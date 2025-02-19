@@ -1,5 +1,5 @@
 <p align = "center" >
-    # Loading And Exploring (MNIST)
+    <h1 align = "Center"> Loading And Exploring (MNIST)</h1>
 </p>
 ## Objetive:
 Make sure you understand your data well and that there are no surprises before moving on to modeling
