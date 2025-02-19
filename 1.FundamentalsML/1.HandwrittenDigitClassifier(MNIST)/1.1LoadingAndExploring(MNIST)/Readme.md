@@ -21,5 +21,5 @@ Make sure you understand your data well and that there are no surprises before m
     - This allows for informed decisions, such as performing data augmentation if you see that there are few images of certain digits
 
 ## Results 
-![Histogram]()
+![Histogram](https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.1LoadingAndExploring(MNIST)/Images/Histogram.png)
 ## Program explication   
