@@ -24,8 +24,8 @@ Make sure you understand your data well and that there are no surprises before m
 
 ## Results 
 <p align="center">
-  <img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.1LoadingAndExploring(MNIST)/Images/Histogram.png" alt="Histogram" width="10000"/>
-  <img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.1LoadingAndExploring(MNIST)/Images/Result.png" alt="Result2" width="10000"/>
+  <img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.1LoadingAndExploring(MNIST)/Images/Histogram.png" alt="Histogram" width="1000"/>
+  <img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.1LoadingAndExploring(MNIST)/Images/Result.png" alt="Result2" width="1000"/>
 </p>
 
 ## Program explication   
