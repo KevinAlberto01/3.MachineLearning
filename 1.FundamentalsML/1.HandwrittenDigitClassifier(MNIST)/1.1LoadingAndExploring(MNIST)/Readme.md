@@ -34,3 +34,7 @@ The program is designed to show the dimensions (x, y) of the dataset, the classe
 </p>
 
 ## Program explication   
+
+|Pseudocode| Image of the program|
+|----------|---------------------|
+NumPy: Used to work with arrays and matrices, and it has functions for mathematics and statistics <br> Pandas: Used to manipulate and analyze data, particularly with DataFrames (tables of rows and columns).<br> matplotlib.pyplot: Used to create graphs, and pyplot is specifically for generating different types of plots (e.g., bar, line, scatter).<br> load_digits from sklearn.datasets: Used to load a dataset of handwritten digits, which is commonly used in classification projects.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.1LoadingAndExploring(MNIST)/Images/1.DeclareteLibraries.png" width="4000"/>|
