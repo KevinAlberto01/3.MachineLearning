@@ -27,7 +27,10 @@ View the original images to confirm that the data you are using is reasonable an
 | <p align = "left"> It's just a way to check that you are working with real images of handwritten digits. <br> It doesn't matter that the data is internally normalized, the images always look like digits because imshow() knows how to interpret the matrices as images.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.2DataPreprocessing/Images/1.Results.png" width="4000"/>|
 |----------------------------|----------------------------------------------------------------------------|
 
-The program is designed to show the dimensions (x, y) of the dataset, the classes it has, and the number of examples per class.
+Check the normalized numerical values to ensure that the preprocessing was done correctly.
+
+| <p align = "left"> Negative values represent pixels that are below average. <br> Positive values represent pixels that are above the average. <br> Values close to 0 represent pixels with an average value.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.2DataPreprocessing/Images/2.DataNormalized" width="4000"/>|
+|----------------------------|----------------------------------------------------------------------------|
 <p align="center">
   <img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.1LoadingAndExploring(MNIST)/Images/Result.png" alt="Result2" width="1000"/>
 </p>
