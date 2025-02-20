@@ -30,9 +30,9 @@ That chart visually represents the accuracy of each algorithm you tested. Each b
 |<p align = "left"> Higher = better accuracy. <br> Lower = worse accuracy.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.3TrainingMultipleAlgorithms/Images/Results.png" width="700"/>|
 |----------------------------|----------------------------------------------------------------------------|
 
-The program is designed to show the dimensions (x, y) of the dataset, the classes it has, and the number of examples per class.
+Percentage of correct answers in the test set (the closer to 1 or 100%, the better).
 <p align="center">
-  <img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.1LoadingAndExploring(MNIST)/Images/Result.png" alt="Result2" width="1000"/>
+  <img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.1LoadingAndExploring(MNIST)/Images/Results.png" alt="Result2" width="1000"/>
 </p>
 
 <p align = "center" >
