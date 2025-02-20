@@ -27,7 +27,7 @@ Este proceso te enseña a no depender de un solo algoritmo y a comparar métodos
 
 That chart visually represents the accuracy of each algorithm you tested. Each bar represents an algorithm, and the height indicates how well it performed.
 
-| <p align = "left"> Higher = better accuracy. <br> Lower = worse accuracy.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.3TrainingMultipleAlgorithms/Images/Results.png" width="1000"/>|
+| <p align = "left"> Higher = better accuracy. <br> Lower = worse accuracy.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.3TrainingMultipleAlgorithms/Images/Results.png" width="700"/>|
 |----------------------------|----------------------------------------------------------------------------|
 
 The program is designed to show the dimensions (x, y) of the dataset, the classes it has, and the number of examples per class.
