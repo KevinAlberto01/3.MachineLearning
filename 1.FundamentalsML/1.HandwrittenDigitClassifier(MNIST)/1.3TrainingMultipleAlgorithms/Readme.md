@@ -28,12 +28,26 @@ Este proceso te enseña a no depender de un solo algoritmo y a comparar métodos
 That chart visually represents the accuracy of each algorithm you tested. Each bar represents an algorithm, and the height indicates how well it performed.
 
 |<p align = "left"> Higher = better accuracy. <br> Lower = worse accuracy.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.3TrainingMultipleAlgorithms/Images/Results.png" width="700"/>|
-|----------------------------|----------------------------------------------------------------------------|
+|----------------------------------------|----------------------------------------------------------------------------|
 
 Percentage of correct answers in the test set (the closer to 1 or 100%, the better).
 <p align="center">
   <img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.3TrainingMultipleAlgorithms/Images/Data.png" alt="Result2" width="1000"/>
 </p>
+
+In this exercise we choose the SVM Algorithm because have better precition and its excelent to small datasets 
+
+<p align = "center" >
+    <h2 align = "Center"> 🔎 Aspects to consider 🔍</h2>
+</p> 
+
+|Algorithm|Why would you choose it?| When to avoid it? |
+|---------|------------------------|-------------------|
+|<p align = "center"> svm </p>|<p align = "center"> Better accuracy, works well on small datasets </p>|<p align = "center"> Can be slow on large databasets </p>|
+|<p align = "center"> Logistic Regression </p>| <p align = "center"> Simple, quick, easy to interpret </p>|<p align = "center"> if the data is not linearly separeble, performance decreases </p>|
+|<p align = "center"> KNN </p>|<p align = "center"> Easy to understand, no "real" training needed </p>|<p align = "center"> slow in predictions with a lot of data </p>|
+|<p align = "center"> MLP(Neural Network)</p>|<p align = "center"> More flexible, it adapts well to complex patterns </p>| <p align = "center"> it can bre more difficult to adjust and slower </p>|
+
 
 <p align = "center" >
     <h2 align = "Center"> 💻 Program explication 💻</h2>
