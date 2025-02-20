@@ -29,7 +29,7 @@ View the original images to confirm that the data you are using is reasonable an
 
 Check the normalized numerical values to ensure that the preprocessing was done correctly.
 
-| <p align = "left"> **Negative values** represent pixels that are below average. <br> <br> Positive values represent pixels that are above the average. <br> <br> Values close to 0 represent pixels with an average value.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.2DataPreprocessing/Images/2.DataNormalized.png" width="1000"/>|
+| <p align = "left"> **Negative values** represent pixels that are below average. <br> <br> Positive values represent pixels that are above the average. <br> <br> Values close to 0 represent pixels with an average value.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.2DataPreprocessing/Images/2.DataNormalized.png" width="500"/>|
 |----------------------------|----------------------------------------------------------------------------|
 <p align="center">
   <img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.1LoadingAndExploring(MNIST)/Images/Result.png" alt="Result2" width="1000"/>
