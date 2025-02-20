@@ -1,29 +1,22 @@
 <p align = "center" >
-    <h1 align = "Center"> Loading And Exploring (MNIST)</h1>
+    <h1 align = "Center"> Data Preprocessing</h1>
 </p>
 
 <p align = "center" >
     <h2 align = "Center">🎯 Objetives 🎯</h2>
 </p>
 
-Make sure you understand your data well and that there are no surprises before moving on to modeling
+Transform the raw data into a format that is more suitable for the model to learn patterns more quickly and accurately.
 
-* **1.Understand your data before training any model** 
-    - Know what you're dealing with: images of handwritten digits
-    - Understand how many examples there are, how many classes there are and how many examples per class
+* **1.Normalization / Standardization**
+    - Scale the pixel values to be in a more uniform range
+        - Mean 0 and variance 1 with StandardScaler, or between 0 and 1 by dividing by 255
+    - This makes the training more stable and faster, and improves the performance of some models.
 
-* **2.Identify potential problems**
+* **2.Identify potential problems:**
     - The balanced of the dataset
         - If a class has too few examples, the model may not learn to recognize it well 
 
-* **3.Familiarize yourself with the structure of the data**
-    - See that each image is sized (8x8 or 28x28)
-    - Visually observe some images to verify that the data makes sense(that it's not corrupted)
-
-* **4.Foundation for future steps**
-    - Before applying models or transformations, it's always recommended to understand the distribution of the data
-
-    - This allows for informed decisions, such as performing data augmentation if you see that there are few images of certain digits
 
 <p align = "center" >
     <h2 align = "Center">📝 Results 📝 </h2>
