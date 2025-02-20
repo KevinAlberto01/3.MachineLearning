@@ -32,7 +32,7 @@ That chart visually represents the accuracy of each algorithm you tested. Each b
 
 Percentage of correct answers in the test set (the closer to 1 or 100%, the better).
 <p align="center">
-  <img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.1LoadingAndExploring(MNIST)/Images/Data.png" alt="Result2" width="1000"/>
+  <img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.3TrainingMultipleAlgorithms/Images/Data.png" alt="Result2" width="1000"/>
 </p>
 
 <p align = "center" >
