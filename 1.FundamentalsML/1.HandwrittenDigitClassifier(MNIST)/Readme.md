@@ -12,6 +12,18 @@ Extra: Implement the model from scratch without advanced frameworks.
 
 To do this, we will use the MNIST (Modified National Institute of Standards and Technology) dataset, a widely used dataset in the field of Machine Learning. It contains 60,000 training images and 10,000 test images, where each image is 28x28 pixels and represents a number from 0 to 9.
 
+### Loading And Exploring (MNIST)
+
+|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.1LoadingAndExploring(MNIST)/Images/Histogram.png" width="1000"/>|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.1LoadingAndExploring(MNIST)/Images/Result.png" alt="Result2" width="2000"/>|
+|----------|---------------------|
+
+### Data preprocessing 
+
+### Training with Multiple ALgorithms 
+
+### Evaluating the Model
+
+### Optimizing Performance
 
 ## Tasks to be Performed (Program #1 ...)
 Loading and exploring the MNIST dataset to understand the distribution of the data. 
