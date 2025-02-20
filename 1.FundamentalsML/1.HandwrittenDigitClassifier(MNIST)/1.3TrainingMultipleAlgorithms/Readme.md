@@ -35,7 +35,7 @@ Percentage of correct answers in the test set (the closer to 1 or 100%, the bett
   <img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.3TrainingMultipleAlgorithms/Images/Data.png" alt="Result2" width="1000"/>
 </p>
 
-In this exercise we choose the SVM Algorithm because have better precition and its excelent to small datasets 
+In this exercise we choose the **SVM Algorithm with 97% of Acurrancy** because have better precition and its excelent to small datasets 
 
 <p align = "center" >
     <h2 align = "Center"> 🔎 Aspects to consider 🔍</h2>
