@@ -31,9 +31,22 @@ Provide detailed metrics (precision, recall, and F1-score) for each number from 
 Show the accuracy of each model so you can compare them visually.
 <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.4EvaluationMetrics/Images/Results.png" width="4000"/>
 
-2.Confusion Matrix 
+3.Confusion Matrix 
+It's a table that shows how many times the model correctly classified each number and how many times it made mistakes.
+**To read it**
+- The rows represent the real numbers (true labels).
+- The columns represent the model's predictions.
+- The values on the main diagonal are the correct predictions (true positives).
+- The values outside the diagonal are errors (incorrect predictions).
 
-3.Classification Report 
+| Logistic Regression| K-Nearest Neighbors(KNN)|
+|------------------------|------------------------| 
+|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.4EvaluationMetrics/Images/ConfusionMatrix(LR).png" width="4000"/> |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.4EvaluationMetrics/Images/ConfusionMatrix(KNN).png" width="4000"/>|
+| SVM| Multi Layer Perceptron(MLP)|
+|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.4EvaluationMetrics/Images/ConfusionMatrix(SVM).png" width="4000"/> |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.4EvaluationMetrics/Images/ConfusionMatrix(MLP).png" width="4000"/>|
+
+
+4.Classification Report 
 
 
 | <p align = "left"> Each  bar corresponds to a digit from 0 to 9, and the height of the bar indicates how many images of that digit are in the dataset. <br> It is used to verify that the data is balanced (that there is a similar number of images for each number) or to detect if any class has very few examples, which could affect the performance of your modeel.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.1LoadingAndExploring(MNIST)/Images/Histogram.png" width="4000"/>|
