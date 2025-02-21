@@ -34,7 +34,7 @@ Provide detailed metrics (precision, recall, and F1-score) for each number from 
     <h3 align = "Center">2.Bars Graph</h3>
 </p>
 Show the accuracy of each model so you can compare them visually.
-<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.4EvaluationMetrics/Images/Results.png" width="2000"/>
+<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.4EvaluationMetrics/Images/Results.png" width="1500"/>
 
 <p align = "center" >
     <h3 align = "Center">3.Confusion Matrix</h3>
