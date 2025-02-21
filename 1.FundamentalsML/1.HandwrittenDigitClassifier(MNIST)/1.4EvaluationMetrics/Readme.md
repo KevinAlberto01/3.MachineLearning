@@ -28,7 +28,7 @@ The purpose of this stage is to analyze how well each model is performing in cla
 </p>
 
 Provide detailed metrics (precision, recall, and F1-score) for each number from 0 to 9.
-<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.4EvaluationMetrics/Images/Data.png" width="4000"/>
+<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.4EvaluationMetrics/Images/Data.png" width="600"/>
 
 <p align = "center" >
     <h3 align = "Center">2.Bars Graph</h3>
