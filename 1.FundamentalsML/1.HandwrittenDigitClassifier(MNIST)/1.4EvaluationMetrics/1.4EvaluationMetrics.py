@@ -77,6 +77,17 @@ for name, matrix in conf_matrix.items():
     plt.title(f'Cofusion Matrix - {name}')
     plt.show() 
 
+    #7.1 ADITIONAL INFORMATION
+    print(f"Confusion Matrix for {name}:")
+    print(matrix)
+    print("\nMost misclassified digits:")
+
+    #7.2 FIND THE MOST MISCLASSIFIED DIGITS
+    errors = np.where(matrix != np.diag(matrix))
+    for true_label, pred_label in zip(errors[0], errors[1]):
+        print(f" - The model condused {true_label} with {pred_label} {matrix[true_label]} times.")
+    print("-" * 40)
+    
 #8.CLASSIFICATION REPORT 
 for name, report in classification_reports.items():
     print(f"\n{name} - Report of classification:")
