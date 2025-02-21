@@ -16,10 +16,10 @@ Este proceso te enseña a no depender de un solo algoritmo y a comparar métodos
     - Sensitive to Neighbors and data
 
 * **3.Support Vector Machine (SVM)**
-    -Tens to be robust for this type of problems 
+    - Tens to be robust for this type of problems 
 
 * **4.Multi-Layer Perceptron(MLP)**
-    -Can Perform very well, but it depends on the training
+    - Can Perform very well, but it depends on the training
 
 <p align = "center" >
     <h2 align = "Center">📝 Results 📝 </h2>
