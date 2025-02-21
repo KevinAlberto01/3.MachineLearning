@@ -1,5 +1,5 @@
 <p align = "center" >
-    <h1 align = "Center"> Loading And Exploring (MNIST)</h1>
+    <h1 align = "Center"> Evaluation Mectris </h1>
 </p>
 
 <p align = "center" >
