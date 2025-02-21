@@ -49,13 +49,11 @@ It's a table that shows how many times the model correctly classified each numbe
 4.Classification Report 
 
 
-| <p align = "left"> Each  bar corresponds to a digit from 0 to 9, and the height of the bar indicates how many images of that digit are in the dataset. <br> It is used to verify that the data is balanced (that there is a similar number of images for each number) or to detect if any class has very few examples, which could affect the performance of your modeel.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.1LoadingAndExploring(MNIST)/Images/Histogram.png" width="4000"/>|
-|----------------------------|----------------------------------------------------------------------------|
-
-The program is designed to show the dimensions (x, y) of the dataset, the classes it has, and the number of examples per class.
-<p align="center">
-  <img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.1LoadingAndExploring(MNIST)/Images/Result.png" alt="Result2" width="1000"/>
-</p>
+| **Logistic Regression**| **K-Nearest Neighbors(KNN)**|
+|------------------------|------------------------| 
+|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.4EvaluationMetrics/Images/ReportClassification(LR).png" width="4000"/> |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.4EvaluationMetrics/Images/ReportClassification(KNN).png" width="2000"/>|
+| <p align = "center" > **SVM** </p> | <p align = "center" > **Multi Layer Perceptron(MLP)** </p>|
+|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.4EvaluationMetrics/Images/ReportClassification(SVM).png" width="4000"/> |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.4EvaluationMetrics/Images/ReportClassification(MLP).png" width="2000"/>|
 
 <p align = "center" >
     <h2 align = "Center"> 💻 Program explication 💻</h2>
