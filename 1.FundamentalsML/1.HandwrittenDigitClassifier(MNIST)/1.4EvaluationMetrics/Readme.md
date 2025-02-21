@@ -23,15 +23,22 @@ The purpose of this stage is to analyze how well each model is performing in cla
     <h2 align = "Center">📝 Results 📝 </h2>
 </p>
 
-1.Accuracy (General Precision)
+<p align = "center" >
+    <h3 align = "Center">1.Accuracy (General Precision)</h3>
+</p>
+
 Provide detailed metrics (precision, recall, and F1-score) for each number from 0 to 9.
 <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.4EvaluationMetrics/Images/Data.png" width="4000"/>
 
-2.Bars Graph 
+<p align = "center" >
+    <h3 align = "Center">2.Bars Graph</h3>
+</p>
 Show the accuracy of each model so you can compare them visually.
 <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.4EvaluationMetrics/Images/Results.png" width="2000"/>
 
-3.Confusion Matrix 
+<p align = "center" >
+    <h3 align = "Center">3.Confusion Matrix</h3>
+</p>
 It's a table that shows how many times the model correctly classified each number and how many times it made mistakes.
 **To read it**
 - The rows represent the real numbers (true labels).
@@ -56,7 +63,7 @@ It's a table that shows how many times the model correctly classified each numbe
 |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.4EvaluationMetrics/Images/ReportClassification(SVM).png" width="4000"/> |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.4EvaluationMetrics/Images/ReportClassification(MLP).png" width="2000"/>|
 
 <p align = "center" >
-    <h2 align = "Center"> 💻 Program explication 💻</h2>
+    <h2 align = "Center"> 💻 Program explication 💻 (PENDING)</h2>
 </p> 
 
 |Pseudocode| Image of the program|
