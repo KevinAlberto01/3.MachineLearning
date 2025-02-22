@@ -50,7 +50,7 @@ After optimizing the hyperparameters of each model using GridSearchCV, they were
 </p>
 Show the accuracy of each model so you can compare them visually.
 <p align = "center" >
-    <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.4EvaluationMetrics/Images/Results.png" width="500"/>
+    <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.5Optimization(Tuning%26Hyperparameters)/Images/Results.png" width="500"/>
 </p>
 <p align = "center" >
     <h3 align = "Center">3.Confusion Matrix</h3>
