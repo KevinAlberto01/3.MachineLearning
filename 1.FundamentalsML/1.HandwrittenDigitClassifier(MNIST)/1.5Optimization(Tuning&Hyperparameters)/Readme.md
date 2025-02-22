@@ -81,7 +81,7 @@ It's a table that shows how many times the model correctly classified each numbe
 |------------------------|------------------------| 
 |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.4EvaluationMetrics/Images/ConfusionMatrix(SVM).png" width="1000"/>|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.5Optimization(Tuning%26Hyperparameters)/Images/ConfusionMatrix(SVM).png" width="1000"/>|
 
-###  <p align = "center" > **3.3 SVM** </p>
+###  <p align = "center" > **3.4 MLP** </p>
  
 | **Without Hyperparameter**| **With Hyperparameter**|
 |------------------------|------------------------| 
@@ -97,6 +97,13 @@ It's a table that shows how many times the model correctly classified each numbe
 | **Without Hyperparameter**| **With Hyperparameter**|
 |------------------------|------------------------| 
 |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.4EvaluationMetrics/Images/ReportClassification(LR).png" width="1000"/>|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.5Optimization(Tuning%26Hyperparameters)/Images/ReportClassification(LR).png" width="1000"/>|
+
+###  <p align = "center" > **3.2 K-Nearest Neighbors(KNN)** </p>
+ 
+| **Without Hyperparameter**| **With Hyperparameter**|
+|------------------------|------------------------| 
+|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.4EvaluationMetrics/Images/ReportClassification(KNN).png" width="1000"/>|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.5Optimization(Tuning%26Hyperparameters)/Images/ReportClassification(KNN).png" width="1000"/>|
+
 
 | **Logistic Regression**| **K-Nearest Neighbors(KNN)**|
 |------------------------|------------------------| 
