@@ -40,15 +40,15 @@ Optimize the models through hyperparameter tuning and compare their performance 
 </p>
 
 After optimizing the hyperparameters of each model using GridSearchCV, they were evaluated on the test set.
-
-<p align = "center" >
-    <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.5Optimization(Tuning%26Hyperparameters)/Images/Data.png" width="1000"/>
-</p>
+ **Acurracy Without Hyperparameter**| **Acurracy with Hyperparameter**|
+|------------------------|------------------------| 
+|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.4EvaluationMetrics/Images/Data.png" width="600"/>|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.5Optimization(Tuning%26Hyperparameters)/Images/Data.png" width="1000"/>|
 
 <p align = "center" >
     <h3 align = "Center">2.Bars Graph</h3>
 </p>
-Show the accuracy of each model so you can compare them visually.
+Show the improved accuracy of each model so you can compare them visually.
+
 <p align = "center" >
     <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.5Optimization(Tuning%26Hyperparameters)/Images/Results.png" width="500"/>
 </p>
