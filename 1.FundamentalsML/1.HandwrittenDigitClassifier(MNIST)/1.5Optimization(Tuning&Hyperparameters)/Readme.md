@@ -42,7 +42,7 @@ Optimize the models through hyperparameter tuning and compare their performance 
 After optimizing the hyperparameters of each model using GridSearchCV, they were evaluated on the test set.
 
 <p align = "center" >
-    <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.4EvaluationMetrics/Images/Data.png" width="600"/>
+    <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.5Optimization(Tuning%26Hyperparameters)/Images/Data.png" width="600"/>
 </p>
 
 <p align = "center" >
