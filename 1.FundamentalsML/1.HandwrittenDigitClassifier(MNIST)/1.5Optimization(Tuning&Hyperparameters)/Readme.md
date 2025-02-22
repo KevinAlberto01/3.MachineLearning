@@ -1,33 +1,46 @@
 <p align = "center" >
-    <h1 align = "Center"> Evaluation Mectris </h1>
+    <h1 align = "Center"> Optimization Tuning and D </h1>
 </p>
 
 <p align = "center" >
     <h2 align = "Center">🎯 Objetives 🎯</h2>
 </p>
 
-The purpose of this stage is to analyze how well each model is performing in classifying the handwritten numbers from the MNIST 8x8 dataset.  We not only want to know the percentage of times it gets it right (accuracy), but also where it makes mistakes and how well it handles each individual number.
+Optimize the models through hyperparameter tuning and compare their performance in the classification of MNIST 8x8 digits.
 
-* **1.Accuracy (General Precision)** 
-    - Indicate what percentage of the predictions were correct.
-    - Limited because it does not show where the model makes mistakes.
+* **1.Load and prepare the data** 
+    - Load the MNIST 8x8 dataset.
+    - Split into training and test data.
+    - Normalize the data with **`StandardScaler`**.
 
-* **2.Confusion Matrix**
-    - Show how many times the model was correct and in which cases it was wrong.  
-    - It is useful for identifying error patterns.
+* **2.Optimization with GridSearchCV (Tuning)**
+    - Different hyperparameters are tested for 4 models:
+        - Logistic Regression
+        - K-Nearest Neighbors (KNN)
+        - Support Vector Machines (SVM)
+        - MLP neural network
+    - **`GridSearchCV`** is Used to find the best hyperparameters.
 
-* **3.Classification Report**
-    - Provide detailed metrics (precision, recall, and F1-score) for each number from 0 to 9.
+* **3.Evaluate Performance**
+    - The best model found is saved.
+    - Its accuracy is measured on the test set.
+    - The confusion matrix is generated to analyze errors.
+    - The classification report is shown with metrics such as precision and recall.
+
+* **4.Visualization of results**
+    - The comparison of accuracy between models is graphed.
+    - Confusion matrices with heatmaps are shown.
 
 <p align = "center" >
-    <h2 align = "Center">📝 Results 📝 </h2>
+    <h2 align = "Center">📝 Results (PENDING Before after)📝 </h2>
 </p>
 
 <p align = "center" >
-    <h3 align = "Center">1.Accuracy (General Precision)</h3>
+    <h3 align = "Center">1.Hyperparameter</h3>
 </p>
 
-Provide detailed metrics (precision, recall, and F1-score) for each number from 0 to 9.
+After optimizing the hyperparameters of each model using GridSearchCV, they were evaluated on the test set.
+
 <p align = "center" >
     <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.4EvaluationMetrics/Images/Data.png" width="600"/>
 </p>
