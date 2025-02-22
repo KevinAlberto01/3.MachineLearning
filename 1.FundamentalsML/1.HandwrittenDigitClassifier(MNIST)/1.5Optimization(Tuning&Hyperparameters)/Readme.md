@@ -51,7 +51,7 @@ Show the improved accuracy of each model so you can compare them visually.
 
  **Bar Graph Before**| **Bar Graph After**|
 |------------------------|------------------------| 
-|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.4EvaluationMetrics/Images/Results.png" width="700"/>|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.5Optimization(Tuning%26Hyperparameters)/Images/Results.png" width="2000"/>|
+|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.4EvaluationMetrics/Images/Results.png" width="700"/>|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.5Optimization(Tuning%26Hyperparameters)/Images/Results.png" width="700"/>|
 
 <p align = "center" >
     <h3 align = "Center">3.Confusion Matrix</h3>
