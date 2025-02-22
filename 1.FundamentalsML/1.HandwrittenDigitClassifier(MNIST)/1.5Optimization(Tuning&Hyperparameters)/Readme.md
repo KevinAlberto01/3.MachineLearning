@@ -63,7 +63,7 @@ It's a table that shows how many times the model correctly classified each numbe
 - The values on the main diagonal are the correct predictions (true positives).
 - The values outside the diagonal are errors (incorrect predictions).
 
-####  <p align = "center" > **3.1 Logistic Regression** </p>
+###  <p align = "center" > **3.1 Logistic Regression** </p>
  
 | **Without Hyperparameter**| **With Hyperparameter**|
 |------------------------|------------------------| 
