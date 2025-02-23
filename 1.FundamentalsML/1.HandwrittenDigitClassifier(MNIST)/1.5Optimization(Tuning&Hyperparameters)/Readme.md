@@ -32,7 +32,7 @@ Optimize the models through hyperparameter tuning and compare their performance 
     - Confusion matrices with heatmaps are shown.
 
 <p align = "center" >
-    <h2 align = "Center">📝 Results (PENDING Before after)📝 </h2>
+    <h2 align = "Center">📝 Results 📝 </h2>
 </p>
 
 <p align = "center" >

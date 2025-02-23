@@ -14,20 +14,27 @@ x = digits.images.reshape(len(digits.images), 8, 8, 1)  # Redimensionar para Ker
 y = keras.utils.to_categorical(digits.target, 10)  # One-hot encoding
 
 # Dividir dataset
-x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=42)
+x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=42, stratify=y)
 
 # Normalizar datos
 x_train = x_train / 16.0
 x_test = x_test / 16.0
 
+# Verificar distribución de clases
+unique_train, counts_train = np.unique(np.argmax(y_train, axis=1), return_counts=True)
+print("Clases en entrenamiento:", dict(zip(unique_train, counts_train)))
+
+unique_test, counts_test = np.unique(np.argmax(y_test, axis=1), return_counts=True)
+print("Clases en prueba:", dict(zip(unique_test, counts_test)))
+
 # Construir modelo SVM en Keras
 model = keras.Sequential([
     layers.Flatten(input_shape=(8, 8, 1)),
-    layers.Dense(10, activation='linear')  # Aproximación de SVM con activación lineal
+    layers.Dense(10, activation='softmax')  # Softmax para mejorar la clasificación
 ])
 
 # Compilar modelo
-model.compile(loss='hinge', optimizer='adam', metrics=['accuracy'])
+model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 
 # Entrenar modelo
 history = model.fit(x_train, y_train, epochs=20, batch_size=32, validation_data=(x_test, y_test))
@@ -48,4 +55,4 @@ plt.show()
 
 # Reporte de clasificación
 print("Classification Report - SVM with Keras")
-print(classification_report(y_test_classes, y_pred_classes))
+print(classification_report(y_test_classes, y_pred_classes, zero_division=1))
