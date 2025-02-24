@@ -29,16 +29,16 @@ Given that the MNIST 8x8 dataset has a limited number of images, artificially ex
 Analyze how data augmentation through transformations such as rotations, translations, and noise affects the models' ability to generalize over the test set.
 
 
- **With Albumentations**| **With Keras**|**With OpenCV**|
+ **<p align = "center" > With Albumentations </p>**| **<p align = "center" > With Keras </p>**|**<p align = "center" > With OpenCV </p>**|
 |------------------------|------------------------|----------------| 
 |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(Albumentations)/Data.png" width="1000"/>|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(Keras)/Data.png" width="1000"/>|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(OpenCV)/Data.png" width="1000"/>|
-|**Logistic Regression**|**Logistic Regression**|**Logistic Regression**|
+|**<p align = "center" > Logistic Regression </p>**|**<p align = "center" > Logistic Regression </p>**|**<p align = "center" > Logistic Regression </p>**|
 |**Accuracy:** 0.8306 <br> **Best Parameter:** ('C': 0.1, 'max_iter':1000)| **Accuracy:** 0. <br> **Best Parameter:** ('C': 0.1, 'max_iter':1000)|**Accuracy:** 0. <br> **Best Parameter:** ('C': 0.1, 'max_iter':1000)|
-|**K-Nearest Neighbors (KNN)**|**K-Nearest Neighbors (KNN)**|**K-Nearest Neighbors (KNN)**|
+|**<p align = "center" > K-Nearest Neighbors (KNN) </p>**|**<p align = "center" > K-Nearest Neighbors (KNN) </p>**|**<p align = "center" > K-Nearest Neighbors (KNN) </p>**|
 |**Accuracy:** 0.8889 <br> **Best Parameter:** ('n_neighbors' : 7)| **Accuracy:** 0. <br> **Best Parameter:** ('C': 0.1, 'max_iter':1000)|**Accuracy:** 0. <br> **Best Parameter:** ('C': 0.1, 'max_iter':1000)|
-|**SVM**|**SVM**|**SVM**|
+|**<p align = "center" > SVM </p>**|**<p align = "center" > SVM </p>**|**<p align = "center" > SVM </p>**|
 |**Accuracy:** 0.9389 <br> **Best Parameter:** ('C': 10, 'kernel':'rbf')| **Accuracy:** 0. <br> **Best Parameter:** ('C': 0.1, 'max_iter':1000)|**Accuracy:** 0. <br> **Best Parameter:** ('C': 0.1, 'max_iter':1000)|
-|**Multi-Layer Perceptron(MLP)**|**Multi-Layer Perceptron(MLP)**|**Multi-Layer Perceptron(MLP)**|
+|**<p align = "center" > Multi-Layer Perceptron(MLP) </p>**|**<p align = "center" > Multi-Layer Perceptron(MLP) </p>**|**<p align = "center" > Multi-Layer Perceptron(MLP) </p>**|
 |**Accuracy:** 0.9333 <br> **Best Parameter:** ('hidden_layer_sizes': (100,), 'max_iter':'500')| **Accuracy:** 0. <br> **Best Parameter:** ('C': 0.1, 'max_iter':1000)|**Accuracy:** 0. <br> **Best Parameter:** ('C': 0.1, 'max_iter':1000)|
 
 
