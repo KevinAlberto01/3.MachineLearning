@@ -31,7 +31,16 @@ Analyze how data augmentation through transformations such as rotations, transla
 
  **With Albumentations**| **With Keras**|**With OpenCV**|
 |------------------------|------------------------|----------------| 
-|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(Albumentations)/Data.png" width="1000"/>|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(Keras)/Data.png" width="1000"/>|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(OpenCV)/Data.png" width="1000"/>
+|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(Albumentations)/Data.png" width="1000"/>|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(Keras)/Data.png" width="1000"/>|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(OpenCV)/Data.png" width="1000"/>|
+|**Logistic Regression**|**Logistic Regression**|**Logistic Regression**|
+|**Accuracy:** 0.8306 <br> **Best Parameter:** ('C': 0.1, 'max_iter':1000)| **Accuracy:** 0. <br> **Best Parameter:** ('C': 0.1, 'max_iter':1000)|**Accuracy:** 0. <br> **Best Parameter:** ('C': 0.1, 'max_iter':1000)|
+|**K-Nearest Neighbors (KNN)**|**K-Nearest Neighbors (KNN)**|**K-Nearest Neighbors (KNN)**|
+|**Accuracy:** 0.8889 <br> **Best Parameter:** ('n_neighbors' : 7)| **Accuracy:** 0. <br> **Best Parameter:** ('C': 0.1, 'max_iter':1000)|**Accuracy:** 0. <br> **Best Parameter:** ('C': 0.1, 'max_iter':1000)|
+|**SVM**|**SVM**|**SVM**|
+|**Accuracy:** 0.9389 <br> **Best Parameter:** ('C': 10, 'kernel':'rbf')| **Accuracy:** 0. <br> **Best Parameter:** ('C': 0.1, 'max_iter':1000)|**Accuracy:** 0. <br> **Best Parameter:** ('C': 0.1, 'max_iter':1000)|
+|**Multi-Layer Perceptron(MLP)**|**Multi-Layer Perceptron(MLP)**|**Multi-Layer Perceptron(MLP)**|
+|**Accuracy:** 0.9333 <br> **Best Parameter:** ('hidden_layer_sizes': (100,), 'max_iter':'500')| **Accuracy:** 0. <br> **Best Parameter:** ('C': 0.1, 'max_iter':1000)|**Accuracy:** 0. <br> **Best Parameter:** ('C': 0.1, 'max_iter':1000)|
+
 
 <p align = "center" >
     <h3 align = "Center">2.Bars Graph</h3>
