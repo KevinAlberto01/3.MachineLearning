@@ -33,13 +33,13 @@ Analyze how data augmentation through transformations such as rotations, transla
 |------------------------|------------------------|----------------| 
 |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(Albumentations)/Data.png" width="1000"/>|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(Keras)/Data.png" width="1000"/>|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(OpenCV)/Data.png" width="1000"/>|
 |**<p align = "center" > Logistic Regression </p>**|**<p align = "center" > Logistic Regression </p>**|**<p align = "center" > Logistic Regression </p>**|
-|**Accuracy:** 0.8306 <br> **Best Parameter:** ('C': 0.1, 'max_iter':1000)| **Accuracy:** 0. <br> **Best Parameter:** ('C': 0.1, 'max_iter':1000)|**Accuracy:** 0. <br> **Best Parameter:** ('C': 0.1, 'max_iter':1000)|
+|**Accuracy:** 0.8306 <br> **Best Parameter:** ('C': 0.1, 'max_iter':1000)| **Accuracy:** 0.68 <br> **Best Parameter:** ('C': 0.1, 'max_iter':1000)|**Accuracy:** 0.6843 <br> **Best Parameter:** ('C': 0.1, 'max_iter':1000)|
 |**<p align = "center" > K-Nearest Neighbors (KNN) </p>**|**<p align = "center" > K-Nearest Neighbors (KNN) </p>**|**<p align = "center" > K-Nearest Neighbors (KNN) </p>**|
-|**Accuracy:** 0.8889 <br> **Best Parameter:** ('n_neighbors' : 7)| **Accuracy:** 0. <br> **Best Parameter:** ('C': 0.1, 'max_iter':1000)|**Accuracy:** 0. <br> **Best Parameter:** ('C': 0.1, 'max_iter':1000)|
+|**Accuracy:** 0.8889 <br> **Best Parameter:** ('n_neighbors' : 7)| **Accuracy:** 0.86 <br> **Best Parameter:** ('n_neighbors' : 7)|**Accuracy:** 0.8081 <br> **Best Parameter:** ('n_neighbors' : 7)|
 |**<p align = "center" > SVM </p>**|**<p align = "center" > SVM </p>**|**<p align = "center" > SVM </p>**|
-|**Accuracy:** 0.9389 <br> **Best Parameter:** ('C': 10, 'kernel':'rbf')| **Accuracy:** 0. <br> **Best Parameter:** ('C': 0.1, 'max_iter':1000)|**Accuracy:** 0. <br> **Best Parameter:** ('C': 0.1, 'max_iter':1000)|
+|**Accuracy:** 0.9389 <br> **Best Parameter:** ('C': 10, 'kernel':'rbf')| **Accuracy:** 0.91 <br> **Best Parameter:** ('C': 10, 'kernel':1000)|**Accuracy:** 0.8401 <br> **Best Parameter:** ('C': 10, 'kernel': 'rbf')|
 |**<p align = "center" > Multi-Layer Perceptron(MLP) </p>**|**<p align = "center" > Multi-Layer Perceptron(MLP) </p>**|**<p align = "center" > Multi-Layer Perceptron(MLP) </p>**|
-|**Accuracy:** 0.9333 <br> **Best Parameter:** ('hidden_layer_sizes': (100,), 'max_iter':'500')| **Accuracy:** 0. <br> **Best Parameter:** ('C': 0.1, 'max_iter':1000)|**Accuracy:** 0. <br> **Best Parameter:** ('C': 0.1, 'max_iter':1000)|
+|**Accuracy:** 0.9333 <br> **Best Parameter:** ('hidden_layer_sizes': (100,), 'max_iter':'500')| **Accuracy:** 0.97 <br> **Best Parameter:** ('hidden_layer_sizes': (100,), 'max_iter':'500')|**Accuracy:** 0.7969 <br> **Best Parameter:** ('hidden_layer_sizes': (100,), 'max_iter':'2000')|
 
 
 <p align = "center" >
@@ -47,10 +47,9 @@ Analyze how data augmentation through transformations such as rotations, transla
 </p>
 Show the improved accuracy of each model so you can compare them visually.
 
- **Bar Graph Before**| **Bar Graph After**|
-|------------------------|------------------------| 
-|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.4EvaluationMetrics/Images/Results.png" width="700"/>|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.5Optimization(Tuning%26Hyperparameters)/Images/Results.png" width="750"/>|
-
+ **<p align = "center" > With Albumentations </p>**| **<p align = "center" > With Keras </p>**|**<p align = "center" > With OpenCV </p>**|
+|------------------------|------------------------|----------------| 
+|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(Albumentations)/Results.png" width="1000"/>|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(Keras)/Results.png" width="1000"/>|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(OpenCV)/Results.png" width="1000"/>|
 <p align = "center" >
     <h3 align = "Center">3.Confusion Matrix</h3>
 </p>
