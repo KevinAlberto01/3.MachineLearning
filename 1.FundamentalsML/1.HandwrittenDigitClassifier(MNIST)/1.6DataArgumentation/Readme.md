@@ -29,9 +29,9 @@ Given that the MNIST 8x8 dataset has a limited number of images, artificially ex
 Analyze how data augmentation through transformations such as rotations, translations, and noise affects the models' ability to generalize over the test set.
 
 
- **Acurracy Without Hyperparameter**| **Acurracy with Hyperparameter**|
-|------------------------|------------------------| 
-|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.4EvaluationMetrics/Images/Data.png" width="700"/>|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.5Optimization(Tuning%26Hyperparameters)/Images/Data.png" width="2000"/>|
+ **With Albumentations**| **With Keras**|**With OpenCV**|
+|------------------------|------------------------|----------------| 
+|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(Albumentations)/Data.png" width="700"/>|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(Keras)/Data.png" width="2000"/>|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(OpenCV)/Data.png" width="2000"/>
 
 <p align = "center" >
     <h3 align = "Center">2.Bars Graph</h3>
