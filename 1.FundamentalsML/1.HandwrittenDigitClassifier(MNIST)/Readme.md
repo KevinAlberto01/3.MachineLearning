@@ -32,7 +32,16 @@ To do this, we will use the MNIST (Modified National Institute of Standards and 
 | <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.1LoadingAndExploring(MNIST)/Images/Histogram.png" width="700"/>| <img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.1LoadingAndExploring(MNIST)/Images/Result.png" alt="Result2" width="1000"/>|
 |----------------------------|----------------------------------------------------------------------------|
 
+We have a program that show the dimensions of x, y of the dataset, the classes it has numbers of 0 to 9, and the number of examples per class, it have
+
 <h2 align = "Center">📉​ 2. Data Preprocessing 📉</h2>
+Transform the raw data into a format that is more suitable for the model to learn patterns more quickly and accurately.
+
+* **1.Normalization / Standardization**
+* **2.Conversion to vectors**
+
+|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.2DataPreprocessing/Images/Results.png" width="4000"/>| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.2DataPreprocessing/Images/DataNormalized.png" width="500"/>|
+|----------------------------|----------------------------------------------------------------------------|
 
 <h2 align = "Center">🧮​ 3. Training Multiple Algorithms 🧮</h2>
 
@@ -46,26 +55,3 @@ To do this, we will use the MNIST (Modified National Institute of Standards and 
 
 <h2 align = "Center">🔧​ 8. Personalisation 🔧</h2>
  
-|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.1LoadingAndExploring(MNIST)/Images/Histogram.png" width="1000"/>|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.1LoadingAndExploring(MNIST)/Images/Result.png" alt="Result2" width="2000"/>|
-|----------|---------------------|
-
-### Data preprocessing 
-
-### Training with Multiple ALgorithms 
-
-### Evaluating the Model
-
-### Optimizing Performance
-
-## Tasks to be Performed (Program #1 ...)
-Loading and exploring the MNIST dataset to understand the distribution of the data. 
-Data preprocessing, including pixel normalization and conversion of images to vectors.
-Training a Machine Learning model using algorithms such as:
-Logistic Regression
-K-Nearest Neighbors (KNN)
-Support Vector Machines (SVM)
-Neural Networks (MLP or CNN)
-Evaluating the model with metrics such as accuracy and confusion matrix.
-Optimizing performance, testing techniques such as hyperparameter tuning or data augmentation.
-
-## Tasks to be Performed (Program #1 ...)
