@@ -100,9 +100,11 @@ It's a table that shows how many times the model correctly classified each numbe
 | <p align = "center" > **SVM** </p> | <p align = "center" > **Multi Layer Perceptron(MLP)** </p>|
 |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.4EvaluationMetrics/Images/ReportClassification(SVM).png" width="4000"/> |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.4EvaluationMetrics/Images/ReportClassification(MLP).png" width="2000"/>|
 
-Note: in the accuracy its different because the number to two-place decimal but it the same result that we use the **SVM Algorithm with 97% of Acurrancy** because have better precition and its excelent to small datasets
+Note: in the accuracy its different because the number to two-place decimal but it the same result that we use the **SVM Algorithm with 98% of Acurrancy** because have better precition and its excelent to small datasets
 
 <h2 align = "Center">📈​ 5. Optimization (Tuning & Hyperparameters)📈​</h2>
+
+
 
 <h2 align = "Center">📑​ 6. Data Argumentation 📑 ​</h2>
 
