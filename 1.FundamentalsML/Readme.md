@@ -5,3 +5,5 @@
    
 Tools: Scikit-learn, Pandas, Matplotlib, Seaborn
 Datasets: Kaggle, UCI ML Repository
+
+Process 1-4 select the model 5 and 6 tunning 7-8 SHOW AND PERSONALIZATION
