@@ -24,6 +24,10 @@ To do this, we will use the MNIST (Modified National Institute of Standards and 
 
 <h2 align = "Center">🔎​ 1. Loading and Exploring (MNIST) 🔍​</h2>
 
+* **1.Understand your data before training any model** 
+* **2.Identify potential problems**
+* **3.Familiarize yourself with the structure of the data**
+* **4.Foundation for future steps**
 
 | <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.1LoadingAndExploring(MNIST)/Images/Histogram.png" width="700"/>| <img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.1LoadingAndExploring(MNIST)/Images/Result.png" alt="Result2" width="1000"/>|
 |----------------------------|----------------------------------------------------------------------------|
