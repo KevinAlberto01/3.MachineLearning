@@ -23,12 +23,21 @@ To do this, we will use the MNIST (Modified National Institute of Standards and 
 </p>
 
 <h2 align = "Center">🔎​ 1. Loading and Exploring (MNIST) 🔍​</h2>
+<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.1LoadingAndExploring(MNIST)/Images/Histogram.png" width="4000"/>
+
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.1LoadingAndExploring(MNIST)/Images/Result.png" alt="Result2" width="1000"/>
 <h2 align = "Center">📉​ 2. Data Preprocessing 📉</h2>
+
 <h2 align = "Center">🧮​ 3. Training Multiple Algorithms 🧮</h2>
+
 <h2 align = "Center">📊​ 4. Evaluation Metrics 📊​</h2>
+
 <h2 align = "Center">📈​ 5. Optimization (Tuning & Hyperparameters)📈​</h2>
+
 <h2 align = "Center">📑​ 6. Data Argumentation 📑 ​</h2>
+
 <h2 align = "Center">📦​ 7. Join All 📦</h2>
+
 <h2 align = "Center">🔧​ 8. Personalisation 🔧</h2>
  
 |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.1LoadingAndExploring(MNIST)/Images/Histogram.png" width="1000"/>|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.1LoadingAndExploring(MNIST)/Images/Result.png" alt="Result2" width="2000"/>|
