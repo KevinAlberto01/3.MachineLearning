@@ -6,8 +6,8 @@
     <h2 align = "Center">🎯 Objetives 🎯</h2>
 </p>
 
-Probar diferentes modelos te permite entender cuál funciona mejor para tu problema y cómo varía el rendimiento según el algoritmo.
-Este proceso te enseña a no depender de un solo algoritmo y a comparar métodos en la práctica.
+Trying different models allows you to understand which one works best for your problem and how performance varies depending on the algorithm.
+This process teaches you not to rely on a single algorithm and to compare methods in practice.
 
 * **1.Logistic Regression** 
     - Basic but effective 

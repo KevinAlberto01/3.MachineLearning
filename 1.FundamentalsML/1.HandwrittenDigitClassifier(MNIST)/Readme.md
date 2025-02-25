@@ -47,6 +47,26 @@ View the original images to confirm that the data you are using is reasonable an
 
 <h2 align = "Center">🧮​ 3. Training Multiple Algorithms 🧮</h2>
 
+Trying different models allows you to understand which one works best for your problem and how performance varies depending on the algorithm.
+This process teaches you not to rely on a single algorithm and to compare methods in practice.
+
+* **1.Logistic Regression** 
+* **2.K-Nearest Neighbors(KNN)**
+* **3.Support Vector Machine (SVM)**
+* **4.Multi-Layer Perceptron(MLP)**
+
+<p align = "center" >
+    <h2 align = "Center"> 🔎 Aspects to consider 🔍</h2>
+</p> 
+
+|Algorithm|Why would you choose it?| When to avoid it? |
+|---------|------------------------|-------------------|
+|<p align = "center"> svm </p>|<p align = "center"> Better accuracy, works well on small datasets </p>|<p align = "center"> Can be slow on large databasets </p>|
+|<p align = "center"> Logistic Regression </p>| <p align = "center"> Simple, quick, easy to interpret </p>|<p align = "center"> if the data is not linearly separeble, performance decreases </p>|
+|<p align = "center"> KNN </p>|<p align = "center"> Easy to understand, no "real" training needed </p>|<p align = "center"> slow in predictions with a lot of data </p>|
+|<p align = "center"> MLP(Neural Network)</p>|<p align = "center"> More flexible, it adapts well to complex patterns </p>| <p align = "center"> it can bre more difficult to adjust and slower </p>|
+In this exercise we choose the **SVM Algorithm with 97% of Acurrancy** because have better precition and its excelent to small datasets 
+
 <h2 align = "Center">📊​ 4. Evaluation Metrics 📊​</h2>
 
 <h2 align = "Center">📈​ 5. Optimization (Tuning & Hyperparameters)📈​</h2>
