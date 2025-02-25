@@ -74,7 +74,7 @@ In this exercise we choose the **SVM Algorithm with 97% of Acurrancy** because h
 <h2 align = "Center">📊​ 4. Evaluation Metrics 📊​</h2>
 
 <p align = "center" >
-    <h3 align = "Center">3.Confusion Matrix</h3>
+    <h3 align = "Center">4.1 Confusion Matrix</h3>
 </p>
 It's a table that shows how many times the model correctly classified each number and how many times it made mistakes.
 **To read it**
@@ -90,14 +90,17 @@ It's a table that shows how many times the model correctly classified each numbe
 |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.4EvaluationMetrics/Images/ConfusionMatrix(SVM).png" width="4000"/> |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.4EvaluationMetrics/Images/ConfusionMatrix(MLP).png" width="2000"/>|
 
 
-4.Classification Report 
-
+<p align = "center" >
+    <h3 align = "Center">4.2 Classification Report</h3>
+</p>
 
 | **Logistic Regression**| **K-Nearest Neighbors(KNN)**|
 |------------------------|------------------------| 
 |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.4EvaluationMetrics/Images/ReportClassification(LR).png" width="4000"/> |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.4EvaluationMetrics/Images/ReportClassification(KNN).png" width="2000"/>|
 | <p align = "center" > **SVM** </p> | <p align = "center" > **Multi Layer Perceptron(MLP)** </p>|
 |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.4EvaluationMetrics/Images/ReportClassification(SVM).png" width="4000"/> |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.4EvaluationMetrics/Images/ReportClassification(MLP).png" width="2000"/>|
+
+Note: in the accuracy its different because the number to two-place decimal but it the same result that we use the **SVM Algorithm with 97% of Acurrancy** because have better precition and its excelent to small datasets
 
 <h2 align = "Center">📈​ 5. Optimization (Tuning & Hyperparameters)📈​</h2>
 
