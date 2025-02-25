@@ -40,7 +40,7 @@ Transform the raw data into a format that is more suitable for the model to lear
 * **1.Normalization / Standardization**
 * **2.Conversion to vectors**
 
-|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.2DataPreprocessing/Images/Results.png" width="4000"/>| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.2DataPreprocessing/Images/DataNormalized.png" width="500"/>|
+|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.2DataPreprocessing/Images/Results.png" width="850"/>| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.2DataPreprocessing/Images/DataNormalized.png" width="1000"/>|
 |----------------------------|----------------------------------------------------------------------------|
 
 View the original images to confirm that the data you are using is reasonable and makes sense, Check the normalized numerical values to ensure that the preprocessing was done correctly.
