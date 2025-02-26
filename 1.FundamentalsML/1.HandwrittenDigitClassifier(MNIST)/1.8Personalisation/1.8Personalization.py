@@ -2,6 +2,7 @@
 import numpy as np 
 import matplotlib.pyplot as plt 
 import seaborn as sns
+from matplotlib.gridspec import GridSpec 
 from sklearn.datasets import load_digits
 from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.preprocessing import StandardScaler
@@ -65,13 +66,11 @@ classification_reports = classification_report(y_test, y_pred)
 
 #10.VISUALIZATION
 #10.1 Confusion Matrix
-plt.figure(figsize=(6,5))
-sns.heatmap(conf_matrix, annot = True, fmt = 'd', cmap = 'Blues',
-                xticklabels=digits.target_names, yticklabels=digits.target_names)
-plt.xlabel('Predicted')
-plt.ylabel('True')
-plt.title('Confusion Matrix')
-plt.show()
+fig = plt.figure(figsize=(16,5))
+outer_gs = GridSpec(1,2, figure = fig, width_ratios=[10, 6])
+left_sub_gs = outer_gs[0].subgridspec(2,5)
+num_images = 10
+
 #10.2 Print aditional INformation
 print("Confusion Matrix:")
 print(conf_matrix)
@@ -95,9 +94,12 @@ print("Evaluation Completed!")
 
 #12.VISUALIZATION PRECISION 
 num_images = 10
-fig, axes = plt.subplots(2, 5, figsize=(10, 5))
 
-for i, ax in enumerate(axes.flat):
+for i in range(num_images):
+    row = i//5 #Determina la fila 
+    col = i % 5  #Determina la columna 
+    ax = fig.add_subplot(left_sub_gs[row, col])
+
     img = x_test[i].reshape(8,8) #Reshape to 8x8
     true_label = y_test[i]
     predicted_label = y_pred[i]
@@ -106,5 +108,12 @@ for i, ax in enumerate(axes.flat):
     ax.set_title(f"True: {true_label}\nPredicted: {predicted_label}")
     ax.axis('off')
 
-plt.tight_layout()
+ax_cf = fig.add_subplot(outer_gs[1])
+sns.heatmap(conf_matrix, annot = True, fmt = 'd', cmap = 'Blues',
+                xticklabels=digits.target_names, yticklabels=digits.target_names, square = True, cbar_kws = {"shrink": 0.8}, annot_kws ={"size":12})
+ax_cf.set_xlabel('Predicted', fontsize = 12)
+ax_cf.set_ylabel('True', fontsize=12)
+ax_cf.set_title('Confusion Matrix', fontsize = 14)
+
+plt.subplots_adjust(hspace= 0.3, wspace = 0.6)
 plt.show()
