@@ -1,5 +1,6 @@
 # Objective: Master data preprocessing and basic ML models.
 ## 1. Emotion detector in facial images
+<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.8Personalisation/Images/Dashboard.png" width="2000"/>
 ## 2. Traffic sign detector
 ## 3. Real-time object detector with YOLO
    
