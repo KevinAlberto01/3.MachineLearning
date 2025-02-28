@@ -119,8 +119,18 @@ note: In this exercise, it is normal that we don't see much change in accuracy b
 |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(Albumentations)/AlbumentationsResults.png" width="1000"/>|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(Keras)/KerasResults.png" width="1000"/>|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(OpenCV)/OpenCVResults.png" width="1000"/>|
 |**Accuracy:** 0.9250 <br> **Best Parameter:** ('C': 10, 'kernel':'rbf')| **Accuracy:** 0.91 <br> **Best Parameter:** ('C': 10, 'kernel':1000)|**Accuracy:** 0.8081 <br> **Best Parameter:** ('C': 10, 'kernel': 'rbf')|
 
+Note: In this exercise, it is normal for the accuracy to worsen because it is a well-structured database, but in theory, we will see the best parameters to use. If there is no improvement, we can skip this part and move on to the next point.
 
 <h2 align = "Center">📦​ 7. Join All 📦</h2>
+
+The final result will include the **database information (model accuracy and x,y dimensions), the 10 example images, the confusion matrix, class distribution, normalized data, and the classification report.**
+<h2 align = "Center">📑​ 6. Data Argumentation 📑 ​</h2>
+
+**<p align = "center" > Data Information </p>**| **<p align = "center" > Classification Report </p>**|
+|------------------------|------------------------
+|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.7JoinAll/Images/DataNormalized.png" width="1000"/>|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.7JoinAll/Images/ClassificationReport.png" width="1000"/>|
+**<p align = "center" > True and Predict </p>**| **<p align = "center" > Confusion Matrix </p>**|
+|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.7JoinAll/Images/TrueAnd%20Predict.png" width="1000"/>|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.7JoinAll/Images/ConfusionMatrix.png" width="1000"/>|
 
 <h2 align = "Center">🔧​ 8. Personalisation 🔧</h2>
  
