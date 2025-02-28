@@ -84,7 +84,6 @@ with col1_top:
     **Dimension of y:** {y.shape}  
     """
     st.markdown(info_text)
-
     fig_donut = make_donut(accuracy * 100)
     st.pyplot(fig_donut)
 
