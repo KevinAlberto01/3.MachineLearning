@@ -104,7 +104,10 @@ Note: in the accuracy its different because the number to two-place decimal but 
 
 <h2 align = "Center">📈​ 5. Optimization (Tuning & Hyperparameters)📈​</h2>
 At this point, only the SVM algorithm is being used, so we can focus on a single model.
-<img src = "" width="2000"/>
+
+<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.5Optimization(Tuning%26Hyperparameters)/Images/SVMResults.png" width="2000"/>
+
+note: In this exercise, it is normal that we don't see much change in accuracy because it is a well-structured database from the library, but in theory, we will see the best parameters to use. 
 
 
 
