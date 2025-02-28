@@ -135,4 +135,6 @@ The final result will include the **database information (model accuracy and x,y
 
 <h2 align = "Center">🔧​ 8. Personalisation 🔧</h2>
  
+ I used the Streamlit library to create a dashboard, to bring everything together on a single webpage, so that the user could see everything on one page and not get lost trying to find the information since they had to navigate through different windows. 
+
 <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.8Personalisation/Images/Dashboard.png" width="2000"/>
