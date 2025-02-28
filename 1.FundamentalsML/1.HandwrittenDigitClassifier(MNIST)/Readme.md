@@ -103,7 +103,7 @@ It's a table that shows how many times the model correctly classified each numbe
 Note: in the accuracy its different because the number to two-place decimal but it the same result that we use the **SVM Algorithm with 98% of Acurrancy** because have better precition and its excelent to small datasets
 
 <h2 align = "Center">📈​ 5. Optimization (Tuning & Hyperparameters)📈​</h2>
-At this point, only the SVM algorithm is being used, so we can focus on a single model.
+At this point, only the SVM algorithm is being used, so we can focus on a single model. <br>
 
 <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.5Optimization(Tuning%26Hyperparameters)/Images/SVMResults.png" width="2000"/>
 
