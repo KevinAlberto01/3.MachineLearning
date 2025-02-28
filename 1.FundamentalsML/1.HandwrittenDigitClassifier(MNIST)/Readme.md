@@ -135,3 +135,4 @@ The final result will include the **database information (model accuracy and x,y
 
 <h2 align = "Center">🔧​ 8. Personalisation 🔧</h2>
  
+<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.8Personalisation/Images/Dashboard.png" width="2000"/>
