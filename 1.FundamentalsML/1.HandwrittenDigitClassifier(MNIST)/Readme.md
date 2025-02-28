@@ -126,11 +126,12 @@ Note: In this exercise, it is normal for the accuracy to worsen because it is a 
 The final result will include the **database information (model accuracy and x,y dimensions), the 10 example images, the confusion matrix, class distribution, normalized data, and the classification report.**
 <h2 align = "Center">📑​ 6. Data Argumentation 📑 ​</h2>
 
-**<p align = "center" > Data Information </p>**| **<p align = "center" > Classification Report </p>**|
+**<p align = "center" > Data Information </p>**| **<p align = "center" > Data Normalized </p>**|
 |------------------------|------------------------
-|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.7JoinAll/Images/DataNormalized.png" width="1000"/>|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.7JoinAll/Images/ClassificationReport.png" width="1000"/>|
-**<p align = "center" > True and Predict </p>**| **<p align = "center" > Confusion Matrix </p>**|
-|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.7JoinAll/Images/TrueAnd%20Predict.png" width="1000"/>|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.7JoinAll/Images/ConfusionMatrix.png" width="1000"/>|
+|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.7JoinAll/Images/Data.png" width="1000"/>|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.7JoinAll/Images/DataNormalized.png" width="1000"/>|
+**<p align = "center" > Classification Report </p>**| **<p align = "center" > Confusion Matrix </p>**|
+|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.7JoinAll/Images/ClassificationReport.png" width="1000"/>|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.7JoinAll/Images/ConfusionMatrix.png" width="1000"/>|
+**<p align = "center" > True and Predict </p>**|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.7JoinAll/Images/TrueAnd%20Predict.png" width="1000"/>
 
 <h2 align = "Center">🔧​ 8. Personalisation 🔧</h2>
  
