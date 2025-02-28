@@ -9,10 +9,23 @@ from sklearn import datasets
 from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.svm import SVC
 from sklearn.metrics import classification_report, confusion_matrix
+from sklearn.preprocessing import StandardScaler  # Agregado
 
 st.set_page_config(layout="wide")
 
+# Ajustar margen superior para pegar el título arriba
+st.markdown(
+    """
+    <style>
+        .block-container {
+            padding-top: 0rem;
+        }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
 # Título grande y centrado al inicio
+st.markdown("<br>", unsafe_allow_html=True)
 st.markdown("<h1 style='text-align: center; font-size: 42px; font-weight: bold;'>DASHBOARD MNIST</h1>", unsafe_allow_html=True)
 
 # Datos y modelo
@@ -22,11 +35,17 @@ y = digits.target
 
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.25, random_state=42)
 
+# Normalización (StandardScaler que conserva negativos y decimales)
+scaler = StandardScaler()
+x_train_normalized = scaler.fit_transform(x_train)
+x_test_normalized = scaler.transform(x_test)
+
+# GridSearchCV y entrenamiento
 param_grid = {'C': [1, 10], 'kernel': ['linear', 'rbf']}
 grid_search = GridSearchCV(SVC(), param_grid, cv=3)
-grid_search.fit(x_train, y_train)
+grid_search.fit(x_train_normalized, y_train)  # Importante usar los datos normalizados
 
-y_pred = grid_search.predict(x_test)
+y_pred = grid_search.predict(x_test_normalized)
 conf_matrix = confusion_matrix(y_test, y_pred)
 report = classification_report(y_test, y_pred, output_dict=True)
 
@@ -40,20 +59,17 @@ class_counts.columns = ['Class', 'Examples per class']
 df_info_no_index = class_counts
 
 
-# Función actualizada para el donut chart con el título arriba más pegado y el color azul más fuerte
+# Función para el donut chart
 def make_donut(input_response, input_color='blue'):
     if input_color == 'blue':
-        chart_color = ['#E0F0FF', '#2A79B9']  # Azul claro y azul más fuerte
+        chart_color = ['#E0F0FF', '#2A79B9']
     else:
         chart_color = ['#E0F0FF', '#2A79B9']
 
     fig, ax = plt.subplots(figsize=(3.5, 3.5), dpi=100)
-
-    # Fondo transparente
     fig.patch.set_alpha(0.0)
     ax.set_facecolor('none')
 
-    # Título arriba, más grande y más pegado - en blanco
     ax.text(0.5, 0.97, "Model Accuracy", ha='center', va='center',
             fontsize=16, fontweight='bold', color='white', transform=ax.transAxes)
 
@@ -63,15 +79,12 @@ def make_donut(input_response, input_color='blue'):
            counterclock=False,
            wedgeprops=dict(width=0.26, edgecolor='white'))
 
-    # Porcentaje en el centro, subido un poco, también en blanco
     ax.text(0, 0.06, f'{input_response:.1f}%', ha='center', va='center',
             fontsize=24, fontweight='bold', color='white')
 
     ax.set(aspect="equal")
     plt.close(fig)
     return fig
-
-
 
 
 # Streamlit Layout
@@ -84,11 +97,12 @@ with col1_top:
     **Dimension of y:** {y.shape}  
     """
     st.markdown(info_text)
+    st.markdown("<br>", unsafe_allow_html=True)
     fig_donut = make_donut(accuracy * 100)
     st.pyplot(fig_donut)
 
 with col2_top:
-    st.markdown("<h3 style='text-align: center;'>True vs. Predicted</h3>", unsafe_allow_html=True)
+    st.markdown("<h3 style='text-align: center;'>True vs Predicted</h3>", unsafe_allow_html=True)
     fig_images, axes = plt.subplots(2, 5, figsize=(12, 5))
     axes = axes.flatten()
     for i, ax in enumerate(axes[:10]):
@@ -133,7 +147,11 @@ with col2_bot:
 
 with col3_bot:
     st.markdown("<h3 style='text-align: center;'>Normalized Data</h3>", unsafe_allow_html=True)
-    st.write(pd.DataFrame(x_train[:5], columns=[f"F{i}" for i in range(x_train.shape[1])]))
+
+    # Mostrar normalizados (con decimales)
+    df_normalized = pd.DataFrame(x_train_normalized[:5], columns=[f"F{i}" for i in range(x_train.shape[1])])
+
+    st.write(df_normalized.style.format("{:.4f}"))
 
 with col4_bot:
     st.markdown("<h3 style='text-align: center;'>Classification Report</h3>", unsafe_allow_html=True)
