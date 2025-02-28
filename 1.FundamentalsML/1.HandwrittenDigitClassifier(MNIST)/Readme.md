@@ -103,6 +103,8 @@ It's a table that shows how many times the model correctly classified each numbe
 Note: in the accuracy its different because the number to two-place decimal but it the same result that we use the **SVM Algorithm with 98% of Acurrancy** because have better precition and its excelent to small datasets
 
 <h2 align = "Center">📈​ 5. Optimization (Tuning & Hyperparameters)📈​</h2>
+At this point, only the SVM algorithm is being used, so we can focus on a single model.
+<img src = "" width="2000"/>
 
 
 

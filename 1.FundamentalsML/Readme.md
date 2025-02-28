@@ -3,6 +3,7 @@
 <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.8Personalisation/Images/Dashboard.png" width="2000"/>
 
 ## 2. HousePrice Prediction
+
 ## 3. Sentimental Analysis Movie Reviews
    
 Tools: Scikit-learn, Pandas, Matplotlib, Seaborn
