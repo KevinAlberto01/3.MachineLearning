@@ -12,7 +12,7 @@ from sklearn.metrics import mean_squared_error, r2_score
 print("\n=== 1. Loading Cleaned Data ===")
 file_path = '/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/2.ExploratoryDataAnalysis(EDA)/AmesHousing_cleaned.csv'
 df = pd.read_csv(file_path)
-print(f"✅ Dataset loaded with shape: {df.shape}")
+print(f"Dataset loaded with shape: {df.shape}")
 
 # Separar features y target
 X = df.drop(columns=['SalePrice'])
@@ -20,7 +20,7 @@ y = df['SalePrice']
 
 # Detectar columnas categóricas
 categorical_columns = X.select_dtypes(include=['object']).columns
-print(f"🔎 Columnas categóricas detectadas: {list(categorical_columns)}")
+print(f"\nDetected Categorical Columns: {list(categorical_columns)}")
 
 # Aplicar One-Hot Encoding
 X = pd.get_dummies(X, columns=categorical_columns, drop_first=True)
@@ -51,7 +51,7 @@ def evaluate_model(model, X_train, X_test, y_train, y_test):
     train_r2 = r2_score(y_train, y_train_pred)
     test_r2 = r2_score(y_test, y_test_pred)
     
-    print(f"\n📊 Modelo: {model.__class__.__name__}")
+    print(f"\n📊 Model: {model.__class__.__name__}")
     print(f"Train RMSE: {train_rmse:.2f}")
     print(f"Test RMSE: {test_rmse:.2f}")
     print(f"Train R2: {train_r2:.2f}")
@@ -91,7 +91,7 @@ plt.bar(x - width/2, df_results['Train RMSE'], width=width, label='Train RMSE')
 plt.bar(x + width/2, df_results['Test RMSE'], width=width, label='Test RMSE')
 plt.xticks(x, df_results['Model'], rotation=45)
 plt.ylabel('RMSE')
-plt.title('Comparación de RMSE')
+plt.title('Comparation of RMSE')
 plt.legend()
 
 # Gráfica de R²
@@ -100,7 +100,7 @@ plt.bar(x - width/2, df_results['Train R²'], width=width, label='Train R²')
 plt.bar(x + width/2, df_results['Test R²'], width=width, label='Test R²')
 plt.xticks(x, df_results['Model'], rotation=45)
 plt.ylabel('R²')
-plt.title('Comparación de R²')
+plt.title('Comparation de R²')
 plt.legend()
 
 plt.tight_layout()
