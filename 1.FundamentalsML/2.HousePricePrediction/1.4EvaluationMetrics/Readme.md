@@ -45,23 +45,18 @@ Analyze in detail the performance of each evaluated model. Its purpose is to com
 <p align = "center" >
     <h2 align = "Center">📝 Results 📝 </h2>
 </p>
-Total loaded shape
-<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.3TraininigMultipleAlgorithms/Images/7.DatasetLoaded.png" width="4000"/>
+1.Load of Results 
+<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.4EvaluationMetrics/Images/1.LoadResults.png" width="4000"/>
 
-Categorical colums 
-<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.3TraininigMultipleAlgorithms/Images/2.CategoticalColumns.png" width="4000"/>
+2.Analysis of Overfitting / Underfitting 
+<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.4EvaluationMetrics/Images/2.AnalysisOverfittingUnderfitting.png" width="4000"/>
 
-Best max_depth (Decision Tree Regressor)
-<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.3TraininigMultipleAlgorithms/Images/8.BestDecisionTreeRegressor.png" width="4000"/>
+3.Graphical Comparison
+<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.4EvaluationMetrics/Images/3.GraphicalComparison.png" width="4000"/>
 
-|Linear Regression|Decision Tree Regressor|
-|----------|---------------------|
-|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.3TraininigMultipleAlgorithms/Images/3.LinealRegression.png" width="4000"/>|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.3TraininigMultipleAlgorithms/Images/4.DecisionTreeRegressor.png" width="4000"/>|
-|<p align = "center" >**Random Forest Regressor**</p>|<p align = "center" >**KNeighbors Regressor**</p>|
-|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.3TraininigMultipleAlgorithms/Images/5.RandomForestRegressor.png" width="4000"/> |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.3TraininigMultipleAlgorithms/Images/6.KNeighborsRegressor.png" width="4000"/>|
-
-Comparation RMSE vs R²
-<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.3TraininigMultipleAlgorithms/Images/1.RMSEvsR2.png" width="4000"/>
+4.Final Summary
+<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.4EvaluationMetrics/Images/4.FinalSummary.png
+" width="4000"/>
 
 <p align = "center" >
     <h2 align = "Center"> 💻 Program explication (PENDING)💻</h2>
