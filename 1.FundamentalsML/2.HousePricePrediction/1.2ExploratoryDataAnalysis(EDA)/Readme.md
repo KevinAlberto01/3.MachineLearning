@@ -50,9 +50,9 @@ Visually and statistically explore the already cleaned data (AmesHousing_cleaned
 |SalePrice Histogram|Boxplot Sale Price|
 |----------|---------------------|
 |See Initial Distribution <br> <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.2ExploratoryDataAnalysis(EDA)/Images/1.HistogramSalePrice.png" width="4000"/>|Detect Outliers <br> <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.2ExploratoryDataAnalysis(EDA)/Images/2.BoxplotSalePrice.png" width="4000"/>|
-|**GrLivArea vs SalePrice Scatter Plot**|**Correlation Matrix**|
+|<p align = "center" >**GrLivArea vs SalePrice Scatter Plot**</p>|<p align = "center" >**Correlation Matrix**</p>|
 |Direct relationship between area and price <br> <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.2ExploratoryDataAnalysis(EDA)/Images/3.LivingAreavsSalePRice.png" width="4000"/> |Identify key variables <br> <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.2ExploratoryDataAnalysis(EDA)/Images/4.CorrelationMatrix.png" width="4000"/>|
-|**Transformación Logarítmica**|**Scatter Plot GrLivArea vs Log_SalePrice**|
+|<p align = "center" >**Transformación Logarítmica**</p>|<p align = "center" >**Scatter Plot GrLivArea vs Log_SalePrice**</p>|
 |Normalizar SalePrice <br> <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.2ExploratoryDataAnalysis(EDA)/Images/5.HistogramLogSalePrice.png" width="4000"/> |Mejorar relación lineal <br> <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.2ExploratoryDataAnalysis(EDA)/Images/6.LivingAreaLogSalePrice.png" width="4000"/>|
 
 <p align = "center" >
