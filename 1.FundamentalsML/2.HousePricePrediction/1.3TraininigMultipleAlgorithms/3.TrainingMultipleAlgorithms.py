@@ -7,10 +7,11 @@ from sklearn.tree import DecisionTreeRegressor
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.neighbors import KNeighborsRegressor
 from sklearn.metrics import mean_squared_error, r2_score
+from sklearn.model_selection import GridSearchCV
 
 # 1. Loading Cleaned Data
 print("\n=== 1. Loading Cleaned Data ===")
-file_path = '/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/2.ExploratoryDataAnalysis(EDA)/AmesHousing_cleaned.csv'
+file_path = '/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/1.2ExploratoryDataAnalysis(EDA)/AmesHousing_cleaned.csv'
 df = pd.read_csv(file_path)
 print(f"Dataset loaded with shape: {df.shape}")
 
@@ -29,10 +30,19 @@ X = pd.get_dummies(X, columns=categorical_columns, drop_first=True)
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
 
+# --- Grid Search para DecisionTreeRegressor ---
+def get_best_decision_tree(X_train, y_train):
+    param_grid = {'max_depth': [5, 10, 15, 20, 25, None]}
+    grid_search = GridSearchCV(DecisionTreeRegressor(random_state=42), param_grid, cv=5, scoring='neg_mean_squared_error')
+    grid_search.fit(X_train, y_train)
+    print(f"\n✅ Best max_depth for DecisionTreeRegressor: {grid_search.best_params_['max_depth']}")
+    return DecisionTreeRegressor(random_state=42, max_depth=grid_search.best_params_['max_depth'])
+
+
 # Modelos
 models = {
     'LinearRegression': LinearRegression(),
-    'DecisionTreeRegressor': DecisionTreeRegressor(random_state=42),
+    'DecisionTreeRegressor': get_best_decision_tree(X_train, y_train),  # Optimizado
     'RandomForestRegressor': RandomForestRegressor(random_state=42),
     'KNeighborsRegressor': KNeighborsRegressor()
 }
@@ -50,12 +60,12 @@ def evaluate_model(model, X_train, X_test, y_train, y_test):
     test_rmse = mean_squared_error(y_test, y_test_pred, squared=False)
     train_r2 = r2_score(y_train, y_train_pred)
     test_r2 = r2_score(y_test, y_test_pred)
-    
+
     print(f"\n📊 Model: {model.__class__.__name__}")
     print(f"Train RMSE: {train_rmse:.2f}")
     print(f"Test RMSE: {test_rmse:.2f}")
-    print(f"Train R2: {train_r2:.2f}")
-    print(f"Test R2: {test_r2:.2f}")
+    print(f"Train R²: {train_r2:.2f}")
+    print(f"Test R²: {test_r2:.2f}")
     print("-" * 50)
 
     results.append({
