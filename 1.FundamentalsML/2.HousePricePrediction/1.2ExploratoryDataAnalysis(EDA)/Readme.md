@@ -53,7 +53,7 @@ Visually and statistically explore the already cleaned data (AmesHousing_cleaned
 |**GrLivArea vs SalePrice Scatter Plot**|**Correlation Matrix**|
 |Direct relationship between area and price <br> <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.2ExploratoryDataAnalysis(EDA)/Images/3.LivingAreavsSalePRice.png" width="4000"/> |Identify key variables <br> <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.2ExploratoryDataAnalysis(EDA)/Images/4.CorrelationMatrix.png" width="4000"/>|
 |**Transformación Logarítmica**|**Scatter Plot GrLivArea vs Log_SalePrice**|
-|Normalizar SalePrice|Mejorar relación lineal|
+|Normalizar SalePrice <br> <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.2ExploratoryDataAnalysis(EDA)/Images/5.HistogramLogSalePrice.png" width="4000"/> |Mejorar relación lineal <br> <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.2ExploratoryDataAnalysis(EDA)/Images/6.LivingAreaLogSalePrice.png" width="4000"/>|
 
 <p align = "center" >
     <h2 align = "Center"> 💻 Program explication (PENDING) 💻</h2>
