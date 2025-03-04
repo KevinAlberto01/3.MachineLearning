@@ -33,7 +33,12 @@ Load the house prices dataset (AmesHousing.csv), identify numerical and categori
     <h2 align = "Center">📝 Results 📝 </h2>
 </p>
 
-El programa genera el archivo:
+The program generates the file:
+
+|Repository| Terminal|
+|----------|---------------------|
+<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.DataProcessing/Images/File.png" width="4000"/>| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.DataProcessing/Images/Results.png" width="4000"/>|
+
 
 | <p align = "left"> Each  bar corresponds to a digit from 0 to 9, and the height of the bar indicates how many images of that digit are in the dataset. <br> It is used to verify that the data is balanced (that there is a similar number of images for each number) or to detect if any class has very few examples, which could affect the performance of your modeel.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.1LoadingAndExploring(MNIST)/Images/Histogram.png" width="4000"/>|
 |----------------------------|----------------------------------------------------------------------------|
