@@ -62,20 +62,22 @@ This program is responsible for testing and comparing different Machine Learning
     <h2 align = "Center">📝 Results 📝 </h2>
 </p>
 Total loaded shape
+<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.3TraininigMultipleAlgorithms/Images/7.DatasetLoaded.png" width="4000"/>
 
 Categorical colums 
+<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.3TraininigMultipleAlgorithms/Images/2.CategoticalColumns.png" width="4000"/>
 
-Best max_depth (Decision Tree REgressor)
+Best max_depth (Decision Tree Regressor)
+<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.3TraininigMultipleAlgorithms/Images/8.BestDecisionTreeRegressor.png" width="4000"/>
 
 |Linear Regression|Decision Tree Regressor|
 |----------|---------------------|
-|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.2ExploratoryDataAnalysis(EDA)/Images/1.HistogramSalePrice.png" width="4000"/>|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.2ExploratoryDataAnalysis(EDA)/Images/2.BoxplotSalePrice.png" width="4000"/>|
+|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.3TraininigMultipleAlgorithms/Images/8.BestDecisionTreeRegressor.png" width="4000"/>|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.3TraininigMultipleAlgorithms/Images/8.BestDecisionTreeRegressor.png" width="4000"/>|
 |<p align = "center" >**Random Forest Regressor**</p>|<p align = "center" >**KNeighbors Regressor**</p>|
-|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.2ExploratoryDataAnalysis(EDA)/Images/3.LivingAreavsSalePRice.png" width="4000"/> |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.2ExploratoryDataAnalysis(EDA)/Images/4.CorrelationMatrix.png" width="4000"/>|
+|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.3TraininigMultipleAlgorithms/Images/8.BestDecisionTreeRegressor.png" width="4000"/> |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.3TraininigMultipleAlgorithms/Images/8.BestDecisionTreeRegressor.png" width="4000"/>|
 
 Comparation RMSE vs R²
-
-<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.3TraininigMultipleAlgorithms/Images/1.RMSEvsR2.png" width="4000"/>
+<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.3TraininigMultipleAlgorithms/Images/8.BestDecisionTreeRegressor.png" width="4000"/>
 
 <p align = "center" >
     <h2 align = "Center"> 💻 Program explication 💻</h2>
