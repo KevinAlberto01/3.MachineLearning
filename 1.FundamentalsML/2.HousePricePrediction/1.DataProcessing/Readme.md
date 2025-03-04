@@ -23,7 +23,7 @@ Load the house prices dataset (AmesHousing.csv), identify numerical and categori
     - In numerical columns, fill in the missing values with the median of the column.
     - In categorical columns, fill the missing values with the string 'Missing'.
     
-> .[!NOTE].
+>[!NOTE]
 >It is a common strategy to avoid data loss and ensure that each cell has a valid value.
 
 * **4.Save Clean Dataset**
