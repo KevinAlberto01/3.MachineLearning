@@ -37,7 +37,7 @@ The program generates the file:
 
 |Repository| Terminal|
 |----------|---------------------|
-<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.DataProcessing/Images/File.png" width="4000"/>| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.DataProcessing/Images/Results.png" width="4000"/>|
+<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.1DataProcessing/Images/File.png" width="4000"/>| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.1DataProcessing/Images/Results.png" width="4000"/>|
 
 The table contain
 - All the original columns.
