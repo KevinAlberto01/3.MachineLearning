@@ -115,3 +115,5 @@ plt.legend()
 
 plt.tight_layout()
 plt.show()
+
+df_results.to_csv('/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/1.4EvaluationMetrics/df_results.csv', index=False)
