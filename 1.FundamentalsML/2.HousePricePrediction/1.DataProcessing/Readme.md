@@ -39,17 +39,13 @@ The program generates the file:
 |----------|---------------------|
 <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.DataProcessing/Images/File.png" width="4000"/>| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.DataProcessing/Images/Results.png" width="4000"/>|
 
-
-| <p align = "left"> Each  bar corresponds to a digit from 0 to 9, and the height of the bar indicates how many images of that digit are in the dataset. <br> It is used to verify that the data is balanced (that there is a similar number of images for each number) or to detect if any class has very few examples, which could affect the performance of your modeel.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.1LoadingAndExploring(MNIST)/Images/Histogram.png" width="4000"/>|
-|----------------------------|----------------------------------------------------------------------------|
-
-The program is designed to show the dimensions (x, y) of the dataset, the classes it has, and the number of examples per class.
-<p align="center">
-  <img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.1LoadingAndExploring(MNIST)/Images/Result.png" alt="Result2" width="1000"/>
-</p>
+The table contain
+- All the original columns.
+- Without null values (because they have already been filled in).
+- Ready to be explored or transformed (like with One-Hot Encoding later).
 
 <p align = "center" >
-    <h2 align = "Center"> 💻 Program explication 💻</h2>
+    <h2 align = "Center"> 💻 Program explication (PENDING)💻</h2>
 </p> 
 
 |Pseudocode| Image of the program|
