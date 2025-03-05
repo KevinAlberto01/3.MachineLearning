@@ -57,19 +57,31 @@ Perform hyperparameter optimization for 4 regression models and evaluate which c
     <h2 align = "Center">📝 Results 📝 </h2>
 </p>
 
-✅ Carga y limpia los datos.
+Distribution of SalePrices
+<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.4EvaluationMetrics/Imagess/1.LoadResults.png" width="4000"/>
+
+Summary of SalePrice
 <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.4EvaluationMetrics/Images/1.LoadResults.png" width="4000"/>
-✅ Aplica get_dummies().
+
+Results
 <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.4EvaluationMetrics/Images/1.LoadResults.png" width="4000"/>
-✅ Escala las variables.
+
+log1p yes
 <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.4EvaluationMetrics/Images/1.LoadResults.png" width="4000"/>
-✅ Opcionalmente aplica log1p() a SalePrice.
+
+log1p not
 <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.4EvaluationMetrics/Images/1.LoadResults.png" width="4000"/>
-✅ Entrena los 4 modelos: Linear Regression, Decision Tree, Random Forest y KNN.
+
+Comparation of Models yes
 <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.4EvaluationMetrics/Images/1.LoadResults.png" width="4000"/>
-✅ Calcula RMSE y R² de cada modelo (train y test).
+
+Comparation of Models not
 <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.4EvaluationMetrics/Images/1.LoadResults.png" width="4000"/>
-✅ Grafica las comparaciones de RMSE y R² en barras.
+
+RMSEvsR2 yes
+<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.4EvaluationMetrics/Images/1.LoadResults.png" width="4000"/>
+
+RMSEvsR2 not
 <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.4EvaluationMetrics/Images/1.LoadResults.png" width="4000"/>
 
 <p align = "center" >

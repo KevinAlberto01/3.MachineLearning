@@ -89,7 +89,7 @@ print("\nComparation of Models:")
 print(results)
 
 # Save results
-results.to_csv('3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/1.5Optimization(Tuning&Hyperparameters)/model_comparison_results.csv', index=False)
+results.to_csv('/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/1.5Optimization(Tuning&Hyperparameters)/model_comparison_results.csv', index=False)
 
 # Comparison charts
 fig, axs = plt.subplots(1, 2, figsize=(14, 5))
