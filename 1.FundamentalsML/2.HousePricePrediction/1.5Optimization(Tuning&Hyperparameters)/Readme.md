@@ -58,31 +58,26 @@ Perform hyperparameter optimization for 4 regression models and evaluate which c
 </p>
 
 Distribution of SalePrices
-<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.4EvaluationMetrics/Imagess/1.LoadResults.png" width="4000"/>
+<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.5Optimization(Tuning%26Hyperparameters)/Images/DistributionSalePrice.png" width="4000"/>
 
 Summary of SalePrice
-<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.4EvaluationMetrics/Images/1.LoadResults.png" width="4000"/>
+<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.5Optimization(Tuning%26Hyperparameters)/Images/SummarySalePrice.png" width="4000"/>
 
 Results
-<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.4EvaluationMetrics/Images/1.LoadResults.png" width="4000"/>
+<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.5Optimization(Tuning%26Hyperparameters)/Images/Results.png" width="4000"/>
 
-log1p yes
-<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.4EvaluationMetrics/Images/1.LoadResults.png" width="4000"/>
+|log1p yes|log1p not|
+|----------|---------------------|
+|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.5Optimization(Tuning%26Hyperparameters)/Images/ApplyLog1(yes).png" width="4000"/>|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.5Optimization(Tuning%26Hyperparameters)/Images/ApplyLog1(not).png" width="4000"/>|
 
-log1p not
-<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.4EvaluationMetrics/Images/1.LoadResults.png" width="4000"/>
 
-Comparation of Models yes
-<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.4EvaluationMetrics/Images/1.LoadResults.png" width="4000"/>
+|Comparation of Models yes|Comparation of Models not|
+|----------|---------------------|
+|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.5Optimization(Tuning%26Hyperparameters)/Images/ComparationModels(Yes).png" width="4000"/>|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.5Optimization(Tuning%26Hyperparameters)/Images/ComparationModels(not).png" width="4000"/>|
 
-Comparation of Models not
-<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.4EvaluationMetrics/Images/1.LoadResults.png" width="4000"/>
-
-RMSEvsR2 yes
-<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.4EvaluationMetrics/Images/1.LoadResults.png" width="4000"/>
-
-RMSEvsR2 not
-<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.4EvaluationMetrics/Images/1.LoadResults.png" width="4000"/>
+|RMSEvsR2 yes|RMSEvsR2 not|
+|----------|---------------------|
+|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.5Optimization(Tuning%26Hyperparameters)/Images/RMSEvsR2(yes).png" width="4000"/>|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.5Optimization(Tuning%26Hyperparameters)/Images/RMSEvsR2(not).png" width="4000"/>|
 
 <p align = "center" >
     <h2 align = "Center"> 💻 Program explication (PENDING)💻</h2>
