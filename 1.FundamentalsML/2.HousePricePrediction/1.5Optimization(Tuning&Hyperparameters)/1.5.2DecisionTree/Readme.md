@@ -1,5 +1,5 @@
 <p align = "center" >
-    <h1 align = "Center"> 1.5.1 Linear Regression </h1>
+    <h1 align = "Center"> 1.5.2 Decision Tree </h1>
 </p>
 
 <p align = "center" >
