@@ -5,7 +5,7 @@
 <p align = "center" >
     <h2 align = "Center">📜 Description 📜</h2>
 </p>
-Linear regression doesn't have as many hyperparameters to tune, but you can check how data standardization affects it (optional).  
+Linear regression doesn't have as many hyperparameters to tune, but you can check how data standardization affects it.  
 
 <p align = "center" >
     <h2 align = "Center">📝 Results 📝 </h2>
