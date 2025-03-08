@@ -1,5 +1,5 @@
 <p align = "center" >
-    <h1 align = "Center"> Loading And Exploring (MNIST)</h1>
+    <h1 align = "Center"> 1.1 Loading And Exploring (MNIST)</h1>
 </p>
 
 <p align = "center" >
