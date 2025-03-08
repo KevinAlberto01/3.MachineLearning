@@ -28,7 +28,7 @@ To do this, we will use the MNIST (Modified National Institute of Standards and 
     <h2 align = "Center">📓 Step by Step 📓</h2>
 </p>
 
-<h2 align = "Center">🔎​ 1. Loading and Exploring (MNIST) 🔍​</h2>
+<h4 align = "Center">🔎​ 1. Loading and Exploring (MNIST) 🔍​</h4>
 
 * **1.Understand your data before training any model** 
 * **2.Identify potential problems**
@@ -40,7 +40,7 @@ To do this, we will use the MNIST (Modified National Institute of Standards and 
 
 We have a program that show the dimensions of x, y of the dataset, the classes it has numbers of 0 to 9, and the number of examples per class, it have
 
-<h2 align = "Center">📉​ 2. Data Preprocessing 📉</h2>
+<h4 align = "Center">📉​ 2. Data Preprocessing 📉</h4>
 Transform the raw data into a format that is more suitable for the model to learn patterns more quickly and accurately.
 
 * **1.Normalization / Standardization**
@@ -51,7 +51,7 @@ Transform the raw data into a format that is more suitable for the model to lear
 
 View the original images to confirm that the data you are using is reasonable and makes sense, Check the normalized numerical values to ensure that the preprocessing was done correctly.
 
-<h2 align = "Center">🧮​ 3. Training Multiple Algorithms 🧮</h2>
+<h4 align = "Center">🧮​ 3. Training Multiple Algorithms 🧮</h4>
 
 Trying different models allows you to understand which one works best for your problem and how performance varies depending on the algorithm.
 This process teaches you not to rely on a single algorithm and to compare methods in practice.
@@ -67,7 +67,7 @@ This process teaches you not to rely on a single algorithm and to compare method
 In this exercise we choose the **SVM Algorithm with 97% of Acurrancy** because have better precition and its excelent to small datasets
 
 <p align = "center" >
-    <h2 align = "Center"> 🔎 Aspects to consider 🔍</h2>
+    <h4 align = "Center"> 🔎 Aspects to consider 🔍</h4>
 </p> 
 
 |Algorithm|Why would you choose it?| When to avoid it? |
@@ -77,12 +77,12 @@ In this exercise we choose the **SVM Algorithm with 97% of Acurrancy** because h
 |<p align = "center"> KNN </p>|<p align = "center"> Easy to understand, no "real" training needed </p>|<p align = "center"> slow in predictions with a lot of data </p>|
 |<p align = "center"> MLP(Neural Network)</p>|<p align = "center"> More flexible, it adapts well to complex patterns </p>| <p align = "center"> it can bre more difficult to adjust and slower </p>| 
 
-<h2 align = "Center">📊​ 4. Evaluation Metrics 📊​</h2>
+<h4 align = "Center">📊​ 4. Evaluation Metrics 📊​</h4>
 
 <p align = "center" >
-    <h3 align = "Center">4.1 Confusion Matrix</h3>
+    <h5 align = "Center">4.1 Confusion Matrix</h5>
 </p>
-It's a table that shows how many times the model correctly classified each number and how many times it made mistakes.
+It's a table hat shows how many times the model correctly classified each number and how many times it made mistakes.
 **To read it**
 - The rows represent the real numbers (true labels).
 - The columns represent the model's predictions.
@@ -97,7 +97,7 @@ It's a table that shows how many times the model correctly classified each numbe
 
 
 <p align = "center" >
-    <h3 align = "Center">4.2 Classification Report</h3>
+    <h4 align = "Center">4.2 Classification Report</h4>
 </p>
 
 | **Logistic Regression**| **K-Nearest Neighbors(KNN)**|
@@ -108,7 +108,7 @@ It's a table that shows how many times the model correctly classified each numbe
 
 Note: in the accuracy its different because the number to two-place decimal but it the same result that we use the **SVM Algorithm with 98% of Acurrancy** because have better precition and its excelent to small datasets
 
-<h2 align = "Center">📈​ 5. Optimization (Tuning & Hyperparameters)📈​</h2>
+<h4 align = "Center">📈​ 5. Optimization (Tuning & Hyperparameters)📈​</h4>
 
 At this point, only the SVM algorithm is being used, so we can focus on a single model. <br>
 
@@ -118,7 +118,7 @@ note: In this exercise, it is normal that we don't see much change in accuracy b
 
 
 
-<h2 align = "Center">📑​ 6. Data Argumentation 📑 ​</h2>
+<h4 align = "Center">📑​ 6. Data Argumentation 📑 ​</h4>
 
  **<p align = "center" > With Albumentations </p>**| **<p align = "center" > With Keras </p>**|**<p align = "center" > With OpenCV </p>**|
 |------------------------|------------------------|----------------| 
@@ -127,10 +127,10 @@ note: In this exercise, it is normal that we don't see much change in accuracy b
 
 Note: In this exercise, it is normal for the accuracy to worsen because it is a well-structured database, but in theory, we will see the best parameters to use. If there is no improvement, we can skip this part and move on to the next point.
 
-<h2 align = "Center">📦​ 7. Join All 📦</h2>
+<h4 align = "Center">📦​ 7. Join All 📦</h4>
 
 The final result will include the **database information (model accuracy and x,y dimensions), the 10 example images, the confusion matrix, class distribution, normalized data, and the classification report.**
-<h2 align = "Center">📑​ 6. Data Argumentation 📑 ​</h2>
+<h4 align = "Center">📑​ 6. Data Argumentation 📑 ​</h4>
 
 **<p align = "center" > Data Information </p>**| **<p align = "center" > Data Normalized </p>**|
 |------------------------|------------------------
