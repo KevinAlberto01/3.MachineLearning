@@ -13,11 +13,13 @@ This roadmap is designed to develop skills in solid Machine Learning projects, m
 * Facilitate the documentation and presentation of results through graphs, metrics, and an organized workflow.
 
 <p align = "center" >
-    <h2 align = "Center">🔎 Focus 🔎 
-</h2>
+    <h2 align = "Center">🔎 Focus 🔎 </h2>
 </p>
+The Proyects are structured so that each step is independent, allowing: 
 
-The roadmap is structured so that each step is independent, allowing: 🔹 Easily identify which improvements have the most impact. 🔹 Test different combinations of techniques without losing control of the process. 🔹 Develop confidence in the critical analysis of results.
+* Easily identify which improvements have the most impact.
+* Test different combinations of techniques without losing control of the process.
+* Develop confidence in the critical analysis of results.
 
 ## 1. Fundamentals ML
 
