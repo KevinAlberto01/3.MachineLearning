@@ -115,7 +115,8 @@ At this point, only the SVM algorithm is being used, so we can focus on a single
 
 <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.5Optimization(Tuning%26Hyperparameters)/Images/SVMResults.png" width="2000"/>
 
-note: In this exercise, it is normal that we don't see much change in accuracy because it is a well-structured database from the library, but in theory, we will see the best parameters to use. 
+> [!NOTE] 
+>In this exercise, it is normal that we don't see much change in accuracy because it is a well-structured database from the library, but in theory, we will see the best parameters to use. 
 
 
 
@@ -126,7 +127,8 @@ note: In this exercise, it is normal that we don't see much change in accuracy b
 |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(Albumentations)/AlbumentationsResults.png" width="1000"/>|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(Keras)/KerasResults.png" width="1000"/>|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(OpenCV)/OpenCVResults.png" width="1000"/>|
 |**Accuracy:** 0.9250 <br> **Best Parameter:** ('C': 10, 'kernel':'rbf')| **Accuracy:** 0.91 <br> **Best Parameter:** ('C': 10, 'kernel':1000)|**Accuracy:** 0.8081 <br> **Best Parameter:** ('C': 10, 'kernel': 'rbf')|
 
-Note: In this exercise, it is normal for the accuracy to worsen because it is a well-structured database, but in theory, we will see the best parameters to use. If there is no improvement, we can skip this part and move on to the next point.
+> [!NOTE] 
+>In this exercise, it is normal for the accuracy to worsen because it is a well-structured database, but in theory, we will see the best parameters to use. If there is no improvement, we can skip this part and move on to the next point.
 
 <h4 align = "Center">📦​ 7. Join All 📦</h4>
 
