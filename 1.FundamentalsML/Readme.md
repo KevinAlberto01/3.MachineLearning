@@ -1,9 +1,16 @@
-# Firs Steps in Machine Learning 
+# 1.Fundamentals ML 
 
 <p align = "center" >
     <h2 align = "Center">🎯 Objetives 🎯</h2>
 </p>
-Master data preprocessing and basic ML models.
+
+These projects are designed to develop a solid understanding of key concepts in Machine Learning, covering everything from data manipulation to model implementation and evaluation.  
+The projects include: 
+* **Handwritten Digit Classifier (MNIST)**
+* **House Price Prediction**
+* **Sentiment Analysis (Movie Reviews)**
+>[!NOTE]
+>Each focusing on different aspects of machine learning.
 
 ## 1. HandWritten DigitClassifier (MNIST)
 
@@ -18,11 +25,3 @@ Master data preprocessing and basic ML models.
 
 <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.8Personalisation/Images/Dashboard.png" width="2000"/>
 
-## 2. HousePrice Prediction
-
-## 3. Sentimental Analysis Movie Reviews
-   
-Tools: Scikit-learn, Pandas, Matplotlib, Seaborn
-Datasets: Kaggle, UCI ML Repository
-
-Process 1-4 select the model 5 and 6 tunning 7-8 SHOW AND PERSONALIZATION
