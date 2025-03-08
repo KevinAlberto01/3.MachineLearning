@@ -32,3 +32,42 @@ Image classification and handling of visual data using techniques such as Data A
 
 <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.8Personalisation/Images/Dashboard.png" width="2000"/>
 
+## 2.House Price Prediction
+
+<p align = "center" >
+    <h4 align = "Center">🎯 Objetives 🎯</h4>
+</p>
+
+Predict the value of residential properties based on their characteristics (number of rooms, location, etc.).
+
+<p align = "center" >
+    <h4 align = "Center">🔎 Focus 🔎 </h4>
+</p>
+
+Regression models and Feature Engineering techniques to improve model accuracy.
+
+<p align = "center" >
+    <h4 align = "Center">✅ Results ✅ </h4>
+</p>
+
+<img src = "" width="2000"/>
+
+## 3.Sentimental Analysis (Movie Reviews)
+
+<p align = "center" >
+    <h4 align = "Center">🎯 Objetives 🎯</h4>
+</p>
+
+Analyze movie reviews to classify sentiment (positive or negative).
+
+<p align = "center" >
+    <h4 align = "Center">🔎 Focus 🔎 </h4>
+</p>
+
+Natural Language Processing (NLP) and text analysis techniques to extract semantic patterns.
+
+<p align = "center" >
+    <h4 align = "Center">✅ Results ✅ </h4>
+</p>
+
+<img src = "" width="2000"/>
