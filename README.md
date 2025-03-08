@@ -27,8 +27,14 @@ The Proyects are structured so that each step is independent, allowing:
 |---------|------------------------|-------------------|
 |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.8Personalisation/Images/Dashboard.png" width="2000"/>|ADD|ADD|
 
-## 1. Fundamentals ML
+## 2.Deep Learning & Neural Networks
 
-|1. HandWritten DigitClassifier (MNIST)|2. HousePrice Prediction| 3. Sentimental Analysis Movie Reviews |
+|1.EmotionDetector(FacialImages)|2.Traffic Sign Detector| 3.RealTimeObjectDetector(YOLO)|
 |---------|------------------------|-------------------|
-|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.8Personalisation/Images/Dashboard.png" width="2000"/>|ADD|ADD|
+|ADD|ADD|ADD|
+
+## 3.Advanced Application & AI Production
+
+|1.Object Traking (Dron)|2. AI Image Generate (GANs & Stable Diffusion)| 3.Chatbot (Natural Language Processing (NLP)) |
+|---------|------------------------|-------------------|
+|ADD|ADD|ADD|
