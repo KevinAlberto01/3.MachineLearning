@@ -1,5 +1,5 @@
 <p align = "center" >
-    <h1 align = "Center"> Training Multiple Algorithms</h1>
+    <h1 align = "Center"> 3.Training Multiple Algorithms</h1>
 </p>
 
 <p align = "center" >
