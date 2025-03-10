@@ -1,4 +1,4 @@
-#IMPORT LIBRARIES 
+#1.IMPORT LIBRARIES 
 import numpy as np
 import matplotlib.pyplot as plt 
 import seaborn as sns
@@ -12,20 +12,20 @@ from sklearn.svm import SVC
 from sklearn.neural_network import MLPClassifier
 from sklearn.metrics import classification_report, confusion_matrix
 
-#LOAD DATASET
+#2.LOAD DATASET
 print("Loading Dataset MINIST 8x8...")
 digits = load_digits()
 x = digits.images #keep the original shape 
 y = digits.target
 
-#DEFINE DATA ARGUMENTATION USING ALBUMENTATIONS
+#3.DEFINE DATA ARGUMENTATION USING ALBUMENTATIONS
 transform = A.Compose([
     A.ShiftScaleRotate(shift_limit = 0.01, scale_limit = 0.1, rotate_limit = 15, p = 0.5),
     A.GridDistortion(num_steps = 5, distort_limit = 0.3, p=0.5),
     A.ElasticTransform(alpha = 1, sigma = 50, p = 0.5) 
 ])
 
-#APPLY ARGUMENTATION TO TRAINING DATA
+#4.APPLY ARGUMENTATION TO TRAINING DATA
 argumented_images = []
 argumented_labels = []
 for img, label in zip(x, y):
@@ -33,19 +33,19 @@ for img, label in zip(x, y):
     argumented_images.append(argumented)
     argumented_labels.append(label)
 
-#CONVERT TO NUMPY ARRAY
+#5.CONVERT TO NUMPY ARRAY
 x_argument = np.array(argumented_images).reshape(len(argumented_images), -1)
 y_argument = np.array(argumented_labels)
 
-#DIVIDE DATASET INTO TRAINING AND TESTING 
+#6.DIVIDE DATASET INTO TRAINING AND TESTING 
 x_train, x_test, y_train, y_test = train_test_split(x_argument, y_argument, test_size=0.2, random_state = 42)
 
-#NORMALIZE DATA 
+#7.NORMALIZE DATA 
 scaler = StandardScaler()
 x_train = scaler.fit_transform(x_train)
 x_test = scaler.transform(x_test)
 
-#DEFINE MODELS WITH HYPERPARAMETERS TUNING
+#8.DEFINE MODELS WITH HYPERPARAMETERS TUNING
 param_grid = {
     "Logistic Regression": {"C": [0.1, 1, 10], "max_iter": [1000, 5000]},
     "K-Nearest Neighbors (KNN)": {"n_neighbors": [3, 5, 7]}, "SVM": {"C": [0.1, 1, 10], "kernel": ["linear", "rbf"]},
@@ -56,7 +56,7 @@ best_models = {}
 results = {}
 conf_matrix = {}
 classification_reports = {}
-
+#8.1 OPtimization, Training and Evaluation
 for name, params in param_grid.items():
     print(f"Optimizing {name}...")
     if name == "Logistic Regression":
@@ -82,8 +82,9 @@ for name, params in param_grid.items():
     print(f"{name} - Accuracy after argumentation: {accuracy: .4f}")
 
 print ("Models in Results Dictionary:"), results.keys()
-#VISUALIZATION OF ACCURACY COMPARISON 
-plt.figure(figsize=(8,5 ))
+
+#9.VISUALIZATION OF ACCURACY COMPARISON 
+plt.figure(figsize=(8,5))
 plt.bar(results.keys(), results.values(), color = 'skyblue')
 plt.ylabel('Accuracy')
 plt.title('Comparison of Oprimizes Algorithms with Data Argumentation (Albumentations)')
@@ -91,7 +92,7 @@ plt.xticks(rotation = 0)
 plt.ylim(0.75, 1.0)
 plt.show()
 
-#SHOW CONFUSION MATRIX FOR EACH MODEL
+#10.SHOW CONFUSION MATRIX FOR EACH MODEL
 for name, matrix in conf_matrix.items():
     plt.figure(figsize=(6,5))
     sns.heatmap(matrix, annot = True, fmt = 'd', cmap = 'Blues', xticklabels=digits.target_names, yticklabels=digits.target_names)
@@ -104,7 +105,7 @@ for name, matrix in conf_matrix.items():
     print(matrix)
     print("-" * 50)
 
-#CLASSIFICATION REPORT
+#11.CLASSIFICATION REPORT
 for name, report in classification_reports.items():
     print(f"\n{name} - Classification Report:")
     print(report)
