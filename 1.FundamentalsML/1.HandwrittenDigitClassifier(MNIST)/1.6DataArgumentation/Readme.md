@@ -1,5 +1,5 @@
 <p align = "center" >
-    <h1 align = "Center"> Data Argumentation </h1>
+    <h1 align = "Center"> 6.Data Argumentation </h1>
 </p>
 
 <p align = "center" >
@@ -116,7 +116,11 @@ It's a table that shows how many times the model correctly classified each numbe
 <p align = "center" >
     <h2 align = "Center"> 💻 Program explication 💻</h2>
 </p> 
+In this case, three different programs were used because the models were making many errors, but they will be shown below with each explanation.
 
+<p align = "center" >
+    <h4 align = "Center"> Albumentations 💻</h4>
+</p> 
 |Pseudocode| Image of the program|
 |----------|---------------------|
 **NumPy:** Used to work with arrays and matrices, and it has functions for mathematics and statistics <br> **Pandas:** Used to manipulate and analyze data, particularly with DataFrames (tables of rows and columns).<br> **matplotlib.pyplot:** Used to create graphs, and pyplot is specifically for generating different types of plots (e.g., bar, line, scatter).<br> **load_digits from sklearn.datasets:** Used to load a dataset of handwritten digits, which is commonly used in classification projects.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.1LoadingAndExploring(MNIST)/Images/1.DeclareteLibraries.png" width="4000"/>|
