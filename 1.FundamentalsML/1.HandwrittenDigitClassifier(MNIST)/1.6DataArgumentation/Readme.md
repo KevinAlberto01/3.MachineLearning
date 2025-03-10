@@ -225,27 +225,14 @@ The confusion matrix is visualized using **`seaborn.heatmap()`** to facilitate i
 </p> 
 |Pseudocode| Image of the program|
 |----------|---------------------|
-
-| <img src = "" width="4000"/>|
-
-| <img src = "" width="4000"/>|
-
-|<img src = "" width="4000"/>|
-
-| <img src = "" width="4000"/>|
-
-| <img src = "" width="4000"/>|
-
-| <img src = "" width="4000"/>|
-
-| <img src = "" width="4000"/>|
-
-| <img src = "" width="4000"/>|
-
-|<img src = "" width="4000"/>|
-
-| <img src = "" width="4000"/>|
-
-| <img src = "" width="4000"/>|
-
-| <img src = "" width="4000"/>|
+**NumPy:** For handling numerical data. <br> **Matplotlib & Seaborn:** For visualizing the confusion matrix. <br> **TensorFlow/Keras:** To build, compile, and train the model. <br> **Scikit-learn:** For dataset management and model evaluation.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/tree/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(Keras)/SVM/1.ImportLibraries.png" width="4000"/>|
+**`digits.images`:** Contiene las imágenes de los dígitos en matrices de 8x8. <br> **`reshape()`:** Agrega una dimensión adicional para que cada imagen tenga forma (8, 8, 1), adaptándose al formato que espera Keras. <br> **`to_categorical()`:** Convierte las etiquetas en formato **one-hot encoding** para que el modelo trabaje mejor en problemas de clasificación multiclase.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/tree/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(Keras)/SVM/2.LoadDataset.png" width="4000"/>|
+**`train_test_split()`** splits the dataset into: <br> **`x_train`** and **`y_train`** (**80%** for training). <br> **`x_test`** and **`y_test`** (**20%** for testing). <br> **`stratify=y`:** Ensures that the class distribution remains balanced in both sets, avoiding biases.|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/tree/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(Keras)/SVM/3.DivideDataset.png" width="4000"/>|
+Divide by **16.0** because the original values of the dataset range from **0** to **16**, thus normalizing them in the **[0, 1]** range.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/tree/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(Keras)/SVM/4.NormalizationData.png" width="4000"/>|
+**`np.argmax()`:** Converts the one-hot encoding into its respective original labels. <br> **`np.unique()`:** Shows the number of examples per class in each set.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/tree/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(Keras)/SVM/5.VerificationDistributionClasses.png" width="4000"/>|
+**`Flatten()`:** Flattens 8x8 images into 64-element vectors. <br> **`Densa(10, activación='softmax')`:** <br> **10:** Because there are 10 possible classes (digits from 0 to 9). <br> **softmax:** Transforms the outputs into probabilities for each class. <br> Although it seems like a basic model, this behavior mimics the linear decision function of an SVM for multiclass classification.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/tree/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(Keras)/SVM/6.ConstructionModelKetas.png" width="4000"/>|
+**`loss='categorical_crossentropy'`:** For multiclass classification problems. <br> **`optimizer='adam'`:** Efficient and robust optimizer. <br> **`metrics=['accuracy']`:** Measures the model's accuracy during training.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/tree/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(Keras)/SVM/7.CompilationModel.png" width="4000"/>|
+**`epochs=20`:** The model will train for 20 complete iterations over the data. <br> **`batch_size=32`:** It will train in batches of 32 samples. <br> **`validation_data=(x_test, y_test)`:** Evaluates performance on the test set during training.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/tree/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(Keras)/SVM/8.TrainingModel.png" width="4000"/>|
+**`predict()`:** Predicts the probabilities for each class in the test set. <br> **`np.argmax()`:** Converts the probabilities into class labels.|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/tree/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(Keras)/SVM/9.EvaluationModel.png" width="4000"/>|
+**`confusion_matrix()`:** Shows the correct and incorrect predictions by class. <br> **`sns.heatmap()`:** Visualizes the results clearly with colors.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/tree/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(Keras)/SVM/10.MatrixConfusion.png" width="4000"/>|
+The **`classification_report()`** provides: <br> **`Precision`:** How accurate were the predictions for each class. <br> **`Recall`:** How well did you identify the correct classes .<br> **`F1-Score`:** Average between precision and recall.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/tree/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(Keras)/SVM/11.ReportClassification.png" width="4000"/>|
