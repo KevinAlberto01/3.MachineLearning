@@ -65,7 +65,7 @@ plt.ylim(0.95, 1.0) #Adjust scale to have a better visualization
 plt.show()
 print()
 
-#8.SHOW CONFUSION MATRIX FOR EACH MODEL
+#7.SHOW CONFUSION MATRIX FOR EACH MODEL
 for name, matrix in conf_matrix.items():
     plt.figure(figsize = (6,5))
     sns.heatmap(matrix, annot = True, fmt = 'd', cmap= 'Blues', 
