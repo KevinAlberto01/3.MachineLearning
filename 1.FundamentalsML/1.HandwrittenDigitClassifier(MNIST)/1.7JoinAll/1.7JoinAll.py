@@ -1,4 +1,4 @@
-#1.DECLARATE LIBRARIES
+#1.IMPORT LIBRARIES
 import numpy as np 
 import matplotlib.pyplot as plt 
 import seaborn as sns
@@ -52,7 +52,6 @@ print(f"Best Parameters: {grid_search.best_params_} ")
 model.fit(x_train, y_train)
 
 #9.EVALUATION METRICS
-
 #9.1 Predictions
 y_pred = model.predict(x_test)
 #9.2 Accuracy
@@ -93,7 +92,7 @@ print("Evaluation Completed!")
 #11.OPTIMIZATION (TUNING & HYPERPARAMETERS)
 #Dont need it 
 
-#12.VISUALIZATION PRECISION 
+#11.VISUALIZATION PRECISION 
 num_images = 10
 fig, axes = plt.subplots(2, 5, figsize=(10, 5))
 
