@@ -114,7 +114,7 @@ It's a table that shows how many times the model correctly classified each numbe
 
 
 <p align = "center" >
-    <h2 align = "Center"> 💻 Program explication 💻 (PENDING)</h2>
+    <h2 align = "Center"> 💻 Program explication 💻</h2>
 </p> 
 
 |Pseudocode| Image of the program|
