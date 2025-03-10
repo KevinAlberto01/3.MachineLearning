@@ -1,5 +1,5 @@
 <p align = "center" >
-    <h1 align = "Center"> 1.5 Optimization Tuning & Hyperparameters </h1>
+    <h1 align = "Center"> 5.Optimization Tuning & Hyperparameters </h1>
 </p>
 
 <p align = "center" >
