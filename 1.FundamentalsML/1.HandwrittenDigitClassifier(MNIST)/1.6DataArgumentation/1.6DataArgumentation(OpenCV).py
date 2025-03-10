@@ -1,3 +1,4 @@
+#1.LIBRARY IMPORTATION
 import cv2
 import numpy as np
 import matplotlib.pyplot as plt
@@ -11,31 +12,32 @@ from sklearn.neural_network import MLPClassifier
 from sklearn.metrics import classification_report, confusion_matrix
 from sklearn.preprocessing import StandardScaler
 
+#2.DATA AUGMENTATION FUNCTION WITH OPEN CV
 def apply_augmentation(img):
-    # Rotación más ligera (-10 a 10 grados)
+    # Lighter rotation (-10 to 10 degrees)
     angle = np.random.uniform(-10, 10)
     h, w = img.shape
     M = cv2.getRotationMatrix2D((w//2, h//2), angle, 1)
     rotated = cv2.warpAffine(img, M, (w, h))
     
-    # Traslación más reducida (-1 a 1 píxel)
+    # Reduced translation (-1 to 1 pixel)
     tx, ty = np.random.randint(-1, 2, 2)
     M = np.float32([[1, 0, tx], [0, 1, ty]])
     translated = cv2.warpAffine(rotated, M, (w, h))
     
-    # Ruido gaussiano más leve (std=5 en lugar de 10)
+    # Softer Gaussian noise (std=5 instead of 10)
     noise = np.random.normal(0, 5, img.shape).astype(np.int16)
     noisy = np.clip(translated.astype(np.int16) + noise, 0, 255).astype(np.uint8)
     
     return noisy
 
-# Cargar dataset
+#3.LOAD DATASET
 print("Loading Dataset MNIST 8x8...")
 digits = load_digits()
 x = digits.images  # Mantener la forma original
 y = digits.target
 
-# Aplicar Data Augmentation con OpenCV
+#4.APPLY DATA AUGMENTATION WITH OPEN CV 
 augmented_images = []
 augmented_labels = []
 for img, label in zip(x, y):
@@ -43,24 +45,24 @@ for img, label in zip(x, y):
     augmented_images.append(augmented)
     augmented_labels.append(label)
 
-# Convertir a numpy array y normalizar
+#5.CONVERT TO NUMPY ARRAY AND NORMALIZE 
 x_augmented = np.array(augmented_images).reshape(len(augmented_images), -1) / 255.0
 x_original = x.reshape(len(x), -1) / 255.0  # Normalizar imágenes originales
 y_augmented = np.array(augmented_labels)
 
-# Combinar imágenes originales con aumentadas
+#6.COMBINE ORIGINAL IMAGES WITH AUGMENTED ONES
 x_combined = np.concatenate((x_original, x_augmented), axis=0)
 y_combined = np.concatenate((y, y_augmented), axis=0)
 
-# Dividir dataset en entrenamiento y prueba
+#7.SPLIT DATASET INTO TRAINING AND TEST
 x_train, x_test, y_train, y_test = train_test_split(x_combined, y_combined, test_size=0.2, random_state=42)
 
-# Escalar los datos
+#8.SCALE THE DATA
 scaler = StandardScaler()
 x_train_scaled = scaler.fit_transform(x_train)
 x_test_scaled = scaler.transform(x_test)
 
-# Definir modelos y ajustar hiperparámetros
+#9.DEFINE MODELS AND ADJUST HYPERPARAMETERS
 param_grid = {
     "Logistic Regression": {"C": [0.1, 1, 10], "max_iter": [1000, 5000]},
     "K-Nearest Neighbors (KNN)": {"n_neighbors": [3, 5, 7]},
@@ -73,6 +75,7 @@ results = {}
 conf_matrix = {}
 classification_reports = {}
 
+#10.TRAIN & EVALUATE MODELS
 for name, params in param_grid.items():
     print(f"Optimizing {name}...")
     if name == "Logistic Regression":
@@ -88,7 +91,7 @@ for name, params in param_grid.items():
     grid_search.fit(x_train_scaled, y_train)
     best_models[name] = grid_search.best_estimator_
     
-    # Evaluar modelo
+    #10.1 Evaluate the model
     y_pred = best_models[name].predict(x_test_scaled)
     accuracy = best_models[name].score(x_test_scaled, y_test)
     results[name] = accuracy
@@ -97,7 +100,7 @@ for name, params in param_grid.items():
     print(f"Best Parameters for {name}: {grid_search.best_params_}")
     print(f"{name} - Accuracy after augmentation: {accuracy:.4f}")
 
-# Visualización de comparación de modelos
+#11.MODEL COMPARISON VISUALIZATION
 plt.figure(figsize=(8, 5))
 plt.bar(results.keys(), results.values(), color='skyblue', edgecolor='none')
 plt.ylabel('Accuracy')
@@ -107,7 +110,7 @@ plt.xticks(rotation=0)
 plt.grid(False)  # Eliminar líneas punteadas o rectas
 plt.show()
 
-# Mostrar matriz de confusión para cada modelo
+#12. SHOW CONFUSION MATRIX FOR EACH MODELS
 for name, matrix in conf_matrix.items():
     plt.figure(figsize=(6, 5))
     sns.heatmap(matrix, annot=True, fmt='d', cmap='Blues', xticklabels=digits.target_names, yticklabels=digits.target_names, cbar=False)
@@ -120,7 +123,7 @@ for name, matrix in conf_matrix.items():
     print(matrix)
     print("-" * 50)
 
-# Reporte de clasificación
+#13.CLASSIFICATION REPORT
 for name, report in classification_reports.items():
     print(f"\n{name} - Classification Report:")
     print(report)

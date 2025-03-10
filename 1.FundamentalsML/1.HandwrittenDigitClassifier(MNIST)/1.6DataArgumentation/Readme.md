@@ -121,20 +121,21 @@ In this case, three different programs were used because the models were making 
 <p align = "center" >
     <h4 align = "Center"> Albumentations 💻</h4>
 </p> 
+
 |Pseudocode| Image of the program|
 |----------|---------------------|
+**numpy:** For handling matrices and arrays.<br>**matplotlib:** For plotting comparisons and confusion matrices.<br>**seaborn:** Advanced visualization for the confusion matrix. <br>**albumentations:** Library specialized in Data Augmentation for images.<br>**sklearn:** For data manipulation, scaling, classification, and metrics.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/tree/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(Albumentations)/1.ImportLibraries.png" width="4000"/>|
+**`load_digits()`** loads the reduced MNIST dataset (8x8 digit images). <br> **`x`** is stored in its original form as 8x8 images, which makes it easier to apply **Data Augmentation**.<br> **`y`** it contains the corresponding labels.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/tree/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(Albumentations)/2.LoadDataset.png" width="4000"/>|
+This section creates a Data Augmentation pipeline that includes: <br> **`ShiftScaleRotate:`** Randomly shifts, scales, and rotates the image.<br> **`shift_limit=0.01:`** Maximum displacement of 1% in any direction. <br> **`scale_limit=0.1`:** Scale the image up to 10%.<br> **`rotate_limit=15`:** Maximum rotation of ±15°. <br> **`GridDistortion`:** Deforms the image in a grid to simulate distortions. <br> **`ElasticTransform:`** Applies an elastic transformation that stretches and deforms the image to improve the model's robustness. <br> The parameter p=0.5 indicates that each transformation has a 50% probability of being applied to each image.|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/tree/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(Albumentations)/3.DefineDataArgumentation.png" width="4000"/>|
+Each image in the dataset is processed. <br> Each image is subjected to the transformations defined in **`transform`**. <br> The augmented images and their respective labels are stored in lists for later conversion to arrays.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/tree/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(Albumentations)/4.ApplyArgumentationTraining.png" width="4000"/>|
+**`np.array()`** converts lists into **`NumPy`** arrays to facilitate handling with Scikit-learn. <br> **`reshape(len(...), -1)`** transforms the augmented **8x8** images into vectors of **64** elements (format required by the models).| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/tree/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(Albumentations)/5.ConvertNumpyArray.png" width="4000"/>|
+**80%** of the data is allocated for training and **20%** for testing. <br> **`random_state=42`** ensures that the split is reproducible in each execution.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/tree/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(Albumentations)/6.DivideDatasetIntoTrainingTesting.png" width="4000"/>|
+**`StandardScaler()`** adjusts the data so that each feature has a **mean of 0** and a **standard deviation of 1**, which improves the performance of the models.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/tree/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(Albumentations)/7.NormalizeData.png" width="4000"/>|
+The **hyperparameters** that will be optimized using **`GridSearchCV`** are defined. <br> Each model is iterated through and **`GridSearchCV`** is applied to find the best parameters. <br> The best model is saved in **`best_models`**.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/tree/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(Albumentations)/8.DefineModelsWithHyperparametersTuning.png" width="4000"/>|
+A bar graph is generated that compares the performance (accuracy) of each optimized model.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/tree/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(Albumentations)/9.VisualizationAccuracyComparison.png" width="4000"/>|
+**`Seaborn`** is used to visually display classification errors.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/tree/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(Albumentations)/10.ShowConfusionMatrixEachModel.png" width="4000"/>|
 
-| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.1LoadingAndExploring(MNIST)/Images/1.DeclareteLibraries.png" width="4000"/>|
-
-| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.1LoadingAndExploring(MNIST)/Images/2.LoadDataset.png" width="4000"/>|
-
-|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.1LoadingAndExploring(MNIST)/Images/3.ExploringDimensionsDataSet.png" width="4000"/>|
-
-| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.1LoadingAndExploring(MNIST)/Images/4.CheckClassesNumberExamples.png" width="4000"/>|
-
-| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.1LoadingAndExploring(MNIST)/Images/5.ViewDistributionClasses.png" width="4000"/>|
-
-| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.1LoadingAndExploring(MNIST)/Images/6.ViewExample.png" width="4000"/>|
+A report is generated that includes metrics such as: <br> **Precision** <br> **Recall** <br> **F1-score** <br> Final message indicating that the entire workflow has been completed successfully.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/tree/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(Albumentations)/11.ClassificationReport.png" width="4000"/>|
 
 <p align = "center" >
     <h4 align = "Center"> Open CV 💻</h4>
@@ -142,17 +143,17 @@ In this case, three different programs were used because the models were making 
 |Pseudocode| Image of the program|
 |----------|---------------------|
 
-| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.1LoadingAndExploring(MNIST)/Images/1.DeclareteLibraries.png" width="4000"/>|
+| <img src = "" width="4000"/>|
 
-| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.1LoadingAndExploring(MNIST)/Images/2.LoadDataset.png" width="4000"/>|
+| <img src = "" width="4000"/>|
 
-|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.1LoadingAndExploring(MNIST)/Images/3.ExploringDimensionsDataSet.png" width="4000"/>|
+|<img src = ""/>|
 
-| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.1LoadingAndExploring(MNIST)/Images/4.CheckClassesNumberExamples.png" width="4000"/>|
+| <img src = "" width="4000"/>|
 
-| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.1LoadingAndExploring(MNIST)/Images/5.ViewDistributionClasses.png" width="4000"/>|
+| <img src = "" width="4000"/>|
 
-| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.1LoadingAndExploring(MNIST)/Images/6.ViewExample.png" width="4000"/>|
+| <img src = "" width="4000"/>|
 
 
 <p align = "center" >
@@ -161,14 +162,14 @@ In this case, three different programs were used because the models were making 
 |Pseudocode| Image of the program|
 |----------|---------------------|
 
-| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.1LoadingAndExploring(MNIST)/Images/1.DeclareteLibraries.png" width="4000"/>|
+| <img src = "" width="4000"/>|
 
-| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.1LoadingAndExploring(MNIST)/Images/2.LoadDataset.png" width="4000"/>|
+| <img src = "" width="4000"/>|
 
-|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.1LoadingAndExploring(MNIST)/Images/3.ExploringDimensionsDataSet.png" width="4000"/>|
+|<img src = "" width="4000"/>|
 
-| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.1LoadingAndExploring(MNIST)/Images/4.CheckClassesNumberExamples.png" width="4000"/>|
+| <img src = "" width="4000"/>|
 
-| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.1LoadingAndExploring(MNIST)/Images/5.ViewDistributionClasses.png" width="4000"/>|
+| <img src = "" width="4000"/>|
 
-| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.1LoadingAndExploring(MNIST)/Images/6.ViewExample.png" width="4000"/>|
+| <img src = "" width="4000"/>|
