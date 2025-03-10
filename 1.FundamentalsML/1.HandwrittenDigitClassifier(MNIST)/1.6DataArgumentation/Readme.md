@@ -142,12 +142,64 @@ A report is generated that includes metrics such as: <br> **Precision** <br> **R
 </p> 
 |Pseudocode| Image of the program|
 |----------|---------------------|
+**cv2 (OpenCV):** To apply Data Augmentation through visual transformations. <br> **numpy:** Handling arrays and mathematical operations. <br> **matplotlib** and **seaborn:** For visualization of graphs and confusion matrices. <br> **sklearn:** For data manipulation, scaling, classification, and metrics.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/tree/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(OpenCV)/1.LibraryImportation.png" width="4000"/>|
+**Rotation:** A random rotation between **-10°** and **10°** is applied. <br> **Translation:** A small random shift of **-1** to **1** pixel is applied. <br> **Gaussian Noise:** Noise with a low standard deviation (std=5) is added to simulate slight imperfections in the image. <br> The use of slight transformations improves the model's robustness without distorting the images too much.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/tree/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(OpenCV)/2.DataAugmentationFunctionOpencv.png" width="4000"/>|
+
+|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/tree/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(OpenCV)/3.LoadDataset.png"/>|
+
+| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/tree/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(OpenCV)/4.ApplyDataAugmentationOpenCV.png" width="4000"/>|
+
+| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/tree/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(OpenCV)/5.ConvertNumpyArrayandNormalize.png" width="4000"/>|
+
+| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/tree/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(OpenCV)/6.CombineOriginalImagesAugmented.png" width="4000"/>|
+
+| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/tree/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(OpenCV)/7.SplitDatasetTrainingTest.png" width="4000"/>|
+
+| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/tree/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(OpenCV)/8.ScaleData.png" width="4000"/>|
+
+| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/tree/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(OpenCV)/9.DefineModelsAdjustHyperparameters.png" width="4000"/>|
+
+| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/tree/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(OpenCV)/10.Train&EvaluateModels.png" width="4000"/>|
+
+| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/tree/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(OpenCV)/11.ModelComparisonVIsual.png" width="4000"/>|
+
+| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/tree/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(OpenCV)/12.ShowConfusionMatrix.png" width="4000"/>|
+
+| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/tree/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(OpenCV)/13.CLassificationReport.png" width="4000"/>|
+
+<p align = "center" >
+    <h4 align = "Center"> Keras 💻</h4>
+</p> 
+
+<p align = "center" >
+    <h5 align = "Center"> Keras 💻</h5>
+</p> 
+|Pseudocode| Image of the program|
+|----------|---------------------|
 
 | <img src = "" width="4000"/>|
 
 | <img src = "" width="4000"/>|
 
-|<img src = ""/>|
+|<img src = "" width="4000"/>|
+
+| <img src = "" width="4000"/>|
+
+| <img src = "" width="4000"/>|
+
+| <img src = "" width="4000"/>|
+
+<p align = "center" >
+    <h5 align = "Center"> Keras 💻</h5>
+</p> 
+|Pseudocode| Image of the program|
+|----------|---------------------|
+
+| <img src = "" width="4000"/>|
+
+| <img src = "" width="4000"/>|
+
+|<img src = "" width="4000"/>|
 
 | <img src = "" width="4000"/>|
 
@@ -157,7 +209,44 @@ A report is generated that includes metrics such as: <br> **Precision** <br> **R
 
 
 <p align = "center" >
-    <h4 align = "Center"> Keras 💻</h4>
+    <h5 align = "Center"> Keras 💻</h5>
+</p> 
+|Pseudocode| Image of the program|
+|----------|---------------------|
+
+| <img src = "" width="4000"/>|
+
+| <img src = "" width="4000"/>|
+
+|<img src = "" width="4000"/>|
+
+| <img src = "" width="4000"/>|
+
+| <img src = "" width="4000"/>|
+
+| <img src = "" width="4000"/>|
+
+
+<p align = "center" >
+    <h5 align = "Center"> Keras 💻</h5>
+</p> 
+|Pseudocode| Image of the program|
+|----------|---------------------|
+
+| <img src = "" width="4000"/>|
+
+| <img src = "" width="4000"/>|
+
+|<img src = "" width="4000"/>|
+
+| <img src = "" width="4000"/>|
+
+| <img src = "" width="4000"/>|
+
+| <img src = "" width="4000"/>|
+
+<p align = "center" >
+    <h5 align = "Center"> Keras 💻</h5>
 </p> 
 |Pseudocode| Image of the program|
 |----------|---------------------|
