@@ -223,6 +223,7 @@ The confusion matrix is visualized using **`seaborn.heatmap()`** to facilitate i
 <p align = "center" >
     <h5 align = "Center"> 4.SVM </h5>
 </p> 
+
 |Pseudocode| Image of the program|
 |----------|---------------------|
 **NumPy:** For handling numerical data. <br> **Matplotlib & Seaborn:** For visualizing the confusion matrix. <br> **TensorFlow/Keras:** To build, compile, and train the model. <br> **Scikit-learn:** For dataset management and model evaluation.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/tree/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(Keras)/SVM/1.ImportLibraries.png" width="4000"/>|
