@@ -161,7 +161,29 @@ The report details the Precision, Recall, and F1-score metrics.| <img src = "htt
 </p> 
 
 <p align = "center" >
-    <h5 align = "Center"> Keras 💻</h5>
+    <h5 align = "Center"> 1.KNN </h5>
+</p> 
+
+|Pseudocode| Image of the program|
+|----------|---------------------|
+**tensorflow and keras:** To build and train the model. <br> **numpy:** To handle arrays and perform numerical calculations. <br> **matplotlib and seaborn:** For visualizing graphs and confusion matrices. <br> **albumentations:** To apply Data Augmentation to images. <br> **sklearn:** To split the dataset and evaluate the model's performance.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/tree/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(Keras)/KNN/1.ImportLibraries.png" width="4000"/>|
+The MNIST 8x8 dataset is **loaded**. <br> **`x`** contains the images (each **8x8** pixels).<br>**`y`** contains the labels (digits from 0 to 9).| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/tree/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(Keras)/KNN/2.LoadData.png" width="4000"/>|
+**`ShiftScaleRotate`:** Performs small rotations, scalings, and shifts to simulate slight variations in the images. <br> **`GridDistortion`:** Deforms the image with a grid, ideal for simulating variations in the position of the digits. <br> **`ElasticTransform`:** Applies an elastic transformation to slightly distort the images.|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/tree/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(Keras)/KNN/3.DataAugmentation.png" width="4000"/>|
+Each image in the dataset is processed, the transformation is applied, and the augmented images are stored along with their labels.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/tree/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(Keras)/KNN/4.ApplyDataAugmentation.png" width="4000"/>|
+**`reshape()`** converts each image into a 3D matrix of shape (8, 8, 1) so that Keras can process it. <br> **`to_categorical()`** converts the labels into one-hot encoding format, which is the required format for multi-class classification.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/tree/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(Keras)/KNN/5.PrepareData.png" width="4000"/>|
+The dataset is divided into: <br> **80%** for training. <br> **20%** for testing.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/tree/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(Keras)/KNN/6.DivisionDataset.png" width="4000"/>|
+The pixel values are normalized to the range **`[0, 1]`** by dividing by 16 (the maximum value of the MNIST 8x8 dataset).| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/tree/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(Keras)/KNN/7.NormalizationData.png" width="4000"/>|
+**`Flatten()`** converts the 8x8 images into a vector of 64 elements. <br> **`Dense(64, activation='relu')`** adds a hidden layer with 64 neurons. <br> **`Dense(10, activation='softmax')`** adds an output layer to classify the 10 digits. <br> **`categorical_crossentropy`** is the appropriate loss function for classification problems| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/tree/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(Keras)/KNN/8.ModelDefinition.png" width="4000"/>|
+**`model.fit()`** is the method that trains the model. <br> Its key parameters are:
+<br> **`x_train and y_train`:** Training data. <br> **`validation_data=(x_test, y_test)`:** <br> Provides the validation data to evaluate the model's performance after each epoch. <br> **history** stores the training history, including accuracy and loss for each epoch.  This is useful if you want to plot the evolution of the training.|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/tree/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(Keras)/KNN/9.ModelTraining.png" width="4000"/>|
+**`model.evaluate()`** evaluates the model's performance on the test data. <br> **`test_loss`:** Measures the model's error on the test set. <br> **`test_acc`:** Represents the model's accuracy on the test set (value between 0 and 1). <br> The value shown with **`print()`** indicates how well the model generalized after training.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/tree/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(Keras)/KNN/10.ModelEvaluation.png" width="4000"/>|
+**`model.predict()`** generates the model's predictions on the test data. <br> **`y_pred`** will contain probabilities for each class (output of the model with softmax). <br> **`np.argmax()`** is used to convert those probabilities into the predicted classes: <br> **`axis=1`**  selects the index of the class with the highest probability in each row (each image). <br> **`y_pred_classes`** are the predicted classes. <br> **`y_test_classes`** are the actual classes (converted from one-hot encoding to numerical labels).| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/tree/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(Keras)/KNN/11.Prediction.png" width="4000"/>|
+**`confusion_matrix()`** generates a matrix that shows: <br> **`Rows`:** Real classes.
+**`Columns`:** Predicted Classes. <br> Each cell indicates how many times the model classified correctly or made a mistake. <br> **`sns.heatmap()`** is used to visualize the confusion matrix clearly and visually. <br> The argument **`annot=True`** adds the numbers in each cell. <br> The argument **`cmap='Blues'`** applies a blue gradient to highlight the highest values. <br> In this matrix, the darker the blue on the main diagonal, the better the model's performance.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/tree/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(Keras)/KNN/12.ConfusionMatrix.png" width="4000"/>|
+**`classification_report()`** generates a detailed report that includes: <br> **`Precision`:** Percentage of correct predictions for each class. <br> **`Recall`:** The model's ability to correctly find all instances of a class. <br> **`F1-Score`:** Harmonic mean between precision and recall (better when it approaches 1). <br> **`Support`:** Total number of samples in each class.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/tree/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.6DataArgumentation/Images(Keras)/KNN/13.ClassificationMatrix.png" width="4000"/>|
+
+<p align = "center" >
+    <h5 align = "Center"> 2.Lineal Regression (LR) </h5>
 </p> 
 |Pseudocode| Image of the program|
 |----------|---------------------|
@@ -178,8 +200,22 @@ The report details the Precision, Recall, and F1-score metrics.| <img src = "htt
 
 | <img src = "" width="4000"/>|
 
+| <img src = "" width="4000"/>|
+
+| <img src = "" width="4000"/>|
+
+|<img src = "" width="4000"/>|
+
+| <img src = "" width="4000"/>|
+
+| <img src = "" width="4000"/>|
+
+| <img src = "" width="4000"/>|
+
+
+
 <p align = "center" >
-    <h5 align = "Center"> Keras 💻</h5>
+    <h5 align = "Center"> 3.MLP </h5>
 </p> 
 |Pseudocode| Image of the program|
 |----------|---------------------|
@@ -196,9 +232,22 @@ The report details the Precision, Recall, and F1-score metrics.| <img src = "htt
 
 | <img src = "" width="4000"/>|
 
+| <img src = "" width="4000"/>|
+
+| <img src = "" width="4000"/>|
+
+|<img src = "" width="4000"/>|
+
+| <img src = "" width="4000"/>|
+
+| <img src = "" width="4000"/>|
+
+| <img src = "" width="4000"/>|
+
+
 
 <p align = "center" >
-    <h5 align = "Center"> Keras 💻</h5>
+    <h5 align = "Center"> 4.SVM </h5>
 </p> 
 |Pseudocode| Image of the program|
 |----------|---------------------|
@@ -214,31 +263,6 @@ The report details the Precision, Recall, and F1-score metrics.| <img src = "htt
 | <img src = "" width="4000"/>|
 
 | <img src = "" width="4000"/>|
-
-
-<p align = "center" >
-    <h5 align = "Center"> Keras 💻</h5>
-</p> 
-|Pseudocode| Image of the program|
-|----------|---------------------|
-
-| <img src = "" width="4000"/>|
-
-| <img src = "" width="4000"/>|
-
-|<img src = "" width="4000"/>|
-
-| <img src = "" width="4000"/>|
-
-| <img src = "" width="4000"/>|
-
-| <img src = "" width="4000"/>|
-
-<p align = "center" >
-    <h5 align = "Center"> Keras 💻</h5>
-</p> 
-|Pseudocode| Image of the program|
-|----------|---------------------|
 
 | <img src = "" width="4000"/>|
 
