@@ -4,7 +4,7 @@ import numpy as np
 
 # 1️ Load of Results
 print("\n=== 1. Load of Results ===")
-df_results = pd.read_csv('/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/1.4EvaluationMetrics/df_results.csv')
+df_results = pd.read_csv('/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/2.4EvaluationMetrics/df_results.csv')
 
 print("Loads of Results:")
 print(df_results)
