@@ -1,0 +1,203 @@
+Dataset Information (Before Cleaning):
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 2930 entries, 0 to 2929
+Data columns (total 82 columns):
+ #   Column           Non-Null Count  Dtype  
+---  ------           --------------  -----  
+ 0   Order            2930 non-null   int64  
+ 1   PID              2930 non-null   int64  
+ 2   MS SubClass      2930 non-null   int64  
+ 3   MS Zoning        2930 non-null   object 
+ 4   Lot Frontage     2440 non-null   float64
+ 5   Lot Area         2930 non-null   int64  
+ 6   Street           2930 non-null   object 
+ 7   Alley            198 non-null    object 
+ 8   Lot Shape        2930 non-null   object 
+ 9   Land Contour     2930 non-null   object 
+ 10  Utilities        2930 non-null   object 
+ 11  Lot Config       2930 non-null   object 
+ 12  Land Slope       2930 non-null   object 
+ 13  Neighborhood     2930 non-null   object 
+ 14  Condition 1      2930 non-null   object 
+ 15  Condition 2      2930 non-null   object 
+ 16  Bldg Type        2930 non-null   object 
+ 17  House Style      2930 non-null   object 
+ 18  Overall Qual     2930 non-null   int64  
+ 19  Overall Cond     2930 non-null   int64  
+ 20  Year Built       2930 non-null   int64  
+ 21  Year Remod/Add   2930 non-null   int64  
+ 22  Roof Style       2930 non-null   object 
+ 23  Roof Matl        2930 non-null   object 
+ 24  Exterior 1st     2930 non-null   object 
+ 25  Exterior 2nd     2930 non-null   object 
+ 26  Mas Vnr Type     1155 non-null   object 
+ 27  Mas Vnr Area     2907 non-null   float64
+ 28  Exter Qual       2930 non-null   object 
+ 29  Exter Cond       2930 non-null   object 
+ 30  Foundation       2930 non-null   object 
+ 31  Bsmt Qual        2850 non-null   object 
+ 32  Bsmt Cond        2850 non-null   object 
+ 33  Bsmt Exposure    2847 non-null   object 
+ 34  BsmtFin Type 1   2850 non-null   object 
+ 35  BsmtFin SF 1     2929 non-null   float64
+ 36  BsmtFin Type 2   2849 non-null   object 
+ 37  BsmtFin SF 2     2929 non-null   float64
+ 38  Bsmt Unf SF      2929 non-null   float64
+ 39  Total Bsmt SF    2929 non-null   float64
+ 40  Heating          2930 non-null   object 
+ 41  Heating QC       2930 non-null   object 
+ 42  Central Air      2930 non-null   object 
+ 43  Electrical       2929 non-null   object 
+ 44  1st Flr SF       2930 non-null   int64  
+ 45  2nd Flr SF       2930 non-null   int64  
+ 46  Low Qual Fin SF  2930 non-null   int64  
+ 47  Gr Liv Area      2930 non-null   int64  
+ 48  Bsmt Full Bath   2928 non-null   float64
+ 49  Bsmt Half Bath   2928 non-null   float64
+ 50  Full Bath        2930 non-null   int64  
+ 51  Half Bath        2930 non-null   int64  
+ 52  Bedroom AbvGr    2930 non-null   int64  
+ 53  Kitchen AbvGr    2930 non-null   int64  
+ 54  Kitchen Qual     2930 non-null   object 
+ 55  TotRms AbvGrd    2930 non-null   int64  
+ 56  Functional       2930 non-null   object 
+ 57  Fireplaces       2930 non-null   int64  
+ 58  Fireplace Qu     1508 non-null   object 
+ 59  Garage Type      2773 non-null   object 
+ 60  Garage Yr Blt    2771 non-null   float64
+ 61  Garage Finish    2771 non-null   object 
+ 62  Garage Cars      2929 non-null   float64
+ 63  Garage Area      2929 non-null   float64
+ 64  Garage Qual      2771 non-null   object 
+ 65  Garage Cond      2771 non-null   object 
+ 66  Paved Drive      2930 non-null   object 
+ 67  Wood Deck SF     2930 non-null   int64  
+ 68  Open Porch SF    2930 non-null   int64  
+ 69  Enclosed Porch   2930 non-null   int64  
+ 70  3Ssn Porch       2930 non-null   int64  
+ 71  Screen Porch     2930 non-null   int64  
+ 72  Pool Area        2930 non-null   int64  
+ 73  Pool QC          13 non-null     object 
+ 74  Fence            572 non-null    object 
+ 75  Misc Feature     106 non-null    object 
+ 76  Misc Val         2930 non-null   int64  
+ 77  Mo Sold          2930 non-null   int64  
+ 78  Yr Sold          2930 non-null   int64  
+ 79  Sale Type        2930 non-null   object 
+ 80  Sale Condition   2930 non-null   object 
+ 81  SalePrice        2930 non-null   int64  
+dtypes: float64(11), int64(28), object(43)
+memory usage: 1.8+ MB
+
+Summary Statistics (Before Cleaning):
+            Order           PID  MS SubClass  Lot Frontage       Lot Area  Overall Qual  Overall Cond   Year Built  Year Remod/Add  Mas Vnr Area  BsmtFin SF 1  BsmtFin SF 2  Bsmt Unf SF  Total Bsmt SF   1st Flr SF   2nd Flr SF  Low Qual Fin SF  Gr Liv Area  Bsmt Full Bath  Bsmt Half Bath    Full Bath    Half Bath  Bedroom AbvGr  Kitchen AbvGr  TotRms AbvGrd   Fireplaces  Garage Yr Blt  Garage Cars  Garage Area  Wood Deck SF  Open Porch SF  Enclosed Porch   3Ssn Porch  Screen Porch    Pool Area      Misc Val      Mo Sold      Yr Sold      SalePrice
+count  2930.00000  2.930000e+03  2930.000000   2440.000000    2930.000000   2930.000000   2930.000000  2930.000000     2930.000000   2907.000000   2929.000000   2929.000000  2929.000000    2929.000000  2930.000000  2930.000000      2930.000000  2930.000000     2928.000000     2928.000000  2930.000000  2930.000000    2930.000000    2930.000000    2930.000000  2930.000000    2771.000000  2929.000000  2929.000000   2930.000000    2930.000000     2930.000000  2930.000000   2930.000000  2930.000000   2930.000000  2930.000000  2930.000000    2930.000000
+mean   1465.50000  7.144645e+08    57.387372     69.224590   10147.921843      6.094881      5.563140  1971.356314     1984.266553    101.896801    442.629566     49.722431   559.262547    1051.614544  1159.557679   335.455973         4.676792  1499.690444        0.431352        0.061134     1.566553     0.379522       2.854266       1.044369       6.443003     0.599317    1978.132443     1.766815   472.819734     93.751877      47.533447       23.011604     2.592491     16.002048     2.243345     50.635154     6.216041  2007.790444  180796.060068
+std     845.96247  1.887308e+08    42.638025     23.365335    7880.017759      1.411026      1.111537    30.245361       20.860286    179.112611    455.590839    169.168476   439.494153     440.615067   391.890885   428.395715        46.310510   505.508887        0.524820        0.245254     0.552941     0.502629       0.827731       0.214076       1.572964     0.647921      25.528411     0.760566   215.046549    126.361562      67.483400       64.139059    25.141331     56.087370    35.597181    566.344288     2.714492     1.316613   79886.692357
+min       1.00000  5.263011e+08    20.000000     21.000000    1300.000000      1.000000      1.000000  1872.000000     1950.000000      0.000000      0.000000      0.000000     0.000000       0.000000   334.000000     0.000000         0.000000   334.000000        0.000000        0.000000     0.000000     0.000000       0.000000       0.000000       2.000000     0.000000    1895.000000     0.000000     0.000000      0.000000       0.000000        0.000000     0.000000      0.000000     0.000000      0.000000     1.000000  2006.000000   12789.000000
+25%     733.25000  5.284770e+08    20.000000     58.000000    7440.250000      5.000000      5.000000  1954.000000     1965.000000      0.000000      0.000000      0.000000   219.000000     793.000000   876.250000     0.000000         0.000000  1126.000000        0.000000        0.000000     1.000000     0.000000       2.000000       1.000000       5.000000     0.000000    1960.000000     1.000000   320.000000      0.000000       0.000000        0.000000     0.000000      0.000000     0.000000      0.000000     4.000000  2007.000000  129500.000000
+50%    1465.50000  5.354536e+08    50.000000     68.000000    9436.500000      6.000000      5.000000  1973.000000     1993.000000      0.000000    370.000000      0.000000   466.000000     990.000000  1084.000000     0.000000         0.000000  1442.000000        0.000000        0.000000     2.000000     0.000000       3.000000       1.000000       6.000000     1.000000    1979.000000     2.000000   480.000000      0.000000      27.000000        0.000000     0.000000      0.000000     0.000000      0.000000     6.000000  2008.000000  160000.000000
+75%    2197.75000  9.071811e+08    70.000000     80.000000   11555.250000      7.000000      6.000000  2001.000000     2004.000000    164.000000    734.000000      0.000000   802.000000    1302.000000  1384.000000   703.750000         0.000000  1742.750000        1.000000        0.000000     2.000000     1.000000       3.000000       1.000000       7.000000     1.000000    2002.000000     2.000000   576.000000    168.000000      70.000000        0.000000     0.000000      0.000000     0.000000      0.000000     8.000000  2009.000000  213500.000000
+max    2930.00000  1.007100e+09   190.000000    313.000000  215245.000000     10.000000      9.000000  2010.000000     2010.000000   1600.000000   5644.000000   1526.000000  2336.000000    6110.000000  5095.000000  2065.000000      1064.000000  5642.000000        3.000000        2.000000     4.000000     2.000000       8.000000       3.000000      15.000000     4.000000    2207.000000     5.000000  1488.000000   1424.000000     742.000000     1012.000000   508.000000    576.000000   800.000000  17000.000000    12.000000  2010.000000  755000.000000
+
+Dataset Information (After Cleaning):
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 2930 entries, 0 to 2929
+Data columns (total 82 columns):
+ #   Column           Non-Null Count  Dtype  
+---  ------           --------------  -----  
+ 0   order            2930 non-null   int64  
+ 1   pid              2930 non-null   int64  
+ 2   ms_subclass      2930 non-null   int64  
+ 3   ms_zoning        2930 non-null   object 
+ 4   lot_frontage     2930 non-null   float64
+ 5   lot_area         2930 non-null   int64  
+ 6   street           2930 non-null   object 
+ 7   alley            2930 non-null   object 
+ 8   lot_shape        2930 non-null   object 
+ 9   land_contour     2930 non-null   object 
+ 10  utilities        2930 non-null   object 
+ 11  lot_config       2930 non-null   object 
+ 12  land_slope       2930 non-null   object 
+ 13  neighborhood     2930 non-null   object 
+ 14  condition_1      2930 non-null   object 
+ 15  condition_2      2930 non-null   object 
+ 16  bldg_type        2930 non-null   object 
+ 17  house_style      2930 non-null   object 
+ 18  overall_qual     2930 non-null   int64  
+ 19  overall_cond     2930 non-null   int64  
+ 20  year_built       2930 non-null   int64  
+ 21  year_remod/add   2930 non-null   int64  
+ 22  roof_style       2930 non-null   object 
+ 23  roof_matl        2930 non-null   object 
+ 24  exterior_1st     2930 non-null   object 
+ 25  exterior_2nd     2930 non-null   object 
+ 26  mas_vnr_type     2930 non-null   object 
+ 27  mas_vnr_area     2930 non-null   float64
+ 28  exter_qual       2930 non-null   object 
+ 29  exter_cond       2930 non-null   object 
+ 30  foundation       2930 non-null   object 
+ 31  bsmt_qual        2930 non-null   object 
+ 32  bsmt_cond        2930 non-null   object 
+ 33  bsmt_exposure    2930 non-null   object 
+ 34  bsmtfin_type_1   2930 non-null   object 
+ 35  bsmtfin_sf_1     2930 non-null   float64
+ 36  bsmtfin_type_2   2930 non-null   object 
+ 37  bsmtfin_sf_2     2930 non-null   float64
+ 38  bsmt_unf_sf      2930 non-null   float64
+ 39  total_bsmt_sf    2930 non-null   float64
+ 40  heating          2930 non-null   object 
+ 41  heating_qc       2930 non-null   object 
+ 42  central_air      2930 non-null   object 
+ 43  electrical       2930 non-null   object 
+ 44  1st_flr_sf       2930 non-null   int64  
+ 45  2nd_flr_sf       2930 non-null   int64  
+ 46  low_qual_fin_sf  2930 non-null   int64  
+ 47  gr_liv_area      2930 non-null   int64  
+ 48  bsmt_full_bath   2930 non-null   float64
+ 49  bsmt_half_bath   2930 non-null   float64
+ 50  full_bath        2930 non-null   int64  
+ 51  half_bath        2930 non-null   int64  
+ 52  bedroom_abvgr    2930 non-null   int64  
+ 53  kitchen_abvgr    2930 non-null   int64  
+ 54  kitchen_qual     2930 non-null   object 
+ 55  totrms_abvgrd    2930 non-null   int64  
+ 56  functional       2930 non-null   object 
+ 57  fireplaces       2930 non-null   int64  
+ 58  fireplace_qu     2930 non-null   object 
+ 59  garage_type      2930 non-null   object 
+ 60  garage_yr_blt    2930 non-null   float64
+ 61  garage_finish    2930 non-null   object 
+ 62  garage_cars      2930 non-null   float64
+ 63  garage_area      2930 non-null   float64
+ 64  garage_qual      2930 non-null   object 
+ 65  garage_cond      2930 non-null   object 
+ 66  paved_drive      2930 non-null   object 
+ 67  wood_deck_sf     2930 non-null   int64  
+ 68  open_porch_sf    2930 non-null   int64  
+ 69  enclosed_porch   2930 non-null   int64  
+ 70  3ssn_porch       2930 non-null   int64  
+ 71  screen_porch     2930 non-null   int64  
+ 72  pool_area        2930 non-null   int64  
+ 73  pool_qc          2930 non-null   object 
+ 74  fence            2930 non-null   object 
+ 75  misc_feature     2930 non-null   object 
+ 76  misc_val         2930 non-null   int64  
+ 77  mo_sold          2930 non-null   int64  
+ 78  yr_sold          2930 non-null   int64  
+ 79  sale_type        2930 non-null   object 
+ 80  sale_condition   2930 non-null   object 
+ 81  saleprice        2930 non-null   int64  
+dtypes: float64(11), int64(28), object(43)
+memory usage: 1.8+ MB
+
+Summary Statistics (After Cleaning):
+            order           pid  ms_subclass  lot_frontage       lot_area  overall_qual  overall_cond   year_built  year_remod/add  mas_vnr_area  bsmtfin_sf_1  bsmtfin_sf_2  bsmt_unf_sf  total_bsmt_sf   1st_flr_sf   2nd_flr_sf  low_qual_fin_sf  gr_liv_area  bsmt_full_bath  bsmt_half_bath    full_bath    half_bath  bedroom_abvgr  kitchen_abvgr  totrms_abvgrd   fireplaces  garage_yr_blt  garage_cars  garage_area  wood_deck_sf  open_porch_sf  enclosed_porch   3ssn_porch  screen_porch    pool_area      misc_val      mo_sold      yr_sold      saleprice
+count  2930.00000  2.930000e+03  2930.000000   2930.000000    2930.000000   2930.000000   2930.000000  2930.000000     2930.000000   2930.000000   2930.000000   2930.000000  2930.000000    2930.000000  2930.000000  2930.000000      2930.000000  2930.000000     2930.000000     2930.000000  2930.000000  2930.000000    2930.000000    2930.000000    2930.000000  2930.000000    2930.000000  2930.000000  2930.000000   2930.000000    2930.000000     2930.000000  2930.000000   2930.000000  2930.000000   2930.000000  2930.000000  2930.000000    2930.000000
+mean   1465.50000  7.144645e+08    57.387372     69.019795   10147.921843      6.094881      5.563140  1971.356314     1984.266553    101.096928    442.604778     49.705461   559.230717    1051.593515  1159.557679   335.455973         4.676792  1499.690444        0.431058        0.061092     1.566553     0.379522       2.854266       1.044369       6.443003     0.599317    1978.179522     1.766894   472.822184     93.751877      47.533447       23.011604     2.592491     16.002048     2.243345     50.635154     6.216041  2007.790444  180796.060068
+std     845.96247  1.887308e+08    42.638025     21.326422    7880.017759      1.411026      1.111537    30.245361       20.860286    178.634545    455.515036    169.142089   439.422500     440.541315   391.890885   428.395715        46.310510   505.508887        0.524762        0.245175     0.552941     0.502629       0.827731       0.214076       1.572964     0.647921      24.826620     0.760449   215.009876    126.361562      67.483400       64.139059    25.141331     56.087370    35.597181    566.344288     2.714492     1.316613   79886.692357
+min       1.00000  5.263011e+08    20.000000     21.000000    1300.000000      1.000000      1.000000  1872.000000     1950.000000      0.000000      0.000000      0.000000     0.000000       0.000000   334.000000     0.000000         0.000000   334.000000        0.000000        0.000000     0.000000     0.000000       0.000000       0.000000       2.000000     0.000000    1895.000000     0.000000     0.000000      0.000000       0.000000        0.000000     0.000000      0.000000     0.000000      0.000000     1.000000  2006.000000   12789.000000
+25%     733.25000  5.284770e+08    20.000000     60.000000    7440.250000      5.000000      5.000000  1954.000000     1965.000000      0.000000      0.000000      0.000000   219.000000     793.000000   876.250000     0.000000         0.000000  1126.000000        0.000000        0.000000     1.000000     0.000000       2.000000       1.000000       5.000000     0.000000    1962.000000     1.000000   320.000000      0.000000       0.000000        0.000000     0.000000      0.000000     0.000000      0.000000     4.000000  2007.000000  129500.000000
+50%    1465.50000  5.354536e+08    50.000000     68.000000    9436.500000      6.000000      5.000000  1973.000000     1993.000000      0.000000    370.000000      0.000000   466.000000     990.000000  1084.000000     0.000000         0.000000  1442.000000        0.000000        0.000000     2.000000     0.000000       3.000000       1.000000       6.000000     1.000000    1979.000000     2.000000   480.000000      0.000000      27.000000        0.000000     0.000000      0.000000     0.000000      0.000000     6.000000  2008.000000  160000.000000
+75%    2197.75000  9.071811e+08    70.000000     78.000000   11555.250000      7.000000      6.000000  2001.000000     2004.000000    162.750000    734.000000      0.000000   801.750000    1301.500000  1384.000000   703.750000         0.000000  1742.750000        1.000000        0.000000     2.000000     1.000000       3.000000       1.000000       7.000000     1.000000    2001.000000     2.000000   576.000000    168.000000      70.000000        0.000000     0.000000      0.000000     0.000000      0.000000     8.000000  2009.000000  213500.000000
+max    2930.00000  1.007100e+09   190.000000    313.000000  215245.000000     10.000000      9.000000  2010.000000     2010.000000   1600.000000   5644.000000   1526.000000  2336.000000    6110.000000  5095.000000  2065.000000      1064.000000  5642.000000        3.000000        2.000000     4.000000     2.000000       8.000000       3.000000      15.000000     4.000000    2207.000000     5.000000  1488.000000   1424.000000     742.000000     1012.000000   508.000000    576.000000   800.000000  17000.000000    12.000000  2010.000000  755000.000000
