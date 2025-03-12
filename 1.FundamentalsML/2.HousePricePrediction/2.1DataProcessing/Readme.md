@@ -37,10 +37,10 @@ Finally, save the cleaned dataset in a CSV file.
     <h2 align = "Center">📝 Results 📝 </h2>
 </p>
 
-<div style="margin-bottom: 1px;">
-<details>
-    <summary>📊 Dataset Information (Before Cleaning)</summary>
-    <pre>
+<div style="margin-bottom: 1px; display: flex; justify-content: center; align-items: center; height: 100vh;">
+    <details>
+        <summary>📊 Dataset Information (Before Cleaning)</summary>
+        <pre>
         #   Column           Non-Null Count  Dtype  
         ---  ------           --------------  -----  
         0   Order            2930 non-null   int64  
