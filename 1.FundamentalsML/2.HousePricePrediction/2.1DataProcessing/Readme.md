@@ -40,57 +40,6 @@ Finally, save the cleaned dataset in a CSV file.
 <details>
   <summary>📊 Ver datos (Clic para expandir)</summary>
 
-  <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
-    <div style="width: 30%;">
-      | Column           | Non-Null Count  | Dtype  |
-      |------------------|-----------------|--------|
-      | Order            | 2930 non-null   | int64  |
-      | PID              | 2930 non-null   | int64  |
-      | MS SubClass      | 2930 non-null   | int64  |
-      | MS Zoning        | 2930 non-null   | object |
-      | Lot Frontage     | 2440 non-null   | float64|
-      | Lot Area         | 2930 non-null   | int64  |
-      | Street           | 2930 non-null   | object |
-      | Alley            | 198 non-null    | object |
-      | Lot Shape        | 2930 non-null   | object |
-      | Land Contour     | 2930 non-null   | object |
-    </div>
-
-    <div style="width: 30%;">
-      | Column           | Non-Null Count  | Dtype  |
-      |------------------|-----------------|--------|
-      | Utilities        | 2930 non-null   | object |
-      | Lot Config       | 2930 non-null   | object |
-      | Land Slope       | 2930 non-null   | object |
-      | Neighborhood     | 2930 non-null   | object |
-      | Condition 1      | 2930 non-null   | object |
-      | Condition 2      | 2930 non-null   | object |
-      | Bldg Type        | 2930 non-null   | object |
-      | House Style      | 2930 non-null   | object |
-      | Overall Qual     | 2930 non-null   | int64  |
-      | Overall Cond     | 2930 non-null   | int64  |
-    </div>
-
-    <div style="width: 30%;">
-      | Column           | Non-Null Count  | Dtype  |
-      |------------------|-----------------|--------|
-      | Year Built       | 2930 non-null   | int64  |
-      | Year Remod/Add   | 2930 non-null   | int64  |
-      | Roof Style       | 2930 non-null   | object |
-      | Roof Matl        | 2930 non-null   | object |
-      | Exterior 1st     | 2930 non-null   | object |
-      | Exterior 2nd     | 2930 non-null   | object |
-      | Mas Vnr Type     | 1155 non-null   | object |
-      | Mas Vnr Area     | 2907 non-null   | float64|
-      | Exter Qual       | 2930 non-null   | object |
-      | Exter Cond       | 2930 non-null   | object |
-    </div>
-  </div>
-</details>
-
-<details>
-  <summary>📊 Ver datos (Clic para expandir)</summary>
-
   ```plaintext
     #   Column           Non-Null Count  Dtype  
     ---  ------           --------------  -----  
@@ -177,6 +126,7 @@ Finally, save the cleaned dataset in a CSV file.
     80  Sale Condition   2930 non-null   object 
     81  SalePrice        2930 non-null   int64  
 </details> ```
+
 
 ```plaintext
 | Order | PID        | MS SubClass | MS Zoning | Lot Frontage | Lot Area | Street | Alley | Lot Shape | Land Contour | Utilities | Lot Config | Land Slope | Neighborhood | Condition 1 | Condition 2 | Bldg Type | House Style | Overall Qual | Overall Cond | Year Built | Year Remod/Add | Roof Style | Roof Matl | Exterior 1st | Exterior 2nd | Mas Vnr Type | Mas Vnr Area | Exter Qual | Exter Cond | Foundation | Bsmt Qual | Bsmt Cond | Bsmt Exposure | BsmtFin Type 1 | BsmtFin SF 1 | BsmtFin Type 2 | BsmtFin SF 2 | Bsmt Unf SF | Total Bsmt SF | Heating | Heating QC | Central Air | Electrical | 1st Flr SF | 2nd Flr SF | Low Qual Fin SF | Gr Liv Area | Bsmt Full Bath | Bsmt Half Bath | Full Bath | Half Bath | Bedroom AbvGr | Kitchen AbvGr | Kitchen Qual | TotRms AbvGrd | Functional | Fireplaces | Fireplace Qu | Garage Type | Garage Yr Blt | Garage Finish | Garage Cars | Garage Area | Garage Qual | Garage Cond | Paved Drive | Wood Deck SF | Open Porch SF | Enclosed Porch | 3Ssn Porch | Screen Porch | Pool Area | Pool QC | Fence | Misc Feature | Misc Val | Mo Sold | Yr Sold | Sale Type | Sale Condition | SalePrice |
