@@ -37,22 +37,147 @@ Finally, save the cleaned dataset in a CSV file.
     <h2 align = "Center">📝 Results 📝 </h2>
 </p>
 
-<p align = "center" >
-    <h2 align = "Center"> 💻 Program explication 💻</h2>
-</p> 
+<details>
+  <summary>📊 Ver datos (Clic para expandir)</summary>
 
-|Pseudocode| Image of the program|
-|----------|---------------------|
-**NumPy:** Used to work with arrays and matrices, and it has functions for mathematics and statistics <br> **Pandas:** Used to manipulate and analyze data, particularly with DataFrames (tables of rows and columns).<br> **matplotlib.pyplot:** Used to create graphs, and pyplot is specifically for generating different types of plots (e.g., bar, line, scatter).<br> **load_digits from sklearn.datasets:** Used to load a dataset of handwritten digits, which is commonly used in classification projects.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.1LoadingAndExploring(MNIST)/Images/1.DeclareteLibraries.png" width="4000"/>|
-**`digits`:** loads a dataset of handwritten digit images, where you find images of numbers 0 to 9 in black and white, each with 8x8 pixels. Each image represents a number (digit) and has a label indicating which number it is. <br> **`x`:** Contains images (numeric format), for each 8x8 image it is flattened into a 64 array, each value represents the pixel intensity (0 = black, 16 = white). <br> **`y`:** contains the labels (real numbers of the images), each element is a number from 0 to , representing which digit each image is| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.1LoadingAndExploring(MNIST)/Images/2.LoadDataset.png" width="4000"/>|
-**`x.shape`:** Returns the dimension of x(1797, 64), it has 1797 images, and each image has 64 values (8x8 pixels). <br> **`y.shape`:** Returns the dimension of y (1797), there are 1797 labels per image, each label is the number it represents (0-9).|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.1LoadingAndExploring(MNIST)/Images/3.ExploringDimensionsDataSet.png" width="4000"/>|
-**`clases`:** Contains the unique values of y(0-9) <br> **`count_classes`:** Array that indicates how many examples there are of each class | <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.1LoadingAndExploring(MNIST)/Images/4.CheckClassesNumberExamples.png" width="4000"/>|
-**`plt.figure(figsize=(8,5))`:** Set the size of the figure (8 wide and 5 high) <br> **`plt.bar(clases, count_classes, color='skyblue')`:** Create the bar chart, the list that contains the number of examples, assign the color of the bars. <br> **`plt.xlabel('Digit')`:** Set the x-axis label <br> **`plt.ylabel('Number of examples')`:** Set the y-axis label <br> **`plt.title('Distribution of the classes')`:** Add a title to the chart. <br> **`plt.show()`:** Visualize the graph | <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.1LoadingAndExploring(MNIST)/Images/5.ViewDistributionClasses.png" width="4000"/>|
-**`fig, axes = plt.subplots(2, 5, figsize=(10, 5))`:** Create a figure and a grid (2 rows and 5 columns) totaling 10 subplots, set the size (10, 5 in inches)  10 wide and 5 high <br> **`fig.suptitle("Examples of images")`:** Establish a general title <br> **`for i, ax in enumerate(axes.ravel())`:** Iterates through each of the subplots, converts the (2x5) matrix into a one-dimensional array, which makes individual access easier, and returns both the index `i` and the `ax` object in each iteration. <br> **`ax.imshow(x[i].reshape(8,8), cmap='gray')`:** it is a vector image from the dataset.  resize to an 8x8 matrix, apply a grayscale <br> **`ax.set_title(f"label: {y[i]}")`:** Assign a title to each subplot. <br> **`ax.axis('off')`:** Deactivate the axes so that the marks or values do not appear. <br> **`plt.show()`:** Show the subplots and images. | <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.1LoadingAndExploring(MNIST)/Images/6.ViewExample.png" width="4000"/>|
+  <div style="display: flex; flex-wrap: wrap; justify-content: space-between;">
+    <div style="width: 30%;">
+      | Column           | Non-Null Count  | Dtype  |
+      |------------------|-----------------|--------|
+      | Order            | 2930 non-null   | int64  |
+      | PID              | 2930 non-null   | int64  |
+      | MS SubClass      | 2930 non-null   | int64  |
+      | MS Zoning        | 2930 non-null   | object |
+      | Lot Frontage     | 2440 non-null   | float64|
+      | Lot Area         | 2930 non-null   | int64  |
+      | Street           | 2930 non-null   | object |
+      | Alley            | 198 non-null    | object |
+      | Lot Shape        | 2930 non-null   | object |
+      | Land Contour     | 2930 non-null   | object |
+    </div>
 
-TABLAS
+    <div style="width: 30%;">
+      | Column           | Non-Null Count  | Dtype  |
+      |------------------|-----------------|--------|
+      | Utilities        | 2930 non-null   | object |
+      | Lot Config       | 2930 non-null   | object |
+      | Land Slope       | 2930 non-null   | object |
+      | Neighborhood     | 2930 non-null   | object |
+      | Condition 1      | 2930 non-null   | object |
+      | Condition 2      | 2930 non-null   | object |
+      | Bldg Type        | 2930 non-null   | object |
+      | House Style      | 2930 non-null   | object |
+      | Overall Qual     | 2930 non-null   | int64  |
+      | Overall Cond     | 2930 non-null   | int64  |
+    </div>
 
-before
+    <div style="width: 30%;">
+      | Column           | Non-Null Count  | Dtype  |
+      |------------------|-----------------|--------|
+      | Year Built       | 2930 non-null   | int64  |
+      | Year Remod/Add   | 2930 non-null   | int64  |
+      | Roof Style       | 2930 non-null   | object |
+      | Roof Matl        | 2930 non-null   | object |
+      | Exterior 1st     | 2930 non-null   | object |
+      | Exterior 2nd     | 2930 non-null   | object |
+      | Mas Vnr Type     | 1155 non-null   | object |
+      | Mas Vnr Area     | 2907 non-null   | float64|
+      | Exter Qual       | 2930 non-null   | object |
+      | Exter Cond       | 2930 non-null   | object |
+    </div>
+  </div>
+</details>
+
+<details>
+  <summary>📊 Ver datos (Clic para expandir)</summary>
+
+  ```plaintext
+    #   Column           Non-Null Count  Dtype  
+    ---  ------           --------------  -----  
+    0   Order            2930 non-null   int64  
+    1   PID              2930 non-null   int64  
+    2   MS SubClass      2930 non-null   int64  
+    3   MS Zoning        2930 non-null   object 
+    4   Lot Frontage     2440 non-null   float64
+    5   Lot Area         2930 non-null   int64  
+    6   Street           2930 non-null   object 
+    7   Alley            198 non-null    object 
+    8   Lot Shape        2930 non-null   object 
+    9   Land Contour     2930 non-null   object 
+    10  Utilities        2930 non-null   object 
+    11  Lot Config       2930 non-null   object 
+    12  Land Slope       2930 non-null   object 
+    13  Neighborhood     2930 non-null   object 
+    14  Condition 1      2930 non-null   object 
+    15  Condition 2      2930 non-null   object 
+    16  Bldg Type        2930 non-null   object 
+    17  House Style      2930 non-null   object 
+    18  Overall Qual     2930 non-null   int64  
+    19  Overall Cond     2930 non-null   int64  
+    20  Year Built       2930 non-null   int64  
+    21  Year Remod/Add   2930 non-null   int64  
+    22  Roof Style       2930 non-null   object 
+    23  Roof Matl        2930 non-null   object 
+    24  Exterior 1st     2930 non-null   object 
+    25  Exterior 2nd     2930 non-null   object 
+    26  Mas Vnr Type     1155 non-null   object 
+    27  Mas Vnr Area     2907 non-null   float64
+    28  Exter Qual       2930 non-null   object 
+    29  Exter Cond       2930 non-null   object 
+    30  Foundation       2930 non-null   object 
+    31  Bsmt Qual        2850 non-null   object 
+    32  Bsmt Cond        2850 non-null   object 
+    33  Bsmt Exposure    2847 non-null   object 
+    34  BsmtFin Type 1   2850 non-null   object 
+    35  BsmtFin SF 1     2929 non-null   float64
+    36  BsmtFin Type 2   2849 non-null   object 
+    37  BsmtFin SF 2     2929 non-null   float64
+    38  Bsmt Unf SF      2929 non-null   float64
+    39  Total Bsmt SF    2929 non-null   float64
+    40  Heating          2930 non-null   object 
+    41  Heating QC       2930 non-null   object 
+    42  Central Air      2930 non-null   object 
+    43  Electrical       2929 non-null   object 
+    44  1st Flr SF       2930 non-null   int64  
+    45  2nd Flr SF       2930 non-null   int64  
+    46  Low Qual Fin SF  2930 non-null   int64  
+    47  Gr Liv Area      2930 non-null   int64  
+    48  Bsmt Full Bath   2928 non-null   float64
+    49  Bsmt Half Bath   2928 non-null   float64
+    50  Full Bath        2930 non-null   int64  
+    51  Half Bath        2930 non-null   int64  
+    52  Bedroom AbvGr    2930 non-null   int64  
+    53  Kitchen AbvGr    2930 non-null   int64  
+    54  Kitchen Qual     2930 non-null   object 
+    55  TotRms AbvGrd    2930 non-null   int64  
+    56  Functional       2930 non-null   object 
+    57  Fireplaces       2930 non-null   int64  
+    58  Fireplace Qu     1508 non-null   object 
+    59  Garage Type      2773 non-null   object 
+    60  Garage Yr Blt    2771 non-null   float64
+    61  Garage Finish    2771 non-null   object 
+    62  Garage Cars      2929 non-null   float64
+    63  Garage Area      2929 non-null   float64
+    64  Garage Qual      2771 non-null   object 
+    65  Garage Cond      2771 non-null   object 
+    66  Paved Drive      2930 non-null   object 
+    67  Wood Deck SF     2930 non-null   int64  
+    68  Open Porch SF    2930 non-null   int64  
+    69  Enclosed Porch   2930 non-null   int64  
+    70  3Ssn Porch       2930 non-null   int64  
+    71  Screen Porch     2930 non-null   int64  
+    72  Pool Area        2930 non-null   int64  
+    73  Pool QC          13 non-null     object 
+    74  Fence            572 non-null    object 
+    75  Misc Feature     106 non-null    object 
+    76  Misc Val         2930 non-null   int64  
+    77  Mo Sold          2930 non-null   int64  
+    78  Yr Sold          2930 non-null   int64  
+    79  Sale Type        2930 non-null   object 
+    80  Sale Condition   2930 non-null   object 
+    81  SalePrice        2930 non-null   int64  
+</details> ```
+
 ```plaintext
 | Order | PID        | MS SubClass | MS Zoning | Lot Frontage | Lot Area | Street | Alley | Lot Shape | Land Contour | Utilities | Lot Config | Land Slope | Neighborhood | Condition 1 | Condition 2 | Bldg Type | House Style | Overall Qual | Overall Cond | Year Built | Year Remod/Add | Roof Style | Roof Matl | Exterior 1st | Exterior 2nd | Mas Vnr Type | Mas Vnr Area | Exter Qual | Exter Cond | Foundation | Bsmt Qual | Bsmt Cond | Bsmt Exposure | BsmtFin Type 1 | BsmtFin SF 1 | BsmtFin Type 2 | BsmtFin SF 2 | Bsmt Unf SF | Total Bsmt SF | Heating | Heating QC | Central Air | Electrical | 1st Flr SF | 2nd Flr SF | Low Qual Fin SF | Gr Liv Area | Bsmt Full Bath | Bsmt Half Bath | Full Bath | Half Bath | Bedroom AbvGr | Kitchen AbvGr | Kitchen Qual | TotRms AbvGrd | Functional | Fireplaces | Fireplace Qu | Garage Type | Garage Yr Blt | Garage Finish | Garage Cars | Garage Area | Garage Qual | Garage Cond | Paved Drive | Wood Deck SF | Open Porch SF | Enclosed Porch | 3Ssn Porch | Screen Porch | Pool Area | Pool QC | Fence | Misc Feature | Misc Val | Mo Sold | Yr Sold | Sale Type | Sale Condition | SalePrice |
 |-------|------------|-------------|-----------|--------------|----------|--------|-------|-----------|--------------|-----------|------------|------------|--------------|-------------|-------------|-----------|-------------|--------------|--------------|------------|----------------|------------|-----------|--------------|--------------|--------------|--------------|------------|------------|------------|-----------|-----------|---------------|----------------|--------------|----------------|--------------|-------------|---------------|---------|------------|-------------|------------|------------|------------|-----------------|-------------|----------------|----------------|-----------|-----------|---------------|---------------|--------------|---------------|------------|------------|--------------|-------------|---------------|---------------|-------------|-------------|-------------|-------------|-------------|--------------|---------------|----------------|------------|--------------|-----------|---------|-------|--------------|----------|---------|---------|-----------|----------------|-----------|
@@ -74,3 +199,16 @@ after
 |     4 |  526353030 |          20 | RL        |         93.0 |    11160 | Pave   | Missing | Reg       | Lvl          | AllPub    | Corner     | Gtl        | NAmes        | Norm        | Norm        | 1Fam      | 1Story      |            7 |            5 |       1968 |           1968 | Hip        | CompShg   | BrkFace      | BrkFace      | Missing      |          0.0 | Gd         | TA         | CBlock     | TA        | TA        | No            | ALQ            |       1065.0 | Unf            |          0.0 |      1045.0 |        2110.0 | GasA    | Ex         | Y           | SBrkr      |       2110 |          0 |               0 |        2110 |            1.0 |            0.0 |         2 |         1 |             3 |             1 | Ex           |             8 | Typ        |          2 | TA           | Attchd      |        1968.0 | Fin           |         2.0 |       522.0 | TA          | TA          | Y           |            0 |             0 |              0 |          0 |            0 |         0 | Missing | Missing | Missing      |        0 |       4 |    2010 | WD        | Normal         |    244000 |
 |     5 |  527105010 |          60 | RL        |         74.0 |    13830 | Pave   | Missing | IR1       | Lvl          | AllPub    | Inside     | Gtl        | Gilbert      | Norm        | Norm        | 1Fam      | 2Story      |            5 |            5 |       1997 |           1998 | Gable      | CompShg   | VinylSd      | VinylSd      | Missing      |          0.0 | TA         | TA         | PConc      | Gd        | TA        | No            | GLQ            |        791.0 | Unf            |          0.0 |       137.0 |         928.0 | GasA    | Gd         | Y           | SBrkr      |        928 |        701 |               0 |        1629 |            0.0 |            0.0 |         2 |         1 |             3 |             1 | TA           |             6 | Typ        |          1 | TA           | Attchd      |        1997.0 | Fin           |         2.0 |       482.0 | TA          | TA          | Y           |          212 |            34 |              0 |          0 |            0 |         0 | Missing | MnPrv   | Missing      |        0 |       3 |    2010 | WD        | Normal         |    189900 |
 ```
+
+<p align = "center" >
+    <h2 align = "Center"> 💻 Program explication 💻</h2>
+</p> 
+
+|Pseudocode| Image of the program|
+|----------|---------------------|
+**NumPy:** Used to work with arrays and matrices, and it has functions for mathematics and statistics <br> **Pandas:** Used to manipulate and analyze data, particularly with DataFrames (tables of rows and columns).<br> **matplotlib.pyplot:** Used to create graphs, and pyplot is specifically for generating different types of plots (e.g., bar, line, scatter).<br> **load_digits from sklearn.datasets:** Used to load a dataset of handwritten digits, which is commonly used in classification projects.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.1LoadingAndExploring(MNIST)/Images/1.DeclareteLibraries.png" width="4000"/>|
+**`digits`:** loads a dataset of handwritten digit images, where you find images of numbers 0 to 9 in black and white, each with 8x8 pixels. Each image represents a number (digit) and has a label indicating which number it is. <br> **`x`:** Contains images (numeric format), for each 8x8 image it is flattened into a 64 array, each value represents the pixel intensity (0 = black, 16 = white). <br> **`y`:** contains the labels (real numbers of the images), each element is a number from 0 to , representing which digit each image is| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.1LoadingAndExploring(MNIST)/Images/2.LoadDataset.png" width="4000"/>|
+**`x.shape`:** Returns the dimension of x(1797, 64), it has 1797 images, and each image has 64 values (8x8 pixels). <br> **`y.shape`:** Returns the dimension of y (1797), there are 1797 labels per image, each label is the number it represents (0-9).|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.1LoadingAndExploring(MNIST)/Images/3.ExploringDimensionsDataSet.png" width="4000"/>|
+**`clases`:** Contains the unique values of y(0-9) <br> **`count_classes`:** Array that indicates how many examples there are of each class | <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.1LoadingAndExploring(MNIST)/Images/4.CheckClassesNumberExamples.png" width="4000"/>|
+**`plt.figure(figsize=(8,5))`:** Set the size of the figure (8 wide and 5 high) <br> **`plt.bar(clases, count_classes, color='skyblue')`:** Create the bar chart, the list that contains the number of examples, assign the color of the bars. <br> **`plt.xlabel('Digit')`:** Set the x-axis label <br> **`plt.ylabel('Number of examples')`:** Set the y-axis label <br> **`plt.title('Distribution of the classes')`:** Add a title to the chart. <br> **`plt.show()`:** Visualize the graph | <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.1LoadingAndExploring(MNIST)/Images/5.ViewDistributionClasses.png" width="4000"/>|
+**`fig, axes = plt.subplots(2, 5, figsize=(10, 5))`:** Create a figure and a grid (2 rows and 5 columns) totaling 10 subplots, set the size (10, 5 in inches)  10 wide and 5 high <br> **`fig.suptitle("Examples of images")`:** Establish a general title <br> **`for i, ax in enumerate(axes.ravel())`:** Iterates through each of the subplots, converts the (2x5) matrix into a one-dimensional array, which makes individual access easier, and returns both the index `i` and the `ax` object in each iteration. <br> **`ax.imshow(x[i].reshape(8,8), cmap='gray')`:** it is a vector image from the dataset.  resize to an 8x8 matrix, apply a grayscale <br> **`ax.set_title(f"label: {y[i]}")`:** Assign a title to each subplot. <br> **`ax.axis('off')`:** Deactivate the axes so that the marks or values do not appear. <br> **`plt.show()`:** Show the subplots and images. | <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.1LoadingAndExploring(MNIST)/Images/6.ViewExample.png" width="4000"/>|
