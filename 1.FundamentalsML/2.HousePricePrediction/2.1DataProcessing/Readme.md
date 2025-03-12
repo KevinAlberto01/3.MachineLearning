@@ -37,7 +37,7 @@ Finally, save the cleaned dataset in a CSV file.
     <h2 align = "Center">📝 Results 📝 </h2>
 </p>
 
-<div style="margin-bottom: 20px;">
+<div style="margin-bottom: 1px;">
 <details>
   <summary>📊 Dataset Information (Before Cleaning)</summary>
   <pre>
@@ -128,8 +128,6 @@ Finally, save the cleaned dataset in a CSV file.
     </pre>
 <details> 
 </div>
-
-<br><br>
 
 <details>
   <summary>📊 Dataset Information (Before Cleaning)</summary>
