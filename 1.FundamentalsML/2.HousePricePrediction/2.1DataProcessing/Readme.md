@@ -39,93 +39,93 @@ Finally, save the cleaned dataset in a CSV file.
 
 <div style="margin-bottom: 1px;">
 <details>
-  <summary>📊 Dataset Information (Before Cleaning)</summary>
-  <pre>
-    #   Column           Non-Null Count  Dtype  
-    ---  ------           --------------  -----  
-    0   Order            2930 non-null   int64  
-    1   PID              2930 non-null   int64  
-    2   MS SubClass      2930 non-null   int64  
-    3   MS Zoning        2930 non-null   object 
-    4   Lot Frontage     2440 non-null   float64
-    5   Lot Area         2930 non-null   int64  
-    6   Street           2930 non-null   object 
-    7   Alley            198 non-null    object 
-    8   Lot Shape        2930 non-null   object 
-    9   Land Contour     2930 non-null   object 
-    10  Utilities        2930 non-null   object 
-    11  Lot Config       2930 non-null   object 
-    12  Land Slope       2930 non-null   object 
-    13  Neighborhood     2930 non-null   object 
-    14  Condition 1      2930 non-null   object 
-    15  Condition 2      2930 non-null   object 
-    16  Bldg Type        2930 non-null   object 
-    17  House Style      2930 non-null   object 
-    18  Overall Qual     2930 non-null   int64  
-    19  Overall Cond     2930 non-null   int64  
-    20  Year Built       2930 non-null   int64  
-    21  Year Remod/Add   2930 non-null   int64  
-    22  Roof Style       2930 non-null   object 
-    23  Roof Matl        2930 non-null   object 
-    24  Exterior 1st     2930 non-null   object 
-    25  Exterior 2nd     2930 non-null   object 
-    26  Mas Vnr Type     1155 non-null   object 
-    27  Mas Vnr Area     2907 non-null   float64
-    28  Exter Qual       2930 non-null   object 
-    29  Exter Cond       2930 non-null   object 
-    30  Foundation       2930 non-null   object 
-    31  Bsmt Qual        2850 non-null   object 
-    32  Bsmt Cond        2850 non-null   object 
-    33  Bsmt Exposure    2847 non-null   object 
-    34  BsmtFin Type 1   2850 non-null   object 
-    35  BsmtFin SF 1     2929 non-null   float64
-    36  BsmtFin Type 2   2849 non-null   object 
-    37  BsmtFin SF 2     2929 non-null   float64
-    38  Bsmt Unf SF      2929 non-null   float64
-    39  Total Bsmt SF    2929 non-null   float64
-    40  Heating          2930 non-null   object 
-    41  Heating QC       2930 non-null   object 
-    42  Central Air      2930 non-null   object 
-    43  Electrical       2929 non-null   object 
-    44  1st Flr SF       2930 non-null   int64  
-    45  2nd Flr SF       2930 non-null   int64  
-    46  Low Qual Fin SF  2930 non-null   int64  
-    47  Gr Liv Area      2930 non-null   int64  
-    48  Bsmt Full Bath   2928 non-null   float64
-    49  Bsmt Half Bath   2928 non-null   float64
-    50  Full Bath        2930 non-null   int64  
-    51  Half Bath        2930 non-null   int64  
-    52  Bedroom AbvGr    2930 non-null   int64  
-    53  Kitchen AbvGr    2930 non-null   int64  
-    54  Kitchen Qual     2930 non-null   object 
-    55  TotRms AbvGrd    2930 non-null   int64  
-    56  Functional       2930 non-null   object 
-    57  Fireplaces       2930 non-null   int64  
-    58  Fireplace Qu     1508 non-null   object 
-    59  Garage Type      2773 non-null   object 
-    60  Garage Yr Blt    2771 non-null   float64
-    61  Garage Finish    2771 non-null   object 
-    62  Garage Cars      2929 non-null   float64
-    63  Garage Area      2929 non-null   float64
-    64  Garage Qual      2771 non-null   object 
-    65  Garage Cond      2771 non-null   object 
-    66  Paved Drive      2930 non-null   object 
-    67  Wood Deck SF     2930 non-null   int64  
-    68  Open Porch SF    2930 non-null   int64  
-    69  Enclosed Porch   2930 non-null   int64  
-    70  3Ssn Porch       2930 non-null   int64  
-    71  Screen Porch     2930 non-null   int64  
-    72  Pool Area        2930 non-null   int64  
-    73  Pool QC          13 non-null     object 
-    74  Fence            572 non-null    object 
-    75  Misc Feature     106 non-null    object 
-    76  Misc Val         2930 non-null   int64  
-    77  Mo Sold          2930 non-null   int64  
-    78  Yr Sold          2930 non-null   int64  
-    79  Sale Type        2930 non-null   object 
-    80  Sale Condition   2930 non-null   object 
-    81  SalePrice        2930 non-null   int64
-    </pre>
+    <summary>📊 Dataset Information (Before Cleaning)</summary>
+    <pre>
+        #   Column           Non-Null Count  Dtype  
+        ---  ------           --------------  -----  
+        0   Order            2930 non-null   int64  
+        1   PID              2930 non-null   int64  
+        2   MS SubClass      2930 non-null   int64  
+        3   MS Zoning        2930 non-null   object 
+        4   Lot Frontage     2440 non-null   float64
+        5   Lot Area         2930 non-null   int64  
+        6   Street           2930 non-null   object 
+        7   Alley            198 non-null    object 
+        8   Lot Shape        2930 non-null   object 
+        9   Land Contour     2930 non-null   object 
+        10  Utilities        2930 non-null   object 
+        11  Lot Config       2930 non-null   object 
+        12  Land Slope       2930 non-null   object 
+        13  Neighborhood     2930 non-null   object 
+        14  Condition 1      2930 non-null   object 
+        15  Condition 2      2930 non-null   object 
+        16  Bldg Type        2930 non-null   object 
+        17  House Style      2930 non-null   object 
+        18  Overall Qual     2930 non-null   int64  
+        19  Overall Cond     2930 non-null   int64  
+        20  Year Built       2930 non-null   int64  
+        21  Year Remod/Add   2930 non-null   int64  
+        22  Roof Style       2930 non-null   object 
+        23  Roof Matl        2930 non-null   object 
+        24  Exterior 1st     2930 non-null   object 
+        25  Exterior 2nd     2930 non-null   object 
+        26  Mas Vnr Type     1155 non-null   object 
+        27  Mas Vnr Area     2907 non-null   float64
+        28  Exter Qual       2930 non-null   object 
+        29  Exter Cond       2930 non-null   object 
+        30  Foundation       2930 non-null   object 
+        31  Bsmt Qual        2850 non-null   object 
+        32  Bsmt Cond        2850 non-null   object 
+        33  Bsmt Exposure    2847 non-null   object 
+        34  BsmtFin Type 1   2850 non-null   object 
+        35  BsmtFin SF 1     2929 non-null   float64
+        36  BsmtFin Type 2   2849 non-null   object 
+        37  BsmtFin SF 2     2929 non-null   float64
+        38  Bsmt Unf SF      2929 non-null   float64
+        39  Total Bsmt SF    2929 non-null   float64
+        40  Heating          2930 non-null   object 
+        41  Heating QC       2930 non-null   object 
+        42  Central Air      2930 non-null   object 
+        43  Electrical       2929 non-null   object 
+        44  1st Flr SF       2930 non-null   int64  
+        45  2nd Flr SF       2930 non-null   int64  
+        46  Low Qual Fin SF  2930 non-null   int64  
+        47  Gr Liv Area      2930 non-null   int64  
+        48  Bsmt Full Bath   2928 non-null   float64
+        49  Bsmt Half Bath   2928 non-null   float64
+        50  Full Bath        2930 non-null   int64  
+        51  Half Bath        2930 non-null   int64  
+        52  Bedroom AbvGr    2930 non-null   int64  
+        53  Kitchen AbvGr    2930 non-null   int64  
+        54  Kitchen Qual     2930 non-null   object 
+        55  TotRms AbvGrd    2930 non-null   int64  
+        56  Functional       2930 non-null   object 
+        57  Fireplaces       2930 non-null   int64  
+        58  Fireplace Qu     1508 non-null   object 
+        59  Garage Type      2773 non-null   object 
+        60  Garage Yr Blt    2771 non-null   float64
+        61  Garage Finish    2771 non-null   object 
+        62  Garage Cars      2929 non-null   float64
+        63  Garage Area      2929 non-null   float64
+        64  Garage Qual      2771 non-null   object 
+        65  Garage Cond      2771 non-null   object 
+        66  Paved Drive      2930 non-null   object 
+        67  Wood Deck SF     2930 non-null   int64  
+        68  Open Porch SF    2930 non-null   int64  
+        69  Enclosed Porch   2930 non-null   int64  
+        70  3Ssn Porch       2930 non-null   int64  
+        71  Screen Porch     2930 non-null   int64  
+        72  Pool Area        2930 non-null   int64  
+        73  Pool QC          13 non-null     object 
+        74  Fence            572 non-null    object 
+        75  Misc Feature     106 non-null    object 
+        76  Misc Val         2930 non-null   int64  
+        77  Mo Sold          2930 non-null   int64  
+        78  Yr Sold          2930 non-null   int64  
+        79  Sale Type        2930 non-null   object 
+        80  Sale Condition   2930 non-null   object 
+        81  SalePrice        2930 non-null   int64
+        </pre>
     <details> 
 </div>
 
