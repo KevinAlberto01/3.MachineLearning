@@ -42,7 +42,7 @@ Finally, save the cleaned dataset in a CSV file.
         <summary>📊 Dataset Information (Before Cleaning)</summary>
         <pre>
         <strong>#   Column           Non-Null Count  Dtype  </strong>
-        ---  ------           --------------  -----  
+        --- ------           --------------  -----  
         0   Order            2930 non-null   int64  
         1   PID              2930 non-null   int64  
         2   MS SubClass      2930 non-null   int64  
@@ -97,7 +97,7 @@ Finally, save the cleaned dataset in a CSV file.
         51  Half Bath        2930 non-null   int64  
         52  Bedroom AbvGr    2930 non-null   int64  
         53  Kitchen AbvGr    2930 non-null   int64  
-        54  Kitchen Qual     2930 non-null   objec       Summary Statistics (Before Cleaning):t 
+        54  Kitchen Qual     2930 non-null   objec       
         55  TotRms AbvGrd    2930 non-null   int64  
         56  Functional       2930 non-null   object 
         57  Fireplaces       2930 non-null   int64  
@@ -237,6 +237,24 @@ Finally, save the cleaned dataset in a CSV file.
         </pre>
     <details> 
 </div>
+
+<div style="margin-bottom: 1px; display: flex; justify-content: center; align-items: center; height: 100vh;">
+    <details>
+        <summary>📊 Dataset Information (After Cleaning)</summary>
+        <pre>
+            order           pid  ms_subclass  lot_frontage       lot_area  overall_qual  overall_cond   year_built  year_remod/add  mas_vnr_area  bsmtfin_sf_1  bsmtfin_sf_2  bsmt_unf_sf  total_bsmt_sf   1st_flr_sf   2nd_flr_sf  low_qual_fin_sf  gr_liv_area  bsmt_full_bath  bsmt_half_bath    full_bath    half_bath  bedroom_abvgr  kitchen_abvgr  totrms_abvgrd   fireplaces  garage_yr_blt  garage_cars  garage_area  wood_deck_sf  open_porch_sf  enclosed_porch   3ssn_porch  screen_porch    pool_area      misc_val      mo_sold      yr_sold      saleprice
+            count  2930.00000  2.930000e+03  2930.000000   2930.000000    2930.000000   2930.000000   2930.000000  2930.000000     2930.000000   2930.000000   2930.000000   2930.000000  2930.000000    2930.000000  2930.000000  2930.000000      2930.000000  2930.000000     2930.000000     2930.000000  2930.000000  2930.000000    2930.000000    2930.000000    2930.000000  2930.000000    2930.000000  2930.000000  2930.000000   2930.000000    2930.000000     2930.000000  2930.000000   2930.000000  2930.000000   2930.000000  2930.000000  2930.000000    2930.000000
+            mean   1465.50000  7.144645e+08    57.387372     69.019795   10147.921843      6.094881      5.563140  1971.356314     1984.266553    101.096928    442.604778     49.705461   559.230717    1051.593515  1159.557679   335.455973         4.676792  1499.690444        0.431058        0.061092     1.566553     0.379522       2.854266       1.044369       6.443003     0.599317    1978.179522     1.766894   472.822184     93.751877      47.533447       23.011604     2.592491     16.002048     2.243345     50.635154     6.216041  2007.790444  180796.060068
+            std     845.96247  1.887308e+08    42.638025     21.326422    7880.017759      1.411026      1.111537    30.245361       20.860286    178.634545    455.515036    169.142089   439.422500     440.541315   391.890885   428.395715        46.310510   505.508887        0.524762        0.245175     0.552941     0.502629       0.827731       0.214076       1.572964     0.647921      24.826620     0.760449   215.009876    126.361562      67.483400       64.139059    25.141331     56.087370    35.597181    566.344288     2.714492     1.316613   79886.692357
+            min       1.00000  5.263011e+08    20.000000     21.000000    1300.000000      1.000000      1.000000  1872.000000     1950.000000      0.000000      0.000000      0.000000     0.000000       0.000000   334.000000     0.000000         0.000000   334.000000        0.000000        0.000000     0.000000     0.000000       0.000000       0.000000       2.000000     0.000000    1895.000000     0.000000     0.000000      0.000000       0.000000        0.000000     0.000000      0.000000     0.000000      0.000000     1.000000  2006.000000   12789.000000
+            25%     733.25000  5.284770e+08    20.000000     60.000000    7440.250000      5.000000      5.000000  1954.000000     1965.000000      0.000000      0.000000      0.000000   219.000000     793.000000   876.250000     0.000000         0.000000  1126.000000        0.000000        0.000000     1.000000     0.000000       2.000000       1.000000       5.000000     0.000000    1962.000000     1.000000   320.000000      0.000000       0.000000        0.000000     0.000000      0.000000     0.000000      0.000000     4.000000  2007.000000  129500.000000
+            50%    1465.50000  5.354536e+08    50.000000     68.000000    9436.500000      6.000000      5.000000  1973.000000     1993.000000      0.000000    370.000000      0.000000   466.000000     990.000000  1084.000000     0.000000         0.000000  1442.000000        0.000000        0.000000     2.000000     0.000000       3.000000       1.000000       6.000000     1.000000    1979.000000     2.000000   480.000000      0.000000      27.000000        0.000000     0.000000      0.000000     0.000000      0.000000     6.000000  2008.000000  160000.000000
+            75%    2197.75000  9.071811e+08    70.000000     78.000000   11555.250000      7.000000      6.000000  2001.000000     2004.000000    162.750000    734.000000      0.000000   801.750000    1301.500000  1384.000000   703.750000         0.000000  1742.750000        1.000000        0.000000     2.000000     1.000000       3.000000       1.000000       7.000000     1.000000    2001.000000     2.000000   576.000000    168.000000      70.000000        0.000000     0.000000      0.000000     0.000000      0.000000     8.000000  2009.000000  213500.000000
+            max    2930.00000  1.007100e+09   190.000000    313.000000  215245.000000     10.000000      9.000000  2010.000000     2010.000000   1600.000000   5644.000000   1526.000000  2336.000000    6110.000000  5095.000000  2065.000000      1064.000000  5642.000000        3.000000        2.000000     4.000000     2.000000       8.000000       3.000000      15.000000     4.000000    2207.000000     5.000000  1488.000000   1424.000000     742.000000     1012.000000   508.000000    576.000000   800.000000  17000.000000    12.000000  2010.000000  755000.000000
+        </pre>
+    <details> 
+</div>
+
 
 
 | Order | PID        | MS SubClass | MS Zoning | Lot Frontage | Lot Area | Street | Alley | Lot Shape | Land Contour | Utilities | Lot Config | Land Slope | Neighborhood | Condition 1 | Condition 2 | Bldg Type | House Style | Overall Qual | Overall Cond | Year Built | Year Remod/Add | Roof Style | Roof Matl | Exterior 1st | Exterior 2nd | Mas Vnr Type | Mas Vnr Area | Exter Qual | Exter Cond | Foundation | Bsmt Qual | Bsmt Cond | Bsmt Exposure | BsmtFin Type 1 | BsmtFin SF 1 | BsmtFin Type 2 | BsmtFin SF 2 | Bsmt Unf SF | Total Bsmt SF | Heating | Heating QC | Central Air | Electrical | 1st Flr SF | 2nd Flr SF | Low Qual Fin SF | Gr Liv Area | Bsmt Full Bath | Bsmt Half Bath | Full Bath | Half Bath | Bedroom AbvGr | Kitchen AbvGr | Kitchen Qual | TotRms AbvGrd | Functional | Fireplaces | Fireplace Qu | Garage Type | Garage Yr Blt | Garage Finish | Garage Cars | Garage Area | Garage Qual | Garage Cond | Paved Drive | Wood Deck SF | Open Porch SF | Enclosed Porch | 3Ssn Porch | Screen Porch | Pool Area | Pool QC | Fence | Misc Feature | Misc Val | Mo Sold | Yr Sold | Sale Type | Sale Condition | SalePrice |
