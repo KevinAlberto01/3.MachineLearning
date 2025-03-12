@@ -151,7 +151,7 @@ Finally, save the cleaned dataset in a CSV file.
         <summary>📊 Dataset Information (After Cleaning)</summary>
         <pre>
         <strong>#  Column            Non-Null Count  Dtype</strong>  
-        ---  ------           --------------  -----  
+        --- ------           --------------  -----  
         0   order            2930 non-null   int64  
         1   pid              2930 non-null   int64  
         2   ms_subclass      2930 non-null   int64  
