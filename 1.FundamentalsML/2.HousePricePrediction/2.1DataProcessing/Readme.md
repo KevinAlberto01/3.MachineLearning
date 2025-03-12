@@ -37,6 +37,7 @@ Finally, save the cleaned dataset in a CSV file.
     <h2 align = "Center">📝 Results 📝 </h2>
 </p>
 
+<div style="margin-bottom: 20px;">
 <details>
   <summary>📊 Dataset Information (Before Cleaning)</summary>
   <pre>
@@ -126,6 +127,9 @@ Finally, save the cleaned dataset in a CSV file.
     81  SalePrice        2930 non-null   int64
     </pre>
 <details> 
+</div>
+
+<br><br>
 
 <details>
   <summary>📊 Dataset Information (Before Cleaning)</summary>
