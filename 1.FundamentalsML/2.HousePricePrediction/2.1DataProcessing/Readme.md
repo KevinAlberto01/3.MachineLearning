@@ -126,7 +126,7 @@ Finally, save the cleaned dataset in a CSV file.
     80  Sale Condition   2930 non-null   object 
     81  SalePrice        2930 non-null   int64
     </pre>
-<details> 
+    <details> 
 </div>
 
 <details>
