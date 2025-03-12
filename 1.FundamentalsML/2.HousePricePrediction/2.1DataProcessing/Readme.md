@@ -148,9 +148,92 @@ Finally, save the cleaned dataset in a CSV file.
 
 <div style="margin-bottom: 1px; display: flex; justify-content: center; align-items: center; height: 100vh;">
     <details>
-        <summary>📊 Dataset Information (Before Cleaning)</summary>
+        <summary>📊 Dataset Information (After Cleaning)</summary>
         <pre>
-
+        <strong>#<strong>   <strong>Column</strong>           <strong>Non-Null Count</strong>  <strong>Dtype</strong>  
+        ---  ------           --------------  -----  
+        0   order            2930 non-null   int64  
+        1   pid              2930 non-null   int64  
+        2   ms_subclass      2930 non-null   int64  
+        3   ms_zoning        2930 non-null   object 
+        4   lot_frontage     2930 non-null   float64
+        5   lot_area         2930 non-null   int64  
+        6   street           2930 non-null   object 
+        7   alley            2930 non-null   object 
+        8   lot_shape        2930 non-null   object 
+        9   land_contour     2930 non-null   object 
+        10  utilities        2930 non-null   object 
+        11  lot_config       2930 non-null   object 
+        12  land_slope       2930 non-null   object 
+        13  neighborhood     2930 non-null   object 
+        14  condition_1      2930 non-null   object 
+        15  condition_2      2930 non-null   object 
+        16  bldg_type        2930 non-null   object 
+        17  house_style      2930 non-null   object 
+        18  overall_qual     2930 non-null   int64  
+        19  overall_cond     2930 non-null   int64  
+        20  year_built       2930 non-null   int64  
+        21  year_remod/add   2930 non-null   int64  
+        22  roof_style       2930 non-null   object 
+        23  roof_matl        2930 non-null   object 
+        24  exterior_1st     2930 non-null   object 
+        25  exterior_2nd     2930 non-null   object 
+        26  mas_vnr_type     2930 non-null   object 
+        27  mas_vnr_area     2930 non-null   float64
+        28  exter_qual       2930 non-null   object 
+        29  exter_cond       2930 non-null   object 
+        30  foundation       2930 non-null   object 
+        31  bsmt_qual        2930 non-null   object 
+        32  bsmt_cond        2930 non-null   object 
+        33  bsmt_exposure    2930 non-null   object 
+        34  bsmtfin_type_1   2930 non-null   object 
+        35  bsmtfin_sf_1     2930 non-null   float64
+        36  bsmtfin_type_2   2930 non-null   object 
+        37  bsmtfin_sf_2     2930 non-null   float64
+        38  bsmt_unf_sf      2930 non-null   float64
+        39  total_bsmt_sf    2930 non-null   float64
+        40  heating          2930 non-null   object 
+        41  heating_qc       2930 non-null   object 
+        42  central_air      2930 non-null   object 
+        43  electrical       2930 non-null   object 
+        44  1st_flr_sf       2930 non-null   int64  
+        45  2nd_flr_sf       2930 non-null   int64  
+        46  low_qual_fin_sf  2930 non-null   int64  
+        47  gr_liv_area      2930 non-null   int64  
+        48  bsmt_full_bath   2930 non-null   float64
+        49  bsmt_half_bath   2930 non-null   float64
+        50  full_bath        2930 non-null   int64  
+        51  half_bath        2930 non-null   int64  
+        52  bedroom_abvgr    2930 non-null   int64  
+        53  kitchen_abvgr    2930 non-null   int64  
+        54  kitchen_qual     2930 non-null   object 
+        55  totrms_abvgrd    2930 non-null   int64  
+        56  functional       2930 non-null   object 
+        57  fireplaces       2930 non-null   int64  
+        58  fireplace_qu     2930 non-null   object 
+        59  garage_type      2930 non-null   object 
+        60  garage_yr_blt    2930 non-null   float64
+        61  garage_finish    2930 non-null   object 
+        62  garage_cars      2930 non-null   float64
+        63  garage_area      2930 non-null   float64
+        64  garage_qual      2930 non-null   object 
+        65  garage_cond      2930 non-null   object 
+        66  paved_drive      2930 non-null   object 
+        67  wood_deck_sf     2930 non-null   int64  
+        68  open_porch_sf    2930 non-null   int64  
+        69  enclosed_porch   2930 non-null   int64  
+        70  3ssn_porch       2930 non-null   int64  
+        71  screen_porch     2930 non-null   int64  
+        72  pool_area        2930 non-null   int64  
+        73  pool_qc          2930 non-null   object 
+        74  fence            2930 non-null   object 
+        75  misc_feature     2930 non-null   object 
+        76  misc_val         2930 non-null   int64  
+        77  mo_sold          2930 non-null   int64  
+        78  yr_sold          2930 non-null   int64  
+        79  sale_type        2930 non-null   object 
+        80  sale_condition   2930 non-null   object 
+        81  saleprice        2930 non-null   int64 
         </pre>
     <details> 
 </div>
