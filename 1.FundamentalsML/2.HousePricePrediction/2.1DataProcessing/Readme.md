@@ -63,7 +63,7 @@ Finally, save the cleaned dataset in a CSV file.
 
 
 <p align = "center" >
-    <h4 align = "Center"> Data base (Before) </h4>
+    <h4 align = "Center"> <strong> Data base (Before) </strong></h4>
 </p>
 
 | #  | Column          | Non-Null Count | Dtype   |
@@ -76,7 +76,7 @@ Finally, save the cleaned dataset in a CSV file.
 | 5  | Lot Area      | 2930 non-null  | int64   |
 
 <p align = "center" >
-    <h4 align = "Center"> Data base (After) </h4>
+    <h4 align = "Center"> <strong>Data base (After)</strong> </h4>
 </p>
 
 | #  | Column          | Non-Null Count | Dtype   |
