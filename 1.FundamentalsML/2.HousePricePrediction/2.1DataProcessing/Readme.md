@@ -88,6 +88,9 @@ Finally, save the cleaned dataset in a CSV file.
 |4   | lot_frontage  |  2930 non-null | float64 |
 |5   | lot_area      |  2930 non-null |  int64  |
 
+>[!NOTE]
+>Below will be the complete before and after database, the above is the same but with a sample of 5 reflected data points.
+
 <div style="margin-bottom: 1px; display: flex; justify-content: center; align-items: center; height: 100vh;">
     <details>
         <summary>📊 Dataset Information (Before Cleaning)</summary>
