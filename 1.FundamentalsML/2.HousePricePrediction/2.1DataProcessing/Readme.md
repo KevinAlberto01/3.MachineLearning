@@ -93,7 +93,7 @@ Finally, save the cleaned dataset in a CSV file.
 
 <div style="margin-bottom: 1px; display: flex; justify-content: center; align-items: center; height: 100vh;">
     <details>
-        <summary>📊 Dataset Information (Before Cleaning)</summary>
+        <summary>📊 Dataset Information (Before Cleaning) 📊</summary>
         <pre>
         <strong>#   Column           Non-Null Count  Dtype  </strong>
         --- ------           --------------  -----  
@@ -185,7 +185,7 @@ Finally, save the cleaned dataset in a CSV file.
 
 <div style="margin-bottom: 1px; display: flex; justify-content: center; align-items: center; height: 100vh;">
     <details>
-        <summary>📊 Summary Statistics (Before Cleaning)</summary>
+        <summary>📊 Summary Statistics (Before Cleaning) 📊</summary>
         <pre>
         <strong>            Order           PID  MS SubClass  Lot Frontage       Lot Area  Overall Qual  Overall Cond   Year Built  Year Remod/Add  Mas Vnr Area  BsmtFin SF 1  BsmtFin SF 2  Bsmt Unf SF  Total Bsmt SF   1st Flr SF   2nd Flr SF  Low Qual Fin SF  Gr Liv Area  Bsmt Full Bath  Bsmt Half Bath    Full Bath    Half Bath  Bedroom AbvGr  Kitchen AbvGr  TotRms AbvGrd   Fireplaces  Garage Yr Blt  Garage Cars  Garage Area  Wood Deck SF  Open Porch SF  Enclosed Porch   3Ssn Porch  Screen Porch    Pool Area      Misc Val      Mo Sold      Yr Sold      SalePrice </strong>
         <strong>count</strong>  2930.00000  2.930000e+03  2930.000000   2440.000000    2930.000000   2930.000000   2930.000000  2930.000000     2930.000000   2907.000000   2929.000000   2929.000000  2929.000000    2929.000000  2930.000000  2930.000000      2930.000000  2930.000000     2928.000000     2928.000000  2930.000000  2930.000000    2930.000000    2930.000000    2930.000000  2930.000000    2771.000000  2929.000000  2929.000000   2930.000000    2930.000000     2930.000000  2930.000000   2930.000000  2930.000000   2930.000000  2930.000000  2930.000000    2930.000000
@@ -202,7 +202,7 @@ Finally, save the cleaned dataset in a CSV file.
 
 <div style="margin-bottom: 1px; display: flex; justify-content: center; align-items: center; height: 100vh;">
     <details>
-        <summary>📊 Dataset Information (After Cleaning)</summary>
+        <summary>📊 Dataset Information (After Cleaning) 📊</summary>
         <pre>
         <strong>#  Column            Non-Null Count  Dtype</strong>  
         --- ------           --------------  -----  
@@ -294,7 +294,7 @@ Finally, save the cleaned dataset in a CSV file.
 
 <div style="margin-bottom: 1px; display: flex; justify-content: center; align-items: center; height: 100vh;">
     <details>
-        <summary>📊 Dataset Information (After Cleaning)</summary>
+        <summary>📊 Dataset Information (After Cleaning) 📊</summary>
         <pre>
             <strong>order           pid  ms_subclass  lot_frontage       lot_area  overall_qual  overall_cond   year_built  year_remod/add  mas_vnr_area  bsmtfin_sf_1  bsmtfin_sf_2  bsmt_unf_sf  total_bsmt_sf   1st_flr_sf   2nd_flr_sf  low_qual_fin_sf  gr_liv_area  bsmt_full_bath  bsmt_half_bath    full_bath    half_bath  bedroom_abvgr  kitchen_abvgr  totrms_abvgrd   fireplaces  garage_yr_blt  garage_cars  garage_area  wood_deck_sf  open_porch_sf  enclosed_porch   3ssn_porch  screen_porch    pool_area      misc_val      mo_sold      yr_sold      saleprice</strong>
             <strong>count</strong> 2930.00000  2.930000e+03  2930.000000   2930.000000    2930.000000   2930.000000   2930.000000  2930.000000     2930.000000   2930.000000   2930.000000   2930.000000  2930.000000    2930.000000  2930.000000  2930.000000      2930.000000  2930.000000     2930.000000     2930.000000  2930.000000  2930.000000    2930.000000    2930.000000    2930.000000  2930.000000    2930.000000  2930.000000  2930.000000   2930.000000    2930.000000     2930.000000  2930.000000   2930.000000  2930.000000   2930.000000  2930.000000  2930.000000    2930.000000
