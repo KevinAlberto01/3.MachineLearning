@@ -37,7 +37,6 @@ Finally, save the cleaned dataset in a CSV file.
     <h2 align = "Center">📝 Results 📝 </h2>
 </p>
 
-
 <p align = "center" >
     <h4 align = "Center"> Data base (Before) </h4>
 </p>
@@ -61,6 +60,33 @@ Finally, save the cleaned dataset in a CSV file.
 |     3 |  526351010 |          20 | RL        |         81.0 |    14267 | Pave   | Missing | IR1       | Lvl          | AllPub    | Corner     | Gtl        | NAmes        | Norm        | Norm        | 1Fam      | 1Story      |            6 |            6 |       1958 |           1958 | Hip        | CompShg   | Wd Sdng      | Wd Sdng      | BrkFace      |        108.0 | TA         | TA         | CBlock     | TA        | TA        | No            | ALQ            |        923.0 | Unf            |          0.0 |       406.0 |        1329.0 | GasA    | TA         | Y           | SBrkr      |       1329 |          0 |               0 |        1329 |            0.0 |            0.0 |         1 |         1 |             3 |             1 | Gd           |             6 | Typ        |          0 | Missing      | Attchd      |        1958.0 | Unf           |         1.0 |       312.0 | TA          | TA          | Y           |          393 |            36 |              0 |          0 |            0 |         0 | Missing | Missing | Gar2         |    12500 |       6 |    2010 | WD        | Normal         |    172000 |
 |     4 |  526353030 |          20 | RL        |         93.0 |    11160 | Pave   | Missing | Reg       | Lvl          | AllPub    | Corner     | Gtl        | NAmes        | Norm        | Norm        | 1Fam      | 1Story      |            7 |            5 |       1968 |           1968 | Hip        | CompShg   | BrkFace      | BrkFace      | Missing      |          0.0 | Gd         | TA         | CBlock     | TA        | TA        | No            | ALQ            |       1065.0 | Unf            |          0.0 |      1045.0 |        2110.0 | GasA    | Ex         | Y           | SBrkr      |       2110 |          0 |               0 |        2110 |            1.0 |            0.0 |         2 |         1 |             3 |             1 | Ex           |             8 | Typ        |          2 | TA           | Attchd      |        1968.0 | Fin           |         2.0 |       522.0 | TA          | TA          | Y           |            0 |             0 |              0 |          0 |            0 |         0 | Missing | Missing | Missing      |        0 |       4 |    2010 | WD        | Normal         |    244000 |
 |     5 |  527105010 |          60 | RL        |         74.0 |    13830 | Pave   | Missing | IR1       | Lvl          | AllPub    | Inside     | Gtl        | Gilbert      | Norm        | Norm        | 1Fam      | 2Story      |            5 |            5 |       1997 |           1998 | Gable      | CompShg   | VinylSd      | VinylSd      | Missing      |          0.0 | TA         | TA         | PConc      | Gd        | TA        | No            | GLQ            |        791.0 | Unf            |          0.0 |       137.0 |         928.0 | GasA    | Gd         | Y           | SBrkr      |        928 |        701 |               0 |        1629 |            0.0 |            0.0 |         2 |         1 |             3 |             1 | TA           |             6 | Typ        |          1 | TA           | Attchd      |        1997.0 | Fin           |         2.0 |       482.0 | TA          | TA          | Y           |          212 |            34 |              0 |          0 |            0 |         0 | Missing | MnPrv   | Missing      |        0 |       3 |    2010 | WD        | Normal         |    189900 |
+
+
+<p align = "center" >
+    <h4 align = "Center"> Data base (Before) </h4>
+</p>
+
+| #  | Column          | Non-Null Count | Dtype   |
+|----|---------------|----------------|---------|
+| 0  | Order         | 2930 non-null  | int64   |
+| 1  | PID           | 2930 non-null  | int64   |
+| 2  | MS SubClass   | 2930 non-null  | int64   |
+| 3  | MS Zoning     | 2930 non-null  | object  |
+| 4  | Lot Frontage  | 2440 non-null  | float64 |
+| 5  | Lot Area      | 2930 non-null  | int64   |
+
+<p align = "center" >
+    <h4 align = "Center"> Data base (After) </h4>
+</p>
+
+| #  | Column          | Non-Null Count | Dtype   |
+|----|---------------|----------------|---------|
+|0   | order         |  2930 non-null |  int64  |
+|1   | pid           |  2930 non-null |  int64  |
+|2   | ms_subclass   |  2930 non-null |  int64  |
+|3   | sms_zoning    |   2930 non-null|  object |
+|4   | lot_frontage  |  2930 non-null | float64 |
+|5   | lot_area      |  2930 non-null |  int64  |
 
 <div style="margin-bottom: 1px; display: flex; justify-content: center; align-items: center; height: 100vh;">
     <details>
