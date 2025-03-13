@@ -318,7 +318,7 @@ Finally, save the cleaned dataset in a CSV file.
 
 |Pseudocode| Image of the program|
 |----------|---------------------|
-add| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/tree/main/1.FundamentalsML/2.HousePricePrediction/2.1DataProcessing/Images/1.ImportLibraries.png" width="4000"/>|
+add| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.1DataProcessing/Images/1.ImportLibraries.png" width="4000"/>|
 add| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/tree/main/1.FundamentalsML/2.HousePricePrediction/2.1DataProcessing/Images/2.LoadDataset.png" width="4000"/>|
 add|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/tree/main/1.FundamentalsML/2.HousePricePrediction/2.1DataProcessing/Images/3.DataInspection.png" width="4000"/>|
 add| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/tree/main/1.FundamentalsML/2.HousePricePrediction/2.1DataProcessing/Images/4.ColumnClassification.png" width="4000"/>|
