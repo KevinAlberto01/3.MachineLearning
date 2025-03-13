@@ -23,28 +23,28 @@ This analysis helps to detect trends, outliers, and patterns in the data, facili
     <h2 align = "Center">📝 Results 📝 </h2>
 </p>
 
-|Description| Histogram of sale Price|
+|**Description**|**Histogram of sale Price**|
 |----------|---------------------|
+|          |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/1.HistogramSalePrice.png" width="4000"/>|
+|**Description**| **Box of Sale Price**|
 |          |                        |
-|Description| Box of Sale Price|
+|**Description**|**Living Area vs Sale Price**|
 |          |                        |
-|Description| Living Area vs Sale Price|
+|**Description**|**Correlation Matrix**|
 |          |                        |
-|Description| Correlation Matrix|
+|**Description**|**Histogram of log sale Price**|
 |          |                        |
-|Description| Histogram of log sale Price|
+|**Description**|**Living Area vs log Sale Price**|
 |          |                        |
-|Description| Living Area vs log Sale Price|
+|**Description**|**Sale price by house style**|
 |          |                        |
-|Description| Sale price by house style|
+|**Description**|**Sale Price by Neighborhood**|
 |          |                        |
-|Description| Sale Price by Neighborhood|
+|**Description**|**Count of Overall Quality**|
 |          |                        |
-|Description| Count of Overall Quality|
+|**Description**|**Name of Colums**|
 |          |                        |
-|Description| Name of Colums|
-|          |                        |
-|Description| Estadistic summary|
+|**Description**|**Estadistic summary**|
 |          |                        |
 
 <p align = "center" >
