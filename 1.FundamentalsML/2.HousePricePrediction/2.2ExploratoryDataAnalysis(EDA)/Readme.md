@@ -53,26 +53,15 @@ This analysis helps to detect trends, outliers, and patterns in the data, facili
 
 |Pseudocode| Image of the program|
 |----------|---------------------|
-add| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/2.1ImportLibraries.png" width="4000"/>|
-
-add| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/2.2LoadDataSet.png" width="4000"/>|
-
-add|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/2.4StatisticalSummary.png" width="4000"/>|
-
-
-add| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/2.5HistogramSalePrice.png" width="4000"/>|
-
-
-add| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/2.6BoxPlotScalePrice.png" width="4000"/>|
-
-add| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/2.7ScatterPlot.png" width="4000"/>|
-
-
-add| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/2.8CorrelationMatrix.png" width="4000"/>|
-
-add| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/2.9LogarithmicTransformation.png" width="4000"/>|
-
-add| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/2.10ScatterPlot.png" width="4000"/>|
-
-
-add| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/2.11AnalysisCategorical.png" width="4000"/>|
+**pandas:** To load and manipulate tabular data (DataFrames). <br> **numpy:** For numerical operations and mathematical functions. <br> **matplotlib.pyplot:** For graphical visualizations. <br> **seaborn:** For more stylish statistical graphics.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/2.1ImportLibraries.png" width="4000"/>|
+**`file_path`:** Path where the CSV file with the cleaned data is stored. <br> **`pd.read_csv(file_path)`:** Loads the CSV into a DataFrame (**`df`**).| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/2.2LoadDataSet.png" width="4000"/>|
+**`str.strip()`:** Removes spaces in column names (prevents errors when accessing them). <br> **`print(df.columns)`:** Displays the column names in the console.|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/2.3CleaningColumnNames.png" width="4000"/>|
+**`df.describe()`:** Generates descriptive statistics (mean, standard deviation, percentiles) for all numeric columns.|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/2.4StatisticalSummary.png" width="4000"/>|
+**`plt.hist()`:** Creates a histogram of the sale prices (**`saleprice`**). <br> **`dropna()`:** Removes null values. <br> **`bins=50`:** Divide the data into 50 intervals. <br> **Color:** **`#87CEEB`** (Sky Blue). <br> **`grid(True, linestyle='--', alpha=0.6)`:** Adds a semi-transparent dotted grid.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/2.5HistogramSalePrice.png" width="4000"/>|
+**`plt.boxplot()`:** Draws a horizontal boxplot of the selling price. <br> **`patch_artist=True`:** Allows changing the color of the box. <br> **Box color:** **`#87CEEB`** (Sky Blue).| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/2.6BoxPlotScalePrice.png" width="4000"/>|
+**`plt.scatter(x, y)`:** Shows the relationship between gr_liv_area (living area) and saleprice (sale price). <br> **Color of dots: #4682B4 (Steel Blue).<br> alpha=0.5: Makes the points semi-transparent for better visualization.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/2.7ScatterPlot.png" width="4000"/>|
+**`df.corr()`:** Calculates the correlation between numerical variables. <br> **`plt.imshow()`:** Draws the correlation matrix. <br> **`Color Map:`** coolwarm (rojo-azul). <br> **`plt.xticks()`** and **`plt.yticks()`:** Label the rows and columns.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/2.8CorrelationMatrix.png" width="4000"/>|
+**`np.log1p(x)`:** Applies `log(1 + x)` to `saleprice` to reduce the skewness of the distribution. <br> **Color:** **`#00BFFF`** (Deep Sky Blue).| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/2.9LogarithmicTransformation.png" width="4000"/>|
+Show the relationship between **`gr_liv_area`** and the price on a logarithmic scale. <br> **Color:** **`#1E90FF`** (Dodger Blue).| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/2.10ScatterPlot.png" width="4000"/>|
+Remove rows where **`house_style`** has null values. <br> Boxplot by Housing Style Boxplot showing the distribution of prices for each type of housing (**`house_style`**). <br> Color palette: **`Blues`**. <bt> Boxplot of prices by **`neighborhood`.** <br> General Quality Housing Count
+Count how many houses there are by quality level (**`overall_qual`**). | <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/2.11AnalysisCategorical.png" width="4000"/>|
