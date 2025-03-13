@@ -53,19 +53,26 @@ This analysis helps to detect trends, outliers, and patterns in the data, facili
 
 |Pseudocode| Image of the program|
 |----------|---------------------|
-add| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.1DataProcessing/Images/1.ImportLibraries.png" width="4000"/>|
+add| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/2.1ImportLibraries.png" width="4000"/>|
 
-add| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.1DataProcessing/Images/2.LoadDataset.png" width="4000"/>|
+add| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/2.2LoadDataSet.png" width="4000"/>|
 
-add|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.1DataProcessing/Images/3.DataInspection.png" width="4000"/>|
-
-
-add| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.1DataProcessing/Images/4.ColumnClassification.png" width="4000"/>|
+add|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/2.4StatisticalSummary.png" width="4000"/>|
 
 
-add| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.1DataProcessing/Images/5.CleaningData.png" width="4000"/>|
-
-add| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.1DataProcessing/Images/6.SaveCleaned.png" width="4000"/>|
+add| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/2.5HistogramSalePrice.png" width="4000"/>|
 
 
-add| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.1DataProcessing/Images/7.DataInspection.png" width="4000"/>|
+add| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/2.6BoxPlotScalePrice.png" width="4000"/>|
+
+add| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/2.7ScatterPlot.png" width="4000"/>|
+
+
+add| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/2.8CorrelationMatrix.png" width="4000"/>|
+
+add| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/2.9LogarithmicTransformation.png" width="4000"/>|
+
+add| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/2.10ScatterPlot.png" width="4000"/>|
+
+
+add| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/2.11AnalysisCategorical.png" width="4000"/>|
