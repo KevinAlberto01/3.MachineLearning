@@ -27,25 +27,25 @@ This analysis helps to detect trends, outliers, and patterns in the data, facili
 |----------|---------------------|
 |          |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/1.HistogramSalePrice.png" width="4000"/>|
 |**Description**| **Box of Sale Price**|
-|          |                        |
+|          |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/2.BoxplotSalePrice.png" width="4000"/>|
 |**Description**|**Living Area vs Sale Price**|
-|          |                        |
+|          |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/3.LivingAreaSalePrice.png" width="4000"/>|
 |**Description**|**Correlation Matrix**|
-|          |                        |
+|          |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/4.CorrelationMatrix.png" width="4000"/>|
 |**Description**|**Histogram of log sale Price**|
-|          |                        |
+|          |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/5.HistogramLogSalePrice.png" width="4000"/>|
 |**Description**|**Living Area vs log Sale Price**|
-|          |                        |
+|          |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/6.LivingAreaLogSalePrice.png" width="4000"/>|
 |**Description**|**Sale price by house style**|
-|          |                        |
+|          |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/7.SalePriceHouseStyle.png" width="4000"/>|
 |**Description**|**Sale Price by Neighborhood**|
-|          |                        |
+|          |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/8.SalePriceByNeighborhood.png" width="4000"/>|
 |**Description**|**Count of Overall Quality**|
-|          |                        |
+|          |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/9.CountOverallQuality.png" width="4000"/>|
 |**Description**|**Name of Colums**|
-|          |                        |
+|          |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/10.Columns.png" width="4000"/>|
 |**Description**|**Estadistic summary**|
-|          |                        |
+|          |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/11.StadisticSummary.png" width="4000"/>|
 
 <p align = "center" >
     <h2 align = "Center"> 💻 Program explication 💻</h2>
