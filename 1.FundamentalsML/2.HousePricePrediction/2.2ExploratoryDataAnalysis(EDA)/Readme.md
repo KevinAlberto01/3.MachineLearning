@@ -24,34 +24,89 @@ This analysis helps to detect trends, outliers, and patterns in the data, facili
 </p>
 
 <p align = "center" >
-    <h4 align = "Center"> Histogram of Sale Price </h4>
+    <h3 align = "Center"> Histogram of Sale Price </h3>
 </p>
 
 **Positive skew:** Since the distribution is not symmetrical and has a long tail to the right, this can affect some regression models. <br> It may be useful to apply a logarithmic transformation to the prices to make the distribution more normal. <br> **Outliers:** There are some houses with very high prices (outliers).  so it is possible to handle them, either by removing them or using them carefully to avoid them having too much influence on the model. <br>**Price ranged:** Most prices are between $100,000 and $300,000, so any prediction outside this range should be evaluated carefully. <br>
 
-|<p align = "left"> **`X-axis (Sale Price)`:** Represents the sale prices of the houses. <br> Y-axis (Frequency): Indicates how many houses fall within a certain price range. <br> Shape of the distribution: Most houses are priced in the range of $100,000 to $200,000, which means the distribution is right-skewed (there are fewer high-value houses). <br >Long tail to the right: There are some houses with very high prices (over $500,000), but they are less common. <br> Mode: The highest peak indicates the most frequent price of houses.|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/1.HistogramSalePrice.png" width="4000"/>|
+|<p align = "left"> **`X-axis (Sale Price)`:** Represents the sale prices of the houses. <br> Y-axis (Frequency): Indicates how many houses fall within a certain price range. <br> Shape of the distribution: Most houses are priced in the range of $100,000 to $200,000, which means the distribution is right-skewed (there are fewer high-value houses). <br> Long tail to the right: There are some houses with very high prices (over $500,000), but they are less common. <br> Mode: The highest peak indicates the most frequent price of houses.|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/1.HistogramSalePrice.png" width="4000"/>|
 |--------------------------------------------|-----------------------------------------------|
 
-|**Description**| **Box of Sale Price**|
-|          |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/2.BoxplotSalePrice.png" width="4000"/>|
-|**Description**|**Living Area vs Sale Price**|
-|          |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/3.LivingAreaSalePrice.png" width="4000"/>|
-|**Description**|**Correlation Matrix**|
-|          |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/4.CorrelationMatrix.png" width="4000"/>|
-|**Description**|**Histogram of log sale Price**|
+<p align = "center" >
+    <h3 align = "Center"> Box of Sale Price </h3>
+</p>
+
+**Box (blue rectangle):** Represents the **interquartile range (IQR)**, that is, the range where 50% of the data is found (between the first quartile Q1 and the third quartile Q3). <br> **Line inside the box:** Represents the **median** (central value of the data). <br> **Whiskers (horizontal lines on the sides of the box):** Represent the range of data without outliers.<br> They extend up to 1.5 times the interquartile range. <br> **Points outside the whiskers:** They are **outliers** (extreme values). In this case, there are many high values that are considered outliers.
+
+|<p align = "left"> **Price distribution:** <br> Most houses are priced between approximately **$100,000** and **$250,000.** <br> The median (line in the box) is close to **$180,000**, indicating that half of the houses cost less than this value. <br> **Outliers in house prices:** <br> There are many houses with prices well above the median, some reaching up to **$700,000**. <br> These extreme values can influence Machine Learning models, especially methods like **Linear Regression**, as they can skew the prediction. <br> **Possible solution for outliers:** <br> **Remove outliers:** If they are errors or very rare cases, you could remove them (for example, if they represent less than 1% of the data). <br> **Logarithmic transformation:** Applying log(Sale Price) can reduce the impact of extreme values. <br> **Robust models:** Some algorithms like **Random Forest or Gradient Boosting** handle outliers better than simple linear regression.|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/2.BoxplotSalePrice.png" width="4000"/>|
+|--------------------------------------------|-----------------------------------------------|
+
+<p align = "center" >
+    <h3 align = "Center"> Living Area vs Sale Price </h3>
+</p>
+
+**Positive relationship:** An **increasing trend** is observed, indicating that the larger the living area, the higher the house price.
+- This suggests that **`gr_liv_area`** is an important feature for predicting the house price.
+
+**Non-strictly linear pattern:** Although there is a clear relationship, the dispersion of the points suggests that other factors also influence the price.
+
+**Outliers in the data:**
+- There are some points that deviate from the general trend.
+- For example, there are houses with large areas (>4000 square feet) but with low prices, which is unusual.
+- There are also houses with extremely high prices that could influence the model.
+
+|<p align = "left"> **`X-axis (gr_liv_area)`:** Represents the living area in square feet. <br> **`Y Axis (Sale Price)`:** Represents the sale price in dollars. <br> **`Each blue dot:`** Represents a house, with its living area and corresponding sale price.|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/3.LivingAreaSalePrice.png" width="4000"/>|
+|--------------------------------------------|-----------------------------------------------|
+
+<p align = "center" >
+    <h3 align = "Center"> Correlation Matrix (PENDING)</h3>
+</p>
+
+|<p align = "left">           |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/4.CorrelationMatrix.png" width="4000"/>|
+|--------------------------------------------|-----------------------------------------------|
+
+<p align = "center" >
+    <h3 align = "Center"> Histogram of log sale Price (PENDING)</h3>
+</p>
+
 |          |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/5.HistogramLogSalePrice.png" width="4000"/>|
-|**Description**|**Living Area vs log Sale Price**|
-|          |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/6.LivingAreaLogSalePrice.png" width="4000"/>|
-|**Description**|**Sale price by house style**|
-|          |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/7.SalePriceHouseStyle.png" width="4000"/>|
-|**Description**|**Sale Price by Neighborhood**|
-|          |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/8.SalePriceByNeighborhood.png" width="4000"/>|
-|**Description**|**Count of Overall Quality**|
-|          |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/9.CountOverallQuality.png" width="4000"/>|
-|**Description**|**Name of Colums**|
-|          |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/10.Columns.png" width="4000"/>|
-|**Description**|**Estadistic summary**|
-|          |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/11.StadisticSummary.png" width="4000"/>|
+|--------------------------------------------|-----------------------------------------------|
+
+<p align = "center" >
+    <h3 align = "Center"> Living Area vs log Sale Price (PENDING)</h3>
+</p>
+
+|<p align = "left">          |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/6.LivingAreaLogSalePrice.png" width="4000"/>|
+
+<p align = "center" >
+    <h3 align = "Center"> Sale price by house style (PENDING)</h3>
+</p>
+
+|<p align = "left">          |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/7.SalePriceHouseStyle.png" width="4000"/>|
+
+<p align = "center" >
+    <h3 align = "Center"> Sale Price by Neighborhood (PENDING)</h3>
+</p>
+
+|<p align = "left">          |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/8.SalePriceByNeighborhood.png" width="4000"/>|
+
+<p align = "center" >
+    <h3 align = "Center"> Count of Overall Quality (PENDING)</h3>
+</p>
+
+|<p align = "left">           |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/9.CountOverallQuality.png" width="4000"/>|
+
+<p align = "center" >
+    <h3 align = "Center"> Name of Colums (PENDING)</h3>
+</p>
+
+|<p align = "left">           |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/10.Columns.png" width="4000"/>|
+
+<p align = "center" >
+    <h3 align = "Center"> Estadistic summary (PENDING)</h3>
+</p>
+
+|<p align = "left">          |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/11.StadisticSummary.png" width="4000"/>|
 
 <p align = "center" >
     <h2 align = "Center"> 💻 Program explication 💻</h2>
