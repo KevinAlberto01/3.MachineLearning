@@ -37,18 +37,39 @@ Different Machine Learning models are tested to evaluate which one performs best
     <h2 align = "Center">📝 Results 📝 </h2>
 </p>
 
-1.
+<p align = "center" >
+    <h4 align = "Center"> Description </h4>
+</p>
 
-<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.3TraininigMultipleAlgorithms/Images/7.DatasetLoaded.png" width="4000"/>
-2. 
+<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.3TraininigMultipleAlgorithms/Images/1.LoadingCleanedData.png" width="4000"/>
+
+<p align = "center" >
+    <h4 align = "Center"> Description </h4>
+</p>
+
+<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.3TraininigMultipleAlgorithms/Images/3.Description" width="4000"/>
+
+<p align = "center" >
+    <h4 align = "Center"> Description </h4>
+</p>
+
 Detected Categorical Columns: ['ms_zoning', 'street', 'alley', 'lot_shape', 'land_contour', 'utilities', 'lot_config', 'land_slope', 'neighborhood', 'condition_1', 'condition_2', 'bldg_type', 'house_style', 'roof_style', 'roof_matl', 'exterior_1st', 'exterior_2nd', 'mas_vnr_type', 'exter_qual', 'exter_cond', 'foundation', 'bsmt_qual', 'bsmt_cond', 'bsmt_exposure', 'bsmtfin_type_1', 'bsmtfin_type_2', 'heating', 'heating_qc', 'central_air', 'electrical', 'kitchen_qual', 'functional', 'fireplace_qu', 'garage_type', 'garage_finish', 'garage_qual', 'garage_cond', 'paved_drive', 'pool_qc', 'fence', 'misc_feature', 'sale_type', 'sale_condition']
 
-3.Shape of x after one-hot encoding 
+<p align = "center" >
+    <h4 align = "Center"> Shape of x after One-Hot encoding </h4>
+</p>
 
+<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.3TraininigMultipleAlgorithms/Images/3.Description" width="4000"/>
 
-4.Best max_depth for DecisionTreeRegressor
+<p align = "center" >
+    <h4 align = "Center"> Best max_depth for DecisionTreeRegressor </h4>
+</p>
 
-5. COmparation 
+<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.3TraininigMultipleAlgorithms/Images/4.BestMaxDepth.png" width="4000"/>
+
+<p align = "center" >
+    <h4 align = "Center"> Comparation </h4>
+</p>
 
 |Linear Regression |Decision Tree Regressor | Random Forest Regressor| K-Nearest Neighbors Regressor|
 |-----------------------------------|------------------------|---------------------|--------------|
