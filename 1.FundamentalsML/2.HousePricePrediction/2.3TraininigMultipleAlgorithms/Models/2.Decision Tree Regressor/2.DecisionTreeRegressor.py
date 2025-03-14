@@ -9,8 +9,8 @@ file_path = '/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.Hous
 df = pd.read_csv(file_path)
 
 # Separar features y target
-X = df.drop(columns=['SalePrice'])
-y = df['SalePrice']
+X = df.drop(columns=['saleprice'])
+y = df['saleprice']
 
 # One-Hot Encoding para las columnas categóricas
 X = pd.get_dummies(X, drop_first=True)
@@ -40,8 +40,9 @@ print(f"Test RMSE: {test_rmse:.2f}")
 print(f"Train R²: {train_r2:.2f}")
 print(f"Test R²: {test_r2:.2f}")
 
-# Gráfica
-plt.scatter(y_test, y_test_pred)
+# Gráfica con color #87CEEB
+plt.figure(figsize=(8, 6))
+plt.scatter(y_test, y_test_pred, color="#87CEEB", alpha=0.6, edgecolors='k')
 plt.xlabel('Real SalePrice')
 plt.ylabel('Predicted SalePrice')
 plt.title('Real vs Predicted SalePrice (Decision Tree)')
