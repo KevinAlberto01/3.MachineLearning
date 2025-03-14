@@ -103,7 +103,7 @@ def evaluate_model(model, X_train, X_test, y_train, y_test):
         'Test Explained Variance': test_ev
     })
 
-#Evaluate all the models
+#9.1 Evaluate all the models
 for name, model in models.items():
     evaluate_model(model, X_train_scaled, X_test_scaled, y_train, y_test)
 
