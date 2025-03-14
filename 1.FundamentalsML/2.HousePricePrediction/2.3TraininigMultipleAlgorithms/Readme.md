@@ -47,7 +47,7 @@ Different Machine Learning models are tested to evaluate which one performs best
     <h4 align = "Center"> Description </h4>
 </p>
 
-<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.3TraininigMultipleAlgorithms/Images/3.Description" width="4000"/>
+<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.3TraininigMultipleAlgorithms/Images/2.ShapeXafterOne-HotEncoding.png" width="4000"/>
 
 <p align = "center" >
     <h4 align = "Center"> Description </h4>
