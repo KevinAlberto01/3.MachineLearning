@@ -2,65 +2,56 @@
     <h1 align = "Center"> Training Multiple Algorithms</h1>
 </p>
 
+various regression algorithms are trained and compared to predict the price of a house. 
+Different Machine Learning models are tested to evaluate which one performs best according to various error and accuracy metrics.
+
 <p align = "center" >
     <h2 align = "Center">🎯 Objetives 🎯</h2>
 </p>
 
-Load the clean dataset, convert the categorical variables, train 4 different models, calculate their key metrics (RMSE and R²), and compare them with clear graphs, helping you select the best model to predict SalePrice.
+* **1.Data Loading and Preparation**
+    - The clean dataset (**`AmesHousing_cleaned.csv`**) is loaded.
+    - The features (**`X`**) and the target variable (**`y = saleprice`**) are separated.
+    - The categorical columns are identified and **One-Hot Encoding** is applied to convert them into numerical variables.
+    - The data is divided into a **training set** (**80%**) and a **test set** (**20%**).
+    - Normalization is applied with **`StandardScaler`** to scale the features.
 
-This program is responsible for testing and comparing different Machine Learning algorithms to predict house prices (SalePrice).  Its purpose is to identify which model offers the best balance between accuracy (R²) and error (RMSE).
+* **2.Model Selection and Optimization**
+    - A function **`get_best_decision_tree()`** is defined that uses **GridSearchCV** to find the best **`max_depth`** in a **Decision Tree**.
+    - Four models are stored in a dictionary:
+        - **Linear Regression (`LinearRegression`)**
+        - **Decision Tree (`DecisionTreeRegressor`)** → Optimized with GridSearchCV.
+        - **Random Forest (`RandomForestRegressor`)**
+        - **K-Nearest Neighbors (`KNeighborsRegressor`)**
 
-
-* **1.Data Loading and Preparation** 
-    - Load the cleaned dataset: AmesHousing_cleaned.csv.
-    - Separate Features (X) and Target (y), where:
-        - Features: All columns except SalePrice.
-        - Objetivo: Columna SalePrice.
-    - Detect categorical columns (object type).
-    - Apply One-Hot Encoding to convert categorical variables into numerical variables (essential for sklearn models).
-    - Divide the data into train (80%) and test (20%).
-
-* **2.Models to Evaluate**
-    - Regresion Lineal
-        - Simple Linear Regression
-    - Decision Tree Regressor
-        - Decision Tree (With max_depth optimized by GridSearchCV)
-    - Random Forest Regressor 
-        - Ensemble of trees (Random Forest)
-    - KNeighbors Regressor
-        - K-nearest neighbors regressor (KNN) 
-
-* **3.Model Evaluation**
-    - The following Metrics are calculated
-        - Train RMSE
-            - Root mean squared error on the training set 
-        - Test RMSE 
-            - Root mean square error on the test set 
-        - Train R2
-            - Coefficient of determination in the training set 
-        - Test R2 
-            - Coefficient of determination in the test set
-    - RMSE measures the absolute error (the lower, the better).
-    - R² measures how well the model explains the variation in SalePrice (the closer to 1, the better).
-
-* **4.Results Recording**
-    - All the results are stored in a DataFrame called df_results.
-    - The results are ordered by the order of the evaluated models (so that the graphical comparison is clear).
-
-* **5.Graphical Comparison**
-    - Generate 2 graph
-        - Comparación de RMSE
-            - Muestra el error (Train/Test) de cada modelo
-        - Comparison of R²
-            - Show the accuracy (Train/Test) of each model.
-    - These charts allow for a quick visualization to identify:
-    - Which model has the least error?
-    - Which model achieves greater accuracy?
-    - Is any model overfitting?
+* **3.Model Training and Evaluation**
+    - Each model is trained and performance metrics are calculated:
+        - **RMSE (Root Mean Squared Error)**
+        - **Puntuación R²**
+        - **MAE (Mean Absolute Error)**
+        - **Explanation of Variance**
+    - The results of each model are printed to the console.
+    - The results are stored in a DataFrame and saved in a CSV file.
 
 <p align = "center" >
     <h2 align = "Center">📝 Results 📝 </h2>
 </p>
+
+1.
+
+
+2. 
+Detected Categorical Columns: ['ms_zoning', 'street', 'alley', 'lot_shape', 'land_contour', 'utilities', 'lot_config', 'land_slope', 'neighborhood', 'condition_1', 'condition_2', 'bldg_type', 'house_style', 'roof_style', 'roof_matl', 'exterior_1st', 'exterior_2nd', 'mas_vnr_type', 'exter_qual', 'exter_cond', 'foundation', 'bsmt_qual', 'bsmt_cond', 'bsmt_exposure', 'bsmtfin_type_1', 'bsmtfin_type_2', 'heating', 'heating_qc', 'central_air', 'electrical', 'kitchen_qual', 'functional', 'fireplace_qu', 'garage_type', 'garage_finish', 'garage_qual', 'garage_cond', 'paved_drive', 'pool_qc', 'fence', 'misc_feature', 'sale_type', 'sale_condition']
+
+3.Shape of x after one-hot encoding 
+
+
+4.Best max_depth for DecisionTreeRegressor
+
+5. COmparation 
+
+
+
 Total loaded shape
 <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.3TraininigMultipleAlgorithms/Images/7.DatasetLoaded.png" width="4000"/>
 

@@ -23,6 +23,7 @@ y = df['saleprice']
 # Detectar columnas categóricas
 categorical_columns = X.select_dtypes(include=['object']).columns
 print(f"\nDetected Categorical Columns: {list(categorical_columns)}")
+print()
 
 # Aplicar One-Hot Encoding
 X = pd.get_dummies(X, columns=categorical_columns, drop_first=True)
@@ -30,6 +31,7 @@ X = pd.get_dummies(X, columns=categorical_columns, drop_first=True)
 # Verificación de la forma de X después de One-Hot Encoding
 print(f"Shape of X after One-Hot Encoding: {X.shape}")
 print(X.head())
+print()
 
 # División train-test
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
