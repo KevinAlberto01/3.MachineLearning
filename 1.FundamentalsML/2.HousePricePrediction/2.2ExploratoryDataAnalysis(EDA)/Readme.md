@@ -23,10 +23,15 @@ This analysis helps to detect trends, outliers, and patterns in the data, facili
     <h2 align = "Center">📝 Results 📝 </h2>
 </p>
 
-|**Description**|**Histogram of sale Price**|
-|----------|---------------------|
-|**Positive skew:** Since the distribution is not symmetrical and has a long tail to the right, this can affect some regression models. <br> It may be useful to apply a logarithmic transformation to the prices to make the distribution more normal. <br> **Outliers:** There are some houses with very high prices (outliers).  so it is possible to handle them, either by removing them or using them carefully to avoid them having too much influence on the model. <br>**Price ranged:** Most prices are between $100,000 and $300,000, so any prediction outside this range should be evaluated carefully. <br> **`X-axis (Sale Price)`:** Represents the sale prices of the houses. <br> Y-axis (Frequency): Indicates how many houses fall within a certain price range. <br> Shape of the distribution: Most houses are priced in the range of $100,000 to $200,000, which means the distribution is right-skewed (there are fewer high-value houses). <br >Long tail to the right: There are some houses with very high prices (over $500,000), but they are less common.
-Mode: The highest peak indicates the most frequent price of houses. |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/1.HistogramSalePrice.png" width="4000"/>|
+<p align = "center" >
+    <h4 align = "Center"> Histogram of Sale Price </h4>
+</p>
+
+**Positive skew:** Since the distribution is not symmetrical and has a long tail to the right, this can affect some regression models. <br> It may be useful to apply a logarithmic transformation to the prices to make the distribution more normal. <br> **Outliers:** There are some houses with very high prices (outliers).  so it is possible to handle them, either by removing them or using them carefully to avoid them having too much influence on the model. <br>**Price ranged:** Most prices are between $100,000 and $300,000, so any prediction outside this range should be evaluated carefully. <br>
+
+|<p align = "left"> **`X-axis (Sale Price)`:** Represents the sale prices of the houses. <br> Y-axis (Frequency): Indicates how many houses fall within a certain price range. <br> Shape of the distribution: Most houses are priced in the range of $100,000 to $200,000, which means the distribution is right-skewed (there are fewer high-value houses). <br >Long tail to the right: There are some houses with very high prices (over $500,000), but they are less common. <br> Mode: The highest peak indicates the most frequent price of houses.|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/1.HistogramSalePrice.png" width="4000"/>|
+|--------------------------------------------|-----------------------------------------------|
+
 |**Description**| **Box of Sale Price**|
 |          |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/2.BoxplotSalePrice.png" width="4000"/>|
 |**Description**|**Living Area vs Sale Price**|
