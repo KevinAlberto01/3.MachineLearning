@@ -1,12 +1,14 @@
 <p align = "center" >
-    <h1 align = "Center"> Linear Regression</h1>
+    <h1 align = "Center"> Decision Tree Regression</h1>
 </p>
 
 <p align = "center" >
     <h2 align = "Center">🎯 Objetives 🎯</h2>
 </p>
 
-This program trains a **Linear Regression model** to predict the sale price of houses (**SalePrice**) based on various features.  Data processing techniques, splitting into training and test sets, and model evaluation using metrics such as **RMSE** and **R²** are employed.  Additionally, a scatter plot is generated to visualize the relationship between the actual and predicted values.
+This program implements a **decision tree model** (DecisionTreeRegressor) to predict house prices based on various features. 
+The model is trained with a dataset, evaluated using performance metrics, and visualized with a scatter plot that compares the actual and predicted values.
+This code allows evaluating the ability of decision trees to model the relationship between a house's features and its price, with the possibility of detecting overfitting if the training performance is much better than the test performance. 
 
 <p align = "center" >
     <h2 align = "Center">📝 Results 📝 </h2>
@@ -16,13 +18,13 @@ This program trains a **Linear Regression model** to predict the sale price of h
     <h4 align = "Center"> Real vs Predicted </h4>
 </p>
 
-<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.3TraininigMultipleAlgorithms/Models/1.Linear%20Regression/Images/1.RealvsPredicted.png" width="4000"/>
+<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.3TraininigMultipleAlgorithms/Models/2.Decision%20Tree%20Regressor/Images/1.RealvsPredicted.png" width="4000"/>
 
 <p align = "center" >
     <h4 align = "Center"> RMSE vs R2 </h4>
 </p>
 
-<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.3TraininigMultipleAlgorithms/Models/1.Linear%20Regression/Images/2.TrainTest.png" width="4000"/>
+<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.3TraininigMultipleAlgorithms/Models/2.Decision%20Tree%20Regressor/Images/2.TrainTest.png" width="4000"/>
 
 
 <p align = "center" >
