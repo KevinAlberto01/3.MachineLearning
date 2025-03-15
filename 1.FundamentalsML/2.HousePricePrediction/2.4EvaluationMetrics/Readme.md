@@ -54,8 +54,11 @@ Analyze in detail the performance of each evaluated model. Its purpose is to com
 3.Graphical Comparison
 <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.4EvaluationMetrics/Images/3.RMSEvsR.png" width="4000"/>
 
-4.Final Summary
-<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.4EvaluationMetrics/Images/1.LoadResults.png" width="4000"/>
+>[!TIP]
+>Don't worry too much yet, because you haven't done Feature Engineering, Optimization, or Data Augmentation.  These steps should improve the results.
+
+>[!NOTE]
+>Remember that the workflow is first to do up to this point and then go back to compare after applying the methods to select the best model. 
 
 <p align = "center" >
     <h2 align = "Center"> 💻 Program explication (PENDING)💻</h2>
