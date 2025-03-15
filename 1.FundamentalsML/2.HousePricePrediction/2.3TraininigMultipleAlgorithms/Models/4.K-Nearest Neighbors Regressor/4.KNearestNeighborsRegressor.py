@@ -1,47 +1,49 @@
+#1.IMPORT LIBRARIES
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsRegressor
 from sklearn.metrics import mean_squared_error, r2_score
 import matplotlib.pyplot as plt
 
-# Cargar datos
+#2.LOAD DATA
 file_path = '/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/AmesHousing_cleaned.csv'
 df = pd.read_csv(file_path)
 
-# Separar features y target
-X = df.drop(columns=['SalePrice'])
-y = df['SalePrice']
+#3.SEPARATION OF FEATURES AND TARGET
+X = df.drop(columns=['saleprice'])
+y = df['saleprice']
 
-# One-Hot Encoding para las columnas categóricas
+#4.ONE-HOT ENCODING
 X = pd.get_dummies(X, drop_first=True)
 
-# División train-test
+#5.DATA SET SPLITTING
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-# Crear el modelo
+#6.MODEL CREATION AND TRAINING
+#6.1 Create the model
 model = KNeighborsRegressor()
-
-# Entrenar el modelo
+#6.2 Train the model
 model.fit(X_train, y_train)
 
-# Predicciones
+#7.PREDICTION WITH THE MODEL
 y_train_pred = model.predict(X_train)
 y_test_pred = model.predict(X_test)
 
-# Evaluar el modelo
+#8.MODEL EVALUATION
 train_rmse = mean_squared_error(y_train, y_train_pred, squared=False)
 test_rmse = mean_squared_error(y_test, y_test_pred, squared=False)
 train_r2 = r2_score(y_train, y_train_pred)
 test_r2 = r2_score(y_test, y_test_pred)
 
-# Resultados
+#9.PRINTING RESULTS
 print(f"Train RMSE: {train_rmse:.2f}")
 print(f"Test RMSE: {test_rmse:.2f}")
 print(f"Train R²: {train_r2:.2f}")
 print(f"Test R²: {test_r2:.2f}")
 
-# Gráfica
-plt.scatter(y_test, y_test_pred)
+#10.VISUALIZATION OF RESULTS
+plt.figure(figsize=(8, 6))
+plt.scatter(y_test, y_test_pred, color="#87CEEB", alpha=0.6, edgecolors='k')
 plt.xlabel('Real SalePrice')
 plt.ylabel('Predicted SalePrice')
 plt.title('Real vs Predicted SalePrice (K-Nearest Neighbors)')
