@@ -46,16 +46,16 @@ Analyze in detail the performance of each evaluated model. Its purpose is to com
     <h2 align = "Center">📝 Results 📝 </h2>
 </p>
 1.Load of Results 
-<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.4EvaluationMetrics/Images/1.LoadResults.png" width="4000"/>
+<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.4EvaluationMetrics/Images/1.LoadResults.png" width="4000"/>
 
 2.Analysis of Overfitting / Underfitting 
-<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.4EvaluationMetrics/Images/2.AnalysisOverfittingUnderfitting.png" width="4000"/>
+<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.4EvaluationMetrics/Images/2.AnalysisOverfitting.png" width="4000"/>
 
 3.Graphical Comparison
-<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.4EvaluationMetrics/Images/3.GraphicalComparison.png" width="4000"/>
+<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.4EvaluationMetrics/Images/3.RMSEvsR.png" width="4000"/>
 
 4.Final Summary
-<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.4EvaluationMetrics/Images/4.FinalSummary.png" width="4000"/>
+<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.4EvaluationMetrics/Images/1.LoadResults.png" width="4000"/>
 
 <p align = "center" >
     <h2 align = "Center"> 💻 Program explication (PENDING)💻</h2>
