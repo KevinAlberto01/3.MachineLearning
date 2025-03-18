@@ -59,24 +59,24 @@ This analysis helps to detect trends, outliers, and patterns in the data, facili
 |--------------------------------------------|-----------------------------------------------|
 
 <p align = "center" >
-    <h3 align = "Center"> Correlation Matrix (PENDING)</h3>
+    <h3 align = "Center"> Correlation Matrix</h3>
 </p>
 
-|<p align = "left">           |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/4.CorrelationMatrix.png" width="4000"/>|
+|<p align = "left">**1.Identify the variables most correlated with Sale Price:** <br> Look for the last row or column ("saleprice") and see which variables have a dark red color, as they indicate a strong relationship with the sale price. <br> Variables such as gr_liv_area, total_bsmt_sf, and garage_cars are often strongly correlated with the price of a house. <br> <br> **2.Detecting relationships between predictor variables:** <br> Some variables may be highly correlated with each other, which can indicate multicollinearity (a problem for linear models). <br> Example: total_bsmt_sf and 1st_flr_sf are usually highly correlated because most houses have a basement that is the same size as the first floor. <br> <br> **3.Identify less useful variables:** <br>If a variable has very low correlations (close to 0) with the selling price and other variables, it is probably not relevant to the model and could be removed to reduce dimensionality.           |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/4.CorrelationMatrix.png" width="4000"/>|
 |--------------------------------------------|-----------------------------------------------|
 
 <p align = "center" >
-    <h3 align = "Center"> Histogram of log sale Price (PENDING)</h3>
+    <h3 align = "Center"> Histogram of log sale Price</h3>
 </p>
 
-|          |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/5.HistogramLogSalePrice.png" width="4000"/>|
+|<p align = "left"> **1.More normal distribution** <br> Applying the logarithm to the selling price makes the distribution **more symmetric and similar to a normal distribution.** <br> This is useful because many Machine Learning models (such as linear regression) perform better when the target variables have a normal distribution. <br> **2.Less bias to the right** <br> The original price usually has a right-skewed distribution (many low values and few high values). <br>Taking the logarithm reduces this bias and helps improve the model's accuracy. <br>**3.Peaks and outliers** <br> It can be seen that most of the values are concentrated between **11.5** and **12.5**, which means that most of the houses have prices in that range after the logarithmic transformation. <br> There are few values at the extremes, which could indicate **possible outliers** that may require further analysis.|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/5.HistogramLogSalePrice.png" width="4000"/>|
 |--------------------------------------------|-----------------------------------------------|
 
 <p align = "center" >
     <h3 align = "Center"> Living Area vs log Sale Price (PENDING)</h3>
 </p>
 
-|<p align = "left">          |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/6.LivingAreaLogSalePrice.png" width="4000"/>|
+|<p align = "left"> **1.Strong positive relationship** <br> A clear **upward** trend is observed, indicating that the **larger the living area, the higher the selling price.** <br> The relationship seems **almost linear**, which is a good sign for models like linear regression. <br> **2.Some outliers** <br> You can see some houses with **very large living areas (>4000-5000 sqft)** but with lower prices than expected. <br> There are also points away from the general pattern in the lower left (small houses with low prices). <br> These values can affect the model if not handled correctly. <br> **3.Use of logarithm in Sale Price** <br> Applying the logarithm to the price helps make the relationship with the living area clearer and less scattered. <br> Without the logarithm, the relationship might appear more curved or skewed.|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/6.LivingAreaLogSalePrice.png" width="4000"/>|
 
 <p align = "center" >
     <h3 align = "Center"> Sale price by house style (PENDING)</h3>
