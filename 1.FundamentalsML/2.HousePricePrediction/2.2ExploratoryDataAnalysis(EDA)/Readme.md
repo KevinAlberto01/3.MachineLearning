@@ -73,11 +73,12 @@ This analysis helps to detect trends, outliers, and patterns in the data, facili
 |--------------------------------------------|-----------------------------------------------|
 
 <p align = "center" >
-    <h3 align = "Center"> Living Area vs log Sale Price (PENDING)</h3>
+    <h3 align = "Center"> Living Area vs log Sale Price </h3>
 </p>
 
-|<p align = "left"> **1.Strong positive relationship** <br> A clear **upward** trend is observed, indicating that the **larger the living area, the higher the selling price.** <br> The relationship seems **almost linear**, which is a good sign for models like linear regression. <br> **2.Some outliers** <br> You can see some houses with **very large living areas (>4000-5000 sqft)** but with lower prices than expected. <br> There are also points away from the general pattern in the lower left (small houses with low prices). <br> These values can affect the model if not handled correctly. <br> **3.Use of logarithm in Sale Price** <br> Applying the logarithm to the price helps make the relationship with the living area clearer and less scattered. <br> Without the logarithm, the relationship might appear more curved or skewed.|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/6.LivingAreaLogSalePrice.png" width="4000"/>|
 
+|<p align = "left"> **1.Strong positive relationship** <br> A clear **upward** trend is observed, indicating that the **larger the living area, the higher the selling price.** <br> The relationship seems **almost linear**, which is a good sign for models like linear regression. <br> **2.Some outliers** <br> You can see some houses with **very large living areas (>4000-5000 sqft)** but with lower prices than expected. <br> There are also points away from the general pattern in the lower left (small houses with low prices). <br> These values can affect the model if not handled correctly. <br> **3.Use of logarithm in Sale Price** <br> Applying the logarithm to the price helps make the relationship with the living area clearer and less scattered. <br> Without the logarithm, the relationship might appear more curved or skewed.|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/Images/6.LivingAreaLogSalePrice.png" width="4000"/>|
+|--------------------------------------------|-----------------------------------------------|
 <p align = "center" >
     <h3 align = "Center"> Sale price by house style (PENDING)</h3>
 </p>
