@@ -103,6 +103,7 @@ If the values of **`SalePrice`** are very dispersed or have a large difference b
 <p align = "center" >
     <h4 align = "Center">4.1 Comparation </h4>
 </p>
+
 |log1p yes|log1p not|
 |----------|---------------------|
 |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.5Optimization(Tuning%26Hyperparameters)/Images/ComparationModels(Yes).png" width="4000"/>|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.5Optimization(Tuning%26Hyperparameters)/Images/ComparaqtionModels(not).png" width="4000"/>|
@@ -139,7 +140,9 @@ If the values of **`SalePrice`** are very dispersed or have a large difference b
 |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.5Optimization(Tuning%26Hyperparameters)/Images/ModelComparationResults(yes).png" width="4000"/>|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.5Optimization(Tuning%26Hyperparameters)/Images/ModelComparationResults(not).png" width="4000"/>|
 
 
-
+<p align = "center" >
+    <h4 align = "Center">4.1 Comparation </h4>
+</p>
 |RMSEvsR2 yes|RMSEvsR2 not|
 |----------|---------------------|
 |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.5Optimization(Tuning%26Hyperparameters)/Images/RMSEvsR2(yes).png" width="4000"/>|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.5Optimization(Tuning%26Hyperparameters)/Images/RMSEvsR2(not).png" width="4000"/>|
