@@ -6,7 +6,7 @@
     <h2 align = "Center">🎯 Objetives 🎯</h2>
 </p>
 
-The search for the best hyperparameters for 4 key models (Linear, Trees, Forests, and KNN), comparing them and visualizing their metrics to identify the optimal model for predicting SalePrice.
+The search for the best hyperparameters for 4 key models (**Linear, Trees, Forests, and KNN**), comparing them and visualizing their metrics to identify the optimal model for predicting SalePrice.
 Perform hyperparameter optimization for 4 regression models and evaluate which configuration offers the best balance between accuracy (R²) and error (RMSE) when predicting house prices (SalePrice). The approach is to compare multiple combinations of hyperparameters to improve the performance of each model.
 
 * **1.Data Loading and Preparation** 
@@ -57,23 +57,45 @@ Perform hyperparameter optimization for 4 regression models and evaluate which c
     <h2 align = "Center">📝 Results 📝 </h2>
 </p>
 
+<p align = "center" >
+    <h4 align = "Center">1.Summary of SalePrice </h4>
+</p>
+
+Is the result of **`df['saleprice']. describe()`**, which provides key statistics about the variable saleprice (the sale price of the houses).
+
+|<p align = "left"> **`count` (2930)** →  It is the number of records in the **`saleprice`** column.  That is to say, you have data on 2930 houses. <br> **`mean` (180,796.06)** → It is the average selling price of the houses. <br> **`std` (79,886.69)** → It is the standard deviation, which indicates how much the prices vary from the average. <br> **`min` (12,789)** → It is the lowest recorded selling price. <br> **`25%` (129,500)** → It is the first quartile.  It means that 25% of the houses have a price less than or equal to $129,500. <br> **`50%` (160,000)** → It is the median.  Half of the houses cost less than $160,000 and the other half more. <br> **`75%` (213,500)** → It is the third quartile.  75% of the houses cost less than or equal to $213,500. <br> **`max` (755,000)** → It is the highest recorded selling price.|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.5Optimization(Tuning%26Hyperparameters)/Images/SummarySalePrice.png" width="4000"/>|
+|----------|---------------------|
+
+The prices are very dispersed (large difference between minimum and maximum).
+The median ($160,000) is lower than the average ($180,796), which suggests that there are some houses with very high prices that are skewing the average upwards.
+There could be outliers, especially if a few houses have extremely high or low prices.
 Distribution of SalePrices
-<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.5Optimization(Tuning%26Hyperparameters)/Images/DistributionSalePrice.png" width="4000"/>
 
-Summary of SalePrice
-<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.5Optimization(Tuning%26Hyperparameters)/Images/SummarySalePrice.png" width="4000"/>
+<p align = "center" >
+    <h4 align = "Center">2.Distribution of SalePrice (PEnding)</h4>
+</p>
 
-Results
-<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.5Optimization(Tuning%26Hyperparameters)/Images/Results.png" width="4000"/>
+<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.5Optimization(Tuning%26Hyperparameters)/Images/DistributionSalePrice.png" width="4000"/>
+
+<p align = "center" >
+    <h4 align = "Center">3.Results </h4>
+</p>
+
+|<p align = "left">It is recommended to use RobustScaler instead of StandardScaler because there are high values in X, indicating the possible presence of outliers. <br> RobustScaler will help ensure that the scaling is not affected by these extreme values. |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.5Optimization(Tuning%26Hyperparameters)/Images/Results.png" width="4000"/>|
+|----------|---------------------|
+
+<p align = "center" >
+    <h4 align = "Center">4.log1p(yes) vs log1p(no) </h4>
+</p>
 
 |log1p yes|log1p not|
 |----------|---------------------|
-|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.5Optimization(Tuning%26Hyperparameters)/Images/ApplyLog1(yes).png" width="4000"/>|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.5Optimization(Tuning%26Hyperparameters)/Images/ApplyLog1(not).png" width="4000"/>|
+|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.5Optimization(Tuning%26Hyperparameters)/Images/ComparationModels(Yes).png" width="4000"/>|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.5Optimization(Tuning%26Hyperparameters)/Images/ComparaqtionModels(not).png" width="4000"/>|
 
 
 |Comparation of Models yes|Comparation of Models not|
 |----------|---------------------|
-|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.5Optimization(Tuning%26Hyperparameters)/Images/ComparationModels(Yes).png" width="4000"/>|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.5Optimization(Tuning%26Hyperparameters)/Images/ComparationModels(not).png" width="4000"/>|
+|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.5Optimization(Tuning%26Hyperparameters)/Images/ModelComparationResults(yes).png" width="4000"/>|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.5Optimization(Tuning%26Hyperparameters)/Images/ModelComparationResults(not).png" width="4000"/>|
 
 |RMSEvsR2 yes|RMSEvsR2 not|
 |----------|---------------------|
