@@ -1,3 +1,4 @@
+#1.IMPORT LIBRARIES
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -9,45 +10,45 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.neighbors import KNeighborsRegressor
 from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_error
 
-# Load data
+#2.LOAD DATA AND VISUALIZATION
 df = pd.read_csv('/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/AmesHousing_cleaned.csv')
 
-# Show summary of SalePrice
+#2.1 Show summary of SalePrice
 print("Summary of SalePrice:")
 print(df['saleprice'].describe())
 
-# Boxplot of SalePrice (without seaborn)
+#2.2 Boxplot of SalePrice (without seaborn)
 plt.figure(figsize=(8, 4))
 plt.boxplot(df['saleprice'], vert=False)
 plt.title("Distribution of SalePrice")
 plt.xlabel("SalePrice")
 plt.show()
 
-# Prepare data (get_dummies)
+#3.PREPROCESSING DATA
 X = pd.get_dummies(df.drop(columns=['saleprice']), drop_first=True)
 y = df['saleprice']
 
-# Check for nulls and negative values
+#3.1 Check for nulls and negative values
 print("Null in X:", X.isnull().sum().sum())
 print("Negative Value X:", (X < 0).sum().sum())
 
-# Determine type of scaling
+#4.SELECTING THE SCALING TYPE (NORMALIZATION)
 type_scaling = 'StandardScaler' if X.max().max() < 1e3 else 'RobustScaler'
 print(f"Recommended escalation: {type_scaling}")
 
 scaler = StandardScaler() if type_scaling == 'StandardScaler' else RobustScaler()
 X_scaled = scaler.fit_transform(X)
 
-# Apply log1p to SalePrice (optional)
+#5.LOGARITHMIC TRANSFORMATION OF THE TARGET VARIABLE
 log_transform = input("Apply log1p to SalePrice? (y/n): ")
 if log_transform.lower() == 's':
     y = np.log1p(y)
     print("Log transformation applied to SalePrice.")
 
-# Split data
+#6.DIVISION OF DATA INTO TRAINING AND TEST SETS
 X_train, X_test, y_train, y_test = train_test_split(X_scaled, y, test_size=0.2, random_state=42)
 
-# Models
+#7.Training and evaluation of models
 models = {
     'Linear Regression': LinearRegression(),
     'Decision Tree': DecisionTreeRegressor(random_state=42),
@@ -55,18 +56,18 @@ models = {
     'KNN': KNeighborsRegressor()
 }
 
-# Initialize list to store results
+#7.1 Initialize list to store results
 results_list = []
 
-# Train and evaluate each model
+#7.2 Train and evaluate each model
 for name, model in models.items():
     model.fit(X_train, y_train)
 
-    # Predictions
+    #7.3 Predictions
     y_train_pred = model.predict(X_train)
     y_test_pred = model.predict(X_test)
 
-    # Calculate metrics
+    #7.4 Calculate metrics
     train_rmse = np.sqrt(mean_squared_error(y_train, y_train_pred))
     test_rmse = np.sqrt(mean_squared_error(y_test, y_test_pred))
     train_r2 = r2_score(y_train, y_train_pred)
@@ -74,7 +75,7 @@ for name, model in models.items():
     train_mae = mean_absolute_error(y_train, y_train_pred)
     test_mae = mean_absolute_error(y_test, y_test_pred)
 
-    # Save results in list
+    #7.5 Save results in list
     results_list.append({
         'Model': name,
         'Train_RMSE': train_rmse,
@@ -85,23 +86,23 @@ for name, model in models.items():
         'Test_MAE': test_mae
     })
 
-# Convert list to DataFrame
+#7.6 Convert list to DataFrame
 results = pd.DataFrame(results_list)
 
-# Show results
+#7.7 Show results
 print("\nComparation of Models:")
 print(results)
 
-# Save results
+#7.8 Save results
 results.to_csv('/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/2.5Optimization(Tuning&Hyperparameters)/AmesHousing_cleaned.csv', index=False)
 
-# Comparison charts
+#8.GRAPHICAL COMPARISON OF RESULTS 
 fig, axs = plt.subplots(1, 2, figsize=(14, 5))
 
 bar_width = 0.35
 index = np.arange(len(results['Model']))
 
-# RMSE Chart
+#8.1 RMSE Chart
 axs[0].bar(index - bar_width/2, results['Train_RMSE'], bar_width, label='Train RMSE')
 axs[0].bar(index + bar_width/2, results['Test_RMSE'], bar_width, label='Test RMSE')
 axs[0].set_xticks(index)
@@ -111,7 +112,7 @@ axs[0].set_xlabel('Model')
 axs[0].set_ylabel('RMSE')
 axs[0].legend()
 
-# R² Graph
+#8.2 R² Graph
 axs[1].bar(index - bar_width/2, results['Train_R2'], bar_width, label='Train R²')
 axs[1].bar(index + bar_width/2, results['Test_R2'], bar_width, label='Test R²')
 axs[1].set_xticks(index)
@@ -124,7 +125,7 @@ axs[1].legend()
 plt.tight_layout()
 plt.show()
 
-# Hyperparameter tuning with GridSearchCV for Random Forest
+#9.HYPERPARAMETER OPTIMIZATION WITH GRIDSEARCH CV FOR RANDOM FOREST
 param_grid = {
     'n_estimators': [50, 100, 150],
     'max_depth': [None, 10, 20],
@@ -139,7 +140,7 @@ print()
 print("\nBest Parameters for Random Forest:", grid_search.best_params_)
 best_rf_model = grid_search.best_estimator_
 
-# Evaluate the best model from GridSearchCV
+#10.EVALUATION OF THE BEST RANDOM FOREST MODEL
 y_train_pred_best_rf = best_rf_model.predict(X_train)
 y_test_pred_best_rf = best_rf_model.predict(X_test)
 
