@@ -88,14 +88,57 @@ Distribution of SalePrices
     <h4 align = "Center">4.log1p(yes) vs log1p(no) </h4>
 </p>
 
+If the values of **`SalePrice`** are very dispersed or have a large difference between low and high prices, this transformation helps to: 
+* **Reduce the variability** of the data, preventing extreme values from dominating the model. 
+* **Make the distribution more normal (symmetric)**, which improves the accuracy of some Machine Learning algorithms.
+
+**When to answer “y” (yes)**
+* If house prices have a very skewed distribution to the right (long tail with very high values).
+* If the models are not working well because high values are affecting the calculations too much.
+
+**When to answer “n” (no)**
+* If SalePrice already has a distribution close to normal.
+* If you prefer to work with the original values without modifications.
+
+<p align = "center" >
+    <h4 align = "Center">4.1 Comparation </h4>
+</p>
 |log1p yes|log1p not|
 |----------|---------------------|
 |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.5Optimization(Tuning%26Hyperparameters)/Images/ComparationModels(Yes).png" width="4000"/>|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.5Optimization(Tuning%26Hyperparameters)/Images/ComparaqtionModels(not).png" width="4000"/>|
 
+<p align = "center" >
+    <h4 align = "Center">Model Interpretation </h4>
+</p>
+
+**Linear Regression** 
+* Good overall performance with a Test_R2 of 0.845 (84.5% of variance explained).
+* The difference between Train_RMSE (18786) and Test_RMSE (35230) suggests that the model may not generalize perfectly.
+
+**Decision Tree**
+* Train_RMSE of 0 and Train_R2 of 1.0 → the model memorizes the data perfectly (overfitting).
+* Test_RMSE of 35128 indicates that on new data it does not perform as well.
+* Test_MAE of 24304 suggests large errors in new predictions.
+
+**Random Forest.**
+* Best model overall:
+    * Test_R2 of 0.909 (explains 90.9% of variability).
+    * Test_RMSE of 26993, the lowest of all models.
+    * Test_MAE of 16029, the lowest absolute error after Linear Regression.
+    * Seems to strike a good balance between accuracy and generalization.
+
+**KNN (K-Nearest Neighbors).**
+* Worst model:
+    * Test_R2 of 0.697, the lowest (poor generalization).
+    * Test_RMSE of 49282, the highest (highest error).
+    * Test_MAE of 28889, the worst in absolute error.
+    * KNN does not seem to be a good choice for this problem.
 
 |Comparation of Models yes|Comparation of Models not|
 |----------|---------------------|
 |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.5Optimization(Tuning%26Hyperparameters)/Images/ModelComparationResults(yes).png" width="4000"/>|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.5Optimization(Tuning%26Hyperparameters)/Images/ModelComparationResults(not).png" width="4000"/>|
+
+
 
 |RMSEvsR2 yes|RMSEvsR2 not|
 |----------|---------------------|
