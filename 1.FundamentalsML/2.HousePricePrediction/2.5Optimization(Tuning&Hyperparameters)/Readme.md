@@ -135,17 +135,53 @@ If the values of **`SalePrice`** are very dispersed or have a large difference b
     * Test_MAE of 28889, the worst in absolute error.
     * KNN does not seem to be a good choice for this problem.
 
-|Comparation of Models yes|Comparation of Models not|
+|First Part|Second part|
 |----------|---------------------|
-|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.5Optimization(Tuning%26Hyperparameters)/Images/ModelComparationResults(yes).png" width="4000"/>|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.5Optimization(Tuning%26Hyperparameters)/Images/ModelComparationResults(not).png" width="4000"/>|
+**5-fold cross-validation** was performed to **evaluate 18 hyperparameter** combinations. <br> **5 folds** → Data were divided into 5 parts, training on 4 and testing on 1, then rotating. <br> **18 candidates** → 18 different combinations of hyperparameters were tested. <br> **90 fits** → As 5 evaluations were made for each combination, the model was trained and evaluated 90 times in total. | **Is the best set of hyperparameters** found by **`GridSearchCV`** for Random Forest: <br> **`max_depth: 20`** <br> The maximum depth of the trees in the random forest. <br> Too large depths may cause overfitting. <br> **` min_samples_split: 5`** <br> The minimum number of samples needed to split a node. <br>A higher value helps avoid excessive splits and reduces overfitting. <br> **`n_estimators: 150`** <br> The number of trees in the forest. <br> A higher number of trees usually improves accuracy, but increases computation time.|
+
+<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.5Optimization(Tuning%26Hyperparameters)/Images/Parameters.png" width="4000"/>
 
 
-<p align = "center" >
-    <h4 align = "Center">4.1 Comparation </h4>
-</p>
+evaluation of the best Random Forest model, which has been optimized using GridSearchCV with the parameters that improved its performance.
+
 |RMSEvsR2 yes|RMSEvsR2 not|
 |----------|---------------------|
 |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.5Optimization(Tuning%26Hyperparameters)/Images/RMSEvsR2(yes).png" width="4000"/>|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.5Optimization(Tuning%26Hyperparameters)/Images/RMSEvsR2(not).png" width="4000"/>|
+
+**1. Train RMSE (Root Mean Squared Error):**
+Error metric indicating the average difference between predicted and actual values.
+>[!TIP]
+>The lower the RMSE, the better the model is at predicting. 
+
+**2. RMSE (Root Mean Squared Error) test:**
+Measures the error in the test set (data that were not used to train the model). 
+A higher value in the test set compared to the training set may indicate that the model has some overfitting.
+>[!TIP]
+>The model fits the training data very well but does not generalize as well to new data.
+
+**3. Train R² (R-squared):**
+Measure of the goodness of fit of the model. A value close to 1 indicates that the model explains a large proportion of the variability of the output variable. 
+>[!TIP]
+>The Train R² of 0.9783 is excellent, which means that the model explains almost 98% of the variability in house prices in the training data.
+
+**4. R² test (R-squared):**
+Indicates how well the model predicts the values in the test set. An R² of 0.9125 suggests that the model is still very good at predicting prices in the test data.
+>[!TIP]
+>The difference between Train R² and Test R² is somewhat normal, as generally the model fits the training data better than the test data, but this value is still very good.
+
+**5. Train MAE (Mean Absolute Error):**
+Is the mean absolute error between the actual and predicted values. It is a measure of the magnitude of the error without considering its direction. 
+>[!TIP]
+>A Train MAE of 6,476.53 means that, on average, the model predictions deviate from the actual values by 6,476.53 units of the target variable.
+
+**6. MAE (Mean Absolute Error) test:**
+The predictions in the test set deviate more than in the training set, with an average error of 15,842.78. 
+>[!TIP]
+>This higher value suggests that the model has more difficulty predicting the values in the test data, which is expected in many cases due to the variability of the data.
+
+
+>[!NOTE]
+>The optimized **Random Forest model** seems to be a very good choice for predicting house prices, but there is always the opportunity to improve it further by tweaking the model or using other techniques such as feature engineering 
 
 <p align = "center" >
     <h2 align = "Center"> 💻 Program explication (PENDING)💻</h2>
