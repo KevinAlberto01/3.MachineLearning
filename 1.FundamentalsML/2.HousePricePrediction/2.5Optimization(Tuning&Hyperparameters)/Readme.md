@@ -146,7 +146,7 @@ Evaluation of the best Random Forest model, which has been optimized using GridS
 
 |RMSEvsR2 yes|RMSEvsR2 not|
 |----------|---------------------|
-|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.5Optimization(Tuning%26Hyperparameters)/Images/RMSEvsR2(yes).png" width="4000"/>|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.5Optimization(Tuning%26Hyperparameters)/Images/RMSEvsR2(not).png" width="4000"/>|
+|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.5Optimization(Tuning%26Hyperparameters)/Images/ComparaqtionModels(yes).png" width="4000"/>|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.5Optimization(Tuning%26Hyperparameters)/Images/ComparaqtionModels(not).png" width="4000"/>|
 
 **1. Train RMSE (Root Mean Squared Error):**
 Error metric indicating the average difference between predicted and actual values.
@@ -183,6 +183,9 @@ The predictions in the test set deviate more than in the training set, with an a
 >[!NOTE]
 >The optimized **Random Forest model** seems to be a very good choice for predicting house prices, but there is always the opportunity to improve it further by tweaking the model or using other techniques such as feature engineering 
 
+|RMSEvsR2 yes|RMSEvsR2 not|
+|----------|---------------------|
+|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.5Optimization(Tuning%26Hyperparameters)/Images/RMSEvsR2(yes).png" width="4000"/>|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.5Optimization(Tuning%26Hyperparameters)/Images/RMSEvsR2(not).png" width="4000"/>|
 <p align = "center" >
     <h2 align = "Center"> 💻 Program explication (PENDING)💻</h2>
 </p> 
