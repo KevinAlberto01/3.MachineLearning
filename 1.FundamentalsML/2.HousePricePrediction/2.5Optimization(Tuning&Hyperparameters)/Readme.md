@@ -139,10 +139,10 @@ If the values of **`SalePrice`** are very dispersed or have a large difference b
 |----------|---------------------|
 **5-fold cross-validation** was performed to **evaluate 18 hyperparameter** combinations. <br> **5 folds** → Data were divided into 5 parts, training on 4 and testing on 1, then rotating. <br> **18 candidates** → 18 different combinations of hyperparameters were tested. <br> **90 fits** → As 5 evaluations were made for each combination, the model was trained and evaluated 90 times in total. | **Is the best set of hyperparameters** found by **`GridSearchCV`** for Random Forest: <br> **`max_depth: 20`** <br> The maximum depth of the trees in the random forest. <br> Too large depths may cause overfitting. <br> **` min_samples_split: 5`** <br> The minimum number of samples needed to split a node. <br>A higher value helps avoid excessive splits and reduces overfitting. <br> **`n_estimators: 150`** <br> The number of trees in the forest. <br> A higher number of trees usually improves accuracy, but increases computation time.|
 
-<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.5Optimization(Tuning%26Hyperparameters)/Images/Parameters.png" width="4000"/>
+<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.5Optimization(Tuning%26Hyperparameters)/Images/Parameters.png" width="4000"/>
 
 
-evaluation of the best Random Forest model, which has been optimized using GridSearchCV with the parameters that improved its performance.
+Evaluation of the best Random Forest model, which has been optimized using GridSearchCV with the parameters that improved its performance.
 
 |RMSEvsR2 yes|RMSEvsR2 not|
 |----------|---------------------|
