@@ -1,3 +1,4 @@
+#1.IMPORT LIBRARIES
 import pandas as pd
 import numpy as np
 from sklearn.model_selection import train_test_split
@@ -8,26 +9,27 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.neighbors import KNeighborsRegressor
 from sklearn.metrics import mean_squared_error, r2_score, mean_absolute_error
 
-# Cargar el dataset original
+#2.LOAD DATASET
 df = pd.read_csv('/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/AmesHousing_cleaned.csv')
 print(df.columns)
-# Feature Engineering Manual (Ejemplos básicos)
+
+#3.MANUAL FEATURE ENGINEERING
 df['TotalBathrooms'] = df['full_bath'] + df['half_bath'] * 0.5
 df['houseage'] = 2025 - df['year_built']
 df['PricePerSF'] = df['saleprice'] / df['gr_liv_area']
 
-# Preprocesamiento
+#4.DATA PREPROCESSING
 X = pd.get_dummies(df.drop(columns=['saleprice']), drop_first=True)
 y = df['saleprice']
 
-# Escalado
+#4.1 Scaling
 scaler = RobustScaler()
 X_scaled = scaler.fit_transform(X)
 
-# División en train-test
+#4.2 Train-test division
 X_train, X_test, y_train, y_test = train_test_split(X_scaled, y, test_size=0.2, random_state=42)
 
-# Modelos
+#5.DEFINE MODELS
 models = {
     'Linear Regression': LinearRegression(),
     'Decision Tree': DecisionTreeRegressor(random_state=42),
@@ -35,16 +37,15 @@ models = {
     'KNN': KNeighborsRegressor()
 }
 
-# Resultados
+#6.MODEL TRAINING AND EVALUATION
 results = []
-
-# Entrenamiento y evaluación de los modelos
+#6.1 Training and evaluation of models 
 for name, model in models.items():
     model.fit(X_train, y_train)
     y_train_pred = model.predict(X_train)
     y_test_pred = model.predict(X_test)
 
-    # Cálculo de las métricas de evaluación
+    #6.2 Calculation of evaluation metrics
     train_rmse = np.sqrt(mean_squared_error(y_train, y_train_pred))
     test_rmse = np.sqrt(mean_squared_error(y_test, y_test_pred))
     train_r2 = r2_score(y_train, y_train_pred)
@@ -66,9 +67,10 @@ for name, model in models.items():
         'Test MSE': test_mse
     })
 
-# Convertir los resultados en un DataFrame
+#7.SAVING AND DISPLAYING RESULTS
+#7.1 Converting the results into a DataFrame
 results_df = pd.DataFrame(results)
 print(results_df)
 
-# Guardar los resultados en un archivo CSV
+#7.2 Saving the results in a CSV file
 results_df.to_csv('/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/2.6FeatureEngineeringManual/results_feature_engineering_with_metrics.csv', index=False)
