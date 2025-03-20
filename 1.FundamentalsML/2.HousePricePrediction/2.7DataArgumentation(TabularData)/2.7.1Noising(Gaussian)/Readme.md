@@ -1,9 +1,14 @@
 <p align = "center" >
     <h1 align = "Center"> Jittering (Optional)</h1>
 </p>
+
+Applies Data Augmentation on a housing price data set by adding Gaussian noise to the numeric variables. It then saves the augmented data set to a CSV file and displays a comparison between the original and modified values.
+
 <p align = "center" >
     <h2 align = "Center">🎯 Objetives 🎯</h2>
 </p>
+
+Create an augmented version of the original data set by adding a small amount of Gaussian noise to the numerical variables. This can help improve the robustness of Machine Learning models by making them less sensitive to minor variations in the data.
 
 <p align = "center" >
     <h2 align = "Center">📝 Results 📝 </h2>
