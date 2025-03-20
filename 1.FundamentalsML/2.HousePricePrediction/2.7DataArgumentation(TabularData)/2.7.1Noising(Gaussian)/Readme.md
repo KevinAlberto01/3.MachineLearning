@@ -64,4 +64,14 @@ Apply Data Augmentation techniques (Gaussian noise) to increase model robustness
 
 |Pseudocode| Image of the program|
 |----------|---------------------|
-|| <img src = "" width="4000"/>|
+|| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.1Noising(Gaussian)/Images/Noising(Gaussian)/1.ImportLibraries.png" width="4000"/>|
+|| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.1Noising(Gaussian)/Images/Noising(Gaussian)/2.LoadData.png" width="4000"/>|
+|| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.1Noising(Gaussian)/Images/Noising(Gaussian)/3.FeatureEngineering.png" width="4000"/>|
+|| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.1Noising(Gaussian)/Images/Noising(Gaussian)/4.DataPreparationModel.png" width="4000"/>|
+|| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.1Noising(Gaussian)/Images/Noising(Gaussian)/5.DataNormalization.png" width="4000"/>|
+|| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.1Noising(Gaussian)/Images/Noising(Gaussian)/6.ApplyingGaussian.png" width="4000"/>|
+|| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.1Noising(Gaussian)/Images/Noising(Gaussian)/7.DivisionIntoTraining.png" width="4000"/>|
+|| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.1Noising(Gaussian)/Images/Noising(Gaussian)/8.DefineMachineLearning.png" width="4000"/>|
+|| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.1Noising(Gaussian)/Images/Noising(Gaussian)/9.TrainingEvaluation.png" width="4000"/>|
+|| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.1Noising(Gaussian)/Images/Noising(Gaussian)/10.SavingResults.png" width="4000"/>|
+|| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.1Noising(Gaussian)/Images/Noising(Gaussian)/11.MetricVisualization.png" width="4000"/>|
