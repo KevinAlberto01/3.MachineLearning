@@ -15,7 +15,7 @@
 
 |Pseudocode| Image of the program|
 |----------|---------------------|
-|d|<img src ="https://github.com/KevinAlberto01/3.MachineLearning/tree/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.1Noising(Gaussian)/Images/OriginalAugmented(Jitters)" width="4000"/>|
+|d|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.1Noising(Gaussian)/Images/OriginalAugmented(Jitters).png" width="4000"/>|
 
 <p align = "center" >
     <h4 align = "Center"> Jitters (Optional)  </h4>
@@ -26,7 +26,7 @@
 
 |Pseudocode| Image of the program|
 |----------|---------------------|
-||<img src = "https://github.com/KevinAlberto01/3.MachineLearning/tree/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.1Noising(Gaussian)/Images/" width="4000"/>|
+||<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.1Noising(Gaussian)/Images/OriginalAugmented(Jitters).png" width="4000"/>|
 
 <p align = "center" >
     <h1 align = "Center"> Noising(Gaussian)</h1>
@@ -50,7 +50,7 @@ Apply Data Augmentation techniques (Gaussian noise) to increase model robustness
 
 |Data (without Jittering)| Data (With Jittering)|
 |----------|---------------------|
-| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/tree/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.1Noising(Gaussian)/Images/ComparationData.png" width="4000"/>| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/tree/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.1Noising(Gaussian)/Images/ComparationData(Jitters).png" width="4000"/>|
+| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.1Noising(Gaussian)/Images/OriginalAugmented(Jitters).png" width="4000"/>| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.1Noising(Gaussian)/Images/OriginalAugmented(Jitters).png" width="4000"/>|
 
 <p align = "center" >
     <h4 align = "Center"> Graph </h4>
@@ -58,7 +58,7 @@ Apply Data Augmentation techniques (Gaussian noise) to increase model robustness
 
 |Graph (without Jittering)| Graph (With Jittering)|
 |----------|---------------------|
-| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/tree/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.1Noising(Gaussian)/Images/ComparationGraph.png" width="4000"/>| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/tree/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.1Noising(Gaussian)/Images/ComparationGraph(Jitters).png" width="4000"/>|
+| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.1Noising(Gaussian)/Images/OriginalAugmented(Jitters).png" width="4000"/>| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.1Noising(Gaussian)/Images/OriginalAugmented(Jitters).png" width="4000"/>|
 
 <p align = "center" >
     <h2 align = "Center"> 💻 Program explication (Noising Gaussian) 💻</h2>
