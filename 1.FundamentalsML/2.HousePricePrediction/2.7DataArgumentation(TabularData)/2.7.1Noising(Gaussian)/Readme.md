@@ -1,5 +1,5 @@
 <p align = "center" >
-    <h1 align = "Center"> Jittering</h1>
+    <h1 align = "Center"> Jittering (Optional)</h1>
 </p>
 <p align = "center" >
     <h2 align = "Center">🎯 Objetives 🎯</h2>
