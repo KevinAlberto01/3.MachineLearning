@@ -15,7 +15,7 @@
 
 |Pseudocode| Image of the program|
 |----------|---------------------|
-||<img src = "https://github.com/KevinAlberto01/3.MachineLearning/tree/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.1Noising(Gaussian)/Images/OriginalAugmented(Jitters) width="4000"/>|
+|d|<img src ="https://github.com/KevinAlberto01/3.MachineLearning/tree/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.1Noising(Gaussian)/Images/OriginalAugmented(Jitters)" width="4000"/>|
 
 <p align = "center" >
     <h4 align = "Center"> Jitters (Optional)  </h4>
