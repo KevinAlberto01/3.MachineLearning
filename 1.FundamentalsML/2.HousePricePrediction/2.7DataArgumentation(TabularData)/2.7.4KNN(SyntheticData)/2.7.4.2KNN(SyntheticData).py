@@ -45,7 +45,7 @@ def generate_knn_synthetic_data(X, y, k_neighbors=5, synthetic_points=500):
 
 
 # Cargar dataset
-df = pd.read_csv('/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/AmesHousing_cleaned.csv')
+df = pd.read_csv('/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.4KNN(SyntheticData)/Jittering.csv')
 
 # Feature Engineering
 df['TotalBathrooms'] = df['full_bath'] + df['half_bath'] * 0.5
@@ -100,7 +100,7 @@ results_df = pd.DataFrame(results)
 print(results_df)
 
 # Guardar resultados en CSV
-results_df.to_csv('/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/1.6.4KNN(SyntheticData)/results_knn_synthetic_data.csv', index=False)
+results_df.to_csv('/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.4KNN(SyntheticData)/KNN(SyntheticDataJittering).csv', index=False)
 
 plt.figure(figsize=(12, 6))
 
