@@ -10,7 +10,7 @@ from sklearn.neighbors import KNeighborsRegressor
 from sklearn.metrics import mean_squared_error, r2_score
 
 # Load original dataset
-df = pd.read_csv('/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/AmesHousing_cleaned.csv')
+df = pd.read_csv('/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.3GenerativeDataArgumentation/Jittering.csv')
 
 # Feature Engineering Manual (you can add more if you need)
 df['TotalBathrooms'] = df['full_bath'] + df['half_bath'] * 0.5
@@ -69,7 +69,7 @@ results_df = pd.DataFrame(results)
 print(results_df)
 
 # Save results to CSV
-results_df.to_csv('/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/1.6.5GenerativeDataArgumentation/results_feature_engineering.csv', index=False)
+results_df.to_csv('/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.3GenerativeDataArgumentation/GenerativeDataAugmentation(Jittering).csv', index=False)
 
 # Plot bar chart comparing Test RMSE of all models
 plt.figure(figsize=(10, 6))
@@ -78,9 +78,6 @@ plt.ylabel('Test RMSE')
 plt.title('Model Comparison - Test RMSE')
 plt.xticks(rotation=45)
 plt.grid(axis='y', alpha=0.7)
-
-# Save the plot (optional)
-plt.savefig('/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/1.6.5GenerativeDataArgumentation/model_comparison_plot.png')
 
 # Show the plot
 plt.show()

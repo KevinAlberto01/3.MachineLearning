@@ -6,7 +6,11 @@ from tensorflow.keras.layers import Dense, Input
 from sklearn.preprocessing import StandardScaler
 
 # --- Load data ---
-df = pd.read_csv('/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/1.2ExploratoryDataAnalysis(EDA)/AmesHousing_cleaned.csv')
+df = pd.read_csv('/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/AmesHousing_cleaned.csv')
+
+#3.INITIAL DATA SUMMARY
+print("Summary of first dates:")
+print(df.describe())
 
 # --- Preprocessing: Only numerical variables (the autoencoder works better with numbers)  --- Preprocessing: Only numerical variables (the autoencoder works better with numbers) ---
 numeric_cols = df.select_dtypes(include=[np.number]).columns.tolist()
@@ -63,7 +67,7 @@ df_final_augmented = pd.concat([df_synthetic.reset_index(drop=True), df_categori
 
 # --- Save augmented dataset ---
 
-output_path = '/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/1.6DataArgumentation(TabularData)/1.6.5GenerativeDataArgumentation/AmesHousing_augmented_generative.csv'
+output_path = '/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.3GenerativeDataArgumentation/Jittering.csv'
 df_final_augmented.to_csv(output_path, index=False)
 
 # --- Final message ---
