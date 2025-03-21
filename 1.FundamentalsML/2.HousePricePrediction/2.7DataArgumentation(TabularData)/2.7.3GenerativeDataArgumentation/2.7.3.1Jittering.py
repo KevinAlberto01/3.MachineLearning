@@ -32,7 +32,7 @@ df_jittered = pd.DataFrame(scaler.inverse_transform(X_jittered), columns=numeric
 categorical_cols = df.select_dtypes(exclude=[np.number]).columns.tolist()
 df_categorical = df[categorical_cols]
 
-# Take random samples from existing categories for the jittered dataset
+#8.1 Take random samples from existing categories for the jittered dataset
 df_categorical_jittered = df_categorical.sample(n=df_jittered.shape[0], replace=True, random_state=42).reset_index(drop=True)
 
 #9.COMBINE NUMERICAL AND CATEGORICAL VARIABLES
