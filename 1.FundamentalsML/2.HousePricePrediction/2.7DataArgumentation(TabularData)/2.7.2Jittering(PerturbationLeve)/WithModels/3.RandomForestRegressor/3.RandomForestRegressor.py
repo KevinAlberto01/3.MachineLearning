@@ -12,16 +12,17 @@ def add_jitter(X, perturbation_level=0.01):
         X_jittered[col] += perturbation
     return X_jittered
 
-# Load data
-df = pd.read_csv('/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/1.2ExploratoryDataAnalysis(EDA)/AmesHousing_cleaned.csv')
+#3.DATASET LOADING
+df = pd.read_csv('/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/AmesHousing_cleaned.csv')
 
-# Feature Engineering
-df['TotalBathrooms'] = df['Full Bath'] + df['Half Bath'] * 0.5
-df['HouseAge'] = 2025 - df['Year Built']
-df['PricePerSF'] = df['SalePrice'] / df['Gr Liv Area']
+#4.FEATURE ENGINEERING
+df['TotalBathrooms'] = df['full_bath'] + df['half_bath'] * 0.5
+df['HouseAge'] = 2025 - df['year_built']
+df['PricePerSF'] = df['saleprice'] / df['gr_liv_area']
 
-X = pd.get_dummies(df.drop(columns=['SalePrice']), drop_first=True)
-y = df['SalePrice']
+#5.DATA PREPARATION
+X = pd.get_dummies(df.drop(columns=['saleprice']), drop_first=True)
+y = df['saleprice']
 
 scaler = RobustScaler()
 X_scaled = scaler.fit_transform(X)
