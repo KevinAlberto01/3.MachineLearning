@@ -16,11 +16,11 @@ Create an augmented version of the original data set by adding a small amount of
 
 |Pseudocode| Image of the program|
 |----------|---------------------|
-|d|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.1Noising(Gaussian)/Images/FirstDate(Jitters).png" width="4000"/>|
+|d|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.2Jittering(PerturbationLeve)/Images/Data(Jittering).png" width="4000"/>|
 
 |Pseudocode| Image of the program|
 |----------|---------------------|
-|d|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.1Noising(Gaussian)/Images/OriginalAugmented(Jitters).png" width="4000"/>|
+|d|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.2Jittering(PerturbationLeve)/Images/Comparation(Jittering).png" width="4000"/>|
 
 
 <p align = "center" >
@@ -29,15 +29,15 @@ Create an augmented version of the original data set by adding a small amount of
 
 |Pseudocode| Image of the program|
 |----------|---------------------|
-|**pandas** for data manipulation. <br> **numpy** for generating Gaussian noise.|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.1Noising(Gaussian)/Images/Jittering/1.ImportLibraries.png" width="4000"/>|
-|The CSV file containing the clean data from the Ames Housing dataset is loaded.|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.1Noising(Gaussian)/Images/Jittering/2.LoadingDataSet.png" width="4000"/>|
-|Descriptive statistics of the numerical variables are printed to better understand the distribution of the data before applying the modification.|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.1Noising(Gaussian)/Images/Jittering/3.DisplayInitial.png" width="4000"/>|
-|Only numeric columns (**int** or **float** type) are selected to apply Gaussian noise to them. This avoids modifying categorical variables.|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.1Noising(Gaussian)/Images/Jittering/4.SelectNumeric.png" width="4000"/>|
-|A **noise factor** corresponding to **1% of the standard deviation** of each variable is defined. This ensures that the added noise is proportional to the scale of the data.|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.1Noising(Gaussian)/Images/Jittering/5.DefineNoise.png" width="4000"/>|
-|A copy of the original dataframe is generated to apply the modification without affecting the original data.|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.1Noising(Gaussian)/Images/Jittering/6.CreateEnlarged.png" width="4000"/>|
-|For each numerical column: <br> A noise quantity with a **normal (Gaussian)** distribution with mean 0 and standard deviation proportional to the column is generated. <br>The noise is added to the corresponding column in **`df_augmented`**. <br> This introduces a slight variation in the data without changing the overall structure of the dataset.|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.1Noising(Gaussian)/Images/Jittering/7.ApplyGaussian.png" width="4000"/>|
-|The new augmented dataset is saved in a CSV file for later use in model training.|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.1Noising(Gaussian)/Images/Jittering/8.SaveAugmented.png" width="4000"/>|
-|To verify that the transformation was applied correctly, the first 5 values of the **`saleprice`** column before and after applying the noise are compared.|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.1Noising(Gaussian)/Images/Jittering/9.CompareOriginal.png" width="4000"/>|
+||<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.2Jittering(PerturbationLeve)/Images/L1.ImportLibraries.png" width="4000"/>|
+||<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.2Jittering(PerturbationLeve)/Images/L2.DataLoading.png" width="4000"/>|
+||<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.2Jittering(PerturbationLeve)/Images/L3.InitialDataSummary.png" width="4000"/>|
+||<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.2Jittering(PerturbationLeve)/Images/L4.SelectionNumericColumns.png" width="4000"/>|
+||<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.2Jittering(PerturbationLeve)/Images/L5.DefinitionJitteringFunction.png" width="4000"/>|
+||<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.2Jittering(PerturbationLeve)/Images/L6.ApplicationJittering.png" width="4000"/>|
+||<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.2Jittering(PerturbationLeve)/Images/L7.ComparisonOA.png" width="4000"/>|
+||<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.2Jittering(PerturbationLeve)/Images/L8.SavingAugmentedDataset.png" width="4000"/>|
+||<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.2Jittering(PerturbationLeve)/Images/L9.FinalMessages.png" width="4000"/>|
 
 <p align = "center" >
     <h1 align = "Center"> Jittering Perturbation Leve </h1>
