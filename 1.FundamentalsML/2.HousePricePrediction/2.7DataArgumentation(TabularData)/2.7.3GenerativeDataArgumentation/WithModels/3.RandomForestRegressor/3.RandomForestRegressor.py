@@ -7,7 +7,7 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_squared_error, r2_score
 
 #2.LOADING DATASET
-df = pd.read_csv('/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/1.2ExploratoryDataAnalysis(EDA)/AmesHousing_cleaned.csv')
+df = pd.read_csv('/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.3GenerativeDataArgumentation/Jittering.csv')
 
 #3.ENCODING CATEGORICAL VARIABLES
 categorical_cols = df.select_dtypes(include=['object']).columns
@@ -16,8 +16,8 @@ for col in categorical_cols:
     df[col] = le.fit_transform(df[col])
 
 #4.SEPARATING INDEPENDENT(X) AND DEPENDENT VARIABLES(Y)
-X = df.drop(columns=['SalePrice'])
-y = df['SalePrice']
+X = df.drop(columns=['saleprice'])
+y = df['saleprice']
 
 #5.SCALING THE FEATURES
 scaler = RobustScaler()
