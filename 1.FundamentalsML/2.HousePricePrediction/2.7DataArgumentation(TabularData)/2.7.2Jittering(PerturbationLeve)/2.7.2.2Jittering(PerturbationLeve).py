@@ -19,7 +19,7 @@ def add_jitter(X, perturbation_level=0.01):
     return X_jittered
 
 #3.LOADING DATASET
-df = pd.read_csv('/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/AmesHousing_cleaned.csv')
+df = pd.read_csv('/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.2Jittering(PerturbationLeve)/Jittering.csv')
 
 #4.FEATURE ENGINEERING
 df['TotalBathrooms'] = df['full_bath'] + df['half_bath'] * 0.5
@@ -75,7 +75,7 @@ for name, model in models.items():
 results_df = pd.DataFrame(results)
 
 #8.2 Save results
-results_df.to_csv('model_comparison_with_jittering.csv', index=False)
+results_df.to_csv('/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.2Jittering(PerturbationLeve)/model_comparison_with_jittering.csv', index=False)
 
 #8.3 Print
 print(results_df)

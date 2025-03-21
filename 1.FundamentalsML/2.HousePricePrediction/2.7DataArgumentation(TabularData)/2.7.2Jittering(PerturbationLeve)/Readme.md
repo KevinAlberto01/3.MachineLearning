@@ -90,7 +90,7 @@ This program is to compare the performance of different Machine Learning models 
 
 |Data (without Jittering)| Data (With Jittering)|
 |----------|---------------------|
-| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.2Jittering(PerturbationLeve)/Images/ComparationData.png" width="4000"/>| <img src = "" width="4000"/>|
+| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.2Jittering(PerturbationLeve)/Images/ComparationData.png" width="4000"/>| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.2Jittering(PerturbationLeve)/Images/ComparationData(Jittering).png" width="4000"/>|
 
 <p align = "center" >
     <h4 align = "Center"> Graph </h4>
@@ -98,7 +98,7 @@ This program is to compare the performance of different Machine Learning models 
 
 |Graph (without Jittering)| Graph (With Jittering)|
 |----------|---------------------|
-| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.2Jittering(PerturbationLeve)/Images/ComparationGraph.png" width="4000"/>| <img src = "" width="4000"/>|
+| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.2Jittering(PerturbationLeve)/Images/ComparationGraph.png" width="4000"/>| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.2Jittering(PerturbationLeve)/Images/ComparationGraph(Jittering).png" width="4000"/>|
 
 <p align = "center" >
     <h2 align = "Center"> 💻 Program explication (Jittering (Perturbation Leve)) 💻</h2>
