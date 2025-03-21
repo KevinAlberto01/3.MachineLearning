@@ -45,10 +45,18 @@ Create an augmented version of the original data set by adding a small amount of
     <h1 align = "Center"> Generative Data Argumentation </h1>
 </p>
 
+This code implements a complete Machine Learning workflow to predict house prices using regression methods. We work with a dataset that has been augmented using Jittering (Data Augmentation for tabular data).
 
 <p align = "center" >
     <h2 align = "Center">🎯 Objetives 🎯</h2>
 </p>
+
+* Predict house prices using Machine Learning models.
+* Compare the performance of different regression algorithms. 
+* Apply Feature Engineering techniques to improve the model. 
+* Use Data Augmentation (Jittering) to generate more data and improve generalization.
+* Evaluate the models with metrics such as RMSE and R². 
+* Save and visualize results for later analysis.
 
 <p align = "center" >
     <h2 align = "Center">📝 Results 📝 </h2>
@@ -76,4 +84,14 @@ Create an augmented version of the original data set by adding a small amount of
 
 |Pseudocode| Image of the program|
 |----------|---------------------|
-|| <img src = "" width="4000"/>|
+|**pandas:** Loading and manipulating tabular data. <br> **numpy:** Mathematical calculations, such as square root for RMSE. <br> **matplotlib.pyplot:** Create plots to compare models. <br> **sklearn.model_selection.train_test_split:** Split data into training and testing. <br> **sklearn.preprocessing.RobustScaler:** Scale data robustly against outliers. <br> **sklearn.preprocessing.LabelEncoder:** Convert categorical variables into numbers. <br> **sklearn models:** Linear Regression, Decision Tree, Random Forest, KNN. <br> **sklearn.metrics:** Calculate RMSE and R² to evaluate models.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.3GenerativeDataArgumentation/Images/G1.ImportLibraries.png" width="4000"/>|
+|The CSV file is read with the data that has already been augmented using **jittering**. <br> **`df`** contains all the columns of the dataset.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.3GenerativeDataArgumentation/Images/G2.LoadingDataset.png" width="4000"/>|
+|**New features** derived from existing columns are created: <br> **`TotalBathrooms`:** <br> Full and half full bathrooms and half half half bathrooms are added. <br> **`HouseAge:`** <br> The age of the house is calculated by subtracting the year of construction to 2025. <br> **`PricePerSF`:** <br> Price per square foot of the house (saleprice divided by gr_liv_area).| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.3GenerativeDataArgumentation/Images/G3.FeatureEnginnering.png" width="4000"/>|
+|**Identifies categorical columns** (text or categories). <br> **Convert categories to numbers** using **`LabelEncoder()`**. <br> Machine learning models cannot process text directly, they need numbers.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.3GenerativeDataArgumentation/Images/G4.CodingCategorical.png" width="4000"/>|
+|**`X`:** All columns except **`saleprice`** (predictor variables). <br> **`y`**: The column **`saleprice`**, which is the target variable we want to predict.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.3GenerativeDataArgumentation/Images/G5.DefiningVariables.png" width="4000"/>|
+|It is robust to **outliers**, unlike **`StandardScaler()`**. <br> It takes care of normalizing the values, reducing the influence of extreme values. <br> **`fit_transform(X)`:** <br> Fits and transforms data in a single operation.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.3GenerativeDataArgumentation/Images/G6.ScalingNumerical.png" width="4000"/>|
+|Divide the data into: <br> **80%** training (**`X_train`**, **`y_train`**). <br> **`20%`** test (**`X_test`**, **`y_test`**). <br> **`random_state=42`:** Ensures that the division is reproducible.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.3GenerativeDataArgumentation/Images/G7.DivideTrainingTest.png" width="4000"/>|
+|**Linear Regression** (**`LinearRegression`**) <br> A simple model that assumes a linear relationship between variables. <br> **DecisionTreeRegressor** (**`DecisionTreeRegressor`**) <br> A nonlinear model that divides data into decision nodes. <br> **Random Forest** (**`RandomForestRegressor`**) <br> Several decision trees combined to improve prediction. <br> **K-Nearest Neighbors** (**`KNeighborsRegressor`**) <br> Predicts the value based on the K nearest neighbors.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.3GenerativeDataArgumentation/Images/G8.DefineModels.png" width="4000"/>|
+|Each model is trained with **`model.fit(X_train, y_train)`** <br> **Predictions** are made on **`X_train`** and **`X_test`**. <br> Evaluation metrics are calculated: <br> **RMSE (Root Mean Squared Error):** Root Mean Squared Error. <br> **R² Score:** How well the model explains the variability of the data. <br> The results are stored in a **`results[]`** list.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.3GenerativeDataArgumentation/Images/G9.TrainEvaluate.png" width="4000"/>|
+|**`Results`** are converted into a **DataFrame** and saved in a CSV file.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.3GenerativeDataArgumentation/Images/G10.ResultsCSV.png" width="4000"/>|
+|A **bar chart** is created to compare the RMSE of the models.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.3GenerativeDataArgumentation/Images/G11.Graphical.png" width="4000"/>|
