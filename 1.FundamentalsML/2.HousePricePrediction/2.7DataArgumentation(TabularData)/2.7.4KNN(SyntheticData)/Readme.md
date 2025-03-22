@@ -45,13 +45,18 @@ Create an augmented version of the original data set by adding a small amount of
     <h1 align = "Center"> Generative Data Argumentation </h1>
 </p>
 
+This code implements a Machine Learning workflow for house price prediction. It utilizes feature engineering techniques and data augmentation via interpolation with K-Nearest Neighbors (KNN). Then, four regression models are trained and compared:
 
+* Linear Regression
+* Decision Tree
+* Random Forest
+* KNN Regressor
 
 <p align = "center" >
     <h2 align = "Center">🎯 Objetives 🎯</h2>
 </p>
 
-
+The purpose of this code is to improve the accuracy of regression models by generating synthetic data with KNN. This allows the models to generalize better and reduce the prediction error in estimating the price of homes.
 
 <p align = "center" >
     <h2 align = "Center">📝 Results 📝 </h2>
@@ -74,15 +79,15 @@ Create an augmented version of the original data set by adding a small amount of
 | <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.4KNN(SyntheticData)/Images/ComparationGraph.png" width="4000"/>| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.4KNN(SyntheticData)/Images/ComparationGraph(Jittering).png" width="4000"/>|
 
 <p align = "center" >
-    <h2 align = "Center"> 💻 Program explication (Jittering (Perturbation Leve)) 💻</h2>
+    <h2 align = "Center"> 💻 KNN (Systhetic Data) 💻</h2>
 </p> 
 
 |Pseudocode| Image of the program|
 |----------|---------------------|
-|| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.4KNN(SyntheticData)/Images/K1.ImportingLibraries.png" width="4000"/>|
-|| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.4KNN(SyntheticData)/Images/K2.FunctionGenerate.png" width="4000"/>|
-|| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.4KNN(SyntheticData)/Images/K3.LoadingPreparing.png" width="4000"/>|
-|| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.4KNN(SyntheticData)/Images/K4.PreaparationModeling.png" width="4000"/>|
-|| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.4KNN(SyntheticData)/Images/K5.SplittingTrainingTesting.png" width="4000"/>|
-|| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.4KNN(SyntheticData)/Images/K6.TrainingModels.png" width="4000"/>|
-|| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.4KNN(SyntheticData)/Images/K7.SavingVisualizing.png" width="4000"/>|
+|**pandas** and **numpy:** Data handling. <br> **matplotlib** and **seaborn:** Plotting. <br> **sklearn:** Preprocessing, ML models, and metrics.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.4KNN(SyntheticData)/Images/K1.ImportingLibraries.png" width="4000"/>|
+|**KNN** (**`NearestNeighbors`**) is used to find nearby points in the original data.<br> A real point is chosen, and its nearest neighbors are searched for. <br> Interpolation between the original point and a random neighbor generates new synthetic points. <br> The synthetic data is then added to the original data.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.4KNN(SyntheticData)/Images/K2.FunctionGenerate.png" width="4000"/>|
+|**TotalBathrooms:** Full bathrooms + half bathrooms. <br> **HouseAge:** Age of the house in years. <br> **PricePerSF:** Price per square foot.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.4KNN(SyntheticData)/Images/K3.LoadingPreparing.png" width="4000"/>|
+|The feature set (**`X`**) and the target variable (**`y`**) are separated. <br> Categorical variables are converted into dummies. <br> **`RobustScaler`** is used to prevent extreme values from affecting training. <br> 500 synthetic points are generated with KNN and combined with the original data.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.4KNN(SyntheticData)/Images/K4.PreaparationModeling.png" width="4000"/>|
+|80% of the data is used for training, and 20% is used for testing.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.4KNN(SyntheticData)/Images/K5.SplittingTrainingTesting.png" width="4000"/>|
+|Four Machine Learning models are defined: <br> **Linear Regression** <br> **Decision Tree** <br> **Random Forest** <br> **KNN Regressor** <br> Each model is trained and evaluated with: <br> **RMSE (Root Mean Squared Error):** Average prediction error. <br> **R² (Coefficient of Determination)**: How well the model explains the variability of the data.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.4KNN(SyntheticData)/Images/K6.TrainingModels.png" width="4000"/>|
+|The results are saved to a CSV. <br> The models are compared with bar plots: <br> Test RMSE: Which model has the lowest error. <br> Test R²: Which model has the best accuracy.| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.4KNN(SyntheticData)/Images/K7.SavingVisualizing.png" width="4000"/>|
