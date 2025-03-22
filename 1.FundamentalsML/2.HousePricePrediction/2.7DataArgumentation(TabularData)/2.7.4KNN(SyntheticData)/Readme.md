@@ -79,4 +79,10 @@ Create an augmented version of the original data set by adding a small amount of
 
 |Pseudocode| Image of the program|
 |----------|---------------------|
-|| <img src = "" width="4000"/>|
+|| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.4KNN(SyntheticData)/Images/K1.ImportingLibraries.png" width="4000"/>|
+|| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.4KNN(SyntheticData)/Images/K2.FunctionGenerate.png" width="4000"/>|
+|| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.4KNN(SyntheticData)/Images/K3.LoadingPreparing.png" width="4000"/>|
+|| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.4KNN(SyntheticData)/Images/K4.PreaparationModeling.png" width="4000"/>|
+|| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.4KNN(SyntheticData)/Images/K5.SplittingTrainingTesting.png" width="4000"/>|
+|| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.4KNN(SyntheticData)/Images/K6.TrainingModels.png" width="4000"/>|
+|| <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/2.7DataArgumentation(TabularData)/2.7.4KNN(SyntheticData)/Images/K7.SavingVisualizing.png" width="4000"/>|
