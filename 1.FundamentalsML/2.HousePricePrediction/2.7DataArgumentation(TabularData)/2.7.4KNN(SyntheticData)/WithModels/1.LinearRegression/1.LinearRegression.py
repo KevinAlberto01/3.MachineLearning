@@ -28,16 +28,18 @@ def generate_knn_synthetic_data(X, y, k_neighbors=5, synthetic_points=500):
     y_augmented = np.concatenate([y.flatten(), y_synthetic])
     return X_augmented, y_augmented
 
-# Load data
-df = pd.read_csv('/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/1.2ExploratoryDataAnalysis(EDA)/AmesHousing_cleaned.csv')
+#3.DATASET LOADING
+df = pd.read_csv('/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/2.2ExploratoryDataAnalysis(EDA)/AmesHousing_cleaned.csv')
 
-# Feature Engineering
-df['TotalBathrooms'] = df['Full Bath'] + df['Half Bath'] * 0.5
-df['HouseAge'] = 2025 - df['Year Built']
-df['PricePerSF'] = df['SalePrice'] / df['Gr Liv Area']
+#4.FEATURE ENGINEERING
+df['TotalBathrooms'] = df['full_bath'] + df['half_bath'] * 0.5
+df['HouseAge'] = 2025 - df['year_built']
+df['PricePerSF'] = df['saleprice'] / df['gr_liv_area']
 
-X = pd.get_dummies(df.drop(columns=['SalePrice']), drop_first=True)
-y = df['SalePrice']
+#4.SEPARATING INDEPENDENT(X) AND DEPENDENT VARIABLES(Y)
+X = pd.get_dummies(df.drop(columns=['saleprice']), drop_first=True)
+y = df['saleprice']
+
 
 scaler = RobustScaler()
 X_scaled = scaler.fit_transform(X)
