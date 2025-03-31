@@ -6,7 +6,15 @@ file_path = '/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.Hous
 df = pd.read_csv(file_path)
 
 raws, columns = df.shape
-print(f"Numers of rows: {raws}")
-print(f"Numers of columns: {columns}")
+#print(f"Numers of rows: {raws}")
+#print(f"Numers of columns: {columns}")
+#print(df.head())
 
-print(df.head())
+null = df.isnull().sum()
+null = null[null > 0]
+#print(null)
+
+duplicate = df.duplicated().sum()
+#print(duplicate)
+
+print(df.info())
