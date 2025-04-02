@@ -3,7 +3,8 @@ import pandas as pd
 import seaborn as sns 
 import matplotlib.pyplot as plt
 import numpy as np 
-
+from scipy.stats import shapiro
+from sklearn.preprocessing import MinMaxScaler
 # Configuración global de gráficos
 plt.rcParams['figure.figsize'] = (10, 6) 
 
@@ -91,15 +92,24 @@ sns.boxplot(y = df ['SalePrice'])
 plt.title('Boxplot of SalePrice')
 plt.show()
 
+stat, p = shapiro(df['SalePrice'])
+print(f'P-value for SalePrice: {p}') 
+
 plt.figure(figsize = (10,8))
 sns.boxplot(y = df ['Gr Liv Area'])
 plt.title('Boxplot of Gr Liv Area')
 plt.show()
 
+stat, p = shapiro(df['Gr Liv Area'])
+print(f'P-value for Gr Liv Area: {p}') 
+
 plt.figure(figsize = (10,8))
 sns.boxplot(y = df ['Overall Qual'])
 plt.title('Boxplot of Overall Qual')
 plt.show()
+
+stat, p = shapiro(df['Overall Qual'])
+print(f'P-value for Overall Qual: {p}') 
 
 print(df['SalePrice'].skew())
 print(df['Gr Liv Area'].skew())
@@ -129,13 +139,28 @@ axes[2].set_title('Distribution of Overall Qual before log')
 plt.show()
 
 df['SalePrice_log'] = np.log1p(df['SalePrice'])
-df['Gr  Liv Area_log'] = np.log1p(df['Gr Liv Area'])
+df['Gr Liv Area_log'] = np.log1p(df['Gr Liv Area'])
 
 fig, axes = plt.subplots(1, 2,  figsize = (12, 5))
 sns.histplot(df['SalePrice_log'], kde = True, bins = 30, ax = axes[0])
 axes[0].set_title("Distribution of SalePrice after log")
 
-sns.histplot(df['Gr  Liv Area_log'], kde = True, bins = 30, ax = axes[1])
+sns.histplot(df['Gr Liv Area_log'], kde = True, bins = 30, ax = axes[1])
 axes[1].set_title("Distribution of Gr Liv Area after log")
+
+plt.show()
+
+scaler = MinMaxScaler()
+df[['SalePrice_log', 'Gr Liv Area_log']] = scaler.fit_transform(df[['SalePrice_log', 'Gr Liv Area_log']])
+
+print(df[['SalePrice_log', 'Gr Liv Area_log']].head())
+
+fig, axes = plt.subplots(1, 2, figsize = (12, 5))
+
+sns.histplot(df['SalePrice_log'], kde=True, bins = 30, ax = axes[0])
+axes[0].set_title("SalePrice after MinMaxScaler")
+
+sns.histplot(df['Gr Liv Area_log'], kde=True, bins = 30, ax = axes[1])
+axes[1].set_title("Gr Liv Area after MinMaxScaler")
 
 plt.show()
