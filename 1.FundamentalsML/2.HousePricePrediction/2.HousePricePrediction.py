@@ -9,7 +9,12 @@ from sklearn.model_selection import train_test_split
 from sklearn.neighbors import KNeighborsRegressor
 from sklearn.metrics import mean_squared_error
 from sklearn.svm import SVR
-
+from sklearn.neural_network import MLPRegressor
+from sklearn.linear_model import Ridge
+from sklearn.metrics import mean_squared_error
+from sklearn.linear_model import Lasso
+import xgboost as xgb
+import lightgbm as lgb
 # Configuración global de gráficos
 plt.rcParams['figure.figsize'] = (10, 6) 
 
@@ -229,3 +234,127 @@ print(f"MSE for Gr Liv Area: {mse1:.4f}")
 print(f"MSE for Overall Qual: {mse2:.4f}") 
 
 """
+
+"""
+#-----------------3. Redes Neuronales (MLP)----------------- #
+
+#SOLO PARA Gr Liv Area_log
+x1 = df[['Gr Liv Area_log']]
+y = df['SalePrice_log']
+
+x1_train, x1_test, y_train, y_test = train_test_split(x1, y, test_size = 0.2, random_state = 42)
+
+mlp1 = MLPRegressor(hidden_layer_sizes=(100,), max_iter=500, random_state=42)
+mlp1.fit(x1_train, y_train)
+y_pred_mlp1 = mlp1.predict(x1_test)
+
+#SOLO PARA Overall Qual
+x2 = df[['Overall Qual']]
+x2_train, x2_test, y_train, y_test = train_test_split(x2, y, test_size = 0.2, random_state = 42)
+
+mlp2 = MLPRegressor(hidden_layer_sizes=(100,), max_iter=500, random_state=42)
+mlp2.fit(x2_train, y_train)
+y_pred_mlp2 = mlp2.predict(x2_test)
+
+#Evaluar Modelos
+print()
+mse1 = mean_squared_error(y_test, y_pred_mlp1)
+mse2 = mean_squared_error(y_test, y_pred_mlp2)
+
+print(f"MSE for Gr Liv Area: {mse1:.4f}")
+print(f"MSE for Overall Qual: {mse2:.4f}") 
+
+"""
+
+"""
+#----------------- 4.Ridge Regression (L2 Regularization) ----------------- #
+
+#SOLO PARA Gr Liv Area_log
+x1 = df[['Gr Liv Area_log']]
+y = df['SalePrice_log']
+
+x1_train, x1_test, y_train, y_test = train_test_split(x1, y, test_size = 0.2, random_state = 42)
+
+rr1 = Ridge(alpha = 1.0)
+rr1.fit(x1_train, y_train)
+y_pred_rr1 = rr1.predict(x1_test)
+
+#SOLO PARA Overall Qual
+x2 = df[['Overall Qual']]
+x2_train, x2_test, y_train, y_test = train_test_split(x2, y, test_size = 0.2, random_state = 42)
+
+rr2 = Ridge(alpha = 1.0)
+rr2.fit(x2_train, y_train)
+y_pred_rr2 = rr2.predict(x2_test)
+
+#Evaluar Modelos
+print()
+mse1 = mean_squared_error(y_test, y_pred_rr1)
+mse2 = mean_squared_error(y_test, y_pred_rr2)
+
+print(f"MSE for Gr Liv Area: {mse1:.4f}")
+print(f"MSE for Overall Qual: {mse2:.4f}") 
+
+"""
+
+"""
+#----------------- 5.Laso Regression (L1 Regularization) ----------------- #
+
+#SOLO PARA Gr Liv Area_log
+x1 = df[['Gr Liv Area_log']]
+y = df['SalePrice_log']
+
+x1_train, x1_test, y_train, y_test = train_test_split(x1, y, test_size = 0.2, random_state = 42)
+
+rr1 = Lasso(alpha = 1.0)
+rr1.fit(x1_train, y_train)
+y_pred_rr1 = rr1.predict(x1_test)
+
+#SOLO PARA Overall Qual
+x2 = df[['Overall Qual']]
+x2_train, x2_test, y_train, y_test = train_test_split(x2, y, test_size = 0.2, random_state = 42)
+
+rr2 = Lasso(alpha = 1.0)
+rr2.fit(x2_train, y_train)
+y_pred_rr2 = rr2.predict(x2_test)
+
+#Evaluar Modelos
+print()
+mse1 = mean_squared_error(y_test, y_pred_rr1)
+mse2 = mean_squared_error(y_test, y_pred_rr2)
+
+print(f"MSE for Gr Liv Area: {mse1:.4f}")
+print(f"MSE for Overall Qual: {mse2:.4f}") 
+
+"""
+
+#"""
+#----------------- 5.Laso Regression (L1 Regularization) ----------------- #
+
+#SOLO PARA Gr Liv Area_log
+x1 = df[['Gr Liv Area_log']]
+y = df['SalePrice_log']
+
+x1_train, x1_test, y_train, y_test = train_test_split(x1, y, test_size = 0.2, random_state = 42)
+
+rr1 = Lasso(alpha = 1.0)
+rr1.fit(x1_train, y_train)
+y_pred_rr1 = rr1.predict(x1_test)
+
+#SOLO PARA Overall Qual
+x2 = df[['Overall Qual']]
+x2_train, x2_test, y_train, y_test = train_test_split(x2, y, test_size = 0.2, random_state = 42)
+
+rr2 = Lasso(alpha = 1.0)
+rr2.fit(x2_train, y_train)
+y_pred_rr2 = rr2.predict(x2_test)
+
+#Evaluar Modelos
+print()
+mse1 = mean_squared_error(y_test, y_pred_rr1)
+mse2 = mean_squared_error(y_test, y_pred_rr2)
+
+print(f"MSE for Gr Liv Area: {mse1:.4f}")
+print(f"MSE for Overall Qual: {mse2:.4f}") 
+
+#"""
