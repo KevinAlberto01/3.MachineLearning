@@ -5,6 +5,11 @@ import matplotlib.pyplot as plt
 import numpy as np 
 from scipy.stats import shapiro
 from sklearn.preprocessing import MinMaxScaler
+from sklearn.model_selection import train_test_split
+from sklearn.neighbors import KNeighborsRegressor
+from sklearn.metrics import mean_squared_error
+from sklearn.svm import SVR
+
 # Configuración global de gráficos
 plt.rcParams['figure.figsize'] = (10, 6) 
 
@@ -164,3 +169,63 @@ sns.histplot(df['Gr Liv Area_log'], kde=True, bins = 30, ax = axes[1])
 axes[1].set_title("Gr Liv Area after MinMaxScaler")
 
 plt.show()
+
+"""
+#-----------------1. KNN REGRESSION----------------- #
+
+#SOLO PARA Gr Liv Area_log
+x1 = df[['Gr Liv Area_log']]
+y = df['SalePrice_log']
+
+x1_train, x1_test, y_train, y_test = train_test_split(x1, y, test_size = 0.2, random_state = 42)
+
+knn1 = KNeighborsRegressor(n_neighbors=5)
+knn1.fit(x1_train, y_train)
+y_pred_knn1 = knn1.predict(x1_test)
+
+#SOLO PARA Overall Qual
+x2 = df[['Overall Qual']]
+x2_train, x2_test, y_train, y_test = train_test_split(x2, y, test_size = 0.2, random_state = 42)
+
+knn2 = KNeighborsRegressor(n_neighbors=5)
+knn2.fit(x2_train, y_train)
+y_pred_knn2 = knn2.predict(x2_test)
+
+#Evaluar Modelos
+print()
+mse1 = mean_squared_error(y_test, y_pred_knn1)
+mse2 = mean_squared_error(y_test, y_pred_knn2)
+
+print(f"MSE for Gr Liv Area: {mse1:.4f}")
+print(f"MSE for Overall Qual: {mse2:.4f}") """
+
+"""
+#-----------------2. SVR (Support Vector Regressor)----------------- #
+
+#SOLO PARA Gr Liv Area_log
+x1 = df[['Gr Liv Area_log']]
+y = df['SalePrice_log']
+
+x1_train, x1_test, y_train, y_test = train_test_split(x1, y, test_size = 0.2, random_state = 42)
+
+svr1 = SVR(kernel='rbf')
+svr1.fit(x1_train, y_train)
+y_pred_svr1 = svr1.predict(x1_test)
+
+#SOLO PARA Overall Qual
+x2 = df[['Overall Qual']]
+x2_train, x2_test, y_train, y_test = train_test_split(x2, y, test_size = 0.2, random_state = 42)
+
+svr2 = SVR(kernel='rbf')
+svr2.fit(x2_train, y_train)
+y_pred_svr2 = svr2.predict(x2_test)
+
+#Evaluar Modelos
+print()
+mse1 = mean_squared_error(y_test, y_pred_svr1)
+mse2 = mean_squared_error(y_test, y_pred_svr2)
+
+print(f"MSE for Gr Liv Area: {mse1:.4f}")
+print(f"MSE for Overall Qual: {mse2:.4f}") 
+
+"""
