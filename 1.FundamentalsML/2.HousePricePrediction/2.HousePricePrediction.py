@@ -119,9 +119,23 @@ fig,axes = plt.subplots(1, 3, figsize = (18, 5))
 
 sns.histplot(df['SalePrice'], kde = True, bins = 30, ax = axes[0])
 axes[0].set_title('Distribution of SalePrice before log')
+
 sns.histplot(df['Gr Liv Area'], kde = True, bins = 30, ax = axes[1])
 axes[1].set_title('Distribution of Gr Live Area before log')
+
 sns.histplot(df['Overall Qual'], kde = True, bins = 30, ax = axes[2])
 axes[2].set_title('Distribution of Overall Qual before log')
+
+plt.show()
+
+df['SalePrice_log'] = np.log1p(df['SalePrice'])
+df['Gr  Liv Area_log'] = np.log1p(df['Gr Liv Area'])
+
+fig, axes = plt.subplots(1, 2,  figsize = (12, 5))
+sns.histplot(df['SalePrice_log'], kde = True, bins = 30, ax = axes[0])
+axes[0].set_title("Distribution of SalePrice after log")
+
+sns.histplot(df['Gr  Liv Area_log'], kde = True, bins = 30, ax = axes[1])
+axes[1].set_title("Distribution of Gr Liv Area after log")
 
 plt.show()
