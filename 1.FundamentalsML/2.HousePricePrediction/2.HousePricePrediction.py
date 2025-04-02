@@ -112,17 +112,16 @@ print(df[df['Gr Liv Area'] <= 0])
 print()
 print(df[df['Overall Qual'] <= 0])
 
-#print(df[['SalePrice', 'Gr Live Area', 'Overall Qual']].isnull().sum())
+print()
+print(df[['SalePrice', 'Gr Liv Area', 'Overall Qual']].isnull().sum())
 
-#fig,axes = plt.subplots(1, 3, figsize = (18, 5))
+fig,axes = plt.subplots(1, 3, figsize = (18, 5))
 
-#sns.histplot(df['SalePrice'], kde = True, bins = 30, ax = axes[0])
-#axes[0].set_title('Distribution of SalePrice before log')
+sns.histplot(df['SalePrice'], kde = True, bins = 30, ax = axes[0])
+axes[0].set_title('Distribution of SalePrice before log')
+sns.histplot(df['Gr Liv Area'], kde = True, bins = 30, ax = axes[1])
+axes[1].set_title('Distribution of Gr Live Area before log')
+sns.histplot(df['Overall Qual'], kde = True, bins = 30, ax = axes[2])
+axes[2].set_title('Distribution of Overall Qual before log')
 
-#sns.histplot(df['Gr Live Area'], kde = True, bins = 30, ax = axes[1])
-#axes[1].set_title('Distribution of Gr Live Area before log')
-
-#sns.histplot(df['Overall Qual'], kde = True, bins = 30, ax = axes[2])
-#axes[2].set_title('Distribution of Overall Qual before log')
-
-#plt.show()
+plt.show()
