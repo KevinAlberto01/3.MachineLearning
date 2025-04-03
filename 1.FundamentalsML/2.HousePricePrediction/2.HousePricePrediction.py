@@ -15,6 +15,22 @@ from sklearn.metrics import mean_squared_error
 from sklearn.linear_model import Lasso
 import xgboost as xgb
 import lightgbm as lgb
+from sklearn.linear_model import LinearRegression
+from sklearn.tree import DecisionTreeRegressor
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.metrics import mean_squared_error, r2_score
+
+def evalute_model(model, x_test, y_test, y_pred, model_name, feature):
+    mse = mean_squared_error(y_test, y_pred)
+    rmse = np.sqrt(mse)
+    r2 = r2_score(y_test, y_pred)
+
+    print(f"Model: {model_name} for {feature}")
+    print(f"MSE: {mse:.4f}")
+    print(f"RMSE: {rmse:.4f}")
+    print(f"R2: {r2:.4f}")
+    print("-" * 50)
+
 # Configuración global de gráficos
 plt.rcParams['figure.figsize'] = (10, 6) 
 
@@ -188,6 +204,8 @@ knn1 = KNeighborsRegressor(n_neighbors=5)
 knn1.fit(x1_train, y_train)
 y_pred_knn1 = knn1.predict(x1_test)
 
+evalute_model(knn1, x1_test, y_test, y_pred_knn1,  "KNN Regressor", "Gr Live Area_log")
+
 #SOLO PARA Overall Qual
 x2 = df[['Overall Qual']]
 x2_train, x2_test, y_train, y_test = train_test_split(x2, y, test_size = 0.2, random_state = 42)
@@ -198,11 +216,15 @@ y_pred_knn2 = knn2.predict(x2_test)
 
 #Evaluar Modelos
 print()
-mse1 = mean_squared_error(y_test, y_pred_knn1)
-mse2 = mean_squared_error(y_test, y_pred_knn2)
+#mse1 = mean_squared_error(y_test, y_pred_knn1)
+#mse2 = mean_squared_error(y_test, y_pred_knn2)
 
-print(f"MSE for Gr Liv Area: {mse1:.4f}")
-print(f"MSE for Overall Qual: {mse2:.4f}") """
+#print(f"MSE for Gr Liv Area: {mse1:.4f}")
+#print(f"MSE for Overall Qual: {mse2:.4f}") 
+
+evalute_model(knn2, x2_test, y_test, y_pred_knn2,  "KNN Regressor", "Overall Qual")
+
+"""
 
 """
 #-----------------2. SVR (Support Vector Regressor)----------------- #
@@ -217,6 +239,8 @@ svr1 = SVR(kernel='rbf')
 svr1.fit(x1_train, y_train)
 y_pred_svr1 = svr1.predict(x1_test)
 
+evalute_model(svr1, x1_test, y_test , y_pred_svr1, "SVR", "Gr Liv Area_log")
+
 #SOLO PARA Overall Qual
 x2 = df[['Overall Qual']]
 x2_train, x2_test, y_train, y_test = train_test_split(x2, y, test_size = 0.2, random_state = 42)
@@ -227,13 +251,14 @@ y_pred_svr2 = svr2.predict(x2_test)
 
 #Evaluar Modelos
 print()
-mse1 = mean_squared_error(y_test, y_pred_svr1)
-mse2 = mean_squared_error(y_test, y_pred_svr2)
+#mse1 = mean_squared_error(y_test, y_pred_svr1)
+#mse2 = mean_squared_error(y_test, y_pred_svr2)
 
-print(f"MSE for Gr Liv Area: {mse1:.4f}")
-print(f"MSE for Overall Qual: {mse2:.4f}") 
+#print(f"MSE for Gr Liv Area: {mse1:.4f}")
+#print(f"MSE for Overall Qual: {mse2:.4f}") 
 
-"""
+evalute_model(svr2, x2_test, y_test , y_pred_svr2, "SVR", "Overall Qual")
+#"""
 
 """
 #-----------------3. Redes Neuronales (MLP)----------------- #
@@ -248,6 +273,8 @@ mlp1 = MLPRegressor(hidden_layer_sizes=(100,), max_iter=500, random_state=42)
 mlp1.fit(x1_train, y_train)
 y_pred_mlp1 = mlp1.predict(x1_test)
 
+evalute_model(mlp1, x1_test, y_test, y_pred_mlp1, "MLP Regressor", "Gr Liv Area_log")
+
 #SOLO PARA Overall Qual
 x2 = df[['Overall Qual']]
 x2_train, x2_test, y_train, y_test = train_test_split(x2, y, test_size = 0.2, random_state = 42)
@@ -258,11 +285,13 @@ y_pred_mlp2 = mlp2.predict(x2_test)
 
 #Evaluar Modelos
 print()
-mse1 = mean_squared_error(y_test, y_pred_mlp1)
-mse2 = mean_squared_error(y_test, y_pred_mlp2)
+#mse1 = mean_squared_error(y_test, y_pred_mlp1)
+#mse2 = mean_squared_error(y_test, y_pred_mlp2)
 
-print(f"MSE for Gr Liv Area: {mse1:.4f}")
-print(f"MSE for Overall Qual: {mse2:.4f}") 
+#print(f"MSE for Gr Liv Area: {mse1:.4f}")
+#print(f"MSE for Overall Qual: {mse2:.4f}") 
+
+evalute_model(mlp2, x2_test, y_test,  y_pred_mlp2, "MLP Regressor", "Overall Qual")
 
 """
 
@@ -279,6 +308,8 @@ rr1 = Ridge(alpha = 1.0)
 rr1.fit(x1_train, y_train)
 y_pred_rr1 = rr1.predict(x1_test)
 
+evalute_model(rr1, x1_test, y_test, y_pred_rr1, "Ridge Regressor", "Gr Liv Area_log")   
+
 #SOLO PARA Overall Qual
 x2 = df[['Overall Qual']]
 x2_train, x2_test, y_train, y_test = train_test_split(x2, y, test_size = 0.2, random_state = 42)
@@ -289,11 +320,13 @@ y_pred_rr2 = rr2.predict(x2_test)
 
 #Evaluar Modelos
 print()
-mse1 = mean_squared_error(y_test, y_pred_rr1)
-mse2 = mean_squared_error(y_test, y_pred_rr2)
+#mse1 = mean_squared_error(y_test, y_pred_rr1)
+#mse2 = mean_squared_error(y_test, y_pred_rr2)
 
-print(f"MSE for Gr Liv Area: {mse1:.4f}")
-print(f"MSE for Overall Qual: {mse2:.4f}") 
+#print(f"MSE for Gr Liv Area: {mse1:.4f}")
+#print(f"MSE for Overall Qual: {mse2:.4f}") 
+
+evalute_model(rr2, x2_test, y_test, y_pred_rr2, "Ridge Regressor", "Overall Qual" )
 
 """
 
@@ -310,6 +343,8 @@ rr1 = Lasso(alpha = 1.0)
 rr1.fit(x1_train, y_train)
 y_pred_rr1 = rr1.predict(x1_test)
 
+evalute_model(rr1, x1_test, y_test, y_pred_rr1, "Lasso Regressor", "Gr Liv Area_log")
+
 #SOLO PARA Overall Qual
 x2 = df[['Overall Qual']]
 x2_train, x2_test, y_train, y_test = train_test_split(x2, y, test_size = 0.2, random_state = 42)
@@ -320,16 +355,18 @@ y_pred_rr2 = rr2.predict(x2_test)
 
 #Evaluar Modelos
 print()
-mse1 = mean_squared_error(y_test, y_pred_rr1)
-mse2 = mean_squared_error(y_test, y_pred_rr2)
+#mse1 = mean_squared_error(y_test, y_pred_rr1)
+#mse2 = mean_squared_error(y_test, y_pred_rr2)
 
-print(f"MSE for Gr Liv Area: {mse1:.4f}")
-print(f"MSE for Overall Qual: {mse2:.4f}") 
+#print(f"MSE for Gr Liv Area: {mse1:.4f}")
+#print(f"MSE for Overall Qual: {mse2:.4f}") 
+
+evalute_model(rr2, x2_test, y_test, y_pred_rr2, "Lasso Regressor", "Overall Qual" )
 
 """
 
-#"""
-#----------------- 5.Laso Regression (L1 Regularization) ----------------- #
+"""
+#----------------- 6.XGBost ----------------- #
 
 #SOLO PARA Gr Liv Area_log
 x1 = df[['Gr Liv Area_log']]
@@ -337,24 +374,154 @@ y = df['SalePrice_log']
 
 x1_train, x1_test, y_train, y_test = train_test_split(x1, y, test_size = 0.2, random_state = 42)
 
-rr1 = Lasso(alpha = 1.0)
-rr1.fit(x1_train, y_train)
-y_pred_rr1 = rr1.predict(x1_test)
+xg1 = xgb.XGBRegressor(objective='reg:squarederror', random_state=42)
+xg1.fit(x1_train, y_train)
+y_pred_rr1 = xg1.predict(x1_test)
+
+evalute_model(xg1, x1_test, y_test, y_pred_rr1, "XGBoost Regressor", "Gr Liv Area_log")
 
 #SOLO PARA Overall Qual
 x2 = df[['Overall Qual']]
 x2_train, x2_test, y_train, y_test = train_test_split(x2, y, test_size = 0.2, random_state = 42)
 
-rr2 = Lasso(alpha = 1.0)
-rr2.fit(x2_train, y_train)
-y_pred_rr2 = rr2.predict(x2_test)
+xg2 = xgb.XGBRegressor(objective='reg:squarederror', random_state=42)
+xg2.fit(x2_train, y_train)
+y_pred_rr2 = xg2.predict(x2_test)
 
 #Evaluar Modelos
 print()
-mse1 = mean_squared_error(y_test, y_pred_rr1)
-mse2 = mean_squared_error(y_test, y_pred_rr2)
+#mse1 = mean_squared_error(y_test, y_pred_rr1)
+#mse2 = mean_squared_error(y_test, y_pred_rr2)
+
+#print(f"MSE for Gr Liv Area: {mse1:.4f}")
+#print(f"MSE for Overall Qual: {mse2:.4f}") 
+
+evalute_model(xg2, x2_test, y_test, y_pred_rr2, "XGBoost Regressor", "Overall Qual" )
+"""
+
+#"""
+#----------------- 7.Ligth GBM ----------------- #
+
+#SOLO PARA Gr Liv Area_log
+x1 = df[['Gr Liv Area_log']]
+y = df['SalePrice_log']
+
+x1_train, x1_test, y_train, y_test = train_test_split(x1, y, test_size = 0.2, random_state = 42)
+
+gbm1 = lgb.LGBMRegressor(objective = 'regression', random_state = 42)
+gbm1.fit(x1_train, y_train)
+y_pred_rr1 = gbm1.predict(x1_test)
+
+evalute_model(gbm1, x1_test, y_test, y_pred_rr1, "LightGBM Regressor", "Gr Liv Area_log")
+
+#SOLO PARA Overall Qual
+x2 = df[['Overall Qual']]
+x2_train, x2_test, y_train, y_test = train_test_split(x2, y, test_size = 0.2, random_state = 42)
+
+gbm2 = lgb.LGBMRegressor(objective = 'regression', random_state = 42)
+gbm2.fit(x2_train, y_train)
+y_pred_rr2 = gbm2.predict(x2_test)
+
+#Evaluar Modelos
+print()
+#mse1 = mean_squared_error(y_test, y_pred_rr1)
+#mse2 = mean_squared_error(y_test, y_pred_rr2)
+
+#print(f"MSE for Gr Liv Area: {mse1:.4f}")
+#print(f"MSE for Overall Qual: {mse2:.4f}") 
+
+evalute_model(gbm2, x2_test, y_test, y_pred_rr2, "LightGBM Regressor", "Overall Qual" )
+
+#"""
+
+"""
+#-----------------1. Regression Lineal Basic ----------------- #
+
+#SOLO PARA Gr Liv Area_log
+x1 = df[['Gr Liv Area']]
+y = df['SalePrice']
+
+x1_train, x1_test, y_train, y_test = train_test_split(x1, y, test_size = 0.2, random_state = 42)
+
+lr1 = LinearRegression()
+lr1.fit(x1_train, y_train)
+y_pred_knn1 = lr1.predict(x1_test)
+
+#SOLO PARA Overall Qual
+x2 = df[['Overall Qual']]
+x2_train, x2_test, y_train, y_test = train_test_split(x2, y, test_size = 0.2, random_state = 42)
+
+lr2 = LinearRegression()
+lr2.fit(x2_train, y_train)
+y_pred_knn2 = lr2.predict(x2_test)
+
+#Evaluar Modelos
+print()
+mse1 = mean_squared_error(y_test, y_pred_knn1)
+mse2 = mean_squared_error(y_test, y_pred_knn2)
 
 print(f"MSE for Gr Liv Area: {mse1:.4f}")
 print(f"MSE for Overall Qual: {mse2:.4f}") 
 
-#"""
+"""
+"""
+#-----------------2. Decision Tree Regressor ----------------- #
+
+#SOLO PARA Gr Liv Area_log
+x1 = df[['Gr Liv Area']]
+y = df['SalePrice']
+
+x1_train, x1_test, y_train, y_test = train_test_split(x1, y, test_size = 0.2, random_state = 42)
+
+dtr1 = DecisionTreeRegressor(random_state=42)
+dtr1.fit(x1_train, y_train)
+y_pred_knn1 = dtr1.predict(x1_test)
+
+#SOLO PARA Overall Qual
+x2 = df[['Overall Qual']]
+x2_train, x2_test, y_train, y_test = train_test_split(x2, y, test_size = 0.2, random_state = 42)
+
+dtr2 = DecisionTreeRegressor(random_state=42)
+dtr2.fit(x2_train, y_train)
+y_pred_knn2 = dtr2.predict(x2_test)
+
+#Evaluar Modelos
+print()
+mse1 = mean_squared_error(y_test, y_pred_knn1)
+mse2 = mean_squared_error(y_test, y_pred_knn2)
+
+print(f"MSE for Gr Liv Area: {mse1:.4f}")
+print(f"MSE for Overall Qual: {mse2:.4f}") 
+"""
+
+"""
+#-----------------3.Random Forest Regressor ----------------- #
+
+#SOLO PARA Gr Liv Area_log
+x1 = df[['Gr Liv Area']]
+y = df['SalePrice']
+
+x1_train, x1_test, y_train, y_test = train_test_split(x1, y, test_size = 0.2, random_state = 42)
+
+dfr1 = RandomForestRegressor(n_estimators=100, random_state=42)
+dfr1.fit(x1_train, y_train)
+y_pred_knn1 = dfr1.predict(x1_test)
+
+#SOLO PARA Overall Qual
+x2 = df[['Overall Qual']]
+x2_train, x2_test, y_train, y_test = train_test_split(x2, y, test_size = 0.2, random_state = 42)
+
+dfr2 = RandomForestRegressor(n_estimators=100, random_state=42)
+dfr2.fit(x2_train, y_train)
+y_pred_knn2 = dfr2.predict(x2_test)
+
+#Evaluar Modelos
+print()
+mse1 = mean_squared_error(y_test, y_pred_knn1)
+mse2 = mean_squared_error(y_test, y_pred_knn2)
+
+print(f"MSE for Gr Liv Area: {mse1:.4f}")
+print(f"MSE for Overall Qual: {mse2:.4f}") 
+
+"""
+
