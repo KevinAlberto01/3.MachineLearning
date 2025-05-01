@@ -1,16 +1,24 @@
+#---------------------------- 0. IMPORT LIBRARIES ----------------------------#
 import joblib
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
+#-----------------------------------------------------------------------------#
 
+#--------------------------- 1. LOAD TRAINED MODEL ---------------------------#
 # Cargar modelo entrenado
 model = joblib.load('/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/lightgbm_optuna_model.pkl')
 
 # Cargar nombres de columnas usadas en el entrenamiento
 expected_columns = joblib.load('/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/feature_names.pkl')
 
+# Cargar el scaler que se guardó
+scaler = joblib.load('/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/min_max_scaler.pkl')
+#-----------------------------------------------------------------------------#
+
+#------------------ 2. TEST SAMPLE PREDICTION (MANUAL INPUT) ------------------#
 # Crear un nuevo DataFrame con las mismas columnas
 new_data = pd.DataFrame([{
     col: 0 for col in expected_columns  # valores de ejemplo
@@ -18,15 +26,12 @@ new_data = pd.DataFrame([{
 
 new_data['Overall Qual'] = 7
 
-# Cargar el scaler que se guardó
-scaler = joblib.load('/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/min_max_scaler.pkl')
 
 # Predicción logarítmica
 prediction_log = model.predict(new_data)
 
 # Crear un DataFrame para la predicción y aplicar la desnormalización
 predicted_df = pd.DataFrame(prediction_log, columns=['SalePrice_log'])
-
 
 # Desnormalizar la predicción (usando el scaler)
 # Aquí aseguramos que las dimensiones coincidan con el scaler (2 columnas)
@@ -40,11 +45,15 @@ prediction_rescaled = predicted_rescaled[:, 0]
 prediction = np.expm1(prediction_rescaled)
 
 print("Predicción final en dólares:", prediction)
+#-------------------------------------------------------------------------------#
 
+#------------------ 3. LOAD ORIGINAL DATA ------------------#
 # Cargar los datos reales
 file_path = '/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/AmesHousing.csv'
 df = pd.read_csv(file_path)
+#-----------------------------------------------------------#
 
+#-------------------- 4. MAKE PREDICTIONS ON DATASET --------------------#
 #Seleccionar las columnas necesarias
 x_test = df[expected_columns].copy()  # Estas son las features con las que entrenaste
 
@@ -57,6 +66,9 @@ predicted_df['Gr Liv Area_log'] = 0  # para mantener la dimensión si tu scaler 
 
 prediction_rescaled = scaler.inverse_transform(predicted_df)
 prediction_final = np.expm1(prediction_rescaled[:, 0])  # quitar log1p
+#-----------------------------------------------------------------------#
+
+#------------------ 5. COMPARE PREDICTIONS VS REAL VALUES ------------------#
 
 #Comparar contra los valores reales
 real_values = df['SalePrice']
@@ -65,7 +77,9 @@ df_comparison = pd.DataFrame({
     'Real': real_values,
     'Predicción': prediction_final
 })
+#---------------------------------------------------------------------------#
 
+#-------------------- 6. VISUALIZATION: REAL vs PREDICTION --------------------#
 #Grafica para comprarar
 plt.figure(figsize=(10, 6))
 sns.scatterplot(x='Real', y='Predicción', data=df_comparison, alpha=0.5)
@@ -77,7 +91,9 @@ plt.xlabel("Valor Real")
 plt.ylabel("Predicción del Modelo")
 plt.grid(True)
 plt.show()
+#------------------------------------------------------------------------------#
 
+#-------------------------------------- 7. METRICS CALCULATION ------------------------------------#
 # Calcular metricas de evaluacion(Cuantificar el rendimiento)
 rmse = np.sqrt(mean_squared_error(real_values, prediction_final))
 mae = mean_absolute_error(real_values, prediction_final)
@@ -86,7 +102,9 @@ r2 = r2_score(real_values, prediction_final)
 print(f"RMSE: {rmse:.2f}")
 print(f"MAE: {mae:.2f}")
 print(f"R^2 Score: {r2:.4f}")
+#--------------------------------------------------------------------------------------------------#
 
+#---------------------------------------- 8. ERROR ANALYSIS ----------------------------------------#
 #Revisar que valores predice peor(para analisis de errores)
 df_comparison['Error absoluto'] = np.abs(df_comparison['Real'] - df_comparison['Predicción'])
 errores_mayores = df_comparison.sort_values('Error absoluto', ascending=False).head(10)
@@ -99,7 +117,9 @@ plt.xlabel("Error Absoluto")
 plt.ylabel("Índice de Fila")
 plt.grid(True)
 plt.show()
+#---------------------------------------------------------------------------------------------------#
 
+#---------------------------------------- 9. BEST ANALYSIS ----------------------------------------#
 # Revisar qué valores predice mejor (menor error absoluto)
 mejores_predicciones = df_comparison.sort_values('Error absoluto', ascending=True).head(10)
 print("Predicciones con menor error absoluto:")
@@ -112,3 +132,4 @@ plt.xlabel("Error Absoluto")
 plt.ylabel("Índice de Fila")
 plt.grid(True)
 plt.show()
+#---------------------------------------------------------------------------------------------------#
