@@ -1,11 +1,11 @@
 # 0. IMPORT LIBRARIES
-import pandas as pd
-import seaborn as sns 
-import matplotlib.pyplot as plt
-import numpy as np 
-from scipy.stats import shapiro
-from sklearn.preprocessing import MinMaxScaler
-from sklearn.model_selection import train_test_split
+import pandas as pd ###
+import seaborn as sns ###
+import matplotlib.pyplot as plt ###
+import numpy as np ##
+from scipy.stats import shapiro ###
+from sklearn.preprocessing import MinMaxScaler ##
+from sklearn.model_selection import train_test_split ###
 from sklearn.neighbors import KNeighborsRegressor
 from sklearn.metrics import mean_squared_error
 from sklearn.svm import SVR
@@ -14,11 +14,20 @@ from sklearn.linear_model import Ridge
 from sklearn.metrics import mean_squared_error
 from sklearn.linear_model import Lasso
 import xgboost as xgb
-import lightgbm as lgb
+import lightgbm as lgb ###
 from sklearn.linear_model import LinearRegression
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.ensemble import RandomForestRegressor
-from sklearn.metrics import mean_squared_error, r2_score
+from sklearn.metrics import mean_squared_error, r2_score ###
+from sklearn.model_selection import RandomizedSearchCV
+from scipy.stats import randint
+import warnings
+import lightgbm as lgb
+import optuna ###
+from lightgbm import early_stopping, log_evaluation ###
+import joblib
+
+warnings.filterwarnings("ignore", category=UserWarning)
 
 def evalute_model(model, x_test, y_test, y_pred, model_name, feature):
     mse = mean_squared_error(y_test, y_pred)
@@ -30,6 +39,25 @@ def evalute_model(model, x_test, y_test, y_pred, model_name, feature):
     print(f"RMSE: {rmse:.4f}")
     print(f"R2: {r2:.4f}")
     print("-" * 50)
+
+def objetive(trial):
+    param = {
+        'objective': 'regression',
+        'metric': 'rmse',
+        'verbosity': -1,
+        'boosting_type': 'gbdt',
+        'n_estimators': trial.suggest_int('n_estimators', 50, 200),
+        'max_depth': trial.suggest_int('max_depth', 5, 20),
+        'learning_rate': trial.suggest_float('learning_rate', 0.01, 0.3),
+        'min_child_samples': trial.suggest_int('min_child_samples', 5, 30)
+    }
+
+    model = lgb.LGBMRegressor(**param)
+    model.fit(x2_train, y_train)
+    preds = model.predict(x2_test)
+    rmse = mean_squared_error(y_test, preds, squared=False)
+    return rmse
+
 
 # Configuración global de gráficos
 plt.rcParams['figure.figsize'] = (10, 6) 
@@ -363,8 +391,7 @@ print()
 
 evalute_model(rr2, x2_test, y_test, y_pred_rr2, "Lasso Regressor", "Overall Qual" )
 
-"""
-
+#"""
 """
 #----------------- 6.XGBost ----------------- #
 
@@ -380,6 +407,8 @@ y_pred_rr1 = xg1.predict(x1_test)
 
 evalute_model(xg1, x1_test, y_test, y_pred_rr1, "XGBoost Regressor", "Gr Liv Area_log")
 
+"""
+"""
 #SOLO PARA Overall Qual
 x2 = df[['Overall Qual']]
 x2_train, x2_test, y_train, y_test = train_test_split(x2, y, test_size = 0.2, random_state = 42)
@@ -399,26 +428,26 @@ print()
 evalute_model(xg2, x2_test, y_test, y_pred_rr2, "XGBoost Regressor", "Overall Qual" )
 """
 
-#"""
+
 #----------------- 7.Ligth GBM ----------------- #
 
 #SOLO PARA Gr Liv Area_log
-x1 = df[['Gr Liv Area_log']]
+#x1 = df[['Gr Liv Area_log']]
 y = df['SalePrice_log']
 
-x1_train, x1_test, y_train, y_test = train_test_split(x1, y, test_size = 0.2, random_state = 42)
+#x1_train, x1_test, y_train, y_test = train_test_split(x1, y, test_size = 0.2, random_state = 42)
 
-gbm1 = lgb.LGBMRegressor(objective = 'regression', random_state = 42)
-gbm1.fit(x1_train, y_train)
-y_pred_rr1 = gbm1.predict(x1_test)
+#gbm1 = lgb.LGBMRegressor(objective = 'regression', random_state = 42)
+#gbm1.fit(x1_train, y_train)
+#y_pred_rr1 = gbm1.predict(x1_test)
 
-evalute_model(gbm1, x1_test, y_test, y_pred_rr1, "LightGBM Regressor", "Gr Liv Area_log")
+#evalute_model(gbm1, x1_test, y_test, y_pred_rr1, "LightGBM Regressor", "Gr Liv Area_log")
 
 #SOLO PARA Overall Qual
 x2 = df[['Overall Qual']]
 x2_train, x2_test, y_train, y_test = train_test_split(x2, y, test_size = 0.2, random_state = 42)
 
-gbm2 = lgb.LGBMRegressor(objective = 'regression', random_state = 42)
+gbm2 = lgb.LGBMRegressor(objective = 'regression', random_state = 42, verbosity = -1)
 gbm2.fit(x2_train, y_train)
 y_pred_rr2 = gbm2.predict(x2_test)
 
@@ -432,7 +461,96 @@ print()
 
 evalute_model(gbm2, x2_test, y_test, y_pred_rr2, "LightGBM Regressor", "Overall Qual" )
 
-#"""
+
+#----------------- 1. Random Search ----------------- #
+##PARAMETERS - Random Search#
+
+param_dist= {
+    'n_estimators': randint(50, 200),
+    'max_depth': randint(10, 30),
+    'min_samples_split': randint(2, 10),   
+}
+
+#RandomizedSearch
+random_search = RandomizedSearchCV(estimator=gbm2, param_distributions=param_dist, n_iter=20, cv = 3, scoring='neg_mean_squared_error', n_jobs=-1, random_state=42, verbose=1)
+random_search.fit(x2_train, y_train)
+
+#Mejor modelo encontrado
+print("Best Parameters: ", random_search.best_params_)
+best_gbm_random = random_search.best_estimator_
+
+#Evaluar el modelo
+y_pred_random = best_gbm_random.predict(x2_test)
+
+mse_random = mean_squared_error(y_test, y_pred_random)
+rmse_random = np.sqrt(mse_random)
+r2_random = r2_score(y_test, y_pred_random)
+
+print("Evaluation of optimization model with Random Search:")
+print(f"MSE: {mse_random: .4f}")
+print(f"RMSE: {rmse_random: .4f}")
+print(f"R2: {r2_random: .4f}")
+
+
+#----------------- 2. Optuna ----------------- #
+study = optuna.create_study(direction = 'minimize')
+study.optimize(objetive, n_trials = 50)
+
+print("Best Parameters:")
+print(study.best_params)
+
+#Evaluar el modelo
+best_params_optuna = study.best_params
+best_optuna = lgb.LGBMRegressor(n_estimators = best_params_optuna['n_estimators'], max_depth = best_params_optuna['max_depth'], learning_rate = best_params_optuna['learning_rate'], min_child_samples = best_params_optuna['min_child_samples'], random_state = 42)
+best_optuna.fit(x2_train, y_train)
+
+y_pred_optuna = best_optuna.predict(x2_test)
+
+mse_optuna = mean_squared_error(y_test, y_pred_optuna)
+rmse_optuna = np.sqrt(mse_optuna)
+r2_optuna = r2_score(y_test, y_pred_optuna)
+
+print("Evaluation of optimization model with Random Search:")
+print(f"MSE: {mse_optuna: .4f}")
+print(f"RMSE: {rmse_optuna: .4f}")
+print(f"R2: {r2_optuna: .4f}")
+
+
+#----------------- 3. Early Stopping ----------------- #
+
+gbm = lgb.LGBMRegressor(objective = 'regression', random_state = 42, n_estimators=1000) 
+gbm.fit(x2_train, y_train, eval_set = [(x2_test, y_test)], eval_metric = 'rmse', callbacks = [early_stopping(stopping_rounds = 50), log_evaluation(0)])
+
+y_pred_early = gbm.predict(x2_test)
+
+mse_early = mean_squared_error(y_test, y_pred_early)
+rmse_early = np.sqrt(mse_early)
+r2_early = r2_score(y_test, y_pred_early)
+
+print("Evaluation of model with Early Stopping:")
+print(f"MSE: {mse_early: .4f}")
+print(f"RMSE: {rmse_early: .4f}")
+print(f"r2: {r2_early: .4f}")
+
+
+results = {
+    "Random Search": r2_random,
+    "Optuna": r2_optuna,
+    "Early Stopping": r2_early
+}
+
+plt.bar(results.keys(), results.values(), color=['skyblue', 'lightgreen', 'lightcoral'])
+plt.ylabel("R² Score")
+plt.title("Comparación de Modelos")
+plt.ylim(0.70, 0.74)
+plt.grid(axis='y', linestyle='--', alpha=0.7)
+plt.show()
+
+
+joblib.dump(best_gbm_random, "gbm_random.pkl")
+joblib.dump(best_optuna, "gbm_optuna.pkl")
+joblib.dump(gbm, "gbm_early.pkl")
+
 
 """
 #-----------------1. Regression Lineal Basic ----------------- #
@@ -447,6 +565,8 @@ lr1 = LinearRegression()
 lr1.fit(x1_train, y_train)
 y_pred_knn1 = lr1.predict(x1_test)
 
+evalute_model(lr1, x1_test, y_test, y_pred_knn1, "Linear Regression", "Gr Liv Area_log")
+
 #SOLO PARA Overall Qual
 x2 = df[['Overall Qual']]
 x2_train, x2_test, y_train, y_test = train_test_split(x2, y, test_size = 0.2, random_state = 42)
@@ -457,11 +577,13 @@ y_pred_knn2 = lr2.predict(x2_test)
 
 #Evaluar Modelos
 print()
-mse1 = mean_squared_error(y_test, y_pred_knn1)
-mse2 = mean_squared_error(y_test, y_pred_knn2)
+#mse1 = mean_squared_error(y_test, y_pred_knn1)
+#mse2 = mean_squared_error(y_test, y_pred_knn2)
 
-print(f"MSE for Gr Liv Area: {mse1:.4f}")
-print(f"MSE for Overall Qual: {mse2:.4f}") 
+#print(f"MSE for Gr Liv Area: {mse1:.4f}")
+#print(f"MSE for Overall Qual: {mse2:.4f}") 
+
+evalute_model(lr2, x2_test, y_test, y_pred_knn2, "Linear Regression", "Overall Qual")
 
 """
 """
@@ -477,6 +599,8 @@ dtr1 = DecisionTreeRegressor(random_state=42)
 dtr1.fit(x1_train, y_train)
 y_pred_knn1 = dtr1.predict(x1_test)
 
+evalute_model(dtr1, x1_test, y_test, y_pred_knn1, "Decision Tree Regressor", "Gr Liv Area_log")
+
 #SOLO PARA Overall Qual
 x2 = df[['Overall Qual']]
 x2_train, x2_test, y_train, y_test = train_test_split(x2, y, test_size = 0.2, random_state = 42)
@@ -487,11 +611,13 @@ y_pred_knn2 = dtr2.predict(x2_test)
 
 #Evaluar Modelos
 print()
-mse1 = mean_squared_error(y_test, y_pred_knn1)
-mse2 = mean_squared_error(y_test, y_pred_knn2)
+#mse1 = mean_squared_error(y_test, y_pred_knn1)
+#mse2 = mean_squared_error(y_test, y_pred_knn2)
 
-print(f"MSE for Gr Liv Area: {mse1:.4f}")
-print(f"MSE for Overall Qual: {mse2:.4f}") 
+#print(f"MSE for Gr Liv Area: {mse1:.4f}")
+#print(f"MSE for Overall Qual: {mse2:.4f}") 
+
+evalute_model(dtr2, x2_test, y_test, y_pred_knn2, "Decision Tree Regressor", "Overall Qual")
 """
 
 """
@@ -507,6 +633,8 @@ dfr1 = RandomForestRegressor(n_estimators=100, random_state=42)
 dfr1.fit(x1_train, y_train)
 y_pred_knn1 = dfr1.predict(x1_test)
 
+evalute_model(dfr1, x1_test, y_test, y_pred_knn1, "Random Forest Regressor", "Gr Liv Area_log")
+
 #SOLO PARA Overall Qual
 x2 = df[['Overall Qual']]
 x2_train, x2_test, y_train, y_test = train_test_split(x2, y, test_size = 0.2, random_state = 42)
@@ -517,11 +645,56 @@ y_pred_knn2 = dfr2.predict(x2_test)
 
 #Evaluar Modelos
 print()
-mse1 = mean_squared_error(y_test, y_pred_knn1)
-mse2 = mean_squared_error(y_test, y_pred_knn2)
+#mse1 = mean_squared_error(y_test, y_pred_knn1)
+#mse2 = mean_squared_error(y_test, y_pred_knn2)
 
-print(f"MSE for Gr Liv Area: {mse1:.4f}")
-print(f"MSE for Overall Qual: {mse2:.4f}") 
+#print(f"MSE for Gr Liv Area: {mse1:.4f}")
+#print(f"MSE for Overall Qual: {mse2:.4f}") 
 
+evalute_model(dfr2, x2_test, y_test, y_pred_knn2, "Random Forest Regressor", "Overall Qual")
 """
 
+#----------------- 6.FEATURE ENGINEERING MANUAL -----------------#
+"""
+#6.1 Crear nuevas variables
+# 6.1.1 Crear Relaciones entre variables 
+df['TotalBathrooms'] = (df['Full Bath'] + (0.5 * df['Half Bath']) + df['Bsmt Full Bath'] + (0.5 * df['Bsmt Half Bath']))
+
+df['TotalSF'] = df['Total Bsmt SF'] + df['1st Flr SF'] + df['2nd Flr SF']
+
+df['GarageRatio'] = df ['Garage Area'] / df['Gr Liv Area']
+
+# 6.1.2 Crear variable de antiguedad 
+df['HouseAge'] = df['Yr Sold'] - df['Year Built']
+df['RemodAge'] = df['Yr Sold'] - df['Year Remod/Add']
+df['GarageAge'] = df['Yr Sold'] - df['Garage Yr Blt']
+
+# 6.1.3 Combinar Informacion de la Zona
+neighborhood_map = df.groupby('Neighborhood')['SalePrice'].mean().sort_values()
+df['NeighborhoodValue'] = df['Neighborhood'].map(neighborhood_map)
+
+# 6.1.4 Bandas de calidad o tamaño 
+df['Qual_Band'] = pd.cut(df['Overall Qual'], bins = [0, 4, 6, 8, 10], labels = ['Baja', 'Media', 'Alta', 'Premium'])
+df['Size_Band'] = pd.cut(df['Gr Liv Area'], bins = 4, labels = ['Pequeñas', 'Mediana', 'Grande', 'XL'])
+
+# 6.1.5 Bandas Temporales 
+df['SaleDecade'] = pd.cut(df['Yr Sold'], bins = [2005, 2007, 2009, 2011], labels = ['2006-07', '2008-09', '2010-11'])
+
+# Ver las primeras filas de tus nuevas features
+print(df[['TotalBathrooms', 'TotalSF', 'GarageRatio', 'HouseAge', 'RemodAge', 'GarageAge',
+          'NeighborhoodValue', 'Qual_Band', 'Size_Band', 'SaleDecade']].head(10))
+
+#6.2 Mini Exploratory Data Analysis
+#6.2.1 Matriz de correlacion 
+#Variables especificas que quieres analizar
+features = ['SalePrice', 'Overall Qual', 'TotalBathrooms', 'TotalSF', 'GarageRatio', 'HouseAge', 'RemodAge', 'GarageAge', 'NeighborhoodValue']# 'Qual_Band', 'Size_Band', 'SaleDecade']
+#Seleccionamos solo esas columnas 
+subset = df[features]
+#Calculamos la correlacion 
+corr_matrix = subset.corr()
+#Hacemos el heatmap 
+plt.figure(figsize = (12,8))
+sns.heatmap(corr_matrix, annot = True, cmap = 'coolwarm', fmt = ".2f")
+plt.title('Correlation Matrix of Selected Features')
+plt.show()
+"""
