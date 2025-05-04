@@ -26,7 +26,6 @@ new_data = pd.DataFrame([{
 
 new_data['Overall Qual'] = 7
 
-
 # Predicción logarítmica
 prediction_log = model.predict(new_data)
 
@@ -66,10 +65,9 @@ predicted_df['Gr Liv Area_log'] = 0  # para mantener la dimensión si tu scaler 
 
 prediction_rescaled = scaler.inverse_transform(predicted_df)
 prediction_final = np.expm1(prediction_rescaled[:, 0])  # quitar log1p
-#-----------------------------------------------------------------------#
+#------------------------------------------------------------------------#
 
 #------------------ 5. COMPARE PREDICTIONS VS REAL VALUES ------------------#
-
 #Comparar contra los valores reales
 real_values = df['SalePrice']
 
@@ -108,7 +106,7 @@ print(f"R^2 Score: {r2:.4f}")
 #Revisar que valores predice peor(para analisis de errores)
 df_comparison['Error absoluto'] = np.abs(df_comparison['Real'] - df_comparison['Predicción'])
 errores_mayores = df_comparison.sort_values('Error absoluto', ascending=False).head(10)
-print(errores_mayores)
+print(errores_mayores)  
 
 plt.figure(figsize=(10, 6))
 sns.barplot(x='Error absoluto', y=errores_mayores.index, data=errores_mayores)

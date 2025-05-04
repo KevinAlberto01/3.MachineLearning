@@ -70,10 +70,12 @@ df = pd.read_csv(file_path)
 df_rows, df_columns = df.shape
 print(f"Number of rows: {df_rows}")
 print(f"Number of columns: {df_columns}")
-
+print(df.head())
 # Verificar valores nulos y duplicados
 null_values = df.isnull().sum()
 null_values = null_values[null_values > 0]
+
+#Esto pasa al seleccionar la variable 
 print("\nColumns with null values:\n", null_values)
 
 duplicates = df.duplicated().sum()
