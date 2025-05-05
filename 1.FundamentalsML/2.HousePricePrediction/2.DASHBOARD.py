@@ -10,8 +10,11 @@ from sklearn.preprocessing import MinMaxScaler ##
 import streamlit.components.v1 as components
 import lightgbm as lgb
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import mean_squared_error, r2_score
+from sklearn.metrics import mean_absolute_error,mean_squared_error, r2_score
 from lightgbm import early_stopping, log_evaluation 
+from scipy.stats import randint
+from sklearn.model_selection import RandomizedSearchCV
+import optuna
 #--------------------------------- 1.PAGE CONFIGURATION ---------------------------------#
 # Configurar página en modo ancho
 st.set_page_config(page_title="House Price Prediction", page_icon="🏠", layout="wide")
@@ -50,6 +53,7 @@ st.markdown("""
 #1.LOAD DATASET
 file_path = '/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/AmesHousing.csv'
 df = pd.read_csv(file_path)
+
 selected_features = ['SalePrice', 'Overall Qual', 'Gr Liv Area', 'Garage Cars', 
                      'Garage Area', 'Total Bsmt SF', '1st Flr SF', 'Full Bath', 'Year Built']
 df_encoded = pd.get_dummies(df, drop_first=True)
@@ -57,37 +61,176 @@ df_corr = df_encoded.corr()
 
 df['SalePrice_log'] = np.log1p(df['SalePrice'])
 df['Gr Liv Area_log'] = np.log1p(df['Gr Liv Area'])
+
 scaler = MinMaxScaler()
+df[['SalePrice_log', 'Gr Liv Area_log']] = scaler.fit_transform(df[['SalePrice_log', 'Gr Liv Area_log']])
+
+y = df['SalePrice_log']
+x2 = df[['Overall Qual']]
+x2_train, x2_test, y_train, y_test = train_test_split(x2, y, test_size = 0.2, random_state = 42)
+
 
 def evalute_model(model, x_test, y_test, y_pred, model_name, feature):
+    mae2 = mean_absolute_error(y_test, y_pred)
     mse = mean_squared_error(y_test, y_pred)
     rmse = np.sqrt(mse)
     r2 = r2_score(y_test, y_pred)
 
     st.write(f"Model: {model_name} for {feature}")
+    st.write(f"Mean Absolute Error (MAE): {mae2:.4f}")
     st.write(f"MSE: {mse:.4f}")
     st.write(f"RMSE: {rmse:.4f}")
     st.write(f"R2: {r2:.4f}")
     st.write("-" * 50)
 
+def objetive(trial):
+    param = {
+        'objective': 'regression',
+        'metric': 'rmse',
+        'verbosity': -1,
+        'boosting_type': 'gbdt',
+        'n_estimators': trial.suggest_int('n_estimators', 50, 200),
+        'max_depth': trial.suggest_int('max_depth', 5, 20),
+        'learning_rate': trial.suggest_float('learning_rate', 0.01, 0.3),
+        'min_child_samples': trial.suggest_int('min_child_samples', 5, 30)
+    }
 
-#---------------------------------------------------------------------------------#
+    model = lgb.LGBMRegressor(**param)
+    model.fit(x2_train, y_train)
+    preds = model.predict(x2_test)
+    rmse = mean_squared_error(y_test, preds, squared=False)
+    return rmse
 
+gbm = lgb.LGBMRegressor(objective = 'regression', random_state = 42, verbosity = -1)
+gbm.fit(x2_train, y_train)
+y_pred_basic = gbm.predict(x2_test)
 #---------------------------------- 3.MAIN ---------------------------------#
 
 if section == "Basic":
-    y = df['SalePrice_log']
-    x2 = df[['Overall Qual']]
-    x2_train, x2_test, y_train, y_test = train_test_split(x2, y, test_size = 0.2, random_state = 42)
 
-    gbm2 = lgb.LGBMRegressor(objective = 'regression', random_state = 42, verbosity = -1)
-    gbm2.fit(x2_train, y_train)
-    y_pred = gbm2.predict(x2_test)
+    col1, col2, col3 = st.columns([1,1,1])
+    with col1:
 
-    mse = mean_squared_error(y_test, y_pred)
-    st.write("Evaluation of Development LGBM Regressor")
-    st.write(f"📊 **MSE (Overall Qual):** `{mse:.4f}`")
-    evalute_model(gbm2, x2_test, y_test, y_pred, "LightGBM Regressor", "Overall Qual" )
+        options = [
+            "📊 Basic LGBM Regressor 📊", "📈 LGBM Regressor with Optuna 📈", "📉 LGBM Regressor with Early Stopping📉"
+        ]
+        selected_option = st.selectbox("", options)
+        
+        if selected_option == "📊 Basic LGBM Regressor 📊":
+
+            sections = st.radio(
+                label="",
+                options=["Results", "Real Resutls"],
+                horizontal=True
+            )
+
+            if sections == "Results":
+                mse = mean_squared_error(y_test, y_pred_basic)
+                st.write("Evaluation of Development LGBM Regressor")
+                st.write(f"📊 **MSE (Overall Qual):** `{mse:.4f}`")
+                evalute_model(gbm, x2_test, y_test, y_pred_basic, "LightGBM Regressor", "Overall Qual" )
+
+            elif sections == "Real Resutls":
+                #exponencional
+                y_pred_early_original = np.expm1(y_pred_basic)  # Exponencial inversa de la predicción
+                y_test_early_original = np.expm1(y_test)
+                evalute_model(gbm, x2_test, y_test_early_original, y_pred_early_original, "LightGBM Regressor without exponetional", "Overall Qual")
+
+        elif selected_option == "📈 LGBM Regressor with Optuna 📈":
+        #------------------------------------- Optuna --------------------------------------------#
+            study = optuna.create_study(direction = 'minimize')
+            study.optimize(objetive, n_trials = 50)
+                        
+            #Evaluar el modelo
+            best_params_optuna = study.best_params
+            best_optuna = lgb.LGBMRegressor(n_estimators = best_params_optuna['n_estimators'], max_depth = best_params_optuna['max_depth'], learning_rate = best_params_optuna['learning_rate'], min_child_samples = best_params_optuna['min_child_samples'], random_state = 42)
+            best_optuna.fit(x2_train, y_train)
+
+            y_pred_optuna = best_optuna.predict(x2_test)
+
+            st.write("Best Parameters:")
+            for key, value in study.best_params.items():
+                st.write(f"{key}: {value}")
+
+            #y_pred_optuna = best_optuna.predict(x2_test)
+
+            mse_optuna = mean_squared_error(y_test, y_pred_optuna)
+            rmse_optuna = np.sqrt(mse_optuna)
+            r2_optuna = r2_score(y_test, y_pred_optuna)
+
+            evalute_model(best_optuna, x2_test, y_test, y_pred_optuna, "LightGBM Regressor With optuna", "Overall Qual" )
+
+            #exponencional
+            y_pred_optuna = np.expm1(y_pred_optuna)  # Exponencial inversa de la predicción
+            y_test_optuna = np.expm1(y_test)
+            evalute_model(best_optuna, x2_test, y_test_optuna, y_pred_optuna, "LightGBM Regressor with optuna without exponetional", "Overall Qual" )
+
+        #-------------------------------------------------------------------------------------------------------#
+
+        elif selected_option == "📉 LGBM Regressor with Early Stopping📉":
+        #------------------------------------- Early Stopping  --------------------------------------------#
+            gbm2 = lgb.LGBMRegressor(objective = 'regression', random_state = 42, n_estimators=1000) 
+            gbm2.fit(x2_train, y_train, eval_set = [(x2_test, y_test)], eval_metric = 'rmse', callbacks = [early_stopping(stopping_rounds = 50), log_evaluation(0)])
+            
+            params_to_display = ["n_estimators", "max_depth", "learning_rate", "min_child_samples"]
+            for param in params_to_display:
+                st.write(f"{param}: {gbm2.get_params()[param]}")
+            
+            y_pred_early = gbm2.predict(x2_test)
+
+            mse_early = mean_squared_error(y_test, y_pred_early)
+            rmse_early = np.sqrt(mse_early)
+            r2_early = r2_score(y_test, y_pred_early)
+
+            evalute_model(gbm2, x2_test, y_test, y_pred_early, "LightGBM Regressor With Early Stopping ", "Overall Qual" )
+
+            #exponencional
+            y_pred_earlyStopping = np.expm1(y_pred_early)  # Exponencial inversa de la predicción
+            y_test_earlyStopping = np.expm1(y_test)
+            evalute_model(gbm2, x2_test, y_test_earlyStopping, y_pred_earlyStopping, "LightGBM Regressor with early stopping without exponetional", "Overall Qual" )
+            #print("Evaluation of model with Early Stopping:")
+            #print(f"MSE: {mse_early: .4f}")
+            #print(f"RMSE: {rmse_early: .4f}")
+            #print(f"r2: {r2_early: .4f}") """
+
+         #-------------------------------------------------------------------------------------------------------#
+
+    with col2: 
+        graph = pd.DataFrame(
+            np.random.randn(100, 3),
+            columns=["Gr Liv Area", "SalePrice", "Overall Qual"])
+        st.line_chart(graph)
+
+    with col3:
+        num_rows = st.slider("Numbers of Overall Qual", 0, 100, 50)
+        np.random.seed(42)
+        data = []
+
+        for i in range(num_rows):
+            data.append(
+                {
+                }
+            )
+        data = pd.DataFrame(data)       
+        #st.markdown("""
+        #<style>
+        #input[type=number] {
+        #    width: 100px;
+        #    height: 100px;
+        #    text-align: center;
+        #    font-size: 24px;
+        #}
+        #</style>
+        #""", unsafe_allow_html=True)
+        #numero = st.number_input("Ingresa un número:", key="custom", label_visibility="collapsed")
+        #st.write("Número ingresado:", numero)
+    col4, col5, col6 = st.columns(3)
+    with col4:
+        st.write("Top 10 Mejores resultados")
+    with col5:
+        st.write("Top 10 Peores resultados")
+    with col6:
+        st.write("Comparacion del resultado")
 
 elif section == "Development":
     #---------------------------------- 2.SIDEBAR ---------------------------------#

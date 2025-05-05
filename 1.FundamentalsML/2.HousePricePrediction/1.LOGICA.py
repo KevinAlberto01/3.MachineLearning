@@ -534,6 +534,7 @@ print(f"MSE: {mse_early: .4f}")
 print(f"RMSE: {rmse_early: .4f}")
 print(f"r2: {r2_early: .4f}")
 
+#--------------------------------------------------------#
 
 results = {
     "Random Search": r2_random,

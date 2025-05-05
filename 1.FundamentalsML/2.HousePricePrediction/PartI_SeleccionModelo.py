@@ -224,6 +224,7 @@ evalute_model(gbm2, x2_test, y_test, y_pred_rr2, "LightGBM Regressor", "Overall 
 #----------------------------------------#
 
 #----------------- 5. FEATURE ENGINEERING MANUAL ----------------- #
+
 #----------------- 1. Optuna ----------------- #
 def objetive(trial):
     param = {
