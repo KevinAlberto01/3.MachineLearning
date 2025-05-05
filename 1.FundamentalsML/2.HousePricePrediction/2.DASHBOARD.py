@@ -8,7 +8,10 @@ from scipy.stats import gaussian_kde
 from scipy.stats import shapiro
 from sklearn.preprocessing import MinMaxScaler ##
 import streamlit.components.v1 as components
-
+import lightgbm as lgb
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import mean_squared_error, r2_score
+from lightgbm import early_stopping, log_evaluation 
 #--------------------------------- 1.PAGE CONFIGURATION ---------------------------------#
 # Configurar página en modo ancho
 st.set_page_config(page_title="House Price Prediction", page_icon="🏠", layout="wide")
@@ -40,13 +43,10 @@ st.markdown("""
         }
     </style>
 """, unsafe_allow_html=True)
-
 #-----------------------------------------------------------------------------------------#
 
 #--------------------------------- 2.DEVELOPMENT ---------------------------------#
-#---------------------------------------------------------------------------------#
 
-#---------------------------------- 2.SIDEBAR ---------------------------------#
 #1.LOAD DATASET
 file_path = '/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/AmesHousing.csv'
 df = pd.read_csv(file_path)
@@ -55,44 +55,64 @@ selected_features = ['SalePrice', 'Overall Qual', 'Gr Liv Area', 'Garage Cars',
 df_encoded = pd.get_dummies(df, drop_first=True)
 df_corr = df_encoded.corr()
 
+df['SalePrice_log'] = np.log1p(df['SalePrice'])
+df['Gr Liv Area_log'] = np.log1p(df['Gr Liv Area'])
+scaler = MinMaxScaler()
 
-#------------------------------------------------------------------------------#
+def evalute_model(model, x_test, y_test, y_pred, model_name, feature):
+    mse = mean_squared_error(y_test, y_pred)
+    rmse = np.sqrt(mse)
+    r2 = r2_score(y_test, y_pred)
+
+    st.write(f"Model: {model_name} for {feature}")
+    st.write(f"MSE: {mse:.4f}")
+    st.write(f"RMSE: {rmse:.4f}")
+    st.write(f"R2: {r2:.4f}")
+    st.write("-" * 50)
+
+
+#---------------------------------------------------------------------------------#
 
 #---------------------------------- 3.MAIN ---------------------------------#
 
 if section == "Basic":
-    st.markdown("### Bienvenido a la seccion basica")
-    st.markdown("### En esta seccion puedes ver la informacion basica del dataset")
+    y = df['SalePrice_log']
+    x2 = df[['Overall Qual']]
+    x2_train, x2_test, y_train, y_test = train_test_split(x2, y, test_size = 0.2, random_state = 42)
+
+    gbm2 = lgb.LGBMRegressor(objective = 'regression', random_state = 42, verbosity = -1)
+    gbm2.fit(x2_train, y_train)
+    y_pred = gbm2.predict(x2_test)
+
+    mse = mean_squared_error(y_test, y_pred)
+    st.write("Evaluation of Development LGBM Regressor")
+    st.write(f"📊 **MSE (Overall Qual):** `{mse:.4f}`")
+    evalute_model(gbm2, x2_test, y_test, y_pred, "LightGBM Regressor", "Overall Qual" )
 
 elif section == "Development":
-
+    #---------------------------------- 2.SIDEBAR ---------------------------------#
     #Verificar dimensiones 
     df_rows, df_columns = df.shape
     col1, col2 = st.columns([0.25,2])
     with col1:
         st.markdown("<h3 style='text-align: center;'>📌 Basic Info</h3>", unsafe_allow_html=True)
         st.markdown(f"**Number of rows:** {df_rows}<br>**Number of columns:** {df_columns}", unsafe_allow_html=True)
-
-
+    #------------------------------------------------------------------------------#
+    
     with col2:
         
         st.markdown("<h3 style='text-align: center;'>First 5 datas</h3>", unsafe_allow_html=True)
         st.dataframe(df.head(), use_container_width=True)
 
-
     #Crear dos columnas: izquierda(info) y derecha(EDA)
     #Ajusta proporcion si quieres mas espacio para el heatmap
     col1, col2, col3 = st.columns([1.2, 2, 2])
-    df_encoded = pd.get_dummies(df, drop_first=True)
-    df_corr = df_encoded.corr()
-
     #COLUMNA IZQUIERDA:INFO
     #3.1 Mostrar mas informacion
     with col1:
         # ----------------------
         # FUNCIÓN PARA MOSTRAR TABLAS CENTRADAS
         # ----------------------
-
 
         def show_centered_table(df_table, title=None):
             # Mostrar el título solo si se especifica y no está vacío
@@ -150,8 +170,6 @@ elif section == "Development":
             # Renderizar el HTML con la tabla estilizada
             components.html(styled_html, height=400, scrolling=True)
 
-
-
         # ----------------------
         # OPCIONES DE VISUALIZACIÓN
         # ----------------------
@@ -194,9 +212,9 @@ elif section == "Development":
             show_centered_table(desc_stats)
 
         elif selected_option == "🔢 First Normalized Values 🔢":
-            df['SalePrice_log'] = np.log1p(df['SalePrice'])
-            df['Gr Liv Area_log'] = np.log1p(df['Gr Liv Area'])
-            scaler = MinMaxScaler()
+            #df['SalePrice_log'] = np.log1p(df['SalePrice'])
+            #df['Gr Liv Area_log'] = np.log1p(df['Gr Liv Area'])
+            #scaler = MinMaxScaler()
             df[['SalePrice_log', 'Gr Liv Area_log']] = scaler.fit_transform(df[['SalePrice_log', 'Gr Liv Area_log']])
             show_centered_table(df[['SalePrice_log', 'Gr Liv Area_log']].head().reset_index(drop=True))
 
@@ -219,8 +237,6 @@ elif section == "Development":
     with col2:
         st.markdown("<h3 style='text-align: center;'>Heat Map</h3>", unsafe_allow_html=True)
 
-        selected_features = ['SalePrice', 'Overall Qual', 'Gr Liv Area', 'Garage Cars', 
-                        'Garage Area', 'Total Bsmt SF', '1st Flr SF', 'Full Bath', 'Year Built']
         fig, ax = plt.subplots(figsize=(12, 10))
         sns.heatmap(df_encoded[selected_features].corr(), annot=True, cmap="coolwarm", vmin=-1, vmax=1, linewidths=0.5)
         ax.set_title('Correlation Matrix of Selected Features')
