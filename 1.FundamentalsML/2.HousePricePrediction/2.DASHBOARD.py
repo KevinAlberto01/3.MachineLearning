@@ -16,6 +16,10 @@ from scipy.stats import randint
 from sklearn.model_selection import RandomizedSearchCV
 import optuna
 import joblib
+import altair as alt
+
+
+
 #--------------------------------- 1.PAGE CONFIGURATION ---------------------------------#
 # Configurar página en modo ancho
 st.set_page_config(page_title="House Price Prediction", page_icon="🏠", layout="wide")
@@ -130,6 +134,51 @@ def load_model():
     return model, expected_columns, scaler
 #-----------------------------------------------------------------------------#
 
+def make_donut(input_response, input_text, input_color):
+    if input_color == 'blue':
+        chart_color = ['#29b5e8', '#155F7A']
+    elif input_color == 'green':
+        chart_color = ['#27AE60', '#12783D']
+    elif input_color == 'orange':
+        chart_color = ['#F39C12', '#875A12']
+    elif input_color == 'red':
+        chart_color = ['#E74C3C', '#781F16']
+    
+    source = pd.DataFrame({
+        "Topic": ['', input_text],
+        "% value": [100 - input_response, input_response]
+    })
+    
+    source_bg = pd.DataFrame({
+        "Topic": ['', input_text],
+        "% value": [100, 0]
+    })
+
+    plot = alt.Chart(source).mark_arc(innerRadius=45, cornerRadius=25).encode(
+        theta="% value",
+        color=alt.Color("Topic:N",
+                        scale=alt.Scale(domain=[input_text, ''], range=chart_color),
+                        legend=None)
+    ).properties(width=130, height=130)
+
+    text = plot.mark_text(
+        align='center',
+        color=chart_color[0],
+        font="Lato",
+        fontSize=32,
+        fontWeight=700,
+        fontStyle="italic"
+    ).encode(text=alt.value(f'{input_response:.1f}%'))
+
+    plot_bg = alt.Chart(source_bg).mark_arc(innerRadius=45, cornerRadius=20).encode(
+        theta="% value",
+        color=alt.Color("Topic:N",
+                        scale=alt.Scale(domain=[input_text, ''], range=chart_color),
+                        legend=None)
+    ).properties(width=130, height=130)
+
+    return plot_bg + plot + text
+
 #---------------------------------- 3.MAIN ---------------------------------#
 
 if section == "Basic":
@@ -223,8 +272,8 @@ if section == "Basic":
 
     with col2: 
         graph = pd.DataFrame(
-            np.random.randn(100, 3),
-            columns=["Gr Liv Area", "SalePrice", "Overall Qual"])
+            np.random.randn(100, 2),
+            columns=[ "SalePrice", "Overall Qual"])
         st.line_chart(graph)
 
     with col3:
@@ -234,7 +283,7 @@ if section == "Basic":
         model, expected_columns, scaler = load_model()  # Aquí sí puede estar cacheado por dentro
 
         # Slider para Overall Qual
-        overall_qual_value = st.slider("Número de Overall Qual", 0, 10, 5)
+        overall_qual_value = st.slider("Número de Overall Qual", 1, 10, 5)
         
         # Mostrar valor
         st.write(f"Valor actual de Overall Qual: **{overall_qual_value}**")
@@ -258,73 +307,88 @@ if section == "Basic":
         prediction_rescaled = predicted_rescaled[:, 0]
         prediction = np.expm1(prediction_rescaled)
 
-        # Mostrar resultado final
-        #st.write("🔧 Debug - Valor ingresado:", overall_qual_value)
-        #print("🔧 Debug - Valor ingresado:", overall_qual_value)
-
-        #print("🔧 Predicción cruda log:", prediction_log)
-        #print("🔧 Predicción desnormalizada:", prediction)
         st.metric("💰 Predicción final en dólares", f"${round(prediction[0], 2):,.2f}")
 
-
-        ##overall_qual_value = st.slider("Numbers of Overall Qual", 0, 100, 50)
-        ##st.write(f"Valor actual de Overall Qual: **{overall_qual_value}**")
-
-        ##np.random.seed(42)
-        ##data = []
-
-        ##for i in range(overall_qual_value):
-            ##data.append(
-            ##    {
-                    #"Overall Qual": overall_qual_value
-            ##    }
-            ##)
-        ##data = pd.DataFrame(data)     
-    
-        # ⚠️ Crear un DataFrame de entrada para la predicción (esto es lo importante)
-        #input_df = pd.DataFrame({"Overall Qual": [overall_qual_value]})
-
-        # Predicción logarítmica
-        #prediction_log = model.predict(input_df)
-
-        # Crear un DataFrame para aplicar la desnormalización
-        #predicted_df = pd.DataFrame(prediction_log, columns=['SalePrice_log'])
-
-        # Añadir columna ficticia si tu scaler espera más de una columna (ajusta según tu scaler)
-        #predicted_df['Gr Liv Area_log'] = 0
-
-        # Desnormalizar usando el scaler entrenado
-        #predicted_rescaled = scaler.inverse_transform(predicted_df)
-
-        # Tomar solo la columna desnormalizada del precio
-        #prediction_rescaled = predicted_rescaled[:, 0]
-
-        # Invertir la transformación logarítmica
-        #prediction = np.expm1(prediction_rescaled)
-
-        # Mostrar el resultado
-        #st.write("💰 Predicción final en dólares:", prediction[0])
-
-        #st.markdown("""
-        #<style>
-        #input[type=number] {
-        #    width: 100px;
-        #    height: 100px;
-        #    text-align: center;
-        #    font-size: 24px;
-        #}
-        #</style>
-        #""", unsafe_allow_html=True)
-        #numero = st.number_input("Ingresa un número:", key="custom", label_visibility="collapsed")
-        #st.write("Número ingresado:", numero)
     col4, col5, col6 = st.columns(3)
     with col4:
-        st.write("Top 10 Mejores resultados")
-    with col5:
         st.write("Top 10 Peores resultados")
+
+        #Seleccionar las columnas necesarias
+        x_test = df[expected_columns].copy()  # Estas son las features con las que entrenaste
+
+        #Predcir con tu modelo
+        prediction_log = model.predict(x_test)
+
+        #Desormalizar si usaste scaler 
+        predicted_df = pd.DataFrame(prediction_log, columns=['SalePrice_log'])
+        predicted_df['Gr Liv Area_log'] = 0  # para mantener la dimensión si tu scaler lo espera
+        predicted_rescaled = scaler.inverse_transform(predicted_df)
+        prediction_rescaled = predicted_rescaled[:, 0]
+        prediction = np.expm1(prediction_rescaled)
+
+        real_values = df['SalePrice']
+        df_comparison = pd.DataFrame({
+            'Real': real_values,
+            'Predicción': prediction_rescaled
+        })
+
+        #Revisar que valores predice peor(para analisis de errores)
+        df_comparison['Error absoluto'] = np.abs(df_comparison['Real'] - df_comparison['Predicción'])
+        errores_mayores = df_comparison.sort_values('Error absoluto', ascending=False).head(10)
+        st.write(errores_mayores)  
+
+    with col5:
+        st.write("Top 10 Mejores resultados")
+
+        mejores_predicciones = df_comparison.sort_values('Error absoluto', ascending=True).head(10)
+        st.write(mejores_predicciones)
         
     with col6:
-        st.write("Comparacion del resultado")
+        # Valor ingresado por el usuario (ya lo tienes)
+        st.write(f"🔧 Valor ingresado de Overall Qual: **{overall_qual_value}**")
+
+        # Filtrar para obtener una fila con ese Overall Qual (puedes usar la más cercana si no hay exacta)
+        fila_real = df.loc[df['Overall Qual'] == overall_qual_value]
+
+        if not fila_real.empty:
+            valor_real = fila_real.iloc[0]['SalePrice']
+        else:
+            valor_real = None
+
+        # Mostrar predicción
+        st.metric("💰 Predicción en dólares", f"${round(prediction[0], 2):,.2f}")
+
+        # Mostrar valor real más cercano si existe
+        if valor_real:
+            st.metric("🏠 Valor real más cercano", f"${valor_real:,.2f}")
+
+            # Calcular error
+            error_abs = abs(valor_real - prediction[0])
+            error_pct = (error_abs / valor_real) * 100
+
+            st.write(f"📉 Error absoluto: ${round(error_abs, 2):,.2f}")
+            st.write(f"📊 Error porcentual: {round(error_pct, 2)}%")
+        else:
+            st.warning("No se encontró un valor real exacto para ese 'Overall Qual'.")
+        
+        # Determinar color y mensaje según error
+        if error_pct < 10:
+            color = "green"
+            mensaje = "✅ Excelente predicción"
+        elif error_pct < 25:
+            color = "blue"
+            mensaje = "🟦 Buena predicción"
+        elif error_pct < 50:
+            color = "orange"
+            mensaje = "🟨 Regular"
+        else:
+            color = "red"
+            mensaje = "🟥 Mala predicción"
+
+        # Mostrar gráfico donut
+        st.write(mensaje)
+        donut_chart = make_donut(error_pct, "Error", color)
+        st.altair_chart(donut_chart)
 
 elif section == "Development":
     #---------------------------------- 2.SIDEBAR ---------------------------------#
@@ -543,12 +607,18 @@ elif section == "Development":
 
 
     # Opción de transformación
-        transformation_option = st.selectbox("", ["📈 Histogram with log1p 📈", "📉 Histogram with log1p + MinMaxScaler 📉"])
+        section = st.radio(
+            label="",
+            options=["📈 Histogram with log1p 📈", "📉 Histogram with log1p + MinMaxScaler 📉"],
+            horizontal=True
+        )
 
+        #transformation_option = st.selectbox("", ["📈 Histogram with log1p 📈", "📉 Histogram with log1p + MinMaxScaler 📉"])
         # Datos necesarios
         overall_qual_data = df['Overall Qual'].dropna()
 
-        if transformation_option == "📈 Histogram with log1p 📈":
+        if section == "📈 Histogram with log1p 📈":
+        #if transformation_option == "📈 Histogram with log1p 📈":
             #st.markdown("<h3 style='text-align: center;'>Histogram with log1p</h3>", unsafe_allow_html=True)
 
             df['SalePrice_log'] = np.log1p(df['SalePrice'])
@@ -584,8 +654,8 @@ elif section == "Development":
 
             st.pyplot(fig)
 
-        elif transformation_option == "📉 Histogram with log1p + MinMaxScaler 📉":
-
+        #elif transformation_option == "📉 Histogram with log1p + MinMaxScaler 📉":
+        elif section == "📉 Histogram with log1p + MinMaxScaler 📉": 
             # Asegurar que las columnas estén disponibles
             if 'SalePrice_log' not in df.columns or 'Gr Liv Area_log' not in df.columns:
                 df['SalePrice_log'] = np.log1p(df['SalePrice'])
