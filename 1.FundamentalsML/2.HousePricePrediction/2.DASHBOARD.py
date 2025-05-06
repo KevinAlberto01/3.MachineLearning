@@ -17,8 +17,7 @@ from sklearn.model_selection import RandomizedSearchCV
 import optuna
 import joblib
 import altair as alt
-
-
+from streamlit_option_menu import option_menu
 
 #--------------------------------- 1.PAGE CONFIGURATION ---------------------------------#
 # Configurar página en modo ancho
@@ -28,13 +27,14 @@ st.markdown("<h1 style = 'text-align: center;'>🏠 House Price Prediction 🏠<
 #Titulos de seleccion 
 
 # Crear columnas vacías a los lados para centrar el radio
-col1, col2, col3 = st.columns([3, 1.3, 3])  # Ajusta proporciones si quieres
+col1, col2, col3 = st.columns([3, 1.15, 3])  # Ajusta proporciones si quieres
 
 with col2:
     section = st.radio(
         label="",
-        options=["Basic", "Development", "Advanced", "Results"],
-        horizontal=True
+        options=["Results", "Development"],
+        horizontal=True,
+        label_visibility="collapsed"
     )
 
 # Estilos personalizados (centrar título y tabla más ancha)
@@ -81,12 +81,25 @@ def evalute_model(model, x_test, y_test, y_pred, model_name, feature):
     rmse = np.sqrt(mse)
     r2 = r2_score(y_test, y_pred)
 
-    st.write(f"Model: {model_name} for {feature}")
-    st.write(f"Mean Absolute Error (MAE): {mae2:.4f}")
-    st.write(f"MSE: {mse:.4f}")
-    st.write(f"RMSE: {rmse:.4f}")
-    st.write(f"R2: {r2:.4f}")
-    st.write("-" * 50)
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.markdown(f"<p style='margin: 0; font-size: 18px; text-align: center;'><strong>Mean Absolute Error (MAE)</strong></p>", unsafe_allow_html=True)
+        st.markdown(f"<p style='margin: 0; font-size: 18px; text-align: center;'>{mae2:.4f}</p>", unsafe_allow_html=True)
+        st.markdown(f"<p style='margin: 0; font-size: 18px; text-align: center;'><strong>Root Mean Squared Error (RMSE)</strong></p>", unsafe_allow_html=True)
+        st.markdown(f"<p style='margin: 0; font-size: 18px; text-align: center;'>{rmse:.4f}</p>", unsafe_allow_html=True)
+
+    with col2:
+        st.markdown(f"<p style='margin: 0; font-size: 18px; text-align: center;'><strong>Mean Squared Error (MSE)</strong></p>", unsafe_allow_html=True)
+        st.markdown(f"<p style='margin: 0; font-size: 18px; text-align: center;'>{mse:.4f}</p>", unsafe_allow_html=True)
+        st.markdown(f"<p style='margin: 0; font-size: 18px; text-align: center;'><strong>R-Squared (R2)</strong></p>", unsafe_allow_html=True)
+        st.markdown(f"<p style='margin: 0; font-size: 18px; text-align: center;'>{r2:.4f}</p>", unsafe_allow_html=True)
+
+    #st.write(f"Model: {model_name} for {feature}")
+    #st.markdown(f"<p style='margin: 0;'><strong>📉 Mean Absolute Error (MAE):</strong> {mae2:.4f}</p>", unsafe_allow_html=True)
+    #st.markdown(f"<p style='margin: 0;'><strong>📊 MSE:</strong> {mse:.4f}</p>", unsafe_allow_html=True)
+    #st.markdown(f"<p style='margin: 0;'><strong>📏 RMSE:</strong> {rmse:.4f}</p>", unsafe_allow_html=True)
+    #st.markdown(f"<p style='margin: 0;'><strong>📈 R2:</strong> {r2:.4f}</p>", unsafe_allow_html=True)
 
 def objetive(trial):
     param = {
@@ -181,28 +194,39 @@ def make_donut(input_response, input_text, input_color):
 
 #---------------------------------- 3.MAIN ---------------------------------#
 
-if section == "Basic":
+if section == "Results":
 
-    col1, col2, col3 = st.columns([1,1,1])
+    col1, col2, col3 = st.columns([0.9,1.2,0.9])
+
     with col1:
+        # CSS para eliminar márgenes y espacio extra entre los elementos
+        st.markdown("<h3 style='font-size: 24px; margin: 0; padding: 0; text-align: center;'>Selección de Modelo</h3>", unsafe_allow_html=True)
 
         options = [
             "📊 Basic LGBM Regressor 📊", "📈 LGBM Regressor with Optuna 📈", "📉 LGBM Regressor with Early Stopping📉"
         ]
-        selected_option = st.selectbox("", options)
+        # Cambiar el tamaño del texto usando markdown antes del selectbox
+        #st.markdown("<h3 style='font-size: 24px; margin: 0; padding: 0;'>Selección de Modelo</h3>", unsafe_allow_html=True)
         
-        if selected_option == "📊 Basic LGBM Regressor 📊":
+        selected_option = st.selectbox("", options, label_visibility="collapsed")
 
-            sections = st.radio(
-                label="",
-                options=["Results", "Real Resutls"],
-                horizontal=True
-            )
+        if selected_option == "📊 Basic LGBM Regressor 📊":
+            col32, col20, col21 = st.columns([1, 2, 1])
+            with col20:
+                sections = st.radio(
+                    label="",
+                    options=["Results", "Real Resutls"],
+                    horizontal=True,
+                    label_visibility="collapsed"
+                )
 
             if sections == "Results":
+
                 mse = mean_squared_error(y_test, y_pred_basic)
-                st.write("Evaluation of Development LGBM Regressor")
-                st.write(f"📊 **MSE (Overall Qual):** `{mse:.4f}`")
+                #st.markdown(f"<p style='margin-bottom: 0; font-weight: bold;'>Evaluation of Development LGBM Regressor</p>", unsafe_allow_html=True)
+                #st.write("Evaluation of Development LGBM Regressor")
+                #st.markdown(f"<p style='margin-bottom: 0; font-weight: bold;'>📊 MSE (Overall Qual):</strong> '{mse:.4f}' </p>", unsafe_allow_html=True)
+                #st.write(f"📊 **MSE (Overall Qual):** `{mse:.4f}`")
                 evalute_model(gbm, x2_test, y_test, y_pred_basic, "LightGBM Regressor", "Overall Qual" )
 
             elif sections == "Real Resutls":
@@ -283,17 +307,17 @@ if section == "Basic":
         model, expected_columns, scaler = load_model()  # Aquí sí puede estar cacheado por dentro
 
         # Slider para Overall Qual
-        overall_qual_value = st.slider("Número de Overall Qual", 1, 10, 5)
+        st.markdown("<h3 style='font-size: 24px; margin: 0; padding: 0; text-align: center;'>Selección Cantidad de Overall Qual</h3>", unsafe_allow_html=True)
+        overall_qual_value = st.slider("", 1, 10, 5)
         
         # Mostrar valor
-        st.write(f"Valor actual de Overall Qual: **{overall_qual_value}**")
+        st.markdown(f"""
+            <p style='font-size: 20px; text-align: center;'>Valor actual de Overall Qual: <strong>{overall_qual_value}</strong></p>
+        """, unsafe_allow_html=True)
         
         # Crear datos con columnas esperadas
         new_data = pd.DataFrame([{col: 0 for col in expected_columns}])
         new_data['Overall Qual'] = overall_qual_value
-
-        #st.dataframe(new_data)
-        #print("🔧 DataFrame enviado a predicción:\n", new_data)
 
         # Predicción
         prediction_log = model.predict(new_data)
@@ -307,88 +331,166 @@ if section == "Basic":
         prediction_rescaled = predicted_rescaled[:, 0]
         prediction = np.expm1(prediction_rescaled)
 
-        st.metric("💰 Predicción final en dólares", f"${round(prediction[0], 2):,.2f}")
+        #st.metric("💰 Predicción final en dólares", f"${round(prediction[0], 2):,.2f}")
+        st.markdown("<h3 style='font-size: 26px; text-align: center;'>Predicción final en dólares</h3>", unsafe_allow_html=True)
+        # Centrar la métrica con markdown
+        st.markdown("<div style='display: flex; justify-content: center;'><div>" 
+                    f"<p style='font-size: 26px; font-weight: bold;'>${round(prediction[0], 2):,.2f}</p>"
+                    "</div></div>", unsafe_allow_html=True)
 
-    col4, col5, col6 = st.columns(3)
+    col4, col5 = st.columns([0.5,1])
     with col4:
-        st.write("Top 10 Peores resultados")
+        st.markdown("""
+            <style>
+                .stHorizontal > div {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            </style>
+        """, unsafe_allow_html=True)
 
-        #Seleccionar las columnas necesarias
-        x_test = df[expected_columns].copy()  # Estas son las features con las que entrenaste
+        col44, col55= st.columns([1,1])
+        with col44:
+            #st.markdown("<h3 style='font-size: 24px; margin: 0; padding: 0; text-align: center;'> Top 10 Peores resultados </h3>", unsafe_allow_html=True)
+            st.markdown("<h3 style='font-size: 24px; margin: 0; padding: 0; text-align: center;'>Top 10 Peores resultados <br> </h3>", unsafe_allow_html=True)
 
-        #Predcir con tu modelo
-        prediction_log = model.predict(x_test)
+            #st.write("Top 10 Peores resultados")
 
-        #Desormalizar si usaste scaler 
-        predicted_df = pd.DataFrame(prediction_log, columns=['SalePrice_log'])
-        predicted_df['Gr Liv Area_log'] = 0  # para mantener la dimensión si tu scaler lo espera
-        predicted_rescaled = scaler.inverse_transform(predicted_df)
-        prediction_rescaled = predicted_rescaled[:, 0]
-        prediction = np.expm1(prediction_rescaled)
+            #Seleccionar las columnas necesarias
+            x_test = df[expected_columns].copy()  # Estas son las features con las que entrenaste
 
-        real_values = df['SalePrice']
-        df_comparison = pd.DataFrame({
-            'Real': real_values,
-            'Predicción': prediction_rescaled
-        })
+            #Predcir con tu modelo
+            prediction_log = model.predict(x_test)
 
-        #Revisar que valores predice peor(para analisis de errores)
-        df_comparison['Error absoluto'] = np.abs(df_comparison['Real'] - df_comparison['Predicción'])
-        errores_mayores = df_comparison.sort_values('Error absoluto', ascending=False).head(10)
-        st.write(errores_mayores)  
+            #Desormalizar si usaste scaler 
+            predicted_df = pd.DataFrame(prediction_log, columns=['SalePrice_log'])
+            predicted_df['Gr Liv Area_log'] = 0  # para mantener la dimensión si tu scaler lo espera
+            predicted_rescaled = scaler.inverse_transform(predicted_df)
+            prediction_rescaled = predicted_rescaled[:, 0]
+            prediction = np.expm1(prediction_rescaled)
 
-    with col5:
-        st.write("Top 10 Mejores resultados")
+            real_values = df['SalePrice']
+            df_comparison = pd.DataFrame({
+                'Real': real_values,
+                'Predicción': prediction_rescaled
+            })
 
-        mejores_predicciones = df_comparison.sort_values('Error absoluto', ascending=True).head(10)
-        st.write(mejores_predicciones)
+            #Revisar que valores predice peor(para analisis de errores)
+            df_comparison['Error absoluto'] = np.abs(df_comparison['Real'] - df_comparison['Predicción'])
+            errores_mayores = df_comparison.sort_values('Error absoluto', ascending=False).head(10)
+            st.write(errores_mayores)  
+
+        with col55:
+            st.markdown("<div style='display: flex; justify-content: center;'><div style='text-align: center;'>"
+                "<h3 style='font-size: 24px; margin: 0; padding: 0;'>Top 10 Mejores resultados <br> </h3>"
+                "</div></div>", unsafe_allow_html=True)
+            #st.write("Top 10 Mejores resultados")
+
+            mejores_predicciones = df_comparison.sort_values('Error absoluto', ascending=True).head(10)
+            st.write(mejores_predicciones)
         
-    with col6:
+    with col5:
+        
         # Valor ingresado por el usuario (ya lo tienes)
-        st.write(f"🔧 Valor ingresado de Overall Qual: **{overall_qual_value}**")
+        #st.write(f"🔧 Valor ingresado de Overall Qual: **{overall_qual_value}**")
+        st.markdown(
+            f"""
+            <div style="text-align: center; font-size: 28px;">
+                <strong>🔧 Valor ingresado de Overall Qual 🔧</strong> <strong> <br>{overall_qual_value}</strong> 
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
 
-        # Filtrar para obtener una fila con ese Overall Qual (puedes usar la más cercana si no hay exacta)
-        fila_real = df.loc[df['Overall Qual'] == overall_qual_value]
+        subcol1, subcol2, subcol3 = st.columns([1,1,1])
+        with subcol1:
+            st.markdown(
+                """
+                <div style="text-align: center;">
+                    <h4>💰 Predicción en dólares 💰</h4>
+                    <p style="font-size: 30px;"><strong>${:,.2f}</strong></p>
+                </div>
+                """.format(round(prediction[0], 2)),
+                unsafe_allow_html=True
+            )
+            # Filtrar para obtener una fila con ese Overall Qual (puedes usar la más cercana si no hay exacta)
+            fila_real = df.loc[df['Overall Qual'] == overall_qual_value]
 
-        if not fila_real.empty:
-            valor_real = fila_real.iloc[0]['SalePrice']
-        else:
-            valor_real = None
+            if not fila_real.empty:
+                valor_real = fila_real.iloc[0]['SalePrice']
+            else:
+                valor_real = None
 
-        # Mostrar predicción
-        st.metric("💰 Predicción en dólares", f"${round(prediction[0], 2):,.2f}")
-
-        # Mostrar valor real más cercano si existe
-        if valor_real:
-            st.metric("🏠 Valor real más cercano", f"${valor_real:,.2f}")
+            st.markdown(
+                """
+                <div style="text-align: center;">
+                    <h4>🏠 Valor real (cercano) 🏠 </h4>
+                    <p style="font-size: 30px;"><strong>${:,.2f}</strong></p>
+                </div>
+                """.format(valor_real if valor_real is not None else 0),
+                unsafe_allow_html=True
+            )
+            # Mostrar valor real más cercano si existe
+            #st.metric("🏠 Valor real más cercano", f"${valor_real:,.2f}")
 
             # Calcular error
             error_abs = abs(valor_real - prediction[0])
             error_pct = (error_abs / valor_real) * 100
+            
 
-            st.write(f"📉 Error absoluto: ${round(error_abs, 2):,.2f}")
-            st.write(f"📊 Error porcentual: {round(error_pct, 2)}%")
-        else:
-            st.warning("No se encontró un valor real exacto para ese 'Overall Qual'.")
+        with subcol2:
+            st.markdown(
+                f"""
+                <div style='text-align: center;'>
+                    <h4>📉 Error absoluto 📉</h4>
+                    <p style='font-size: 30px;'><strong>${round(error_abs, 2):,.2f}</strong></p>
+                </div>
+                """,
+                unsafe_allow_html=True
+            )
+
+            st.markdown(
+                f"""
+                <div style='text-align: center;'>
+                  <h4> 📊 Error porcentual 📊 </h4>
+                  <p style='font-size: 30px;'><strong>{round(error_pct, 2)}%</strong></p>
+                </div>
+                """,
+                unsafe_allow_html=True
+            )
+            #st.write(f"📉 Error absoluto: ${round(error_abs, 2):,.2f}")
+            #st.write(f"📊 Error porcentual: {round(error_pct, 2)}%")
+
         
-        # Determinar color y mensaje según error
-        if error_pct < 10:
-            color = "green"
-            mensaje = "✅ Excelente predicción"
-        elif error_pct < 25:
-            color = "blue"
-            mensaje = "🟦 Buena predicción"
-        elif error_pct < 50:
-            color = "orange"
-            mensaje = "🟨 Regular"
-        else:
-            color = "red"
-            mensaje = "🟥 Mala predicción"
+        with subcol3:
+            # Determinar color y mensaje según error
+            if error_pct < 10:
+                color = "green"
+                mensaje = "✅ Excelente predicción ✅"
+            elif error_pct < 25:
+                color = "blue"
+                mensaje = "🟦 Buena predicción 🟦"
+            elif error_pct < 50:
+                color = "orange"
+                mensaje = "🟨 Regular 🟨"
+            else:
+                color = "red"
+                mensaje = "🟥 Mala predicción 🟥"
 
-        # Mostrar gráfico donut
-        st.write(mensaje)
-        donut_chart = make_donut(error_pct, "Error", color)
-        st.altair_chart(donut_chart)
+            st.markdown(
+                f"""
+                <div style="text-align: center; font-size: 24px;">
+                    {mensaje}
+                </div>
+                """,
+                unsafe_allow_html=True
+            )
+
+            # Mostrar gráfico donut
+            #st.write(mensaje)
+            donut_chart = make_donut(error_pct, "Error", color)
+            st.altair_chart(donut_chart)
 
 elif section == "Development":
     #---------------------------------- 2.SIDEBAR ---------------------------------#
