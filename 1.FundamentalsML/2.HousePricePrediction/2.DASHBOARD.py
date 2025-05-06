@@ -15,6 +15,7 @@ from lightgbm import early_stopping, log_evaluation
 from scipy.stats import randint
 from sklearn.model_selection import RandomizedSearchCV
 import optuna
+import joblib
 #--------------------------------- 1.PAGE CONFIGURATION ---------------------------------#
 # Configurar página en modo ancho
 st.set_page_config(page_title="House Price Prediction", page_icon="🏠", layout="wide")
@@ -104,6 +105,31 @@ def objetive(trial):
 gbm = lgb.LGBMRegressor(objective = 'regression', random_state = 42, verbosity = -1)
 gbm.fit(x2_train, y_train)
 y_pred_basic = gbm.predict(x2_test)
+
+#--------------------------- 1. LOAD TRAINED MODEL ---------------------------#
+# Cargar modelo entrenado
+#model = joblib.load('/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/lightgbm_optuna_model.pkl')
+
+# Cargar nombres de columnas usadas en el entrenamiento
+expected_columns = joblib.load('/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/feature_names.pkl')
+
+# Cargar el scaler que se guardó
+#scaler = joblib.load('/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/min_max_scaler.pkl')
+
+#@st.cache_data
+@st.cache_resource
+def load_model():
+    # Cargar modelo entrenado
+    model = joblib.load('/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/lightgbm_optuna_model.pkl')
+
+    # Cargar nombres de columnas usadas en el entrenamiento
+    expected_columns = joblib.load('/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/feature_names.pkl')
+
+    # Cargar el scaler que se guardó
+    scaler = joblib.load('/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/min_max_scaler.pkl')
+    return model, expected_columns, scaler
+#-----------------------------------------------------------------------------#
+
 #---------------------------------- 3.MAIN ---------------------------------#
 
 if section == "Basic":
@@ -202,16 +228,83 @@ if section == "Basic":
         st.line_chart(graph)
 
     with col3:
-        num_rows = st.slider("Numbers of Overall Qual", 0, 100, 50)
-        np.random.seed(42)
-        data = []
 
-        for i in range(num_rows):
-            data.append(
-                {
-                }
-            )
-        data = pd.DataFrame(data)       
+        # Este bloque NO lleva @st.cache_data
+
+        model, expected_columns, scaler = load_model()  # Aquí sí puede estar cacheado por dentro
+
+        # Slider para Overall Qual
+        overall_qual_value = st.slider("Número de Overall Qual", 0, 10, 5)
+        
+        # Mostrar valor
+        st.write(f"Valor actual de Overall Qual: **{overall_qual_value}**")
+        
+        # Crear datos con columnas esperadas
+        new_data = pd.DataFrame([{col: 0 for col in expected_columns}])
+        new_data['Overall Qual'] = overall_qual_value
+
+        #st.dataframe(new_data)
+        #print("🔧 DataFrame enviado a predicción:\n", new_data)
+
+        # Predicción
+        prediction_log = model.predict(new_data)
+
+        # Preparar predicción para desnormalizar
+        predicted_df = pd.DataFrame(prediction_log, columns=['SalePrice_log'])
+        predicted_df['Gr Liv Area_log'] = 0  # columna ficticia
+
+        # Desnormalización e inversión de log
+        predicted_rescaled = scaler.inverse_transform(predicted_df)
+        prediction_rescaled = predicted_rescaled[:, 0]
+        prediction = np.expm1(prediction_rescaled)
+
+        # Mostrar resultado final
+        #st.write("🔧 Debug - Valor ingresado:", overall_qual_value)
+        #print("🔧 Debug - Valor ingresado:", overall_qual_value)
+
+        #print("🔧 Predicción cruda log:", prediction_log)
+        #print("🔧 Predicción desnormalizada:", prediction)
+        st.metric("💰 Predicción final en dólares", f"${round(prediction[0], 2):,.2f}")
+
+
+        ##overall_qual_value = st.slider("Numbers of Overall Qual", 0, 100, 50)
+        ##st.write(f"Valor actual de Overall Qual: **{overall_qual_value}**")
+
+        ##np.random.seed(42)
+        ##data = []
+
+        ##for i in range(overall_qual_value):
+            ##data.append(
+            ##    {
+                    #"Overall Qual": overall_qual_value
+            ##    }
+            ##)
+        ##data = pd.DataFrame(data)     
+    
+        # ⚠️ Crear un DataFrame de entrada para la predicción (esto es lo importante)
+        #input_df = pd.DataFrame({"Overall Qual": [overall_qual_value]})
+
+        # Predicción logarítmica
+        #prediction_log = model.predict(input_df)
+
+        # Crear un DataFrame para aplicar la desnormalización
+        #predicted_df = pd.DataFrame(prediction_log, columns=['SalePrice_log'])
+
+        # Añadir columna ficticia si tu scaler espera más de una columna (ajusta según tu scaler)
+        #predicted_df['Gr Liv Area_log'] = 0
+
+        # Desnormalizar usando el scaler entrenado
+        #predicted_rescaled = scaler.inverse_transform(predicted_df)
+
+        # Tomar solo la columna desnormalizada del precio
+        #prediction_rescaled = predicted_rescaled[:, 0]
+
+        # Invertir la transformación logarítmica
+        #prediction = np.expm1(prediction_rescaled)
+
+        # Mostrar el resultado
+        #st.write("💰 Predicción final en dólares:", prediction[0])
+
         #st.markdown("""
         #<style>
         #input[type=number] {
@@ -229,6 +322,7 @@ if section == "Basic":
         st.write("Top 10 Mejores resultados")
     with col5:
         st.write("Top 10 Peores resultados")
+        
     with col6:
         st.write("Comparacion del resultado")
 
