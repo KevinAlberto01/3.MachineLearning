@@ -1,23 +1,112 @@
-#0.IMPORT LIBRARIES 
+#------------------------------------------------ 0.IMPORT LIBRARIES -----------------------------------------------# 
 import pandas as pd 
 import streamlit as st
 import matplotlib.pyplot as plt 
 import seaborn as sns
 import numpy as np
+import optuna
+import joblib
+import altair as alt
+import streamlit.components.v1 as components
+import lightgbm as lgb
 from scipy.stats import gaussian_kde
 from scipy.stats import shapiro
 from sklearn.preprocessing import MinMaxScaler ##
-import streamlit.components.v1 as components
-import lightgbm as lgb
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_absolute_error,mean_squared_error, r2_score
 from lightgbm import early_stopping, log_evaluation 
 from scipy.stats import randint
 from sklearn.model_selection import RandomizedSearchCV
-import optuna
-import joblib
-import altair as alt
 from streamlit_option_menu import option_menu
+#--------------------------------------------------------------------------------------------------------------------# 
+
+#-------------------------------------------------- 1.DEVELOPMENT ---------------------------------------------------#
+################################################## 1.1.LOAD DATASET ##################################################
+file_path = '/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/AmesHousing.csv'
+df = pd.read_csv(file_path)
+
+selected_features = ['SalePrice', 'Overall Qual', 'Gr Liv Area', 'Garage Cars', 
+                     'Garage Area', 'Total Bsmt SF', '1st Flr SF', 'Full Bath', 'Year Built']
+
+df_encoded = pd.get_dummies(df, drop_first=True)
+df_corr = df_encoded.corr()
+
+df['SalePrice_log'] = np.log1p(df['SalePrice'])
+df['Gr Liv Area_log'] = np.log1p(df['Gr Liv Area'])
+
+scaler = MinMaxScaler()
+df[['SalePrice_log', 'Gr Liv Area_log']] = scaler.fit_transform(df[['SalePrice_log', 'Gr Liv Area_log']])
+
+y = df['SalePrice_log']
+x2 = df[['Overall Qual']]
+x2_train, x2_test, y_train, y_test = train_test_split(x2, y, test_size = 0.2, random_state = 42)
+
+
+def evalute_model(model, x_test, y_test, y_pred, model_name, feature):
+    mae2 = mean_absolute_error(y_test, y_pred)
+    mse = mean_squared_error(y_test, y_pred)
+    rmse = np.sqrt(mse)
+    r2 = r2_score(y_test, y_pred)
+
+    col1, col2 = st.columns(2)
+
+    with col1:
+        st.markdown(f"<p style='margin: 0; font-size: 18px; text-align: center;'><strong>Mean Absolute Error (MAE)</strong></p>", unsafe_allow_html=True)
+        st.markdown(f"<p style='margin: 0; font-size: 18px; text-align: center;'>{mae2:.4f}</p>", unsafe_allow_html=True)
+        st.markdown(f"<p style='margin: 0; font-size: 18px; text-align: center;'><strong>Root Mean Squared Error (RMSE)</strong></p>", unsafe_allow_html=True)
+        st.markdown(f"<p style='margin: 0; font-size: 18px; text-align: center;'>{rmse:.4f}</p>", unsafe_allow_html=True)
+
+    with col2:
+        st.markdown(f"<p style='margin: 0; font-size: 18px; text-align: center;'><strong>Mean Squared Error (MSE)</strong></p>", unsafe_allow_html=True)
+        st.markdown(f"<p style='margin: 0; font-size: 18px; text-align: center;'>{mse:.4f}</p>", unsafe_allow_html=True)
+        st.markdown(f"<p style='margin: 0; font-size: 18px; text-align: center;'><strong>R-Squared (R2)</strong></p>", unsafe_allow_html=True)
+        st.markdown(f"<p style='margin: 0; font-size: 18px; text-align: center;'>{r2:.4f}</p>", unsafe_allow_html=True)
+
+def objetive(trial):
+    param = {
+        'objective': 'regression',
+        'metric': 'rmse',
+        'verbosity': -1,
+        'boosting_type': 'gbdt',
+        'n_estimators': trial.suggest_int('n_estimators', 50, 200),
+        'max_depth': trial.suggest_int('max_depth', 5, 20),
+        'learning_rate': trial.suggest_float('learning_rate', 0.01, 0.3),
+        'min_child_samples': trial.suggest_int('min_child_samples', 5, 30)
+    }
+
+    model = lgb.LGBMRegressor(**param)
+    model.fit(x2_train, y_train)
+    preds = model.predict(x2_test)
+    rmse = mean_squared_error(y_test, preds, squared=False)
+    return rmse
+
+gbm = lgb.LGBMRegressor(objective = 'regression', random_state = 42, verbosity = -1)
+gbm.fit(x2_train, y_train)
+y_pred_basic = gbm.predict(x2_test)
+
+#-1. LOAD TRAINED MODEL ---------------------------#
+# Cargar modelo entrenado
+#model = joblib.load('/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/lightgbm_optuna_model.pkl')
+
+# Cargar nombres de columnas usadas en el entrenamiento
+expected_columns = joblib.load('/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/feature_names.pkl')
+
+# Cargar el scaler que se guardó
+#scaler = joblib.load('/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/min_max_scaler.pkl')
+
+#@st.cache_data
+@st.cache_resource
+def load_model():
+    # Cargar modelo entrenado
+    model = joblib.load('/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/lightgbm_optuna_model.pkl')
+
+    # Cargar nombres de columnas usadas en el entrenamiento
+    expected_columns = joblib.load('/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/feature_names.pkl')
+
+    # Cargar el scaler que se guardó
+    scaler = joblib.load('/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/min_max_scaler.pkl')
+    return model, expected_columns, scaler
+#-----------------------------------------------------------------------------#
 
 #--------------------------------- 1.PAGE CONFIGURATION ---------------------------------#
 # Configurar página en modo ancho
@@ -53,100 +142,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 #-----------------------------------------------------------------------------------------#
 
-#--------------------------------- 2.DEVELOPMENT ---------------------------------#
-
-#1.LOAD DATASET
-file_path = '/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/AmesHousing.csv'
-df = pd.read_csv(file_path)
-
-selected_features = ['SalePrice', 'Overall Qual', 'Gr Liv Area', 'Garage Cars', 
-                     'Garage Area', 'Total Bsmt SF', '1st Flr SF', 'Full Bath', 'Year Built']
-df_encoded = pd.get_dummies(df, drop_first=True)
-df_corr = df_encoded.corr()
-
-df['SalePrice_log'] = np.log1p(df['SalePrice'])
-df['Gr Liv Area_log'] = np.log1p(df['Gr Liv Area'])
-
-scaler = MinMaxScaler()
-df[['SalePrice_log', 'Gr Liv Area_log']] = scaler.fit_transform(df[['SalePrice_log', 'Gr Liv Area_log']])
-
-y = df['SalePrice_log']
-x2 = df[['Overall Qual']]
-x2_train, x2_test, y_train, y_test = train_test_split(x2, y, test_size = 0.2, random_state = 42)
-
-
-def evalute_model(model, x_test, y_test, y_pred, model_name, feature):
-    mae2 = mean_absolute_error(y_test, y_pred)
-    mse = mean_squared_error(y_test, y_pred)
-    rmse = np.sqrt(mse)
-    r2 = r2_score(y_test, y_pred)
-
-    col1, col2 = st.columns(2)
-
-    with col1:
-        st.markdown(f"<p style='margin: 0; font-size: 18px; text-align: center;'><strong>Mean Absolute Error (MAE)</strong></p>", unsafe_allow_html=True)
-        st.markdown(f"<p style='margin: 0; font-size: 18px; text-align: center;'>{mae2:.4f}</p>", unsafe_allow_html=True)
-        st.markdown(f"<p style='margin: 0; font-size: 18px; text-align: center;'><strong>Root Mean Squared Error (RMSE)</strong></p>", unsafe_allow_html=True)
-        st.markdown(f"<p style='margin: 0; font-size: 18px; text-align: center;'>{rmse:.4f}</p>", unsafe_allow_html=True)
-
-    with col2:
-        st.markdown(f"<p style='margin: 0; font-size: 18px; text-align: center;'><strong>Mean Squared Error (MSE)</strong></p>", unsafe_allow_html=True)
-        st.markdown(f"<p style='margin: 0; font-size: 18px; text-align: center;'>{mse:.4f}</p>", unsafe_allow_html=True)
-        st.markdown(f"<p style='margin: 0; font-size: 18px; text-align: center;'><strong>R-Squared (R2)</strong></p>", unsafe_allow_html=True)
-        st.markdown(f"<p style='margin: 0; font-size: 18px; text-align: center;'>{r2:.4f}</p>", unsafe_allow_html=True)
-
-    #st.write(f"Model: {model_name} for {feature}")
-    #st.markdown(f"<p style='margin: 0;'><strong>📉 Mean Absolute Error (MAE):</strong> {mae2:.4f}</p>", unsafe_allow_html=True)
-    #st.markdown(f"<p style='margin: 0;'><strong>📊 MSE:</strong> {mse:.4f}</p>", unsafe_allow_html=True)
-    #st.markdown(f"<p style='margin: 0;'><strong>📏 RMSE:</strong> {rmse:.4f}</p>", unsafe_allow_html=True)
-    #st.markdown(f"<p style='margin: 0;'><strong>📈 R2:</strong> {r2:.4f}</p>", unsafe_allow_html=True)
-
-def objetive(trial):
-    param = {
-        'objective': 'regression',
-        'metric': 'rmse',
-        'verbosity': -1,
-        'boosting_type': 'gbdt',
-        'n_estimators': trial.suggest_int('n_estimators', 50, 200),
-        'max_depth': trial.suggest_int('max_depth', 5, 20),
-        'learning_rate': trial.suggest_float('learning_rate', 0.01, 0.3),
-        'min_child_samples': trial.suggest_int('min_child_samples', 5, 30)
-    }
-
-    model = lgb.LGBMRegressor(**param)
-    model.fit(x2_train, y_train)
-    preds = model.predict(x2_test)
-    rmse = mean_squared_error(y_test, preds, squared=False)
-    return rmse
-
-gbm = lgb.LGBMRegressor(objective = 'regression', random_state = 42, verbosity = -1)
-gbm.fit(x2_train, y_train)
-y_pred_basic = gbm.predict(x2_test)
-
-#--------------------------- 1. LOAD TRAINED MODEL ---------------------------#
-# Cargar modelo entrenado
-#model = joblib.load('/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/lightgbm_optuna_model.pkl')
-
-# Cargar nombres de columnas usadas en el entrenamiento
-expected_columns = joblib.load('/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/feature_names.pkl')
-
-# Cargar el scaler que se guardó
-#scaler = joblib.load('/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/min_max_scaler.pkl')
-
-#@st.cache_data
-@st.cache_resource
-def load_model():
-    # Cargar modelo entrenado
-    model = joblib.load('/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/lightgbm_optuna_model.pkl')
-
-    # Cargar nombres de columnas usadas en el entrenamiento
-    expected_columns = joblib.load('/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/feature_names.pkl')
-
-    # Cargar el scaler que se guardó
-    scaler = joblib.load('/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/min_max_scaler.pkl')
-    return model, expected_columns, scaler
-#-----------------------------------------------------------------------------#
-
+#-------------------------------------------------- 2.DEVELOPMENT ---------------------------------------------------#
 def make_donut(input_response, input_text, input_color):
     if input_color == 'blue':
         chart_color = ['#29b5e8', '#155F7A']
@@ -167,12 +163,12 @@ def make_donut(input_response, input_text, input_color):
         "% value": [100, 0]
     })
 
-    plot = alt.Chart(source).mark_arc(innerRadius=45, cornerRadius=25).encode(
+    plot = alt.Chart(source).mark_arc(innerRadius=50, cornerRadius=75).encode(
         theta="% value",
         color=alt.Color("Topic:N",
                         scale=alt.Scale(domain=[input_text, ''], range=chart_color),
                         legend=None)
-    ).properties(width=130, height=130)
+    ).properties(width=300, height=250)
 
     text = plot.mark_text(
         align='center',
@@ -183,15 +179,15 @@ def make_donut(input_response, input_text, input_color):
         fontStyle="italic"
     ).encode(text=alt.value(f'{input_response:.1f}%'))
 
-    plot_bg = alt.Chart(source_bg).mark_arc(innerRadius=45, cornerRadius=20).encode(
+    plot_bg = alt.Chart(source_bg).mark_arc(innerRadius=50, cornerRadius=75).encode(
         theta="% value",
         color=alt.Color("Topic:N",
                         scale=alt.Scale(domain=[input_text, ''], range=chart_color),
                         legend=None)
-    ).properties(width=130, height=130)
+    ).properties(width=300, height=250)
 
     return plot_bg + plot + text
-
+#--------------------------------------------------------------------------------------------------------------------#
 #---------------------------------- 3.MAIN ---------------------------------#
 
 if section == "Results":
