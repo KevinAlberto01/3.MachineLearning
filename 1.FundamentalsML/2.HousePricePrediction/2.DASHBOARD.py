@@ -111,6 +111,7 @@ prediction_before = 0
 #Seleccionar las columnas necesarias
 x_test = df[expected_columns].copy()  # Estas son las features con las que entrenaste
 
+
 #-------------------------------------------------- 2.PAGE CONFIGURATION ---------------------------------------------------#
 #################################################### 2.1 Principal page #####################################################
 
@@ -247,9 +248,10 @@ if section == "Results":
 
             y_pred_optuna = best_optuna.predict(x2_test)
 
-            st.write("Best Parameters:")
-            for key, value in study.best_params.items():
-                st.write(f"{key}: {value}")
+            cols = st.columns(len(study.best_params))
+
+            for col, (key, value) in zip(cols, study.best_params.items()):
+                col.metric(label=key, value=round(value, 4) if isinstance(value, float) else value)
 
             #y_pred_optuna = best_optuna.predict(x2_test)
 
@@ -271,9 +273,12 @@ if section == "Results":
             gbm2.fit(x2_train, y_train, eval_set = [(x2_test, y_test)], eval_metric = 'rmse', callbacks = [early_stopping(stopping_rounds = 50), log_evaluation(0)])
             
             params_to_display = ["n_estimators", "max_depth", "learning_rate", "min_child_samples"]
-            for param in params_to_display:
-                st.write(f"{param}: {gbm2.get_params()[param]}")
-            
+            cols = st.columns(len(params_to_display))
+
+            for col, param in zip(cols, params_to_display):
+                value = gbm2.get_params()[param]
+                col.metric(label=param, value=round(value, 4) if isinstance(value, float) else value)
+
             y_pred_early = gbm2.predict(x2_test)
 
             mse_early = mean_squared_error(y_test, y_pred_early)
@@ -300,7 +305,6 @@ if section == "Results":
     with col3:
 
         ################################################## 3.3 Seccion cantidad de Overall Quall ###############################################
-        #model, expected_columns, scaler = load_model()  # Aquí sí puede estar cacheado por dentro
         # Slider para Overall Qual
         st.markdown("<h3 style='font-size: 24px; margin: 0; padding: 0; text-align: center;'>Selección Cantidad de Overall Qual</h3>", unsafe_allow_html=True)
         overall_qual_value = st.slider("", 1, 10, 5)
@@ -334,7 +338,7 @@ if section == "Results":
                     "</div></div>", unsafe_allow_html=True)
         ########################################################################################################################################
 
-    col4, col5 = st.columns([0.6,1])
+    col4, col5 = st.columns([0.7,1])
     with col4:
 
         ################################################## 3.4 Top 10 Peores y mejor Resultados ###############################################
@@ -350,6 +354,8 @@ if section == "Results":
 
         col44, col55= st.columns([1,1])
         with col44:
+
+            #+++++++++++++++++++++++++++++++++++++++++++++++++ 3.4.1 Top 10 Peores Predicciones ++++++++++++++++++++++++++++++++++++++++++++++++
             # Cargar modelo, columnas esperadas y scaler
             model, expected_columns, scaler = load_model()  # Esta función debe devolver el modelo, las columnas en orden, y el scaler entrenado
 
@@ -382,20 +388,23 @@ if section == "Results":
             st.markdown("<h3 style='font-size: 24px; margin: 0; padding: 0; text-align: center;'>Top 10 Peores resultados<br></h3>", unsafe_allow_html=True)
             errores_mayores = df_comparison.sort_values('Error absoluto', ascending=False).head(10)
             st.write(errores_mayores)
-
+            #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         with col55:
+
+            #++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 3.4.1 Top 10 Mejores Predicciones +++++++++++++++++++++++++++++++++++++++++++++
             # Mostrar mejores resultados
             st.markdown("<div style='display: flex; justify-content: center;'><div style='text-align: center;'>"
                         "<h3 style='font-size: 24px; margin: 0; padding: 0;'>Top 10 Mejores resultados<br></h3>"
                         "</div></div>", unsafe_allow_html=True)
             mejores_predicciones = df_comparison.sort_values('Error absoluto', ascending=True).head(10)
             st.write(mejores_predicciones)
-            ########################################################################################################################################
+            #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+            #########################################################################################################################################
     
     with col5:
-        
-        # Valor ingresado por el usuario (ya lo tienes)
-        #st.write(f"🔧 Valor ingresado de Overall Qual: **{overall_qual_value}**")
+    
+        ######################################################## 4.Seccion de desglose informacion ##################################################
+        #++++++++++++++++++++++++++++++++++++++++++++++++++++++ 4.1 Valor ingresado de Overall Qual +++++++++++++++++++++++++++++++++++++++++++++++++
         st.markdown(
             f"""
             <div style="text-align: center; font-size: 28px;">
@@ -407,6 +416,8 @@ if section == "Results":
 
         subcol1, subcol2, subcol3 = st.columns([1,1,1])
         with subcol1:
+
+            #++++++++++++++++++++++++++++++++++++++++++++++++ 4.1 Predicciones en dolares y valor real ++++++++++++++++++++++++++++++++++++++++++++++++
             st.markdown(
                 """
                 <div style="text-align: center;">
@@ -433,15 +444,16 @@ if section == "Results":
                 """.format(valor_real if valor_real is not None else 0),
                 unsafe_allow_html=True
             )
-            # Mostrar valor real más cercano si existe
-            #st.metric("🏠 Valor real más cercano", f"${valor_real:,.2f}")
 
             # Calcular error
             error_abs = abs(valor_real - prediction[0])
             error_pct = (error_abs / valor_real) * 100
+            #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
             
 
         with subcol2:
+            
+            #++++++++++++++++++++++++++++++++++++++++++++++++++ 4.2 Error absoluto y Error Porcentual ++++++++++++++++++++++++++++++++++++++++++++++++++
             st.markdown(
                 f"""
                 <div style='text-align: center;'>
@@ -461,11 +473,12 @@ if section == "Results":
                 """,
                 unsafe_allow_html=True
             )
-            #st.write(f"📉 Error absoluto: ${round(error_abs, 2):,.2f}")
-            #st.write(f"📊 Error porcentual: {round(error_pct, 2)}%")
+            #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
         
         with subcol3:
+
+            #++++++++++++++++++++++++++++++++++++++++++++++++++ 4.2 Error absoluto y Error Porcentual ++++++++++++++++++++++++++++++++++++++++++++++++++
             # Determinar color y mensaje según error
             if error_pct < 10:
                 color = "green"
@@ -489,25 +502,29 @@ if section == "Results":
                 unsafe_allow_html=True
             )
 
-            # Mostrar gráfico donut
-            #st.write(mensaje)
             donut_chart = make_donut(error_pct, "Error", color)
             st.altair_chart(donut_chart)
+            #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        ################################################################################################################################################
+
 
 elif section == "Development":
-    #---------------------------------- 2.SIDEBAR ---------------------------------#
-    #Verificar dimensiones 
+        #Verificar dimensiones 
     df_rows, df_columns = df.shape
+    ######################################################## 5. Basic Information and First 5 Datas ######################################################
     col1, col2 = st.columns([0.25,2])
     with col1:
+        #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 5.1 Basic Information ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         st.markdown("<h3 style='text-align: center;'>📌 Basic Info</h3>", unsafe_allow_html=True)
         st.markdown(f"**Number of rows:** {df_rows}<br>**Number of columns:** {df_columns}", unsafe_allow_html=True)
-    #------------------------------------------------------------------------------#
+        #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     
     with col2:
-        
+        #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 5.2 First 5 Datas +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         st.markdown("<h3 style='text-align: center;'>First 5 datas</h3>", unsafe_allow_html=True)
         st.dataframe(df.head(), use_container_width=True)
+        #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    ######################################################################################################################################################
 
     #Crear dos columnas: izquierda(info) y derecha(EDA)
     #Ajusta proporcion si quieres mas espacio para el heatmap
@@ -515,10 +532,8 @@ elif section == "Development":
     #COLUMNA IZQUIERDA:INFO
     #3.1 Mostrar mas informacion
     with col1:
-        # ----------------------
-        # FUNCIÓN PARA MOSTRAR TABLAS CENTRADAS
-        # ----------------------
 
+        ############################################################## 6.MORE INFORMATION ################################################################
         def show_centered_table(df_table, title=None):
             # Mostrar el título solo si se especifica y no está vacío
             if title and title.strip():
@@ -602,31 +617,40 @@ elif section == "Development":
         # ----------------------
         # VISUALIZACIONES
         # ----------------------
+                
+        #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 6.1 Top 10 Correlated +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         if selected_option == "📊 Top 10 Correlated 📊":
             saleprice_corr = df_corr['SalePrice'].abs().sort_values(ascending=False).head(10).reset_index()
             saleprice_corr.columns = ["Feature", "Correlation"]
             show_centered_table(saleprice_corr)
-
+        #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        
+        #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 6.2 Null Values ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         elif selected_option == "❌ Null Values ❌":
             null_table = df[['SalePrice', 'Gr Liv Area', 'Overall Qual']].isnull().sum().to_frame(name="Null Count").reset_index()
             null_table.columns = ["Feature", "Null Count"]
             show_centered_table(null_table)
+        #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+        #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 6.3 Descriptive Statistics ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         elif selected_option == "📉 Descriptive Statistics 📉":
             desc_stats = df[['Gr Liv Area', 'SalePrice', 'Overall Qual']].describe().reset_index()
             show_centered_table(desc_stats)
+        #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+        #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 6.4 First Normalized Values +++++++++++++++++++++++++++++++++++++++++++++++++++++++
         elif selected_option == "🔢 First Normalized Values 🔢":
-            #df['SalePrice_log'] = np.log1p(df['SalePrice'])
-            #df['Gr Liv Area_log'] = np.log1p(df['Gr Liv Area'])
-            #scaler = MinMaxScaler()
             df[['SalePrice_log', 'Gr Liv Area_log']] = scaler.fit_transform(df[['SalePrice_log', 'Gr Liv Area_log']])
             show_centered_table(df[['SalePrice_log', 'Gr Liv Area_log']].head().reset_index(drop=True))
+        #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+        #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 6.4 Shapiro-Wilk Test +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         elif selected_option == "🧪 Shapiro-Wilk Test 🧪":
             shapiro_table = get_shapiro_results(df)
             show_centered_table(shapiro_table)
+        #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+        #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 6.5 Skew Values ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         elif selected_option == "📐 Skew Values 📐":
             skew_table = pd.DataFrame({
                 'Feature': ['SalePrice', 'Gr Liv Area', 'Overall Qual'],
@@ -637,9 +661,11 @@ elif section == "Development":
                 ]
             })
             show_centered_table(skew_table)
-
+        #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        ######################################################################################################################################################
 
     with col2:
+        ################################################################ 6.Heat Map #####3################################################################
         st.markdown("<h3 style='text-align: center;'>Heat Map</h3>", unsafe_allow_html=True)
 
         fig, ax = plt.subplots(figsize=(12, 10))
@@ -656,12 +682,15 @@ elif section == "Development":
         gr_liv_area_data = df['Gr Liv Area'].dropna().to_numpy().flatten()
         sale_price_data = df['SalePrice'].dropna().to_numpy().flatten()
         overall_qual_data = df['Overall Qual'].dropna().to_numpy().flatten()
+        ##################################################################################################################################################
 
     with col3:
 
+        ################################################################ 7.TYPES OF PLOTS ################################################################
     # Selector
         graph_option = st.selectbox("",["📦 Box Plots 📦", "📊 Histogram 📊"])
 
+        #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 7.1 Box Plots ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         if graph_option == "📦 Box Plots 📦":
             #st.markdown("<h3 style='text-align: center;'>Box Plots</h3>", unsafe_allow_html=True)
             fig, axs = plt.subplots(1, 3, figsize=(21, 7))
@@ -676,7 +705,9 @@ elif section == "Development":
             axs[2].set_title('Boxplot of Overall Qual')
 
             st.pyplot(fig)
+        #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+        #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 7.2 Histogram ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         elif graph_option == "📊 Histogram 📊":
             #st.markdown("<h3 style='text-align: center;'>Basic Histogram</h3>", unsafe_allow_html=True)
 
@@ -708,8 +739,10 @@ elif section == "Development":
             axs[2].set_title("Distribution of Overall Quality")
 
             st.pyplot(fig3)
+        #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        ##################################################################################################################################################
 
-
+    ############################################## 8. Histogram with log1p and Histogram with log1p + MinMaxScaler #######################################
     # Opción de transformación
         section = st.radio(
             label="",
@@ -720,7 +753,8 @@ elif section == "Development":
         #transformation_option = st.selectbox("", ["📈 Histogram with log1p 📈", "📉 Histogram with log1p + MinMaxScaler 📉"])
         # Datos necesarios
         overall_qual_data = df['Overall Qual'].dropna()
-
+        #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 8.2 Histogram with log1p +++++++++++++++++++++++++++++++++++++++++++++++++++++
         if section == "📈 Histogram with log1p 📈":
         #if transformation_option == "📈 Histogram with log1p 📈":
             #st.markdown("<h3 style='text-align: center;'>Histogram with log1p</h3>", unsafe_allow_html=True)
@@ -757,8 +791,9 @@ elif section == "Development":
             axs[2].set_ylabel("Count")
 
             st.pyplot(fig)
+        #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-        #elif transformation_option == "📉 Histogram with log1p + MinMaxScaler 📉":
+        #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 8.3 Histogram with log1p + MinMaxScaler +++++++++++++++++++++++++++++++++++++++++++++++++++++
         elif section == "📉 Histogram with log1p + MinMaxScaler 📉": 
             # Asegurar que las columnas estén disponibles
             if 'SalePrice_log' not in df.columns or 'Gr Liv Area_log' not in df.columns:
@@ -797,6 +832,6 @@ elif section == "Development":
             axs[2].set_ylabel("Count")
 
             st.pyplot(fig)
-
-    #---------------------------------------------------------------------------#
+            #+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        ##################################################################################################################################################
 #----------------------------------------------------------------------------------------------------------------------------#
