@@ -24,7 +24,9 @@ from streamlit_option_menu import option_menu
 ################################################## 1.1.LOAD DATASET ##################################################
 file_path = '/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/AmesHousing.csv'
 df = pd.read_csv(file_path)
+######################################################################################################################
 
+############################################ 1.2 EXPLORATORY DATA ANALYSIS ###########################################
 selected_features = ['SalePrice', 'Overall Qual', 'Gr Liv Area', 'Garage Cars', 
                      'Garage Area', 'Total Bsmt SF', '1st Flr SF', 'Full Bath', 'Year Built']
 
@@ -36,11 +38,15 @@ df['Gr Liv Area_log'] = np.log1p(df['Gr Liv Area'])
 
 scaler = MinMaxScaler()
 df[['SalePrice_log', 'Gr Liv Area_log']] = scaler.fit_transform(df[['SalePrice_log', 'Gr Liv Area_log']])
+######################################################################################################################
 
+############################################ 1.3 TRAINING MULTIPLE MODELS ###########################################
 y = df['SalePrice_log']
 x2 = df[['Overall Qual']]
 x2_train, x2_test, y_train, y_test = train_test_split(x2, y, test_size = 0.2, random_state = 42)
-
+gbm = lgb.LGBMRegressor(objective = 'regression', random_state = 42, verbosity = -1)
+gbm.fit(x2_train, y_train)
+y_pred_basic = gbm.predict(x2_test)
 
 def evalute_model(model, x_test, y_test, y_pred, model_name, feature):
     mae2 = mean_absolute_error(y_test, y_pred)
@@ -79,22 +85,9 @@ def objetive(trial):
     preds = model.predict(x2_test)
     rmse = mean_squared_error(y_test, preds, squared=False)
     return rmse
+######################################################################################################################
 
-gbm = lgb.LGBMRegressor(objective = 'regression', random_state = 42, verbosity = -1)
-gbm.fit(x2_train, y_train)
-y_pred_basic = gbm.predict(x2_test)
-
-#-1. LOAD TRAINED MODEL ---------------------------#
-# Cargar modelo entrenado
-#model = joblib.load('/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/lightgbm_optuna_model.pkl')
-
-# Cargar nombres de columnas usadas en el entrenamiento
-expected_columns = joblib.load('/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/feature_names.pkl')
-
-# Cargar el scaler que se guardó
-#scaler = joblib.load('/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/min_max_scaler.pkl')
-
-#@st.cache_data
+############################################# 1.4 LOAD TRAINING MODEL ###########################################
 @st.cache_resource
 def load_model():
     # Cargar modelo entrenado
