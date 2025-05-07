@@ -89,6 +89,7 @@ def objetive(trial):
 
 ############################################# 1.4 LOAD TRAINING MODEL ###########################################
 @st.cache_resource
+
 def load_model():
     # Cargar modelo entrenado
     model = joblib.load('/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/lightgbm_optuna_model.pkl')
@@ -99,9 +100,20 @@ def load_model():
     # Cargar el scaler que se guardó
     scaler = joblib.load('/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/min_max_scaler.pkl')
     return model, expected_columns, scaler
-#-----------------------------------------------------------------------------#
 
-#--------------------------------- 1.PAGE CONFIGURATION ---------------------------------#
+#--------------------------------------------------------------------------------------------------------------------# 
+
+model, expected_columns, scaler = load_model()  # Aquí sí puede estar cacheado por dentro
+# Crear datos con columnas esperadas
+new_data = pd.DataFrame([{col: 0 for col in expected_columns}])
+prediction_before = 0
+
+#Seleccionar las columnas necesarias
+x_test = df[expected_columns].copy()  # Estas son las features con las que entrenaste
+
+#-------------------------------------------------- 2.PAGE CONFIGURATION ---------------------------------------------------#
+#################################################### 2.1 Principal page #####################################################
+
 # Configurar página en modo ancho
 st.set_page_config(page_title="House Price Prediction", page_icon="🏠", layout="wide")
 # Titulo de la pagina
@@ -133,9 +145,9 @@ st.markdown("""
         }
     </style>
 """, unsafe_allow_html=True)
-#-----------------------------------------------------------------------------------------#
+##############################################################################################################################
 
-#-------------------------------------------------- 2.DEVELOPMENT ---------------------------------------------------#
+########################################################## 2.2 Graphs ########################################################
 def make_donut(input_response, input_text, input_color):
     if input_color == 'blue':
         chart_color = ['#29b5e8', '#155F7A']
@@ -180,25 +192,27 @@ def make_donut(input_response, input_text, input_color):
     ).properties(width=300, height=250)
 
     return plot_bg + plot + text
-#--------------------------------------------------------------------------------------------------------------------#
-#---------------------------------- 3.MAIN ---------------------------------#
+##############################################################################################################################
+#----------------------------------------------------------------------------------------------------------------------------#
+
+
+
+#----------------------------------------------------- 3.PROYECT PAGE -------------------------------------------------------#
 
 if section == "Results":
 
     col1, col2, col3 = st.columns([0.9,1.2,0.9])
-
     with col1:
+
+        ######################################################## 3.1 Seleccion del modelo ######################################################
         # CSS para eliminar márgenes y espacio extra entre los elementos
         st.markdown("<h3 style='font-size: 24px; margin: 0; padding: 0; text-align: center;'>Selección de Modelo</h3>", unsafe_allow_html=True)
-
         options = [
             "📊 Basic LGBM Regressor 📊", "📈 LGBM Regressor with Optuna 📈", "📉 LGBM Regressor with Early Stopping📉"
         ]
-        # Cambiar el tamaño del texto usando markdown antes del selectbox
-        #st.markdown("<h3 style='font-size: 24px; margin: 0; padding: 0;'>Selección de Modelo</h3>", unsafe_allow_html=True)
-        
         selected_option = st.selectbox("", options, label_visibility="collapsed")
 
+        #+++++++++++++++++++++++++++++++++++++++++++++++++++++ 3.1.1 Basic LGM Regressor ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
         if selected_option == "📊 Basic LGBM Regressor 📊":
             col32, col20, col21 = st.columns([1, 2, 1])
             with col20:
@@ -212,10 +226,6 @@ if section == "Results":
             if sections == "Results":
 
                 mse = mean_squared_error(y_test, y_pred_basic)
-                #st.markdown(f"<p style='margin-bottom: 0; font-weight: bold;'>Evaluation of Development LGBM Regressor</p>", unsafe_allow_html=True)
-                #st.write("Evaluation of Development LGBM Regressor")
-                #st.markdown(f"<p style='margin-bottom: 0; font-weight: bold;'>📊 MSE (Overall Qual):</strong> '{mse:.4f}' </p>", unsafe_allow_html=True)
-                #st.write(f"📊 **MSE (Overall Qual):** `{mse:.4f}`")
                 evalute_model(gbm, x2_test, y_test, y_pred_basic, "LightGBM Regressor", "Overall Qual" )
 
             elif sections == "Real Resutls":
@@ -223,9 +233,10 @@ if section == "Results":
                 y_pred_early_original = np.expm1(y_pred_basic)  # Exponencial inversa de la predicción
                 y_test_early_original = np.expm1(y_test)
                 evalute_model(gbm, x2_test, y_test_early_original, y_pred_early_original, "LightGBM Regressor without exponetional", "Overall Qual")
-
+        #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        
+        #++++++++++++++++++++++++++++++++++++++++++++++++++++ 3.1.2 LGBM Regressor with Optuna ++++++++++++++++++++++++++++++++++++++++++++++++++
         elif selected_option == "📈 LGBM Regressor with Optuna 📈":
-        #------------------------------------- Optuna --------------------------------------------#
             study = optuna.create_study(direction = 'minimize')
             study.optimize(objetive, n_trials = 50)
                         
@@ -252,11 +263,10 @@ if section == "Results":
             y_pred_optuna = np.expm1(y_pred_optuna)  # Exponencial inversa de la predicción
             y_test_optuna = np.expm1(y_test)
             evalute_model(best_optuna, x2_test, y_test_optuna, y_pred_optuna, "LightGBM Regressor with optuna without exponetional", "Overall Qual" )
-
-        #-------------------------------------------------------------------------------------------------------#
-
+        #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        
+        #+++++++++++++++++++++++++++++++++++++++++++++++++++ 3.1.3 LGBM Regressor with Early Stopping +++++++++++++++++++++++++++++++++++++++++++
         elif selected_option == "📉 LGBM Regressor with Early Stopping📉":
-        #------------------------------------- Early Stopping  --------------------------------------------#
             gbm2 = lgb.LGBMRegressor(objective = 'regression', random_state = 42, n_estimators=1000) 
             gbm2.fit(x2_train, y_train, eval_set = [(x2_test, y_test)], eval_metric = 'rmse', callbacks = [early_stopping(stopping_rounds = 50), log_evaluation(0)])
             
@@ -276,25 +286,21 @@ if section == "Results":
             y_pred_earlyStopping = np.expm1(y_pred_early)  # Exponencial inversa de la predicción
             y_test_earlyStopping = np.expm1(y_test)
             evalute_model(gbm2, x2_test, y_test_earlyStopping, y_pred_earlyStopping, "LightGBM Regressor with early stopping without exponetional", "Overall Qual" )
-            #print("Evaluation of model with Early Stopping:")
-            #print(f"MSE: {mse_early: .4f}")
-            #print(f"RMSE: {rmse_early: .4f}")
-            #print(f"r2: {r2_early: .4f}") """
-
-         #-------------------------------------------------------------------------------------------------------#
-
+        #++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+        ########################################################################################################################################
     with col2: 
+
+        ###################################### 3.2 Grafica (aun nose de que pero quiero agregar una grafica) ################################### #PENDIENTE
         graph = pd.DataFrame(
             np.random.randn(100, 2),
             columns=[ "SalePrice", "Overall Qual"])
         st.line_chart(graph)
+        ########################################################################################################################################
 
     with col3:
 
-        # Este bloque NO lleva @st.cache_data
-
-        model, expected_columns, scaler = load_model()  # Aquí sí puede estar cacheado por dentro
-
+        ################################################## 3.3 Seccion cantidad de Overall Quall ###############################################
+        #model, expected_columns, scaler = load_model()  # Aquí sí puede estar cacheado por dentro
         # Slider para Overall Qual
         st.markdown("<h3 style='font-size: 24px; margin: 0; padding: 0; text-align: center;'>Selección Cantidad de Overall Qual</h3>", unsafe_allow_html=True)
         overall_qual_value = st.slider("", 1, 10, 5)
@@ -305,7 +311,7 @@ if section == "Results":
         """, unsafe_allow_html=True)
         
         # Crear datos con columnas esperadas
-        new_data = pd.DataFrame([{col: 0 for col in expected_columns}])
+        #new_data = pd.DataFrame([{col: 0 for col in expected_columns}])
         new_data['Overall Qual'] = overall_qual_value
 
         # Predicción
@@ -319,16 +325,19 @@ if section == "Results":
         predicted_rescaled = scaler.inverse_transform(predicted_df)
         prediction_rescaled = predicted_rescaled[:, 0]
         prediction = np.expm1(prediction_rescaled)
-
+        prediction_before = prediction
         #st.metric("💰 Predicción final en dólares", f"${round(prediction[0], 2):,.2f}")
         st.markdown("<h3 style='font-size: 26px; text-align: center;'>Predicción final en dólares</h3>", unsafe_allow_html=True)
         # Centrar la métrica con markdown
         st.markdown("<div style='display: flex; justify-content: center;'><div>" 
                     f"<p style='font-size: 26px; font-weight: bold;'>${round(prediction[0], 2):,.2f}</p>"
                     "</div></div>", unsafe_allow_html=True)
+        ########################################################################################################################################
 
-    col4, col5 = st.columns([0.5,1])
+    col4, col5 = st.columns([0.6,1])
     with col4:
+
+        ################################################## 3.4 Top 10 Peores y mejor Resultados ###############################################
         st.markdown("""
             <style>
                 .stHorizontal > div {
@@ -341,44 +350,48 @@ if section == "Results":
 
         col44, col55= st.columns([1,1])
         with col44:
-            #st.markdown("<h3 style='font-size: 24px; margin: 0; padding: 0; text-align: center;'> Top 10 Peores resultados </h3>", unsafe_allow_html=True)
-            st.markdown("<h3 style='font-size: 24px; margin: 0; padding: 0; text-align: center;'>Top 10 Peores resultados <br> </h3>", unsafe_allow_html=True)
+            # Cargar modelo, columnas esperadas y scaler
+            model, expected_columns, scaler = load_model()  # Esta función debe devolver el modelo, las columnas en orden, y el scaler entrenado
 
-            #st.write("Top 10 Peores resultados")
+            # Seleccionar columnas de entrada para test
+            x_test = df[expected_columns].copy()
 
-            #Seleccionar las columnas necesarias
-            x_test = df[expected_columns].copy()  # Estas son las features con las que entrenaste
-
-            #Predcir con tu modelo
+            # Hacer predicción en log (SalePrice_log)
             prediction_log = model.predict(x_test)
 
-            #Desormalizar si usaste scaler 
-            predicted_df = pd.DataFrame(prediction_log, columns=['SalePrice_log'])
-            predicted_df['Gr Liv Area_log'] = 0  # para mantener la dimensión si tu scaler lo espera
-            predicted_rescaled = scaler.inverse_transform(predicted_df)
-            prediction_rescaled = predicted_rescaled[:, 0]
-            prediction = np.expm1(prediction_rescaled)
+            # Construir DataFrame con las mismas columnas que usó el scaler
+            # Asegúrate que el scaler fue fit con ['Gr Liv Area_log', 'SalePrice_log'] en ese orden (o el orden que corresponda)
+            predicted_df = pd.DataFrame({
+                'Gr Liv Area_log': np.zeros(len(prediction_log)),  # Placeholder
+                'SalePrice_log': prediction_log
+            })[scaler.feature_names_in_]  # Garantiza el orden correcto de columnas
 
-            real_values = df['SalePrice']
+            # Desnormalizar
+            predicted_rescaled = scaler.inverse_transform(predicted_df)
+            prediction_final = np.expm1(predicted_rescaled[:, list(scaler.feature_names_in_).index('SalePrice_log')])
+
+            # Comparar con valores reales
+            real_values = df['SalePrice'].values
             df_comparison = pd.DataFrame({
                 'Real': real_values,
-                'Predicción': prediction_rescaled
+                'Predicción': prediction_final
             })
-
-            #Revisar que valores predice peor(para analisis de errores)
             df_comparison['Error absoluto'] = np.abs(df_comparison['Real'] - df_comparison['Predicción'])
+
+            # Mostrar peores resultados
+            st.markdown("<h3 style='font-size: 24px; margin: 0; padding: 0; text-align: center;'>Top 10 Peores resultados<br></h3>", unsafe_allow_html=True)
             errores_mayores = df_comparison.sort_values('Error absoluto', ascending=False).head(10)
-            st.write(errores_mayores)  
+            st.write(errores_mayores)
 
         with col55:
+            # Mostrar mejores resultados
             st.markdown("<div style='display: flex; justify-content: center;'><div style='text-align: center;'>"
-                "<h3 style='font-size: 24px; margin: 0; padding: 0;'>Top 10 Mejores resultados <br> </h3>"
-                "</div></div>", unsafe_allow_html=True)
-            #st.write("Top 10 Mejores resultados")
-
+                        "<h3 style='font-size: 24px; margin: 0; padding: 0;'>Top 10 Mejores resultados<br></h3>"
+                        "</div></div>", unsafe_allow_html=True)
             mejores_predicciones = df_comparison.sort_values('Error absoluto', ascending=True).head(10)
             st.write(mejores_predicciones)
-        
+            ########################################################################################################################################
+    
     with col5:
         
         # Valor ingresado por el usuario (ya lo tienes)
@@ -786,3 +799,4 @@ elif section == "Development":
             st.pyplot(fig)
 
     #---------------------------------------------------------------------------#
+#----------------------------------------------------------------------------------------------------------------------------#
