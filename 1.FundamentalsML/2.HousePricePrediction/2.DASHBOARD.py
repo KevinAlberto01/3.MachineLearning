@@ -92,13 +92,13 @@ def objetive(trial):
 
 def load_model():
     # Cargar modelo entrenado
-    model = joblib.load('/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/lightgbm_optuna_model.pkl')
+    model = joblib.load('data/lightgbm_optuna_model.pkl')
 
     # Cargar nombres de columnas usadas en el entrenamiento
-    expected_columns = joblib.load('/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/feature_names.pkl')
+    expected_columns = joblib.load('data/feature_names.pkl')
 
     # Cargar el scaler que se guardó
-    scaler = joblib.load('/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/min_max_scaler.pkl')
+    scaler = joblib.load('data/min_max_scaler.pkl')
     return model, expected_columns, scaler
 
 #--------------------------------------------------------------------------------------------------------------------# 
