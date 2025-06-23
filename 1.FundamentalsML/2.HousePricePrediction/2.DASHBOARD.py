@@ -22,7 +22,7 @@ from streamlit_option_menu import option_menu
 
 #-------------------------------------------------- 1.DEVELOPMENT ---------------------------------------------------#
 ################################################## 1.1.LOAD DATASET ##################################################
-file_path = '/home/kevin/Desktop/Kevin/3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/AmesHousing.csv'
+file_path = 'data/AmesHousing.csv'
 df = pd.read_csv(file_path)
 ######################################################################################################################
 
