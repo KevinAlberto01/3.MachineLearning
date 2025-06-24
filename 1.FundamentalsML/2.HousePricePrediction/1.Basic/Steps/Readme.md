@@ -5,7 +5,7 @@
 
 </div>
 
-<table style="width: 100%;">
+<table style="width: 100%; table-layout: fixed;">
   <tr>
     <td style="width: 50%; vertical-align: top; padding-right: 20px;">
       <p>
@@ -15,10 +15,11 @@
       </p>
     </td>
     <td style="width: 50%;">
-      <img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/spanish.png?raw=true" alt="Dashboard Preview" style="max-width: 100%; height: auto;" />
+      <img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/spanish.png?raw=true" alt="Dashboard Preview" style="width: 100%; height: auto;" />
     </td>
   </tr>
 </table>
+
 
 
 ## 📑 Table of Contents
