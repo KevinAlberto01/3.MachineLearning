@@ -5,7 +5,7 @@
 
 </div>
 
-## 📑 Table of Contents
+<h2 align="center">📑 Table of Contents</h2>
 
 1. [Introduction](#1-introduction)
 2. [Development Process](#2-development-process)
@@ -20,7 +20,6 @@
 4. [Technologies Used](#4-technologies-used)
 5. [How to Run](#5-how-to-run)
 
----
 
 <h2 align="center">1. 📌 Introduction </h2>
 
