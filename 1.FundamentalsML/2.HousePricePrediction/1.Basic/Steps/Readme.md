@@ -24,20 +24,11 @@
 
 <h2 align="center">1. 📌 Introduction </h2>
 
-<table style="width: 100%; table-layout: fixed;">
-  <tr>
-    <td style="width: 50%; vertical-align: top; padding-right: 20px;">
-      <p>
-        Este es un proyecto básico de regresión en el que se implementa una pipeline completa de Machine Learning (excepto la etapa de <em>data augmentation</em>) para predecir el precio de una vivienda.
-        El modelo toma en cuenta características clave como la calidad, el tamaño y la ubicación, utilizando datos históricos del mercado inmobiliario.
-        Los resultados y análisis se presentan de forma interactiva en un dashboard intuitivo y visual.
-      </p>
-    </td>
-    <td style="width: 50%;">
-      <img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/spanish.png?raw=true" alt="Dashboard Preview" style="width: 100%; height: auto;" />
-    </td>
-  </tr>
-</table>
+Este es un proyecto básico de regresión en el que se implementa una pipeline completa de *Machine Learning* (excepto la etapa de *data augmentation*) para predecir el precio de una vivienda. El modelo toma en cuenta características clave como la calidad, el tamaño y la ubicación, utilizando datos históricos del mercado inmobiliario. Los resultados y análisis se presentan de forma interactiva en un dashboard intuitivo y visual.
+
+<div align="center">
+  <img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/spanish.png?raw=true" alt="Dashboard Preview" width="600"/>
+</div>
 
 
 ## 5. ▶️ How to Run
