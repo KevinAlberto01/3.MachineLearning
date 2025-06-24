@@ -10,7 +10,7 @@
     <td style="width: 25%; vertical-align: top;">
       Este es un proyecto básico de regresión en el que se implementa una pipeline completa de Machine Learning (excepto la etapa de data augmentation) para predecir el precio de una vivienda. El modelo toma en cuenta características clave como la calidad, el tamaño y la ubicación, utilizando datos históricos del mercado inmobiliario. Los resultados y análisis se presentan de forma interactiva en un dashboard intuitivo y visual.
     </td>
-    <td style="width: 50%;">
+    <td style="width: 100%;">
       <img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/spanish.png" alt="Dashboard Preview" width="100%"/>
     </td>
   </tr>
