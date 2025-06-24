@@ -20,8 +20,6 @@
 4. [Technologies Used](#4-technologies-used)
 5. [How to Run](#5-how-to-run)
 
----
-
 <h2 align="center">1. 📌 Introduction </h2>
 
 Este es un proyecto básico de regresión en el que se implementa una pipeline completa de *Machine Learning* (excepto la etapa de *data augmentation*) para predecir el precio de una vivienda. El modelo toma en cuenta características clave como la calidad, el tamaño y la ubicación, utilizando datos históricos del mercado inmobiliario. Los resultados y análisis se presentan de forma interactiva en un dashboard intuitivo y visual.
