@@ -95,19 +95,29 @@ def objetive(trial):
 
 def load_model():
 
+    base_path = os.path.dirname(__file__)  # ruta donde está 2.DASHBOARD.py
+    models_path = os.path.join(base_path, 'models')
+
+    print("Ruta base:", base_path)
+    print("Archivos en models:", os.listdir(models_path))
+
+    model = joblib.load(os.path.join(models_path, 'lightgbm_optuna_model.pkl'))
+    expected_columns = joblib.load(os.path.join(models_path, 'feature_names.pkl'))
+    scaler = joblib.load(os.path.join(models_path, 'min_max_scaler.pkl'))
+
+    return model, expected_columns, scaler
 
 
 
-    
     # Cargar modelo entrenado
-    model = joblib.load('models/lightgbm_optuna_model.pkl')
+    #model = joblib.load('models/lightgbm_optuna_model.pkl')
 
     # Cargar nombres de columnas usadas en el entrenamiento
-    expected_columns = joblib.load('models/feature_names.pkl')
+    #expected_columns = joblib.load('models/feature_names.pkl')
 
     # Cargar el scaler que se guardó
-    scaler = joblib.load('models/min_max_scaler.pkl')
-    return model, expected_columns, scaler
+    #scaler = joblib.load('models/min_max_scaler.pkl')
+    #return model, expected_columns, scaler
 
 #--------------------------------------------------------------------------------------------------------------------# 
 
