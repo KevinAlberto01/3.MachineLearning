@@ -94,6 +94,11 @@ def objetive(trial):
 @st.cache_resource
 
 def load_model():
+
+
+
+
+    
     # Cargar modelo entrenado
     model = joblib.load('models/lightgbm_optuna_model.pkl')
 
