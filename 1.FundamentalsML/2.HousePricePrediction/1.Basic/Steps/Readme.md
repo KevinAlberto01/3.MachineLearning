@@ -69,18 +69,8 @@ Verificamos los valores nulos presentes en el dataset. En esta etapa, solo se re
 
 En este paso combinamos dos tareas importantes: primero, detectamos los datos duplicados para garantizar la calidad del dataset; luego, analizamos los tipos de datos presentes. Esta última acción es fundamental para planificar futuros procesos, ya que cada variable puede requerir un tratamiento diferente según su tipo.
 
-<div style="text-align: center;">
-  <table style="width: 800px; margin: 0 auto;">
-    <tr>
-      <td style="width: 50%;">
-        <img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/1.4.jpeg?raw=true" alt="Valores duplicados" style="width: 100%; height: 100px;">
-      </td>
-      <td style="width: 50%;">
-        <img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/1.3.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">
-      </td>
-    </tr>
-  </table>
-</div>
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/1.3.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">
+
 
 
 <h3 align="center">2.2 Exploratory Data Analysis</h3>
