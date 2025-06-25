@@ -74,7 +74,20 @@ En este paso combinamos dos tareas importantes: primero, detectamos los datos du
 
 
 <h3 align="center">2.2 Exploratory Data Analysis</h3>
-<h4 align="center">2.2 Verificar los null values</h4>
+
+<h4 align="center">2.2.1 Heatmap</h4>
+Primero, realizamos un heatmap de toda la base de datos para visualizar qué variables presentan relaciones entre sí. Sin embargo, debido a la gran cantidad de datos, el gráfico no permite una visualización clara. Por ello, en el siguiente paso filtramos y enfocamos el análisis en las variables más relevantes para obtener una mejor interpretación.
+
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.1.1.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">
+
+Después, se imprimen las variables más relevantes que se utilizarán para generar un heatmap reducido. El objetivo es obtener una mejor visualización y comprensión de las relaciones entre las variables más influyentes en este caso específico.
+
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.1.2.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">
+
+Por último, utilizamos las variables más relevantes para generar un heatmap reducido, en el cual se observa que las dos primeras variables presentan la mayor correlación (mayor intensidad de color). Esta observación es útil, ya que en los siguientes pasos estas variables pueden ser modificadas o utilizadas para mejorar el modelo.
+
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.1.3.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">
+
 
 <h3 align="center">2.3 Training Multiple Algorithms</h3>
 
