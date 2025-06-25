@@ -127,17 +127,26 @@ Esta visualización es clave para entender mejor nuestros datos antes de constru
 Un boxplot es una representación gráfica que muestra la distribución de una variable numérica, destacando su mediana, cuartiles y posibles valores atípicos (outliers).<br>
 Permite identificar la dispersión, simetría y la presencia de datos extremos de forma rápida y visual.<br><br>
 
-El boxplot de SalePrice, observamos varios puntos por encima del rango intercuartílico, lo que indica la presencia de valores atípicos elevados. Esto sugiere que existen viviendas con precios considerablemente más altos que el promedio del dataset.
+<h5 align="center">2.2.5.1 Boxplot SalePrice</h5>
+Observamos varios puntos por encima del rango intercuartílico, lo que indica la presencia de valores atípicos elevados. Esto sugiere que existen viviendas con precios considerablemente más altos que el promedio del dataset.
 
 <img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.3.1.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"><br>
+
+<h5 align="center">2.2.5.2 Boxplot Gr Liv Area</h5>
 
 El boxplot de Gr Liv Area también muestra la presencia de outliers elevados, con los bigotes superiores extendiéndose más allá que en otros casos, lo que indica que algunas viviendas tienen áreas habitables significativamente mayores al rango típico.
 
 <img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.3.2.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"><br>
 
+<h5 align="center">2.2.5.3 Boxplot OverallQual</h5>
+
 El boxplot de OverallQual presenta valores concentrados principalmente por debajo de la mediana, con pocos o ningún outlier visible, lo que refleja que la mayoría de las viviendas tienen una calidad general dentro de un rango más limitado.
+
 <img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.3.3.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> <br>
 
+Finalmente, analizamos el valor p (p-value) para evaluar la significancia estadística de nuestras variables con respecto a la variable objetivo (SalePrice).
+
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.3.4.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
 
 <h3 align="center">2.3 Training Multiple Algorithms</h3>
 
