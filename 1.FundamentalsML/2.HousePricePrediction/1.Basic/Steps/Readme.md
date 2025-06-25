@@ -29,8 +29,20 @@ A continuación, se explicará cada paso para mostrar la lógica con la que se r
 
 <h2 align="center">2.Development Process</h2>
 
-|<p align = "left"> El proceso de desarrollo de este proyecto sigue una estructura lógica en etapas que permiten construir un modelo de regresión robusto y comprensible. <br> Comenzamos con la carga y limpieza de los datos, seguido de un análisis exploratorio para entender mejor las variables y su impacto en el precio.<br>Luego, se entrenan múltiples algoritmos para comparar su rendimiento utilizando métricas adecuadas.<br>Finalmente, se optimizan los modelos más prometedores y se presenta todo en un dashboard interactivo.|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/spanish.png?raw=true" alt="Dashboard Preview" style="width: 100%; height: auto;" />|
-|----------------------------|----------------------------------------------------------------------------|
+<table style="width: 100%; table-layout: fixed;">
+  <tr>
+    <td style="width: 50%; vertical-align: top; text-align: left; padding-right: 20px;">
+      El proceso de desarrollo de este proyecto sigue una estructura lógica en etapas que permiten construir un modelo de regresión robusto y comprensible. <br><br>
+      Comenzamos con la carga y limpieza de los datos, seguido de un análisis exploratorio para entender mejor las variables y su impacto en el precio. <br><br>
+      Luego, se entrenan múltiples algoritmos para comparar su rendimiento utilizando métricas adecuadas. <br><br>
+      Finalmente, se optimizan los modelos más prometedores y se presenta todo en un dashboard interactivo.
+    </td>
+    <td style="width: 50%;">
+      <img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/spanish.png?raw=true" alt="Dashboard Preview" style="width: 100%; height: auto;" />
+    </td>
+  </tr>
+</table>
+
 
 
 <div align="center">
