@@ -155,8 +155,61 @@ Después de calcular el skewness, observamos que las variables Gr Liv Area y Ove
 
 <img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.3.5.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
 
+Después, filtramos las filas donde alguna variable tenga un valor menor o igual a 0, ya que en datos reales ese tipo de valores no deberían existir (por ejemplo, una superficie o precio negativo no tiene sentido). Esta verificación nos ayuda a detectar errores o inconsistencias en los datos antes de entrenar el modelo.
+
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.3.6.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
+
+Por último, pero no menos importante, volvemos a verificar los valores nulos, pero esta vez solo en las variables que realmente nos interesan para el modelo. Esto nos permite enfocar el preprocesamiento en las columnas relevantes y tomar decisiones informadas sobre cómo manejar los datos faltantes
+
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.3.7.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
+
+<h4 align="center">2.2.7 Aplicamos logaritmos</h4>
+Como pudimos observar, los datos presentan distribuciones sesgadas, lo cual puede afectar el rendimiento de los modelos de regresión.
+Para corregir este problema, aplicamos una transformación logarítmica, lo que nos permite reducir el sesgo y acercar la distribución a una forma más simétrica. A continuación, se muestra una comparación antes y después de aplicar el logaritmo:
+
+| Antes del logaritmo | Después del logaritmo |
+|----------------------------------------------|--------------|
+|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.4.1.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.4.2.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> |
+
+<h4 align="center">2.2.8 Normalizamos los datos</h4>
+Antes de finalizar el análisis de distribución, es importante considerar que la variabilidad entre escalas también puede afectar el rendimiento del modelo.
+Por ello, es necesario normalizar los datos para que las variables tengan valores en rangos similares. Esto ayuda a que el modelo aprenda de manera más eficiente y equitativa.
+En este paso, observamos los valores de las variables seleccionadas para decidir qué tipo de escalado aplicar.
+
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.4.1.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
+
+Por último, realizamos una gráfica para verificar si, tras aplicar la normalización y corregir el sesgo, la distribución de los datos se ha ajustado adecuadamente.
+Esta visualización nos permite confirmar si la variable se aproxima a una distribución normal (forma de campana), lo cual es deseable para muchos algoritmos de Machine Learning.
+
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.4.2.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
+
+
 <h3 align="center">2.3 Training Multiple Algorithms</h3>
 
+Pasamos a la etapa de entrenamiento del modelo, donde aplicaremos diferentes algoritmos de regresión para comparar su rendimiento.
+Dado que se trata de un problema de regresión, se entrenarán los siguientes modelos:
+
+- KNN Regressor
+- SVR (Support Vector Regressor)
+- Redes Neuronales (MLP Regressor)
+- Ridge Regression (Regularización L2)
+- Lasso Regression (Regularización L1)
+- LightGBM
+- XGBoost
+
+El objetivo de este paso es evaluar qué modelo se adapta mejor a los datos en función de las métricas de desempeño, interpretabilidad y complejidad computacional.
+
+<h4 align="center">2.3.1 KNN Regressor</h4>
+
+KNN Regressor predice el valor de un punto tomando el promedio de los k vecinos más cercanos según una métrica de distancia. Es un modelo basado en instancias, sin entrenamiento real, ideal cuando se espera que datos similares tengan valores de salida similares.
+
+
+<h4 align="center">2.3.2 SVR(Support Vector Regressor)</h4>
+<h4 align="center">2.3.3 Redes Neuronales (MLP)</h4>
+<h4 align="center">2.3.4 LightGBM</h4>
+<h4 align="center">2.3.5 Ridge Regression (L2 Regularization)</h4>
+<h4 align="center">2.3.6 Lasso Regression (L1 Regularization)</h4>
+<h4 align="center">2.3.7 XGBoost</h4>
 
 
 <h3 align="center">2.4 Evaluation Metrics</h3>
