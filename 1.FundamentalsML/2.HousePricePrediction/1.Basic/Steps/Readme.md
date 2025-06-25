@@ -125,7 +125,7 @@ Esta visualización es clave para entender mejor nuestros datos antes de constru
 
 <h4 align="center">2.2.5 Boxplot</h4>
 Un boxplot es una representación gráfica que muestra la distribución de una variable numérica, destacando su mediana, cuartiles y posibles valores atípicos (outliers).<br>
-Permite identificar la dispersión, simetría y la presencia de datos extremos de forma rápida y visual.<br>
+Permite identificar la dispersión, simetría y la presencia de datos extremos de forma rápida y visual.<br><br>
 
 El boxplot de SalePrice, observamos varios puntos por encima del rango intercuartílico, lo que indica la presencia de valores atípicos elevados. Esto sugiere que existen viviendas con precios considerablemente más altos que el promedio del dataset.
 
