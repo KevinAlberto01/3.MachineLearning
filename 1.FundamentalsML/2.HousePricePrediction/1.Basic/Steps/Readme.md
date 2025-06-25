@@ -23,7 +23,7 @@
 
 <h2 align="center">1. 📌 Introduction </h2>
 
-Este es un proyecto básico de regresión en el que se implementa una pipeline completa de Machine Learning (excepto la etapa de data augmentation) para predecir el precio de una vivienda. El modelo toma en cuenta características clave como la calidad, el tamaño y la ubicación, utilizando datos históricos del mercado inmobiliario. Los resultados y análisis se presentan de forma interactiva en un dashboard intuitivo y visual.
+Este es un proyecto básico de regresión en el que se implementa una pipeline completa de Machine Learning (excepto la etapa de data augmentation) para predecir el precio de una vivienda. El modelo toma en cuenta características clave como la calidad, el tamaño y la ubicación, utilizando datos históricos del mercado inmobiliario.
 
 A continuación, se explicará cada paso para mostrar la lógica con la que se resolvió el problema.
 
@@ -31,20 +31,23 @@ A continuación, se explicará cada paso para mostrar la lógica con la que se r
   <img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/spanish.png?raw=true" alt="Dashboard Preview" width="600"/>
 </div>
 
-<h2 align="center">1.1 Procesamiento de Datos</h2>
+<h2 align="center">2.Development Process</h2>
+<h3 align="center">2.1 Procesamiento de Datos</h3>
 
-<h2 align="center">1.2 Exploratory Data Analysis</h2>
+<h3 align="center">2.2 Exploratory Data Analysis</h3>
 
-<h2 align="center">1.3 Training Multiple Algorithms</h2>
+<h3 align="center">2.3 Training Multiple Algorithms</h3>
 
-<h2 align="center">1.4 Evaluation Metrics</h2>
+<h3 align="center">2.4 Evaluation Metrics</h3>
 
-<h2 align="center">1.5 Optimization (Tuning & Hyperparameters)</h2>
+<h3 align="center">2.5 Optimization (Tuning & Hyperparameters)</h3>
 
-<h2 align="center">1.6 Feature Engineering Manual</h2>
+<h3 align="center">2.6 Feature Engineering Manual</h3>
 
-<h2 align="center">1.7 Data Argumentation (Tabular Data)</h2>
+<h3 align="center">2.7 Data Argumentation (Tabular Data)</h3>
 
+<h2 align="center">3.Final Results</h2>
+<h2 align="center">4.Technologies Used</h2>
 <h2 align="center">▶️ How to Run</h2>
 
 ```bash
