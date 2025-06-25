@@ -72,10 +72,10 @@ En este paso combinamos dos tareas importantes: primero, detectamos los datos du
 <div style="text-align: center;">
   <table style="width: 800px; margin: 0 auto;">
     <tr>
-      <td style="width: 30%;">
+      <td style="width: 50%;">
         <img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/1.4.jpeg?raw=true" alt="Valores duplicados" style="width: 100%; height: 100px;">
       </td>
-      <td style="width: 70%;">
+      <td style="width: 50%;">
         <img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/1.3.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">
       </td>
     </tr>
