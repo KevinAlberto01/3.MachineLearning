@@ -71,7 +71,7 @@ En este paso combinamos dos tareas importantes: primero, detectamos los datos du
 
 | **Valores duplicados**| **Tipos de datos**|
 |------------------------|------------------------| 
-|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/1.4.jpeg?raw=true" alt="Dashboard Preview" style="width: 100%; height: auto;"> |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/1.3.jpeg?raw=true" alt="Dashboard Preview" style="width: 100%; height: auto;" />|
+|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/1.4.jpeg?raw=true" alt="Dashboard Preview" style="width: 10%; height: auto;"> |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/1.3.jpeg?raw=true" alt="Dashboard Preview" style="width: 100%; height: auto;" />|
 
 <h3 align="center">2.2 Exploratory Data Analysis</h3>
 <h4 align="center">2.2 Verificar los null values</h4>
