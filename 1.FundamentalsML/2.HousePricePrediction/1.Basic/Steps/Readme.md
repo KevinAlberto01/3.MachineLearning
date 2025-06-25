@@ -48,6 +48,7 @@ A continuación, se explicará cada paso para mostrar la lógica con la que se r
 
 <h3 align="center">2.1 Procesamiento de Datos</h3>
 
+<h4 align="center">2.1.1 Carga de datos</h4>
 En el primer paso del proyecto, se cargó el conjunto de datos Ames Housing, obteniendo un total de 2,930 filas y 82 columnas.
 Esto proporciona una base rica y detallada de características que describen las propiedades, incluyendo aspectos como tamaño, calidad, ubicación y más.
 
@@ -57,10 +58,27 @@ Esto proporciona una base rica y detallada de características que describen las
 >Esta etapa es crucial para tener una visión general del dataset, identificar posibles errores o datos faltantes, y planificar los siguientes pasos de limpieza y análisis.
 
 
+<h4 align="center">2.1.2 Verificar los null values</h4>
+
+Verificamos los valores nulos presentes en el dataset. En esta etapa, solo se realiza una inspección visual para entender cómo está compuesta nuestra base de datos, sin tomar aún decisiones sobre qué variables eliminar o conservar. Esto nos permite tener una mejor idea de la calidad y completitud de los datos antes de continuar con el análisis.
+
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/1.2.jpeg?raw=true" alt="Dashboard Preview" style="width: 100%; height: auto;" />
+
+
+<h4 align="center">2.1.3 Identificación de datos duplicados y análisis de tipos de datos</h4>
+
+En este paso combinamos dos tareas importantes: primero, detectamos los datos duplicados para garantizar la calidad del dataset; luego, analizamos los tipos de datos presentes. Esta última acción es fundamental para planificar futuros procesos, ya que cada variable puede requerir un tratamiento diferente según su tipo.
+
+| **Valores duplicados**| **Tipos de datos**|
+|------------------------|------------------------| 
+|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/1.4.jpeg?raw=true" alt="Dashboard Preview" style="width: 100%; height: auto;"> |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/1.3.jpeg?raw=true" alt="Dashboard Preview" style="width: 100%; height: auto;" />|
 
 <h3 align="center">2.2 Exploratory Data Analysis</h3>
+<h4 align="center">2.2 Verificar los null values</h4>
 
 <h3 align="center">2.3 Training Multiple Algorithms</h3>
+
+
 
 <h3 align="center">2.4 Evaluation Metrics</h3>
 
