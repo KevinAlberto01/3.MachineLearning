@@ -148,6 +148,13 @@ Finalmente, analizamos el valor p (p-value) para evaluar la significancia estad�
 
 <img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.3.4.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
 
+<h4 align="center">2.2.6 Distribución de los datos</h4>
+
+Necesitamos calcular el skewness (coeficiente de sesgo) de cada variable para cuantificar el sesgo en su distribución, lo cual es importante para decidir qué acciones tomar en el preprocesamiento.
+Después de calcular el skewness, observamos que las variables Gr Liv Area y Overall Qual presentan un sesgo positivo, es decir, la mayoría de los valores son bajos, pero existen algunos valores muy altos que desvían la distribución.
+
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.3.5.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
+
 <h3 align="center">2.3 Training Multiple Algorithms</h3>
 
 
