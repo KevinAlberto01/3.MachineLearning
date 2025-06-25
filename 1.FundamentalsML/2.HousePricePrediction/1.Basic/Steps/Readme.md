@@ -100,6 +100,30 @@ En base a las variables seleccionadas (Gr Liv Area y Overall Qual), obtenemos in
 
 <img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.1.5.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">
 
+<h4 align="center">2.2.4 Histogramas</h4>
+
+Este paso nos ayuda a visualizar la distribución de los datos de cada variable. A través de los histogramas podemos:
+
+- Detectar la forma de la distribución (normal, sesgada, etc.).
+- Identificar posibles sesgos y valores atípicos (outliers).
+- Evaluar si alguna variable requiere una transformación (como logaritmos o escalado).
+- Observar la distribución general entre variables numéricas.
+- Tomar decisiones sobre el tipo de preprocesamiento que podría mejorar el rendimiento del modelo.
+
+Esta visualización es clave para entender mejor nuestros datos antes de construir modelos predictivos.
+
+|Distribución de Gr Liv Area|Distribución de SalePrice|Distribution of Overall Quality|
+|------------------------|------------------------|-------------------| 
+|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.2.1.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.2.2.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.2.3.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> |
+
+>[!IMPORTANT]
+>A continuación veremos el comportamiento y las combinaciones ded cada una en caso de seleccionarlo, pero aun no lo escogemos
+
+|SalePrice and Gr Liv Area|SalePrice and Overall Qual|Sale Price, Gr Liv Area, overall qual |
+|------------------------|------------------------|-------------------| 
+|Ambas variables presentan una distribución sesgada y contienen valores atípicos (outliers) extremos. Por ello, es recomendable utilizar MinMaxScaler, ya que es más seguro para mantener la escala original sin verse afectado por dichos valores atípicos. <br> Por otro lado, también se podría usar StandardScaler, pero hay que considerar que los outliers pueden influir significativamente en la media y la desviación estándar, afectando el escalado.| SalePrice es una variable continua, mientras que Overall Qual es una variable ordinal con valores de 1 a 10 que representan la calidad. <br> No es necesario normalizar Overall Qual, ya que es un número discreto con significado específico. Por lo tanto, se podría aplicar escalado únicamente a SalePrice usando MinMaxScaler o StandardScaler.| MinMaxScaler es una opción segura si queremos que todas las variables estén en el rango [0, 1]. <br> StandardScaler puede ser útil si Gr Liv Area y SalePrice siguen una distribución normal. <br> Por otro lado, Overall Qual es una variable ordinal, por lo que es recomendable mantenerla sin escalar para conservar su significado.|
+
+
 <h3 align="center">2.3 Training Multiple Algorithms</h3>
 
 
