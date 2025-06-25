@@ -117,11 +117,26 @@ Esta visualización es clave para entender mejor nuestros datos antes de constru
 |<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.2.1.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.2.2.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.2.3.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> |
 
 >[!IMPORTANT]
->A continuación veremos el comportamiento y las combinaciones ded cada una en caso de seleccionarlo, pero aun no lo escogemos
+>A continuación veremos el comportamiento y las combinaciones de cada una en caso de seleccionarlo, pero aun no lo escogemos
 
 |SalePrice and Gr Liv Area|SalePrice and Overall Qual|Sale Price, Gr Liv Area, overall qual |
 |------------------------|------------------------|-------------------| 
 |Ambas variables presentan una distribución sesgada y contienen valores atípicos (outliers) extremos. Por ello, es recomendable utilizar MinMaxScaler, ya que es más seguro para mantener la escala original sin verse afectado por dichos valores atípicos. <br> Por otro lado, también se podría usar StandardScaler, pero hay que considerar que los outliers pueden influir significativamente en la media y la desviación estándar, afectando el escalado.| SalePrice es una variable continua, mientras que Overall Qual es una variable ordinal con valores de 1 a 10 que representan la calidad. <br> No es necesario normalizar Overall Qual, ya que es un número discreto con significado específico. Por lo tanto, se podría aplicar escalado únicamente a SalePrice usando MinMaxScaler o StandardScaler.| MinMaxScaler es una opción segura si queremos que todas las variables estén en el rango [0, 1]. <br> StandardScaler puede ser útil si Gr Liv Area y SalePrice siguen una distribución normal. <br> Por otro lado, Overall Qual es una variable ordinal, por lo que es recomendable mantenerla sin escalar para conservar su significado.|
+
+<h4 align="center">2.2.5 Boxplot</h4>
+Un boxplot es una representación gráfica que muestra la distribución de una variable numérica, destacando su mediana, cuartiles y posibles valores atípicos (outliers).<br>
+Permite identificar la dispersión, simetría y la presencia de datos extremos de forma rápida y visual.
+
+El boxplot de SalePrice, observamos varios puntos por encima del rango intercuartílico, lo que indica la presencia de valores atípicos elevados. Esto sugiere que existen viviendas con precios considerablemente más altos que el promedio del dataset.
+
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.3.1.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">|
+
+El boxplot de Gr Liv Area también muestra la presencia de outliers elevados, con los bigotes superiores extendiéndose más allá que en otros casos, lo que indica que algunas viviendas tienen áreas habitables significativamente mayores al rango típico.
+
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.3.2.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">|
+
+El boxplot de OverallQual presenta valores concentrados principalmente por debajo de la mediana, con pocos o ningún outlier visible, lo que refleja que la mayoría de las viviendas tienen una calidad general dentro de un rango más limitado.
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.3.3.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">|
 
 
 <h3 align="center">2.3 Training Multiple Algorithms</h3>
