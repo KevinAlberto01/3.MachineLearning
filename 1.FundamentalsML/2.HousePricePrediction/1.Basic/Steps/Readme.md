@@ -48,6 +48,16 @@ A continuación, se explicará cada paso para mostrar la lógica con la que se r
 
 <h3 align="center">2.1 Procesamiento de Datos</h3>
 
+En el primer paso del proyecto, se cargó el conjunto de datos Ames Housing, obteniendo un total de 2,930 filas y 82 columnas.
+Esto proporciona una base rica y detallada de características que describen las propiedades, incluyendo aspectos como tamaño, calidad, ubicación y más.
+
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/1.1.1.jpeg?raw=true" alt="Dashboard Preview" style="width: 100%; height: auto;" />
+
+>[!NOTE]
+>Esta etapa es crucial para tener una visión general del dataset, identificar posibles errores o datos faltantes, y planificar los siguientes pasos de limpieza y análisis.
+
+
+
 <h3 align="center">2.2 Exploratory Data Analysis</h3>
 
 <h3 align="center">2.3 Training Multiple Algorithms</h3>
