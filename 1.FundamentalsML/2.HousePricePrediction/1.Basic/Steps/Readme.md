@@ -28,6 +28,22 @@ Este es un proyecto básico de regresión en el que se implementa una pipeline c
 A continuación, se explicará cada paso para mostrar la lógica con la que se resolvió el problema.
 
 <h2 align="center">2.Development Process</h2>
+<table style="width: 100%; table-layout: fixed;">
+  <tr>
+    <td style="width: 50%; vertical-align: top; padding-right: 20px;">
+      <p>
+        El proceso de desarrollo de este proyecto sigue una estructura lógica en etapas que permiten construir un modelo de regresión robusto y comprensible.  
+        Comenzamos con la carga y limpieza de los datos, seguido de un análisis exploratorio para entender mejor las variables y su impacto en el precio.  
+        Luego, se entrenan múltiples algoritmos para comparar su rendimiento utilizando métricas adecuadas.  
+        Finalmente, se optimizan los modelos más prometedores y se presenta todo en un dashboard interactivo.
+      </p>
+    </td>
+    <td style="width: 50%;">
+      <img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/spanish.png?raw=true" alt="Dashboard Preview" style="width: 100%; height: auto;" />
+    </td>
+  </tr>
+</table>
+
 <div align="center">
   <img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/spanish.png?raw=true" alt="Dashboard Preview" width="600"/>
 </div>
