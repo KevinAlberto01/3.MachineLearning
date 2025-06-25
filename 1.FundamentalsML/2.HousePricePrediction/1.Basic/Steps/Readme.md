@@ -27,11 +27,11 @@ Este es un proyecto básico de regresión en el que se implementa una pipeline c
 
 A continuación, se explicará cada paso para mostrar la lógica con la que se resolvió el problema.
 
+<h2 align="center">2.Development Process</h2>
 <div align="center">
   <img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/spanish.png?raw=true" alt="Dashboard Preview" width="600"/>
 </div>
 
-<h2 align="center">2.Development Process</h2>
 <h3 align="center">2.1 Procesamiento de Datos</h3>
 
 <h3 align="center">2.2 Exploratory Data Analysis</h3>
