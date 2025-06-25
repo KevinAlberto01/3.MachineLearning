@@ -46,12 +46,6 @@ A continuación, se explicará cada paso para mostrar la lógica con la que se r
   </tr>
 </table>
 
-
-
-<div align="center">
-  <img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/spanish.png?raw=true" alt="Dashboard Preview" width="600"/>
-</div>
-
 <h3 align="center">2.1 Procesamiento de Datos</h3>
 
 <h3 align="center">2.2 Exploratory Data Analysis</h3>
