@@ -88,6 +88,17 @@ Por último, utilizamos las variables más relevantes para generar un heatmap re
 
 <img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.1.3.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">
 
+<h4 align="center">2.2.2 Pairplot</h4>
+
+En este paso se utiliza un pairplot para visualizar el comportamiento de las variables seleccionadas. Ya que hemos identificado dos variables con alta correlación, es importante observar su distribución y relación visualmente para entender mejor cómo interactúan entre sí.
+
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.1.4.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">
+
+<h4 align="center">2.2.3 Estadísticas descriptivas</h4>
+
+En base a las variables seleccionadas (Gr Liv Area y Overall Qual), obtenemos información más detallada sobre sus relaciones con el resto del dataset. Sin embargo, es importante recordar que SalePrice es nuestra variable objetivo (y), ya que nuestro propósito principal es predecir su comportamiento.
+
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.1.5.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">
 
 <h3 align="center">2.3 Training Multiple Algorithms</h3>
 
