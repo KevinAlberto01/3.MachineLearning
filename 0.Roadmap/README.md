@@ -54,10 +54,12 @@ Cada proyecto aborda un tipo diferente de problema, proporcionando una visión a
     <h3 align = "Center">2.Deep Learning & Neural Networks</h3>
 </p>
 
-|1.EmotionDetector(FacialImages)|2.Traffic Sign Detector| 3.RealTimeObjectDetector(YOLO)|
-|---------|------------------------|-------------------|
-|ADD|ADD|ADD|
+|1.EmotionDetector(FacialImages)|2.Traffic Sign Detector| 3.RealTimeObjectDetector(YOLO)|Advance Application |
+|---------|------------------------|-------------------|----|
+|ADD|ADD|ADD|ADD|
 
+>[!NOTE]
+>Recordemos que cada proyecto se desarrolla en tres etapas para facilitar una mejor comprensión del proceso completo de Machine Learning y así aprender de forma progresiva y estructurada.
 
 <p align = "center" >
     <h3 align = "Center">3.Advanced Application & AI Production</h3>
@@ -66,3 +68,6 @@ Cada proyecto aborda un tipo diferente de problema, proporcionando una visión a
 |1.Object Traking (Dron)|2. AI Image Generate (GANs & Stable Diffusion)| 3.Chatbot (Natural Language Processing (NLP)) |
 |---------|------------------------|-------------------|
 |ADD|ADD|ADD|
+
+>[!NOTE]
+>Recordemos que cada proyecto se desarrolla en tres etapas para facilitar una mejor comprensión del proceso completo de Machine Learning y así aprender de forma progresiva y estructurada.
