@@ -1,6 +1,20 @@
 <h1 align="center"  style="margin-bottom: -10px;">Proyectos de Machine learning</h1>
 <div align="center"> </div>
+<div align="center">
 
+🌐 This README is available in: [English](README.md) | [Spanish](README.es.md)
+
+</div>
+<h2 align="center">📑 Table of Contents</h2>
+
+1. [Description](#1-introduction)
+2. [0.Roadmap](#2-development-process)
+   - [0.Fundamentals ML](#21-data-processing)
+        - [0.1.1.HandWritten Digit Classifier (MNIST)](#22-exploratory-data-analysis-eda)
+        - [0.1.2.House Price Prediction](#22-exploratory-data-analysis-eda)
+        - [0.1.3.Sentiment Analysis (Movie Reviews)](#22-exploratory-data-analysis-eda)
+
+</div>
 <p align = "center" >
     <h2 align = "Center">📜 Description 📜</h2>
 </p>
