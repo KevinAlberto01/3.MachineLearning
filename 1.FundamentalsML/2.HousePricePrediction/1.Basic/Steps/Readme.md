@@ -273,7 +273,7 @@ Esta comparación nos permite visualizar si la optimización realmente mejora el
 
 |GBM Base|Light GBM + Optuna|Light GBM + Early Stopping|
 |----------------------------------------------|--------------|----------|
-|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/5.Optimization/5.1RandomS.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/5.Optimization/5.2Optuna.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/5.Optimization/5.3EarlyStopping.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
+|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/5.Optimization/5.4.1GBMBase.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/5.Optimization/5.4.2GBMOptuna.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/5.Optimization/5.4.3GBMEarly.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
 
 
 <h2 align="center">6.Agr</h2>
