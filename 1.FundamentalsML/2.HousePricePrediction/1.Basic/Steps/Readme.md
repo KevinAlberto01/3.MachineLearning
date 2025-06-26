@@ -289,19 +289,16 @@ Esta comparación nos permite visualizar si la optimización realmente mejora el
 <h2 align="center">7.Technologies Used</h2>
 
 📊 Manipulación y análisis de datos
-
 - Pandas
 - NumPy
 - SciPy
 
 📈 Visualización
-
 - Matplotlib
 - Seaborn
 - Altair
 
 🤖 Machine Learning
-
 - Scikit-learn
 - LightGBM
 - Optuna (tuning de hiperparámetros)
