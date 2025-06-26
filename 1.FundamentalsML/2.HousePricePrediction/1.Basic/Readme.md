@@ -22,3 +22,14 @@
 
 
 <h2 align="center">1. 📌 Introduction </h2>
+
+En esta carpeta se encuentran tres subcarpetas principales: Local, Steps y streamlit.
+A continuación, se explicará cómo ejecutar el proyecto y el motivo por el cual se organizó de esta manera.
+
+<h2 align="center">2.Carpetas dentro de "1.Basic"</h2>
+
+<h2 align="center">2.1.Local</h2>
+
+<h2 align="center">2.2.Steps</h2>
+
+<h2 align="center">2.3.streamlit</h2>

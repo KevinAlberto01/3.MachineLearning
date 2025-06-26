@@ -286,6 +286,14 @@ Esta comparación nos permite visualizar si la optimización realmente mejora el
 💻 Lenguaje utilizado: Python
 👤 Tipo de proyecto: Personal / Portafolio
 
+
+<h2 align="center">6.Agrupar (1/2)</h2>
+<h2 align="center">6.Agrupar (1/2)</h2>
+<h2 align="center">6.Agrupar (1/2)</h2>
+<h2 align="center">6.Agrupar (1/2)</h2>
+
+
+
 <h2 align="center">7.Technologies Used</h2>
 
 📊 Manipulación y análisis de datos
