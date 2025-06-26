@@ -42,6 +42,7 @@ Projects are structured so that each step is independent, allowing you to:
 
 <h2 id="fundamentals" align="center">1. ML Fundamentals</h2>
 
+
 This stage includes three basic projects in ML Fundamentals that help develop critical thinking and familiarize you with the full workflow of Machine Learning.  
 Each project addresses a different type of problem, providing a broad and practical view of fundamental concepts.
 
@@ -49,4 +50,29 @@ Each project addresses a different type of problem, providing a broad and practi
 |---------|------------------------|-------------------|
 |<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/1.BasicModel.jpeg?raw=true" width="2000"/>|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" width="2000"/>|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" width="2000"/>|
 |<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" width="2000"/>|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" width="2000"/>|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" width="2000"/>|
-|<img src="https://
+|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" width="2000"/>|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" width="2000"/>|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" width="2000"/>|
+
+>[!NOTE]  
+>Remember that each project is developed in three stages to facilitate a better understanding of the complete Machine Learning process and to learn progressively and in a structured way.
+
+<h2 id="deep-learning-and-neural-networks" align="center">2. Deep Learning & Neural Networks</h2>
+
+|1. Emotion Detector (Facial Images)|2. Traffic Sign Detector|3. Real-Time Object Detector (YOLO)|4. Advanced Application & AI Production|
+|---------|------------------------|-------------------|----|
+|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" width="2000"/>|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" width="2000"/>|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" width="2000"/>|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" width="2000"/>|
+|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" width="2000"/>|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" width="2000"/>|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" width="2000"/>|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" width="2000"/>|
+|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" width="2000"/>|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" width="2000"/>|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" width="2000"/>|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" width="2000"/>|
+
+>[!NOTE]  
+>Remember that each project is developed in three stages to facilitate a better understanding of the complete Machine Learning process and to learn progressively and in a structured way.
+
+<h2 id="advanced-applications-and-ai-deployment" align="center">3. Advanced Applications and AI Deployment</h2>
+
+|1. Object Tracking (Drone)|2. AI Image Generation (GANs & Stable Diffusion)|3. Chatbot (Natural Language Processing - NLP)|
+|---------|------------------------|-------------------|
+|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" width="2000"/>|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" width="2000"/>|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" width="2000"/>|
+|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" width="2000"/>|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" width="2000"/>|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" width="2000"/>|
+|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" width="2000"/>|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" width="2000"/>|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" width="2000"/>|
+
+>[!NOTE]  
+>Remember that each project is developed in three stages to facilitate a better understanding of the complete Machine Learning process and to learn progressively and in a structured way.
