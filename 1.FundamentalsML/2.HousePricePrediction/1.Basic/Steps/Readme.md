@@ -203,22 +203,46 @@ El objetivo de este paso es evaluar qué modelo se adapta mejor a los datos en f
 
 KNN Regressor predice el valor de un punto tomando el promedio de los k vecinos más cercanos según una métrica de distancia. Es un modelo basado en instancias, sin entrenamiento real, ideal cuando se espera que datos similares tengan valores de salida similares.
 
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/3.Training/3.1.1KNNRegressor.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
 
 <h4 align="center">2.3.2 SVR(Support Vector Regressor)</h4>
+
+SVR es una extensión del algoritmo de Support Vector Machine para tareas de regresión. Busca ajustar una línea (o hiperplano) que prediga los datos con un margen de tolerancia definido, minimizando los errores fuera de ese margen. Es útil para datos no lineales y ofrece buena generalización.
+
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/3.Training/3.1.2SVR.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
+
 <h4 align="center">2.3.3 Redes Neuronales (MLP)</h4>
+
+El MLP Regressor (Perceptrón Multicapa) es una red neuronal con una o más capas ocultas que aprende patrones complejos mediante propagación hacia adelante y retropropagación. Es ideal para capturar relaciones no lineales entre las variables y se adapta bien a conjuntos de datos con múltiples características.
+
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/3.Training/3.1.3MLPRegressor.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
+
 <h4 align="center">2.3.4 LightGBM</h4>
+LightGBM es un algoritmo de Gradient Boosting optimizado para velocidad y eficiencia. Construye árboles de decisión de forma hoja a hoja (leaf-wise) en lugar de nivel por nivel, lo que mejora el rendimiento y precisión. Es ideal para grandes volúmenes de datos y tareas de regresión con alta dimensionalidad.
+
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/3.Training/3.1.4LightGBM.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/3.Training/3.1.4LightGBM2.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
+
 <h4 align="center">2.3.5 Ridge Regression (L2 Regularization)</h4>
+Ridge Regression es una extensión de la regresión lineal que aplica regularización L2 para reducir el sobreajuste. Penaliza los coeficientes grandes al agregar su suma cuadrada al término de pérdida, lo que estabiliza el modelo cuando hay multicolinealidad o muchas variables.
+
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/3.Training/3.1.5RidgeRegression.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
+
 <h4 align="center">2.3.6 Lasso Regression (L1 Regularization)</h4>
+Lasso Regression utiliza regularización L1, que penaliza la suma absoluta de los coeficientes. Esto no solo reduce el sobreajuste, sino que también puede eliminar variables irrelevantes, ya que tiende a llevar algunos coeficientes exactamente a cero, funcionando como una forma de selección de variables.
+
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/3.Training/3.1.6LassoREgressor.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
+
 <h4 align="center">2.3.7 XGBoost</h4>
+
+XGBoost (Extreme Gradient Boosting) es un algoritmo de gradient boosting altamente optimizado y eficiente. Utiliza técnicas avanzadas como regularización, poda de árboles, y paralelización para mejorar tanto la precisión como el rendimiento computacional. Es muy popular en competencias de Machine Learning por su capacidad de manejar datos complejos y ruidosos.
+
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/3.Training/3.1.7XGBoost.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
 
 
 <h3 align="center">2.4 Evaluation Metrics</h3>
 
 <h3 align="center">2.5 Optimization (Tuning & Hyperparameters)</h3>
-
-<h3 align="center">2.6 Feature Engineering Manual</h3>
-
-<h3 align="center">2.7 Data Argumentation (Tabular Data)</h3>
 
 <h2 align="center">3.Final Results</h2>
 <h2 align="center">4.Technologies Used</h2>
