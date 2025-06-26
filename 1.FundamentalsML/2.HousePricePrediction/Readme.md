@@ -9,16 +9,16 @@ Este proyecto tiene como objetivo predecir el precio de venta de viviendas utili
 
 Para abordar este problema de forma progresiva, se desarrollaron tres niveles de implementación, desde una versión básica hasta una solución lista para producción:
 
-<h3 align="center"> Nivel 1 – Modelo Básico: </h3>
+<h3 align="center"> Nivel 1 – Modelo Básico </h3>
 
 En esta primera versión, se enfoca en la carga, limpieza y análisis preliminar del dataset, así como en el entrenamiento de modelos simples para establecer una línea base de predicción.
 Además, se desarrolló un dashboard básico con Streamlit para facilitar la visualización interactiva de los datos y resultados iniciales, permitiendo al usuario explorar el comportamiento de las variables y entender mejor el conjunto de datos.
 
-**Nivel 2 – Modelo Avanzado:**
+<h3 align="center">Nivel 2 – Modelo Avanzado</h3>
 
 Esta versión incorpora técnicas más sofisticadas, como la ingeniería de características (Feature Engineering) y la aumentación de datos (Data Augmentation), para mejorar la calidad del dataset. También se realiza la optimización de hiperparámetros y una comparación exhaustiva entre modelos avanzados, con el objetivo de seleccionar el más preciso y generalizable.
 
-**Nivel 3 – Despliegue del Modelo:**
+<h3 align="center">Nivel 3 – Despliegue del Modelo</h3>
 
 Esta etapa consiste en la creación de un dashboard interactivo robusto, desarrollado con Streamlit. A diferencia de las etapas anteriores, esta versión permite al usuario:
 
