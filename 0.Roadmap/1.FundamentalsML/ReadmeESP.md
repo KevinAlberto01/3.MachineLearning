@@ -89,7 +89,7 @@ En esta última, se creó un dashboard interactivo con Streamlit que permite ing
 
 |Basic Model|Advance model|Deployment|
 |------------------------|------------------------|-------------------| 
-|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/Img/1.BasicModel.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">|
+|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/1.BasicModel.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">|
 
 <h2 id="peliculas" align="center">3.Análisis de Sentimiento (Reseñas de Películas)</h2>
 
