@@ -242,6 +242,23 @@ XGBoost (Extreme Gradient Boosting) es un algoritmo de gradient boosting altamen
 
 <h3 align="center">2.4 Evaluation Metrics</h3>
 
+Después de entrenar múltiples modelos de regresión, es fundamental evaluar su desempeño utilizando métricas específicas. Estas métricas nos permiten comparar los resultados de manera objetiva y elegir el modelo que mejor se ajusta a los datos y generaliza correctamente, en este proyecto se utilizan las siguientes métricas de evaluación:
+
+- MAE (Mean Absolute Error): Promedio del valor absoluto de los errores. Mide cuán lejos están las predicciones de los valores reales en promedio.
+
+- MSE (Mean Squared Error): Promedio de los errores al cuadrado. Penaliza más los errores grandes.
+
+- RMSE (Root Mean Squared Error): Raíz cuadrada del MSE. Se interpreta en la misma escala que la variable objetivo.
+
+- R² Score (Coeficiente de Determinación): Indica qué porcentaje de la varianza en la variable dependiente es explicada por el modelo. Valores cercanos a 1 indican un buen ajuste.
+
+Estas métricas nos ayudan a entender no solo cuánto se equivocan los modelos, sino cómo lo hacen.
+
+Después de comparar el rendimiento de todos los modelos utilizando las métricas de evaluación mencionadas, XGBoost fue el algoritmo que obtuvo los mejores resultados en términos de precisión y capacidad de generalización.
+Gracias a su robustez, manejo eficiente de datos complejos y regularización incorporada, se considera la mejor opción para resolver este problema de predicción de precios de viviendas.
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/3.Training/4.1Evaluation.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
+
+
 <h3 align="center">2.5 Optimization (Tuning & Hyperparameters)</h3>
 
 <h2 align="center">3.Final Results</h2>
