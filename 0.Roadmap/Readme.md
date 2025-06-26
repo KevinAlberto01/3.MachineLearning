@@ -12,9 +12,9 @@
 1. [Description](#description)
 2. [Objectives](#objectives)
 3. [Focus](#focus)
-4. [1. ML Fundamentals](#fundamentals)
-5. [2. Deep Learning & Neural Networks](#deep-learning-and-neural-networks)
-6. [3. Advanced Applications and AI Deployment](#advanced-applications-and-ai-deployment)
+4. [1.Fundamentals ML](#fundamentals)
+5. [2.Deep Learning & Neural Networks](#deep-learning-and-neural-networks)
+6. [3.Advanced Applications and AI Deployment](#advanced-applications-and-ai-deployment)
 
 <h2 id="description" align="center">📜 Description 📜</h2>
 
