@@ -26,10 +26,36 @@
 En esta carpeta se encuentran tres subcarpetas principales: Local, Steps y streamlit.
 A continuación, se explicará cómo ejecutar el proyecto y el motivo por el cual se organizó de esta manera.
 
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Img/1.png?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
+
 <h2 align="center">2.Carpetas dentro de "1.Basic"</h2>
 
-<h2 align="center">2.1.Local</h2>
+<h3 align="center">2.1.Local</h3>
 
-<h2 align="center">2.2.Steps</h2>
+La carpeta está diseñada para ejecutar el proyecto de manera local, permitiendo aplicar toda la lógica del modelo, realizar mejoras, y visualizar los resultados a través de un dashboard interactivo con Streamlit. Aquí puedes probar el flujo completo desde el preprocesamiento hasta la visualización final, sin necesidad de conexión a internet o despliegue externo.
 
-<h2 align="center">2.3.streamlit</h2>
+```bash
+git clone https://github.com/KevinAlberto01/3.MachineLearning.git
+cd 3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/1.Basic/Local
+python nombre_del_programa.py
+```
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Img/1.png?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
+
+<h3 align="center">2.2.Steps</h3>
+
+Esta carpeta está diseñada para explicar en detalle la lógica de desarrollo seguida en el proyecto. Aquí se documentan tanto los pasos del flujo de Machine Learning como los procesos adicionales, incluyendo el diseño y estructura del dashboard interactivo creado con Streamlit.
+
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Img/1.png?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
+
+
+<h3 align="center">2.3.streamlit</h3>
+
+Esta carpeta está diseñada para ejecutar el programa directamente en Streamlit.io, lo que permite visualizar el dashboard de forma interactiva a través de un enlace público. Esta opción es ideal para compartir una demostración del proyecto sin necesidad de instalar nada localmente.
+
+```bash
+git clone https://github.com/KevinAlberto01/3.MachineLearning.git
+cd 3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/1.Basic/streamlit
+python nombre_del_programa.py
+```
+
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Img/1.png?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
