@@ -312,7 +312,10 @@ Esta comparación nos permite visualizar si la optimización realmente mejora el
 <img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/6.Agrupar(1-2)/6.1.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">
 
 ```bash
-git clone https://github.com/yourusername/housing-ml-project.git
-cd housing-ml-project
-pip install -r requirements.txt
-streamlit run streamlit_app.py
+git clone https://github.com/KevinAlberto01/3.MachineLearning.git
+cd 3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/1.Basic/Local
+python nombre_del_programa.py
+
+>[!IMPORTANT]
+>Estos comandos se utilizan exclusivamente para ejecutar la lógica del programa, incluyendo el flujo de trabajo de Machine Learning.
+
