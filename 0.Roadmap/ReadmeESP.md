@@ -10,22 +10,17 @@
 <h2 id="table-of-contents" align="center">📑 Table of Contents</h2>
 
 1. [Descripción](#descripcion)
-2. [0. Roadmap](#0-roadmap)
-   - [0.1 Fundamentos de ML](#01-fundamentos-de-ml)
-        - [0.1.1 Clasificador de Dígitos Escritos a Mano (MNIST)](#011-clasificador-de-digitos-escritos-a-mano-mnist)
-        - [0.1.2 Predicción de Precios de Viviendas](#012-prediccion-de-precios-de-viviendas)
-        - [0.1.3 Análisis de Sentimiento (Reseñas de Películas)](#013-analisis-de-sentimiento-reseñas-de-peliculas)
-
-
+2. [Objetivos](#objetivos)
+3. [Enfoque](#enfoque)
+4. [1.Fundamentos de ML](#fundamentos)
+5. [2.Aprendizaje Profundo y Redes Neuronales](#APYRN)
+6. [3.Aplicaciones Avanzadas y Despliegue de IA](#AAYD)
 
 <h2 id="descripcion" align="center">📜 Descripción 📜</h2>
 
 Este roadmap está diseñado para desarrollar habilidades en proyectos sólidos de Machine Learning, dominar conceptos clave y establecer una base adaptable para futuros proyectos avanzados.
 
-
-<p align = "center" >
-    <h2 align = "Center">🎯 Objetives 🎯</h2>
-</p>
+<h2 id="objetivos" align="center">🎯 Objetives 🎯</h2>
 
 - Comprender el flujo completo de un proyecto de Machine Learning, desde la carga de datos hasta la evaluación final.
 
@@ -37,19 +32,15 @@ Este roadmap está diseñado para desarrollar habilidades en proyectos sólidos 
 
 - Facilitar la documentación y la presentación de resultados mediante gráficos, métricas y un flujo de trabajo organizado.
 
-<p align = "center" >
-    <h2 align = "Center">🔎 Focus 🔎 </h2>
-</p>
+<h2 id="enfoque" align="center">🔎 Enfoque 🔎</h2>
+
 Los proyectos están estructurados de manera que cada paso es independiente, lo que permite:
 
 - Identificar fácilmente qué mejoras tienen el mayor impacto.
 - Probar diferentes combinaciones de técnicas sin perder el control del proceso.
 - Desarrollar confianza en el análisis crítico de los resultados.
 
-
-<p align = "center" >
-    <h2 align = "Center">1. Fundamentals ML </h2>
-</p>
+<h2 id="fundamentos" align="center">1.Fundamentos de ML</h2>
 
 Durante esta etapa se incluyen tres proyectos básicos en Fundamentals ML que permiten desarrollar el pensamiento crítico y familiarizarse con el flujo completo de trabajo en Machine Learning. <br>
 Cada proyecto aborda un tipo diferente de problema, proporcionando una visión amplia y práctica de los conceptos fundamentales.
