@@ -56,9 +56,8 @@ Cada proyecto aborda un tipo diferente de problema, proporcionando una visión a
 
 
 
-<p align = "center" >
-    <h2 align = "Center">2.Deep Learning & Neural Networks</h2>
-</p>
+<h2 id="APYRN" align="center">2.Aprendizaje Profundo y Redes Neuronales</h2>
+
 
 |1.Emotion Detector (FacialImages)|2.Traffic Sign Detector| 3.Real Time Object Detector(YOLO)| 4.Advance Application & AI Production|
 |---------|------------------------|-------------------|----|
@@ -69,9 +68,7 @@ Cada proyecto aborda un tipo diferente de problema, proporcionando una visión a
 >[!NOTE]
 >Recordemos que cada proyecto se desarrolla en tres etapas para facilitar una mejor comprensión del proceso completo de Machine Learning y así aprender de forma progresiva y estructurada.
 
-<p align = "center" >
-    <h2 align = "Center">3.Advanced Application & AI Production</h2>
-</p>
+<h2 id="AAYD" align="center">3.Aplicaciones Avanzadas y Despliegue de IA</h2>
 
 |1.Object Traking (Dron)|2. AI Image Generate (GANs & Stable Diffusion)| 3.Chatbot (Natural Language Processing (NLP)) |
 |---------|------------------------|-------------------|
