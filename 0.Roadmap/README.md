@@ -54,7 +54,7 @@ Cada proyecto aborda un tipo diferente de problema, proporcionando una visión a
     <h3 align = "Center">2.Deep Learning & Neural Networks</h3>
 </p>
 
-|1.EmotionDetector(FacialImages)|2.Traffic Sign Detector| 3.RealTimeObjectDetector(YOLO)|Advance Application & AI Production|
+|1.EmotionDetector (FacialImages)|2.Traffic Sign Detector| 3.Real Time Object Detector(YOLO)|Advance Application & AI Production|
 |---------|------------------------|-------------------|----|
 |ADD|ADD|ADD|ADD|
 
