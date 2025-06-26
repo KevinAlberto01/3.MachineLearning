@@ -1,39 +1,61 @@
-# Firs Steps in Machine Learning 
+<h1 align="center"  style="margin-bottom: -10px;">0.Roadmap</h1>
+<div align="center"> </div>
+
+<p align = "center" >
+    <h2 align = "Center">📜 Description 📜</h2>
+</p>
+
+Este roadmap está diseñado para desarrollar habilidades en proyectos sólidos de Machine Learning, dominar conceptos clave y establecer una base adaptable para futuros proyectos avanzados.
+
 
 <p align = "center" >
     <h2 align = "Center">🎯 Objetives 🎯</h2>
 </p>
 
-This roadmap is designed to **develop skills** in solid **Machine Learning projects**, master key concepts, and establish an adaptable foundation for future advanced projects.
+- Comprender el flujo completo de un proyecto de Machine Learning, desde la carga de datos hasta la evaluación final.
 
-* Understand the **complete flow** of a Machine Learning project, from data loading to final evaluation. 
-* Learn best practices in **feature engineering**, **normalization**, and **optimization** to improve model performance. 
-* Explore and compare **multiple algorithms** in regression and classification problems. 
-* Implement **techniques of Data Augmentation** to strengthen the model's generalization capability. 
-* **Facilitate the documentation** and **presentation** of results through graphs, metrics, and an organized workflow.
+- Aprender las mejores prácticas en ingeniería de características, normalización y optimización para mejorar el rendimiento del modelo.
+
+- Explorar y comparar múltiples algoritmos en problemas de regresión y clasificación.
+
+- Implementar técnicas de aumento de datos (Data Augmentation) para fortalecer la capacidad de generalización del modelo.
+
+- Facilitar la documentación y la presentación de resultados mediante gráficos, métricas y un flujo de trabajo organizado.
 
 <p align = "center" >
     <h2 align = "Center">🔎 Focus 🔎 </h2>
 </p>
-The Proyects are structured so that each step is independent, allowing: 
+Los proyectos están estructurados de manera que cada paso es independiente, lo que permite:
 
-* **Easily identify** which improvements have the **most impact**.
-* **Test different combinations** of techniques without losing control of the process.
-* Develop confidence in the **critical analysis** of results.
+- Identificar fácilmente qué mejoras tienen el mayor impacto.
+- Probar diferentes combinaciones de técnicas sin perder el control del proceso.
+- Desarrollar confianza en el análisis crítico de los resultados.
 
-## 1. Fundamentals ML
+
+<p align = "center" >
+    <h3 align = "Center">1. Fundamentals ML </h3>
+</p>
+
+Durante esta etapa se incluyen tres proyectos básicos en Fundamentals ML que permiten desarrollar el pensamiento crítico y familiarizarse con el flujo completo de trabajo en Machine Learning. 
+Cada proyecto aborda un tipo diferente de problema, proporcionando una visión amplia y práctica de los conceptos fundamentales.
 
 |1. HandWritten DigitClassifier (MNIST)|2. HousePrice Prediction| 3. Sentimental Analysis Movie Reviews |
 |---------|------------------------|-------------------|
 |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.8Personalisation/Images/Dashboard.png" width="2000"/>|ADD|ADD|
 
-## 2.Deep Learning & Neural Networks
+
+<p align = "center" >
+    <h3 align = "Center">2.Deep Learning & Neural Networks</h3>
+</p>
 
 |1.EmotionDetector(FacialImages)|2.Traffic Sign Detector| 3.RealTimeObjectDetector(YOLO)|
 |---------|------------------------|-------------------|
 |ADD|ADD|ADD|
 
-## 3.Advanced Application & AI Production
+
+<p align = "center" >
+    <h3 align = "Center">3.Advanced Application & AI Production</h3>
+</p>
 
 |1.Object Traking (Dron)|2. AI Image Generate (GANs & Stable Diffusion)| 3.Chatbot (Natural Language Processing (NLP)) |
 |---------|------------------------|-------------------|
