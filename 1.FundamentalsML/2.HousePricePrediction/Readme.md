@@ -9,7 +9,7 @@ Este proyecto tiene como objetivo predecir el precio de venta de viviendas utili
 
 Para abordar este problema de forma progresiva, se desarrollaron tres niveles de implementación, desde una versión básica hasta una solución lista para producción:
 
-**Nivel 1 – Modelo Básico:** 
+<div align="center"> Nivel 1 – Modelo Básico: </div>
 
 En esta primera versión, se enfoca en la carga, limpieza y análisis preliminar del dataset, así como en el entrenamiento de modelos simples para establecer una línea base de predicción.
 Además, se desarrolló un dashboard básico con Streamlit para facilitar la visualización interactiva de los datos y resultados iniciales, permitiendo al usuario explorar el comportamiento de las variables y entender mejor el conjunto de datos.
