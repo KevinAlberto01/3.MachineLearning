@@ -34,7 +34,22 @@ Y está preparado para conectarse a la nube, facilitando el acceso desde cualqui
     <h2 align = "Center">🎯 Objetives 🎯</h2>
 </p>
 
+- Predecir el precio de venta de viviendas de manera precisa, utilizando modelos de Machine Learning entrenados con datos reales y múltiples variables relevantes del inmueble.
+
+- Aplicar un flujo completo de ciencia de datos, que incluya desde la exploración y limpieza de datos hasta la evaluación, optimización y despliegue del modelo.
+
+- Desarrollar versiones escalables del proyecto, empezando por un análisis básico hasta llegar a una solución avanzada y desplegable para usuarios finales.
+
+- Implementar visualizaciones interactivas que faciliten la comprensión de los datos, la interpretación del modelo y la exploración de resultados por parte del usuario.
+
+- Construir una aplicación web accesible, alojada en la nube, que permita a cualquier persona predecir precios de viviendas en tiempo real sin conocimientos técnicos.
+
 
 <p align = "center" >
     <h2 align = "Center">💻​ Versiones 💻​</h2>
 </p>
+
+
+|Basic Model|Advance model|Deployment|
+|------------------------|------------------------|-------------------| 
+|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.2.1.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.2.2.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.2.3.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> |
