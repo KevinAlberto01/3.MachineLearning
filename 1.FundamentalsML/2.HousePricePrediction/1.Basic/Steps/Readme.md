@@ -276,12 +276,40 @@ Esta comparación nos permite visualizar si la optimización realmente mejora el
 |<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/5.Optimization/5.4.1GBMBase.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/5.Optimization/5.4.2GBMOptuna.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/5.Optimization/5.4.3GBMEarly.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
 
 
-<h2 align="center">6.Agr</h2>
-Recopilando los datos
-utilizamos la base de datos de kagle, AmesHousing.csv, 
+<h2 align="center">6.Agrupar (1/2)</h2>
 
-<h2 align="center">4.Technologies Used</h2>
-<h2 align="center">▶️ How to Run</h2>
+📂 Dataset utilizado: [AmesHousing.csv](https://www.kaggle.com/datasets/shashanknecrothapa/ames-housing-dataset) *(disponible en Kaggle)*
+🧠 Tipo de aprendizaje: Supervisado
+📈 Tipo de problema: Regresión
+⚙️ Algoritmo principal: LightGBM
+🧪 Nivel del modelo: Básico
+💻 Lenguaje utilizado: Python
+👤 Tipo de proyecto: Personal / Portafolio
+
+<h2 align="center">7.Technologies Used</h2>
+
+📊 Manipulación y análisis de datos
+
+- Pandas
+- NumPy
+- SciPy
+
+📈 Visualización
+
+- Matplotlib
+- Seaborn
+- Altair
+
+🤖 Machine Learning
+
+- Scikit-learn
+- LightGBM
+- Optuna (tuning de hiperparámetros)
+
+
+<h2 align="center">8.Como Ejecutar el programa</h2>
+
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/5.Optimization/5.4.1GBMBase.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">
 
 ```bash
 git clone https://github.com/yourusername/housing-ml-project.git
