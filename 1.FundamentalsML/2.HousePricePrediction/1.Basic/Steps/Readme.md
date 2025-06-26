@@ -312,6 +312,7 @@ Esta comparación nos permite visualizar si la optimización realmente mejora el
 git clone https://github.com/KevinAlberto01/3.MachineLearning.git
 cd 3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/1.Basic/Local
 python nombre_del_programa.py
+```
 
 >[!IMPORTANT]
 >Estos comandos se utilizan exclusivamente para ejecutar la lógica del programa, incluyendo el flujo de trabajo de Machine Learning.
