@@ -62,5 +62,8 @@ Esta carpeta está diseñada para ejecutar el programa directamente en Streamlit
 <img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Img/1.4streamlit.png?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
 
 >[!NOTE]
->En esta carpeta no podemos ejecutarlo localmente sino que tenemos que entrar a la pagina de streamli.io para poder subirlo y que la pagina lo ejecute pero te dejo la estructura con eso no tendras problemas para que se muestre tu dashboard
+>En esta carpeta no es posible ejecutar el programa localmente directamente. Para visualizar el dashboard, es necesario subir el proyecto a Streamlit.io, donde la plataforma se encargará de ejecutarlo en línea.
+Aun así, la estructura del proyecto ya está preparada para facilitar esa carga, por lo que no tendrás problemas para mostrar correctamente el dashboard una vez desplegado.
+
+
 
