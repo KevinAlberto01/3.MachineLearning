@@ -1,6 +1,21 @@
 <h1 align="center"  style="margin-bottom: -10px;">0.Roadmap</h1>
 <div align="center"> </div>
 
+<div align="center">
+
+🌐 This README is available in: [English](Readme.md) | [Spanish](ReadmeESP.md) 🌐
+
+</div>
+<h2 id="table-of-contents" align="center">📑 Table of Contents</h2>
+
+1. [Description](#description)
+2. [0. Roadmap](#0-roadmap)
+   - [0.1 ML Fundamentals](#01-ml-fundamentals)
+        - [0.1.1 Handwritten Digit Classifier (MNIST)](#011-handwritten-digit-classifier-mnist)
+        - [0.1.2 House Price Prediction](#012-house-price-prediction)
+        - [0.1.3 Sentiment Analysis (Movie Reviews)](#013-sentiment-analysis-movie-reviews)
+
+
 <p align = "center" >
     <h2 align = "Center">📜 Description 📜</h2>
 </p>
