@@ -28,10 +28,13 @@ Para abordar este problema de forma progresiva, se desarrollaron tres niveles de
 En esta primera versión, se enfoca en la carga, limpieza y análisis preliminar del dataset, así como en el entrenamiento de modelos simples para establecer una línea base de predicción.
 Además, se desarrolló un dashboard básico con Streamlit para facilitar la visualización interactiva de los datos y resultados iniciales, permitiendo al usuario explorar el comportamiento de las variables y entender mejor el conjunto de datos.
 
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/1.BasicModel.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">
+
 <h2 id="nivel2" align="center">Nivel 2 – Modelo Avanzado</h2>
 
 Esta versión incorpora técnicas más sofisticadas, como la ingeniería de características (Feature Engineering) y la aumentación de datos (Data Augmentation), para mejorar la calidad del dataset. También se realiza la optimización de hiperparámetros y una comparación exhaustiva entre modelos avanzados, con el objetivo de seleccionar el más preciso y generalizable.
 
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">
 <h2 id="nivel3" align="center">Nivel 3 – Despliegue del Modelo</h2>
 
 Esta etapa consiste en la creación de un dashboard interactivo robusto, desarrollado con Streamlit. A diferencia de las etapas anteriores, esta versión permite al usuario:
@@ -42,7 +45,7 @@ Esta etapa consiste en la creación de un dashboard interactivo robusto, desarro
 
 Y está preparado para conectarse a la nube, facilitando el acceso desde cualquier dispositivo sin necesidad de ejecutar código localmente.
 
-
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">
 
 <h2 id="objetivos2" align="center">🎯 Objetivos 🎯</h2>
 
@@ -65,4 +68,4 @@ Y está preparado para conectarse a la nube, facilitando el acceso desde cualqui
 
 |Basic Model|Advance model|Deployment|
 |------------------------|------------------------|-------------------| 
-|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/Img/1.BasicModel.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">|
+|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/1.BasicModel.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">|
