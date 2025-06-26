@@ -1,71 +1,62 @@
-<h1 align="center"  style="margin-bottom: -10px;">🏠 House Price Prediction with Machine Learning 🏠</h1>
+<h1 align="center" style="margin-bottom: -10px;">🏠 House Price Prediction with Machine Learning 🏠</h1>
 <div align="center"> </div>
 
 <div align="center">
-
-🌐 Este README está disponible en: [Inglés](Readme.md) | [Español](ReadmeESP.md) 🌐
-
+🌐 This README is available in: [English](Readme.md) | [Spanish](ReadmeESP.md) 🌐
 </div>
 
 <h2 id="table-of-contents" align="center">📑 Table of Contents</h2>
 
-1. [Descripción](#descripcion)
-2. [Nivel 1 – Modelo Básico](#nivel1)
-3. [Nivel 2 – Modelo Avanzado](#nivel2)
-4. [Nivel 3 – Despliegue del Modelo](#nivel3)
-5. [Objetivos](#objetivos2)
+1. [Description](#description)  
+2. [Level 1 – Basic Model](#level1)  
+3. [Level 2 – Advanced Model](#level2)  
+4. [Level 3 – Model Deployment](#level3)  
+5. [Objectives](#objectives2)  
 
+<h2 id="description" align="center">📜 Description 📜</h2>
 
-<h2 id="descripcion" align="center">📜 Descripción 📜</h2>
+This project aims to predict house sale prices using Machine Learning techniques, based on a dataset that includes multiple property features such as size, location, material quality, among others.
 
+To approach this problem progressively, three implementation levels were developed—from a basic version to a production-ready solution:
 
-Este proyecto tiene como objetivo predecir el precio de venta de viviendas utilizando técnicas de Machine Learning, a partir de un conjunto de datos que incluye múltiples características del inmueble como tamaño, ubicación, calidad de los materiales, entre otras.
+<h2 id="level1" align="center">Level 1 – Basic Model</h2>
 
-Para abordar este problema de forma progresiva, se desarrollaron tres niveles de implementación, desde una versión básica hasta una solución lista para producción:
+In this first version, the focus is on loading, cleaning, and performing preliminary analysis of the dataset, as well as training simple models to establish a prediction baseline.  
+Additionally, a basic dashboard was built using Streamlit to allow interactive data and results visualization, helping users explore variable behavior and better understand the dataset.
 
-<h2 id="nivel1" align="center">Nivel 1 – Modelo Básico</h2>
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/1.BasicModel.jpeg?raw=true" alt="Data Types" style="width: 100%; height: auto;">
 
-En esta primera versión, se enfoca en la carga, limpieza y análisis preliminar del dataset, así como en el entrenamiento de modelos simples para establecer una línea base de predicción.
-Además, se desarrolló un dashboard básico con Streamlit para facilitar la visualización interactiva de los datos y resultados iniciales, permitiendo al usuario explorar el comportamiento de las variables y entender mejor el conjunto de datos.
+<h2 id="level2" align="center">Level 2 – Advanced Model</h2>
 
-<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/1.BasicModel.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">
+This version incorporates more sophisticated techniques such as Feature Engineering and Data Augmentation to improve dataset quality.  
+It also includes hyperparameter optimization and an in-depth comparison between advanced models to select the most accurate and generalizable one.
 
-<h2 id="nivel2" align="center">Nivel 2 – Modelo Avanzado</h2>
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" alt="Data Types" style="width: 100%; height: auto;">
 
-Esta versión incorpora técnicas más sofisticadas, como la ingeniería de características (Feature Engineering) y la aumentación de datos (Data Augmentation), para mejorar la calidad del dataset. También se realiza la optimización de hiperparámetros y una comparación exhaustiva entre modelos avanzados, con el objetivo de seleccionar el más preciso y generalizable.
+<h2 id="level3" align="center">Level 3 – Model Deployment</h2>
 
-<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">
-<h2 id="nivel3" align="center">Nivel 3 – Despliegue del Modelo</h2>
+This stage consists of building a robust interactive dashboard using Streamlit. Unlike previous stages, this version allows the user to:
 
-Esta etapa consiste en la creación de un dashboard interactivo robusto, desarrollado con Streamlit. A diferencia de las etapas anteriores, esta versión permite al usuario:
+- Enter new data manually or by uploading files.  
+- Get real-time predictions.  
+- View graphs and metrics in a clear and intuitive way.  
 
-- Ingresar nuevos datos manualmente o mediante carga de archivos.
-- Obtener predicciones en tiempo real.
-- Visualizar gráficos y métricas de forma clara e intuitiva.
+It is also cloud-ready, making it accessible from any device without running local code.
 
-Y está preparado para conectarse a la nube, facilitando el acceso desde cualquier dispositivo sin necesidad de ejecutar código localmente.
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" alt="Data Types" style="width: 100%; height: auto;">
 
-<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">
+<h2 id="objectives2" align="center">🎯 Objectives 🎯</h2>
 
-<h2 id="objetivos2" align="center">🎯 Objetivos 🎯</h2>
+- Accurately predict house sale prices using Machine Learning models trained with real data and multiple relevant property variables.  
+- Apply a full data science workflow, including data exploration, cleaning, evaluation, optimization, and model deployment.  
+- Develop scalable versions of the project, starting from a basic analysis to a fully deployed solution for end users.  
+- Implement interactive visualizations to facilitate data understanding, model interpretation, and results exploration.  
+- Build a cloud-hosted web application that allows anyone to predict house prices in real time without technical knowledge.
 
-
-- Predecir el precio de venta de viviendas de manera precisa, utilizando modelos de Machine Learning entrenados con datos reales y múltiples variables relevantes del inmueble.
-
-- Aplicar un flujo completo de ciencia de datos, que incluya desde la exploración y limpieza de datos hasta la evaluación, optimización y despliegue del modelo.
-
-- Desarrollar versiones escalables del proyecto, empezando por un análisis básico hasta llegar a una solución avanzada y desplegable para usuarios finales.
-
-- Implementar visualizaciones interactivas que faciliten la comprensión de los datos, la interpretación del modelo y la exploración de resultados por parte del usuario.
-
-- Construir una aplicación web accesible, alojada en la nube, que permita a cualquier persona predecir precios de viviendas en tiempo real sin conocimientos técnicos.
-
-
-<p align = "center" >
-    <h2 align = "Center">💻​ Versiones 💻​</h2>
+<p align="center">
+    <h2 align="center">💻 Versions 💻</h2>
 </p>
 
-
-|Basic Model|Advance model|Deployment|
-|------------------------|------------------------|-------------------| 
-|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/1.BasicModel.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">|
+| Basic Model | Advanced Model | Deployment |
+|-------------|----------------|------------|
+| <img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/1.BasicModel.jpeg?raw=true" alt="Data Types" style="width: 100%; height: auto;"> | <img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" alt="Data Types" style="width: 100%; height: auto;"> | <img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" alt="Data Types" style="width: 100%; height: auto;"> |
