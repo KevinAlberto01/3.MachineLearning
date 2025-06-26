@@ -7,7 +7,7 @@
 </div>
 <h2 align="center">📑 Table of Contents</h2>
 
-1. [Description](#1-introduction)
+1. [Descripción](#-descripción-)
 2. [0.Roadmap](#2-development-process)
    - [0.Fundamentals ML](#21-data-processing)
         - [0.1.1.HandWritten Digit Classifier (MNIST)](#22-exploratory-data-analysis-eda)
@@ -16,7 +16,7 @@
 
 </div>
 <p align = "center" >
-    <h2 align = "Center">📜 Description 📜</h2>
+    <h2 align = "Center">📜 Descripción 📜</h2>
 </p>
 
 En esta carpeta encontrarás todos mis proyectos enfocados 100% en Machine Learning, la idea principal es estar en constante mejoramiento y aprendiendo mas para ser experto en este tipo de proyectos.
