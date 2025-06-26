@@ -24,7 +24,7 @@ En esta carpeta (0.Roadmap) encontraras subcarpetas:
 <p align = "center" >
     <h3 align = "Center">0.1 Fundamentals ML</h4>
 </p>
-Cuenta con 3 proyectos, sencillos para poder empezar a desarollar la logica y el estilo de trabajo que se debe de seguir para tener un orden y control de todos los pasos.
+Esta carpeta incluye tres proyectos básicos, diseñados para desarrollar la lógica y el estilo de trabajo necesarios en machine learning. El objetivo es establecer una metodología ordenada y controlada que permita seguir cada paso del proceso de manera estructurada.
 
 <p align = "center" >
     <h4 align = "Center">0.1.1.Handwritten Digit Classifier (MNIST) </h4>
@@ -34,3 +34,12 @@ Cuenta con 3 proyectos, sencillos para poder empezar a desarollar la logica y el
     <h4 align = "Center">0.1.2.House Price Prediction </h4>
 </p>
 
+Este proyecto fue importante porque me permitió trabajar con una base de datos real en formato .csv (compatible con Excel), lo que me ayudó a comprender cómo extraer, procesar y utilizar datos reales en un entorno de machine learning. 
+
+|Basic Model|Adavance Model|Deployment Model|
+|---------|------------------------|-------------------|
+|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/1.BasicModel.jpeg?raw=true" width="2000"/>|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" width="2000"/>|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" width="2000"/>|
+
+<p align = "center" >
+    <h4 align = "Center">0.1.3.SentimentAnalysis(MovieReviews)</h4>
+</p>
