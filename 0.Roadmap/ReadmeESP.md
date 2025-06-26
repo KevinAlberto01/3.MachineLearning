@@ -3,22 +3,22 @@
 
 <div align="center">
 
-🌐 This README is available in: [English](Readme.md) | [Spanish](ReadmeESP.md) 🌐
+🌐 Este README está disponible en: [English](Readme.md) | [Spanish](ReadmeESP.md) 🌐
 
 </div>
+
 <h2 id="table-of-contents" align="center">📑 Table of Contents</h2>
 
-1. [Description](#description)
+1. [Descripción](#descripcion)
 2. [0. Roadmap](#0-roadmap)
-   - [0.1 ML Fundamentals](#01-ml-fundamentals)
-        - [0.1.1 Handwritten Digit Classifier (MNIST)](#011-handwritten-digit-classifier-mnist)
-        - [0.1.2 House Price Prediction](#012-house-price-prediction)
-        - [0.1.3 Sentiment Analysis (Movie Reviews)](#013-sentiment-analysis-movie-reviews)
+   - [0.1 Fundamentos de ML](#01-fundamentos-de-ml)
+        - [0.1.1 Clasificador de Dígitos Escritos a Mano (MNIST)](#011-clasificador-de-digitos-escritos-a-mano-mnist)
+        - [0.1.2 Predicción de Precios de Viviendas](#012-prediccion-de-precios-de-viviendas)
+        - [0.1.3 Análisis de Sentimiento (Reseñas de Películas)](#013-analisis-de-sentimiento-reseñas-de-peliculas)
 
 
-<p align = "center" >
-    <h2 align = "Center">📜 Description 📜</h2>
-</p>
+
+<h2 id="descripcion" align="center">📜 Descripción 📜</h2>
 
 Este roadmap está diseñado para desarrollar habilidades en proyectos sólidos de Machine Learning, dominar conceptos clave y establecer una base adaptable para futuros proyectos avanzados.
 
