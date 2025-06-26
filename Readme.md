@@ -1,4 +1,4 @@
-<h1 align="center"  style="margin-bottom: -10px;">Proyectos de Machine learning</h1>
+<h1 align="center"  style="margin-bottom: -10px;">Machine Learning Projects</h1>
 <div align="center"> </div>
 <div align="center">
 
