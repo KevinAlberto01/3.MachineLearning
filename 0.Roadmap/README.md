@@ -41,7 +41,13 @@ Cada proyecto aborda un tipo diferente de problema, proporcionando una visión a
 
 |1. HandWritten DigitClassifier (MNIST)|2. HousePrice Prediction| 3. Sentimental Analysis Movie Reviews |
 |---------|------------------------|-------------------|
-|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.8Personalisation/Images/Dashboard.png" width="2000"/>|ADD|ADD|
+|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/1.BasicModel.jpeg?raw=true" width="2000"/>|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" width="2000"/>|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" width="2000"/>|
+|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" width="2000"/>|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" width="2000"/>|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" width="2000"/>|
+|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" width="2000"/>|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" width="2000"/>|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" width="2000"/>|
+
+>[!NOTE]
+>Recordemos que cada proyecto se desarrolla en tres etapas para facilitar una mejor comprensión del proceso completo de Machine Learning y así aprender de forma progresiva y estructurada.
+
 
 
 <p align = "center" >
