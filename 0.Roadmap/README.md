@@ -36,7 +36,7 @@ Los proyectos están estructurados de manera que cada paso es independiente, lo 
     <h3 align = "Center">1. Fundamentals ML </h3>
 </p>
 
-Durante esta etapa se incluyen tres proyectos básicos en Fundamentals ML que permiten desarrollar el pensamiento crítico y familiarizarse con el flujo completo de trabajo en Machine Learning. 
+Durante esta etapa se incluyen tres proyectos básicos en Fundamentals ML que permiten desarrollar el pensamiento crítico y familiarizarse con el flujo completo de trabajo en Machine Learning. <br>
 Cada proyecto aborda un tipo diferente de problema, proporcionando una visión amplia y práctica de los conceptos fundamentales.
 
 |1. HandWritten DigitClassifier (MNIST)|2. HousePrice Prediction| 3. Sentimental Analysis Movie Reviews |
