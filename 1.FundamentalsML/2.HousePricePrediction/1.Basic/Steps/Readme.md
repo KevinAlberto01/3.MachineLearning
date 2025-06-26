@@ -256,10 +256,17 @@ Estas métricas nos ayudan a entender no solo cuánto se equivocan los modelos, 
 
 Después de comparar el rendimiento de todos los modelos utilizando las métricas de evaluación mencionadas, XGBoost fue el algoritmo que obtuvo los mejores resultados en términos de precisión y capacidad de generalización.
 Gracias a su robustez, manejo eficiente de datos complejos y regularización incorporada, se considera la mejor opción para resolver este problema de predicción de precios de viviendas.
-<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/3.Training/4.1Evaluation.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
+<br>
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/4.EvaluationMetrics/4.1Evaluation.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
 
 
 <h3 align="center">2.5 Optimization (Tuning & Hyperparameters)</h3>
+
+La optimización de hiperparámetros consiste en ajustar manual o automáticamente los parámetros que no se aprenden durante el entrenamiento, como la profundidad de los árboles, la tasa de aprendizaje o el número de estimadores. Estos valores tienen un impacto directo en el desempeño del modelo.
+
+|Random Search|Optuna|Early Stopping|
+|----------------------------------------------|--------------|----------|
+|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.4.1.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.4.2.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> |
 
 <h2 align="center">3.Final Results</h2>
 <h2 align="center">4.Technologies Used</h2>
