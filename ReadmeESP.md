@@ -2,7 +2,7 @@
 <div align="center"> </div>
 <div align="center">
 
-🌐 Este README está disponible en: [English](README.md) | [Spanish](README.es.md)
+🌐 Este README está disponible en: [English](Readme.md) | [Spanish](ReadmeESP.md)
 
 </div>
 <h2 align="center">📑 Table of Contents</h2>
