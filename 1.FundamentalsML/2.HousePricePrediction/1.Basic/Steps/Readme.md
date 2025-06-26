@@ -309,7 +309,7 @@ Esta comparación nos permite visualizar si la optimización realmente mejora el
 
 <h2 align="center">8.Como Ejecutar el programa</h2>
 
-<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/5.Optimization/5.4.1GBMBase.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/6.Agrupar(1-2)/6.1.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">
 
 ```bash
 git clone https://github.com/yourusername/housing-ml-project.git
