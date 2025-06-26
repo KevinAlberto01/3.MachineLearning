@@ -20,7 +20,7 @@
 
 Este roadmap está diseñado para desarrollar habilidades en proyectos sólidos de Machine Learning, dominar conceptos clave y establecer una base adaptable para futuros proyectos avanzados.
 
-<h2 id="objetivos" align="center">🎯 Objetives 🎯</h2>
+<h2 id="objetivos" align="center">🎯 Objetivos 🎯</h2>
 
 - Comprender el flujo completo de un proyecto de Machine Learning, desde la carga de datos hasta la evaluación final.
 
@@ -45,7 +45,7 @@ Los proyectos están estructurados de manera que cada paso es independiente, lo 
 Durante esta etapa se incluyen tres proyectos básicos en Fundamentals ML que permiten desarrollar el pensamiento crítico y familiarizarse con el flujo completo de trabajo en Machine Learning. <br>
 Cada proyecto aborda un tipo diferente de problema, proporcionando una visión amplia y práctica de los conceptos fundamentales.
 
-|1.Clasificador de Dígitos Escritos a Mano (MNIST)|2.Predicción de Precios de Viviendas|3.Análisis de Sentimiento (Reseñas de Películas)|
+|1.Clasificador de Dígitos Escritos a Mano (MNIST)|2.Predicción de Precios de Casas|3.Análisis de Sentimiento (Reseñas de Películas)|
 |---------|------------------------|-------------------|
 |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/1.BasicModel.jpeg?raw=true" width="2000"/>|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" width="2000"/>|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" width="2000"/>|
 |<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" width="2000"/>|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" width="2000"/>|<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" width="2000"/>|

@@ -1,9 +1,32 @@
 <h1 align="center"  style="margin-bottom: -10px;">1.Fundamentals ML</h1>
 <div align="center"> </div>
 
-<p align = "center" >
-    <h2 align = "Center">📜 Description 📜</h2>
-</p>
+<div align="center">
+
+🌐 Este README está disponible en: [Inglés](Readme.md) | [Español](ReadmeESP.md) 🌐
+
+</div>
+
+<h2 id="table-of-contents" align="center">📑 Table of Contents</h2>
+
+1. [Descripción](#descripcion)
+2. [1.Clasificador de Dígitos Escritos a Mano (MNIST)](#MNIST)
+    - [Objetivos](#objetivos1)
+    - [Enfoque](#enfoque1)
+    - [Resultados](#Resultados1)
+3. [2.Predicción de Precios de Casas](#casas)
+   - [Objetivos](#objetivos2)
+    - [Enfoque](#enfoque2)
+    - [Resultados](#Resultados2)
+4. [3.Análisis de Sentimiento (Reseñas de Películas)](#peliculas)
+   - [Objetivos](#objetivos3)
+    - [Enfoque](#enfoque3)
+    - [Resultados](#Resultados3)
+
+
+
+
+<h2 id="descripcion" align="center">📜 Descripción 📜</h2>
 
 Esta sección está diseñada para desarrollar una comprensión sólida de los conceptos fundamentales en Machine Learning. Abarca desde la manipulación y preparación de datos hasta la implementación y evaluación básica de modelos.
 Los proyectos incluidos permiten aplicar estos conceptos de manera práctica para sentar las bases de un flujo de trabajo completo en ciencia de datos.
@@ -25,48 +48,40 @@ Cada uno de estos proyectos está diseñado para fortalecer habilidades esencial
 >Cada uno enfocado en diferentes aspectos del aprendizaje automático.
 
 
-<h2 align="center"  style="margin-bottom: -10px;">1. HandWritten DigitClassifier (MNIST)</h2>
+<h2 id="MNIST" align="center">1.Clasificador de Dígitos Escritos a Mano (MNIST)</h2>
+
+
 <div align="center"> </div>
 
-<p align = "center" >
-    <h4 align = "Center">🎯 Objetives 🎯</h4>
-</p>
+
+<h4 id="objetivos1" align="center">🎯 Objetivos 🎯</h2>
+
 
 Develop a classification model that recognizes handwritten digits using the MNIST dataset.
 
-<p align = "center" >
-    <h4 align = "Center">🔎 Focus 🔎 </h4>
-</p>
+<h4 id="enfoque1" align="center">🔎 Enfoque 🔎</h2>
+
 
 Image classification and handling of visual data using techniques such as Data Augmentation and hyperparameter optimization.
 
-<p align = "center" >
-    <h4 align = "Center">✅ Results ✅ </h4>
-</p>
+<h4 id="resultados1" align="center">✅ Resultados ✅ </h2>
 
 <img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.8Personalisation/Images/Dashboard.png" width="2000"/>
 
 
-<h2 align="center"  style="margin-bottom: -10px;">2.House Price Prediction</h2>
-<div align="center"> </div>
+<h2 id="casas" align="center">2.Predicción de Precios de Casas</h2>
 
-<p align = "center" >
-    <h4 align = "Center">🎯 Objetives 🎯</h4>
-</p>
+<h4 id="objetivos2" align="center">🎯 Objetivos 🎯</h2>
 
 Predecir el valor de propiedades residenciales en función de múltiples características como el número de habitaciones, calidad, tamaño, ubicación y año de construcción.  
 El objetivo es construir un modelo confiable que generalice bien a nuevos datos.
 
-<p align = "center" >
-    <h4 align = "Center">🔎 Focus 🔎 </h4>
-</p>
+<h4 id="enfoque2" align="center">🔎 Enfoque 🔎</h2>
 
 Implementación de algoritmos de regresión (Regresión Lineal, Árbol de Decisión, Random Forest, KNN y LightGBM).  
 Se aplicaron técnicas de Ingeniería de Características y Optimización de Hiperparámetros para mejorar el rendimiento y la interpretabilidad del modelo.
 
-<p align = "center" >
-    <h4 align = "Center">✅ Results ✅ </h4>
-</p>
+<h4 id="resultados2" align="center">✅ Resultados ✅ </h2>
 
 Se logró un modelo predictivo robusto con un R² alto y un RMSE bajo en los datos de prueba.  
 El proyecto se desarrolló en tres etapas: una versión básica con modelos iniciales, una versión avanzada con ingeniería de características y optimización, y finalmente una etapa de despliegue.  
@@ -76,23 +91,15 @@ En esta última, se creó un dashboard interactivo con Streamlit que permite ing
 |------------------------|------------------------|-------------------| 
 |<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/Img/1.BasicModel.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/Img/2.AdvanceModel.png?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">|
 
-<h2 align="center"  style="margin-bottom: -10px;">3.Sentimental Analysis (Movie Reviews)</h2>
-<div align="center"> </div>
+<h2 id="peliculas" align="center">3.Análisis de Sentimiento (Reseñas de Películas)</h2>
 
-<p align = "center" >
-    <h4 align = "Center">🎯 Objetives 🎯</h4>
-</p>
-
+<h4 id="objetivos3" align="center">🎯 Objetivos 🎯</h2>
 Analyze movie reviews to classify sentiment (positive or negative).
 
-<p align = "center" >
-    <h4 align = "Center">🔎 Focus 🔎 </h4>
-</p>
+<h4 id="enfoque3" align="center">🔎 Enfoque 🔎</h2>
 
 Natural Language Processing (NLP) and text analysis techniques to extract semantic patterns.
 
-<p align = "center" >
-    <h4 align = "Center">✅ Results ✅ </h4>
-</p>
+<h4 id="resultados3" align="center">✅ Resultados ✅ </h2>
 
 <img src = "" width="2000"/>
