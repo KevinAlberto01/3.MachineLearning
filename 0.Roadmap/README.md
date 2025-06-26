@@ -33,7 +33,7 @@ Los proyectos están estructurados de manera que cada paso es independiente, lo 
 
 
 <p align = "center" >
-    <h3 align = "Center">1. Fundamentals ML </h3>
+    <h2 align = "Center">1. Fundamentals ML </h2>
 </p>
 
 Durante esta etapa se incluyen tres proyectos básicos en Fundamentals ML que permiten desarrollar el pensamiento crítico y familiarizarse con el flujo completo de trabajo en Machine Learning. <br>
@@ -51,7 +51,7 @@ Cada proyecto aborda un tipo diferente de problema, proporcionando una visión a
 
 
 <p align = "center" >
-    <h3 align = "Center">2.Deep Learning & Neural Networks</h3>
+    <h2 align = "Center">2.Deep Learning & Neural Networks</h2>
 </p>
 
 |1.Emotion Detector (FacialImages)|2.Traffic Sign Detector| 3.Real Time Object Detector(YOLO)| 4.Advance Application & AI Production|
@@ -64,7 +64,7 @@ Cada proyecto aborda un tipo diferente de problema, proporcionando una visión a
 >Recordemos que cada proyecto se desarrolla en tres etapas para facilitar una mejor comprensión del proceso completo de Machine Learning y así aprender de forma progresiva y estructurada.
 
 <p align = "center" >
-    <h3 align = "Center">3.Advanced Application & AI Production</h3>
+    <h2 align = "Center">3.Advanced Application & AI Production</h2>
 </p>
 
 |1.Object Traking (Dron)|2. AI Image Generate (GANs & Stable Diffusion)| 3.Chatbot (Natural Language Processing (NLP)) |
