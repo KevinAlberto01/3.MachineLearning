@@ -73,7 +73,7 @@ A continuación, se explicará cada paso para mostrar la lógica con la que se r
 En el primer paso del proyecto, se cargó el conjunto de datos Ames Housing, obteniendo un total de 2,930 filas y 82 columnas.
 Esto proporciona una base rica y detallada de características que describen las propiedades, incluyendo aspectos como tamaño, calidad, ubicación y más.
 
-<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/1.1.1.jpeg?raw=true" alt="Dashboard Preview" style="width: 100%; height: auto;" />
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/1.dataProcessing/1.1.1.jpeg?raw=true" alt="Dashboard Preview" style="width: 100%; height: auto;" />
 
 >[!NOTE]
 >Esta etapa es crucial para tener una visión general del dataset, identificar posibles errores o datos faltantes, y planificar los siguientes pasos de limpieza y análisis.
@@ -83,7 +83,7 @@ Esto proporciona una base rica y detallada de características que describen las
 
 Verificamos los valores nulos presentes en el dataset. En esta etapa, solo se realiza una inspección visual para entender cómo está compuesta nuestra base de datos, sin tomar aún decisiones sobre qué variables eliminar o conservar. Esto nos permite tener una mejor idea de la calidad y completitud de los datos antes de continuar con el análisis.
 
-<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/1.2.jpeg?raw=true" alt="Dashboard Preview" style="width: 100%; height: auto;" />
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/1.dataProcessing/1.2.jpeg?raw=true" alt="Dashboard Preview" style="width: 100%; height: auto;" />
 
 
 <h4 id="Dduplicados" align="center">1.1.3 Identificación de datos duplicados y análisis de tipos de datos</h4>
@@ -91,7 +91,7 @@ Verificamos los valores nulos presentes en el dataset. En esta etapa, solo se re
 
 En este paso combinamos dos tareas importantes: primero, detectamos los datos duplicados para garantizar la calidad del dataset; luego, analizamos los tipos de datos presentes. Esta última acción es fundamental para planificar futuros procesos, ya que cada variable puede requerir un tratamiento diferente según su tipo.
 
-<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/1.3.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/1.dataProcessing/1.3.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">
 
 <h3 id="eda" align="center">1.2 Exploratory Data Analysis (EDA)</h3>
 
@@ -99,27 +99,27 @@ En este paso combinamos dos tareas importantes: primero, detectamos los datos du
 
 Primero, realizamos un heatmap de toda la base de datos para visualizar qué variables presentan relaciones entre sí. Sin embargo, debido a la gran cantidad de datos, el gráfico no permite una visualización clara. Por ello, en el siguiente paso filtramos y enfocamos el análisis en las variables más relevantes para obtener una mejor interpretación.
 
-<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.1.1.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.EDA/2.1.1.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">
 
 Después, se imprimen las variables más relevantes que se utilizarán para generar un heatmap reducido. El objetivo es obtener una mejor visualización y comprensión de las relaciones entre las variables más influyentes en este caso específico.
 
-<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.1.2.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.EDA/2.1.2.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">
 
 Por último, utilizamos las variables más relevantes para generar un heatmap reducido, en el cual se observa que las dos primeras variables presentan la mayor correlación (mayor intensidad de color). Esta observación es útil, ya que en los siguientes pasos estas variables pueden ser modificadas o utilizadas para mejorar el modelo.
 
-<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.1.3.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.EDA/2.1.3.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">
 
 <h4 id="pairplot" align="center">1.2.2 Pairplot</h4>
 
 En este paso se utiliza un pairplot para visualizar el comportamiento de las variables seleccionadas. Ya que hemos identificado dos variables con alta correlación, es importante observar su distribución y relación visualmente para entender mejor cómo interactúan entre sí.
 
-<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.1.4.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.EDA/2.1.4.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">
 
 <h4 id="desc" align="center">1.2.3.Estadísticas descriptivas</h4>
 
 En base a las variables seleccionadas (Gr Liv Area y Overall Qual), obtenemos información más detallada sobre sus relaciones con el resto del dataset. Sin embargo, es importante recordar que SalePrice es nuestra variable objetivo (y), ya que nuestro propósito principal es predecir su comportamiento.
 
-<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.1.5.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.EDA/2.1.5.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">
 
 <h4 id="histo" align="center">1.2.4.Histogramas</h4>
 
@@ -153,38 +153,38 @@ Permite identificar la dispersión, simetría y la presencia de datos extremos d
 
 Observamos varios puntos por encima del rango intercuartílico, lo que indica la presencia de valores atípicos elevados. Esto sugiere que existen viviendas con precios considerablemente más altos que el promedio del dataset.
 
-<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.3.1.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"><br>
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.EDA/2.3.1.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"><br>
 
 <h5 id="grlivarea" align="center">1.2.5.2 Boxplot Gr Liv Area</h5>
 
 El boxplot de Gr Liv Area también muestra la presencia de outliers elevados, con los bigotes superiores extendiéndose más allá que en otros casos, lo que indica que algunas viviendas tienen áreas habitables significativamente mayores al rango típico.
 
-<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.3.2.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"><br>
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.EDA/2.3.2.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"><br>
 
 <h5 id="overallqual" align="center">1.2.5.3 Boxplot OverallQual</h5>
 
 El boxplot de OverallQual presenta valores concentrados principalmente por debajo de la mediana, con pocos o ningún outlier visible, lo que refleja que la mayoría de las viviendas tienen una calidad general dentro de un rango más limitado.
 
-<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.3.3.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> <br>
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.EDA/2.3.3.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> <br>
 
 Finalmente, analizamos el valor p (p-value) para evaluar la significancia estadística de nuestras variables con respecto a la variable objetivo (SalePrice).
 
-<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.3.4.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.EDA/2.3.4.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
 
 <h4 id="distribucion" align="center">1.2.6 Distribución de los datos</h4>
 
 Necesitamos calcular el skewness (coeficiente de sesgo) de cada variable para cuantificar el sesgo en su distribución, lo cual es importante para decidir qué acciones tomar en el preprocesamiento.
 Después de calcular el skewness, observamos que las variables Gr Liv Area y Overall Qual presentan un sesgo positivo, es decir, la mayoría de los valores son bajos, pero existen algunos valores muy altos que desvían la distribución.
 
-<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.3.5.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.EDA/2.3.5.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
 
 Después, filtramos las filas donde alguna variable tenga un valor menor o igual a 0, ya que en datos reales ese tipo de valores no deberían existir (por ejemplo, una superficie o precio negativo no tiene sentido). Esta verificación nos ayuda a detectar errores o inconsistencias en los datos antes de entrenar el modelo.
 
-<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.3.6.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.EDA/?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
 
 Por último, pero no menos importante, volvemos a verificar los valores nulos, pero esta vez solo en las variables que realmente nos interesan para el modelo. Esto nos permite enfocar el preprocesamiento en las columnas relevantes y tomar decisiones informadas sobre cómo manejar los datos faltantes
 
-<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.3.7.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.EDA/2.3.7.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
 
 <h4 id="logaritmos" align="center">1.2.7 Aplicamos logaritmos datos</h4>
 
@@ -201,12 +201,12 @@ Antes de finalizar el análisis de distribución, es importante considerar que l
 Por ello, es necesario normalizar los datos para que las variables tengan valores en rangos similares. Esto ayuda a que el modelo aprenda de manera más eficiente y equitativa.
 En este paso, observamos los valores de las variables seleccionadas para decidir qué tipo de escalado aplicar.
 
-<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.4.1.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.EDA/2.4.1.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
 
 Por último, realizamos una gráfica para verificar si, tras aplicar la normalización y corregir el sesgo, la distribución de los datos se ha ajustado adecuadamente.
 Esta visualización nos permite confirmar si la variable se aproxima a una distribución normal (forma de campana), lo cual es deseable para muchos algoritmos de Machine Learning.
 
-<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.4.2.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.EDA/2.4.2.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
 
 <h3 id="Malgoritmos" align="center">1.3.Training Multiple Algorithms</h3>
 
@@ -227,48 +227,48 @@ El objetivo de este paso es evaluar qué modelo se adapta mejor a los datos en f
 
 KNN Regressor predice el valor de un punto tomando el promedio de los k vecinos más cercanos según una métrica de distancia. Es un modelo basado en instancias, sin entrenamiento real, ideal cuando se espera que datos similares tengan valores de salida similares.
 
-<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/3.Training/3.1.1KNNRegressor.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/3.Training/3.1.1KNNRegressor.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
 
 
 <h4 id="svr" align="center">1.3.2 SVR(Support Vector Regressor)</h4>
 
 SVR es una extensión del algoritmo de Support Vector Machine para tareas de regresión. Busca ajustar una línea (o hiperplano) que prediga los datos con un margen de tolerancia definido, minimizando los errores fuera de ese margen. Es útil para datos no lineales y ofrece buena generalización.
 
-<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/3.Training/3.1.2SVR.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/3.Training/3.1.2SVR.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
 
 <h4 id="mlp" align="center">1.3.3 Redes Neuronales (MLP)</h4>
 
 
 El MLP Regressor (Perceptrón Multicapa) es una red neuronal con una o más capas ocultas que aprende patrones complejos mediante propagación hacia adelante y retropropagación. Es ideal para capturar relaciones no lineales entre las variables y se adapta bien a conjuntos de datos con múltiples características.
 
-<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/3.Training/3.1.3MLPRegressor.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/3.Training/3.1.3MLPRegressor.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
 
 
 <h4 id="gbm" align="center">1.3.4.LightGBM</h4>
 
 LightGBM es un algoritmo de Gradient Boosting optimizado para velocidad y eficiencia. Construye árboles de decisión de forma hoja a hoja (leaf-wise) en lugar de nivel por nivel, lo que mejora el rendimiento y precisión. Es ideal para grandes volúmenes de datos y tareas de regresión con alta dimensionalidad.
 
-<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/3.Training/3.1.4LightGBM.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
-<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/3.Training/3.1.4LightGBM2.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/3.Training/3.1.4LightGBM.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/3.Training/3.1.4LightGBM2.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
 
 <h4 id="l2" align="center">1.3.5.Ridge Regression (L2 Regularization)</h4>
 
 Ridge Regression es una extensión de la regresión lineal que aplica regularización L2 para reducir el sobreajuste. Penaliza los coeficientes grandes al agregar su suma cuadrada al término de pérdida, lo que estabiliza el modelo cuando hay multicolinealidad o muchas variables.
 
-<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/3.Training/3.1.5RidgeRegression.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/3.Training/3.1.5RidgeRegression.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
 
 <h4 id="l1" align="center">1.3.6.Lasso Regression (L1 Regularization)</h4>
 
 Lasso Regression utiliza regularización L1, que penaliza la suma absoluta de los coeficientes. Esto no solo reduce el sobreajuste, sino que también puede eliminar variables irrelevantes, ya que tiende a llevar algunos coeficientes exactamente a cero, funcionando como una forma de selección de variables.
 
-<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/3.Training/3.1.6LassoREgressor.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/3.Training/3.1.6LassoREgressor.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
 
 
 <h4 id="xgboost" align="center">1.3.7.XGBoost</h4>
 
 XGBoost (Extreme Gradient Boosting) es un algoritmo de gradient boosting altamente optimizado y eficiente. Utiliza técnicas avanzadas como regularización, poda de árboles, y paralelización para mejorar tanto la precisión como el rendimiento computacional. Es muy popular en competencias de Machine Learning por su capacidad de manejar datos complejos y ruidosos.
 
-<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/3.Training/3.1.7XGBoost.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/3.Training/3.1.7XGBoost.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
 
 <h3 id="metricas" align="center">1.4.Métricas de Evaluación</h3>
 
@@ -287,7 +287,7 @@ Estas métricas nos ayudan a entender no solo cuánto se equivocan los modelos, 
 Después de comparar el rendimiento de todos los modelos utilizando las métricas de evaluación mencionadas, XGBoost fue el algoritmo que obtuvo los mejores resultados en términos de precisión y capacidad de generalización.
 Gracias a su robustez, manejo eficiente de datos complejos y regularización incorporada, se considera la mejor opción para resolver este problema de predicción de precios de viviendas.
 <br>
-<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/4.EvaluationMetrics/4.1Evaluation.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/4.EvaluationMetrics/4.1Evaluation.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
 
 <h3 id="optimizacion" align="center">1.5.Optimization (Tuning & Hyperparameters)</h3>
 
@@ -302,7 +302,7 @@ Esta comparación nos permite visualizar si la optimización realmente mejora el
 
 |GBM Base|Light GBM + Optuna|Light GBM + Early Stopping|
 |----------------------------------------------|--------------|----------|
-|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/5.Optimization/5.4.1GBMBase.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/5.Optimization/5.4.2GBMOptuna.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/5.Optimization/5.4.3GBMEarly.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
+|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/5.Optimization/5.1RandomS.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/5.Optimization/5.4.2GBMOptuna.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/5.Optimization/5.4.3GBMEarly.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
 
 <h2 id="agrupar1" align="center">3.Agrupar (1/2)</h2>
 
@@ -335,7 +335,7 @@ Esta comparación nos permite visualizar si la optimización realmente mejora el
 
 <h2 id="ejecutar" align="center">6.Como Ejecutar el programa</h2>
 
-<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/6.Agrupar(1-2)/6.1.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/6.Agrupar(1-2)/6.1.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">
 
 ```bash
 git clone https://github.com/KevinAlberto01/3.MachineLearning.git
