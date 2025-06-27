@@ -1,33 +1,30 @@
 <h1 align="center"  style="margin-bottom: -10px;">🏠 House Price Prediction with Machine Learning 🏠</h1>
 <div align="center">
 
-🌐 This README is available in: [English](README.md) | [Spanish](README.es.md)
+🌐 Este README está disponible en: [Inglés](Readme.md) | [Español](ReadmeESP.md) 🌐
 
 </div>
 
 <h2 align="center">📑 Table of Contents</h2>
 
-1. [Introduction](#1-introduction)
-2. [Development Process](#2-development-process)
-   - [1.1 Data Processing](#21-data-processing)
-   - [1.2 Exploratory Data Analysis (EDA)](#22-exploratory-data-analysis-eda)
-   - [1.3 Training Multiple Algorithms](#23-training-multiple-algorithms)
-   - [1.4 Evaluation Metrics](#24-evaluation-metrics)
-   - [1.5 Optimization (Tuning & Hyperparameters)](#25-optimization-tuning--hyperparameters)
-   - [1.6 Manual Feature Engineering](#26-manual-feature-engineering)
-   - [1.7 Data Augmentation (Tabular)](#27-data-augmentation-tabular)
-3. [Final Results](#3-final-results)
-4. [Technologies Used](#4-technologies-used)
-5. [How to Run](#5-how-to-run)
+1. [Descripción](#descripcion)
+2. [Proceso de Desarrollo](#desarollo)
+   - [1.1 Procesamiento de Datos](#datos)
+   - [1.2 Análisis Exploratorio de Datos (EDA)](#eda)
+   - [1.3 Entrenamiento de Múltiples Algoritmos](#Malgoritmos)
+   - [1.4 Métricas de Evaluación](#metricas)
+   - [1.5 Optimización (Ajuste y Hiperparámetros)](#optimizacion)
+3. [Resultados Finales](#resultados)
+4. [Tecnologías Utilizadas](#tech)
+5. [Cómo Ejecutar](#ejecutar)
 
-
-<h2 align="center">1. 📌 Introduction </h2>
+<h2 id="descripcion" align="center">📜 Descripción 📜</h2>
 
 Este es un proyecto básico de regresión en el que se implementa una pipeline completa de Machine Learning (excepto la etapa de data augmentation) para predecir el precio de una vivienda. El modelo toma en cuenta características clave como la calidad, el tamaño y la ubicación, utilizando datos históricos del mercado inmobiliario.
 
 A continuación, se explicará cada paso para mostrar la lógica con la que se resolvió el problema.
 
-<h2 align="center">2.Development Process</h2>
+<h2 id="desarollo" align="center">Proceso de Desarrollo</h2>
 
 <table style="width: 100%; table-layout: fixed;">
   <tr>
@@ -46,7 +43,8 @@ A continuación, se explicará cada paso para mostrar la lógica con la que se r
   </tr>
 </table>
 
-<h3 align="center">2.1 Procesamiento de Datos</h3>
+<h2 id="desarollo" align="center">2.1 Procesamiento de Datos</h2>
+
 
 <h4 align="center">2.1.1 Carga de datos</h4>
 En el primer paso del proyecto, se cargó el conjunto de datos Ames Housing, obteniendo un total de 2,930 filas y 82 columnas.
