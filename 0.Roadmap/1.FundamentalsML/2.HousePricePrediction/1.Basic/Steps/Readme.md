@@ -9,11 +9,32 @@
 
 1. [Descripción](#descripcion)
 2. [Proceso de Desarrollo](#desarollo)
-   - [1.1 Procesamiento de Datos](#datos)
-   - [1.2 Análisis Exploratorio de Datos (EDA)](#eda)
-   - [1.3 Entrenamiento de Múltiples Algoritmos](#Malgoritmos)
-   - [1.4 Métricas de Evaluación](#metricas)
-   - [1.5 Optimización (Ajuste y Hiperparámetros)](#optimizacion)
+   - [1.1.Procesamiento de Datos](#datos)
+      - [1.1.1.Carga de datos](#Cdatos)
+      - [1.1.2.Verificar los null values](#Nvalues)
+      - [1.1.3 Identificación de datos duplicados y análisis de tipos de datos](#Dduplicados)
+   - [1.2.Análisis Exploratorio de Datos (EDA)](#eda)
+      - [1.2.1.Heatmap](#heatmap)
+      - [1.2.2.Pairplot](#pairplot)
+      - [1.2.3.Estadísticas descriptivas](#desc)
+      - [1.2.4.Histogramas](#histo)
+      - [1.2.5.Boxplot](#boxplot)
+        - [1.2.5.1.Boxplot SalePrice](#saleprice)
+        - [1.2.5.2.Boxplot Gr Liv Area](#grlivarea)
+        - [1.2.5.3.Boxplot OverallQual](#overallqual)
+      - [1.2.6.Distribución de los datos](#distribucion)
+      - [1.2.7.Aplicamos logaritmos](#logaritmos)
+      - [1.2.8.Normalizamos los datos](#normalizamos)
+    - [1.3 Entrenamiento de Múltiples Algoritmos](#Malgoritmos)
+      - [3.1.KNN Regressor](#knn)
+      - [3.2.SVR(Support Vector Regressor)](#svr)
+      - [3.3.Redes Neuronales (MLP)](#mlp)
+      - [3.4.LightGBM](#gbm)
+      - [3.5.Ridge Regression (L2 Regularization)](#l2)
+      - [3.6 Lasso Regression (L1 Regularization)](#l1)
+      - [3.7 XGBoost](#xgboost)
+    - [1.4 Métricas de Evaluación](#metricas)
+    - [1.5 Optimización (Ajuste y Hiperparámetros)](#optimizacion)
 3. [Resultados Finales](#resultados)
 4. [Tecnologías Utilizadas](#tech)
 5. [Cómo Ejecutar](#ejecutar)
@@ -46,7 +67,8 @@ A continuación, se explicará cada paso para mostrar la lógica con la que se r
 <h2 id="desarollo" align="center">2.1 Procesamiento de Datos</h2>
 
 
-<h4 align="center">2.1.1 Carga de datos</h4>
+<h4 id="Cdatos" align="center">2.1.1 Carga de datos</h4>
+
 En el primer paso del proyecto, se cargó el conjunto de datos Ames Housing, obteniendo un total de 2,930 filas y 82 columnas.
 Esto proporciona una base rica y detallada de características que describen las propiedades, incluyendo aspectos como tamaño, calidad, ubicación y más.
 
@@ -71,7 +93,7 @@ En este paso combinamos dos tareas importantes: primero, detectamos los datos du
 
 
 
-<h3 align="center">2.2 Exploratory Data Analysis</h3>
+<h3 align="center">2.2 Exploratory Data Analysis (EDA)</h3>
 
 <h4 align="center">2.2.1 Heatmap</h4>
 Primero, realizamos un heatmap de toda la base de datos para visualizar qué variables presentan relaciones entre sí. Sin embargo, debido a la gran cantidad de datos, el gráfico no permite una visualización clara. Por ello, en el siguiente paso filtramos y enfocamos el análisis en las variables más relevantes para obtener una mejor interpretación.
