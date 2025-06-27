@@ -10,9 +10,8 @@
 1. [Descripción](#descripcion)
 2. [2.Carpetas dentro de "1.Basic"](#basic)
    - [2.1.Local](#local)
-3. [Nivel 2 – Modelo Avanzado](#nivel2)
-4. [Nivel 3 – Despliegue del Modelo](#nivel3)
-5. [Objetivos](#objetivos2)
+   - [2.2.Steps](#steps)
+   - [2.3.Streamlit](#streamlit)
 
 
 <h2 id="descripcion" align="center">📜 Descripción 📜</h2>
@@ -54,7 +53,7 @@ streamlit run 2.DASHBOARD.py
 
 <img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/1.Basic/Img/1.2Local.png?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
 
-<h3 align="center">2.2.Steps</h3>
+<h3 id="steps" align="center">2.2.Steps</h3>
 
 Esta carpeta está diseñada para explicar en detalle la lógica de desarrollo seguida en el proyecto. Aquí se documentan tanto los pasos del flujo de Machine Learning como los procesos adicionales, incluyendo el diseño y estructura del dashboard interactivo creado con Streamlit.
 
@@ -64,7 +63,8 @@ Esta carpeta está diseñada para explicar en detalle la lógica de desarrollo s
 >Todo está documentado dentro del README, pero únicamente como explicación de los pasos y de la lógica utilizada.
 Si deseas ejecutar el programa, es necesario subir los archivos y correrlo de forma local.
 
-<h3 align="center">2.3.streamlit</h3>
+
+<h3 id="streamlit" align="center">2.3.streamlit</h3>
 
 Esta carpeta está diseñada para ejecutar el programa directamente en Streamlit.io, lo que permite visualizar el dashboard de forma interactiva a través de un enlace público. Esta opción es ideal para compartir una demostración del proyecto sin necesidad de instalar nada localmente.
 

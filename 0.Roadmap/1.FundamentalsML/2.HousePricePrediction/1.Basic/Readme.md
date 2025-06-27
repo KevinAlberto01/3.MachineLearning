@@ -5,12 +5,11 @@
 
 <h2 id="table-of-contents" align="center">📑 Table of Contents</h2>
 
-1. [Description](#description)  
-2. [2. Folders inside "1.Basic"](#basic)  
-   - [2.1. Local](#local)  
-3. [Level 2 – Advanced Model](#nivel2)  
-4. [Level 3 – Model Deployment](#nivel3)  
-5. [Objectives](#objetivos2)
+1. [Descripción](#descripcion)
+2. [2.Carpetas dentro de "1.Basic"](#basic)
+   - [2.1.Local](#local)
+   - [2.2.Steps](#steps)
+   - [2.3.Streamlit](#streamlit)
 
 <h2 id="description" align="center">📜 Description 📜</h2>
 
@@ -56,7 +55,7 @@ If you want to analyze my logic, it’s important to go to the “Steps” folde
 
 <img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/1.Basic/Img/1.2Local.png?raw=true" alt="Data Types" style="width: 100%; height: auto;"> 
 
-<h3 align="center">2.2. Steps</h3>
+<h3 id="steps" align="center">2.2.Steps</h3>
 
 This folder is designed to explain in detail the development logic followed in the project.
 Here, both the steps of the Machine Learning pipeline and additional processes are documented, including the design and structure of the interactive dashboard created with Streamlit.
@@ -67,7 +66,8 @@ Here, both the steps of the Machine Learning pipeline and additional processes a
 >Everything is inside the README, but it’s only an explanation of the steps and logic.
 If you want to run the program, you need to upload it and run it locally.
 
-<h3 align="center">2.3. Streamlit</h3>
+<h3 id="streamlit" align="center">2.3.streamlit</h3>
+
 This folder is designed to run the program directly on Streamlit.io, allowing you to view the dashboard interactively through a public link.
 This option is ideal for sharing a demo of the project without needing to install anything locally.
 
