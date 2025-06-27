@@ -339,8 +339,8 @@ Esta comparación nos permite visualizar si la optimización realmente mejora el
 
 ```bash
 git clone https://github.com/KevinAlberto01/3.MachineLearning.git
-cd 3.MachineLearning/1.FundamentalsML/2.HousePricePrediction/1.Basic/Local
-python nombre_del_programa.py
+cd 3.MachineLearning/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/1.Basic/Local
+python 1.LOGICA.py
 ```
 
 >[!IMPORTANT]

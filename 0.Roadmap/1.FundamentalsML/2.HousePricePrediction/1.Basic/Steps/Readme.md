@@ -183,3 +183,171 @@ Next, we filtered rows where any variable had a value less than or equal to 0, a
 Finally, and importantly, we rechecked for null values, but this time only in the variables we actually care about for the model. This helps us focus preprocessing efforts on relevant columns and make informed decisions about handling missing data.
 
 <img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.EDA/2.3.7.jpeg?raw=true" alt="Data types" style="width: 100%; height: auto;">
+
+<h4 id="logaritmos" align="center">1.2.7 Log Transformation</h4>
+
+As we observed, the data presents skewed distributions, which can negatively affect the performance of regression models.  
+To address this issue, we applied a logarithmic transformation, which helps reduce skewness and makes the distribution more symmetrical.  
+Below is a comparison before and after applying the logarithm:
+
+| Before Log Transformation | After Log Transformation |
+|---------------------------|--------------------------|
+|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.4.1.jpeg?raw=true" alt="Data Types" style="width: 100%; height: auto;">|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.4.2.jpeg?raw=true" alt="Data Types" style="width: 100%; height: auto;">|
+
+<h4 id="normalizamos" align="center">1.2.8 Data Normalization</h4>
+
+Before concluding the distribution analysis, it’s important to consider that variability in feature scales can also affect model performance.  
+Therefore, it is necessary to normalize the data so that variables fall within similar ranges. This helps the model learn more efficiently and fairly.  
+In this step, we observe the values of selected variables to decide what type of scaling to apply.
+
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.EDA/2.4.1.jpeg?raw=true" alt="Data Types" style="width: 100%; height: auto;">
+
+Finally, we created a graph to verify whether, after normalization and correcting skewness, the data distribution was adequately adjusted.  
+This visualization allows us to confirm whether the variable approximates a normal distribution (bell-shaped curve), which is desirable for many machine learning algorithms.
+
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/2.EDA/2.4.2.jpeg?raw=true" alt="Data Types" style="width: 100%; height: auto;"> 
+
+<h3 id="Malgoritmos" align="center">1.3 Training Multiple Algorithms</h3>
+
+We now move to the model training stage, where we apply different regression algorithms to compare their performance.  
+Since this is a regression problem, the following models are trained:
+
+- KNN Regressor  
+- SVR (Support Vector Regressor)  
+- Neural Networks (MLP Regressor)  
+- Ridge Regression (L2 Regularization)  
+- Lasso Regression (L1 Regularization)  
+- LightGBM  
+- XGBoost  
+
+The goal of this step is to evaluate which model best fits the data based on performance metrics, interpretability, and computational complexity.
+
+<h4 id="knn" align="center">1.3.1 KNN Regressor</h4>
+
+KNN Regressor predicts the value of a point by averaging the values of the k nearest neighbors based on a distance metric.  
+It is an instance-based model, with no actual training phase, and works best when similar data points are expected to have similar output values.
+
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/3.Training/3.1.1KNNRegressor.jpeg?raw=true" alt="Data Types" style="width: 100%; height: auto;">
+
+<h4 id="svr" align="center">1.3.2 SVR (Support Vector Regressor)</h4>
+
+SVR is an extension of the Support Vector Machine algorithm for regression tasks.  
+It aims to fit a line (or hyperplane) that predicts data within a defined margin of tolerance, minimizing errors outside that margin.  
+It is useful for nonlinear data and provides good generalization.
+
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/3.Training/3.1.2SVR.jpeg?raw=true" alt="Data Types" style="width: 100%; height: auto;"> 
+
+<h4 id="mlp" align="center">1.3.3 Neural Networks (MLP)</h4>
+
+The MLP Regressor (Multi-Layer Perceptron) is a neural network with one or more hidden layers that learns complex patterns through forward and backpropagation.  
+It is ideal for capturing nonlinear relationships among variables and adapts well to datasets with multiple features.
+
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/3.Training/3.1.3MLPRegressor.jpeg?raw=true" alt="Data Types" style="width: 100%; height: auto;">
+
+<h4 id="gbm" align="center">1.3.4 LightGBM</h4>
+
+LightGBM is a Gradient Boosting algorithm optimized for speed and efficiency.  
+It builds decision trees leaf-wise rather than level-wise, improving performance and accuracy.  
+It is ideal for large datasets and regression tasks with high dimensionality.
+
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/3.Training/3.1.4LightGBM.jpeg?raw=true" alt="Data Types" style="width: 100%; height: auto;">  
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/3.Training/3.1.4LightGBM2.jpeg?raw=true" alt="Data Types" style="width: 100%; height: auto;">
+
+<h4 id="l2" align="center">1.3.5 Ridge Regression (L2 Regularization)</h4>
+
+Ridge Regression is an extension of linear regression that applies L2 regularization to reduce overfitting.  
+It penalizes large coefficients by adding their squared sum to the loss function, stabilizing the model when multicollinearity or many variables are present.
+
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/3.Training/3.1.5RidgeRegression.jpeg?raw=true" alt="Data Types" style="width: 100%; height: auto;"> 
+
+<h4 id="l1" align="center">1.3.6 Lasso Regression (L1 Regularization)</h4>
+
+Lasso Regression uses L1 regularization, which penalizes the absolute sum of the coefficients.  
+This not only reduces overfitting but can also eliminate irrelevant variables, as it tends to shrink some coefficients exactly to zero—acting as a form of feature selection.
+
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/3.Training/3.1.6LassoREgressor.jpeg?raw=true" alt="Data Types" style="width: 100%; height: auto;"> 
+
+<h4 id="xgboost" align="center">1.3.7 XGBoost</h4>
+
+XGBoost (Extreme Gradient Boosting) is a highly optimized and efficient gradient boosting algorithm.  
+It uses advanced techniques such as regularization, tree pruning, and parallelization to improve both accuracy and computational performance.  
+It is widely popular in machine learning competitions due to its ability to handle complex and noisy data.
+
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/3.Training/3.1.7XGBoost.jpeg?raw=true" alt="Data Types" style="width: 100%; height: auto;"> 
+
+<h3 id="metricas" align="center">1.4 Evaluation Metrics</h3>
+
+After training multiple regression models, it is essential to evaluate their performance using specific metrics.  
+These metrics allow us to objectively compare results and choose the model that best fits the data and generalizes well.  
+In this project, the following evaluation metrics were used:
+
+- **MAE (Mean Absolute Error)**: Average of the absolute values of the errors. Measures how far predictions are from actual values on average.  
+- **MSE (Mean Squared Error)**: Average of squared errors. Penalizes larger errors more.  
+- **RMSE (Root Mean Squared Error)**: Square root of the MSE. Interpreted on the same scale as the target variable.  
+- **R² Score (Coefficient of Determination)**: Indicates the percentage of variance in the dependent variable explained by the model. Values close to 1 indicate a good fit.
+
+These metrics help us understand not only how wrong the models are but also the nature of their errors.
+
+After comparing the performance of all models using the evaluation metrics mentioned, **XGBoost** was the algorithm that achieved the best results in terms of accuracy and generalization capability.  
+Thanks to its robustness, efficient handling of complex data, and built-in regularization, it is considered the best option to solve this house price prediction problem.
+
+<br>
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/4.EvaluationMetrics/4.1Evaluation.jpeg?raw=true" alt="Data Types" style="width: 100%; height: auto;">
+
+<h3 id="optimizacion" align="center">1.5 Optimization (Tuning & Hyperparameters)</h3>
+
+Hyperparameter optimization involves manually or automatically adjusting parameters that are not learned during training, such as tree depth, learning rate, or the number of estimators.  
+These values have a direct impact on the model’s performance.
+
+|Random Search|Optuna|Early Stopping|
+|----------------------------------------------|--------------|----------|
+|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/5.Optimization/5.1RandomS.jpeg?raw=true" alt="Data Types" style="width: 100%; height: auto;">|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/5.Optimization/5.2Optuna.jpeg?raw=true" alt="Data Types" style="width: 100%; height: auto;">|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/5.Optimization/5.3EarlyStopping.jpeg?raw=true" alt="Data Types" style="width: 100%; height: auto;"> 
+
+Finally, we compare the base model with optimized versions obtained through hyperparameter tuning, aiming to find the best possible combination.  
+This comparison allows us to visualize whether the optimization truly improves the model’s performance and to choose the final configuration that offers the best results in terms of accuracy and generalization.
+
+|Base GBM|LightGBM + Optuna|LightGBM + Early Stopping|
+|----------------------------------------------|--------------|----------|
+|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/5.Optimization/5.1RandomS.jpeg?raw=true" alt="Data Types" style="width: 100%; height: auto;">|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/5.Optimization/5.4.2GBMOptuna.jpeg?raw=true" alt="Data Types" style="width: 100%; height: auto;">|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/5.Optimization/5.4.3GBMEarly.jpeg?raw=true" alt="Data Types" style="width: 100%; height: auto;"> 
+
+<h2 id="agrupar1" align="center">3. Grouping (1/2)</h2>
+
+<h2 id="resultados" align="center">4. Final Results</h2>
+
+📂 **Dataset used:** [AmesHousing.csv](https://www.kaggle.com/datasets/shashanknecrothapa/ames-housing-dataset) *(available on Kaggle)*  
+🧠 **Learning type:** Supervised  
+📈 **Problem type:** Regression  
+⚙️ **Main algorithm:** LightGBM  
+🧪 **Model level:** Basic  
+💻 **Language used:** Python  
+👤 **Project type:** Personal / Portfolio
+
+<h2 id="tech" align="center">5. Technologies Used</h2>
+
+📊 **Data manipulation and analysis**  
+- Pandas  
+- NumPy  
+- SciPy
+
+📈 **Visualization**  
+- Matplotlib  
+- Seaborn  
+- Altair
+
+🤖 **Machine Learning**  
+- Scikit-learn  
+- LightGBM  
+- Optuna *(for hyperparameter tuning)*
+
+<h2 id="ejecutar" align="center">6. How to Run the Program</h2>
+
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/6.Agrupar(1-2)/6.1.jpeg?raw=true" alt="Data Types" style="width: 100%; height: auto;">
+
+```bash
+git clone https://github.com/KevinAlberto01/3.MachineLearning.git
+cd 3.MachineLearning/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/1.Basic/Local
+python 1.LOGICA.py
+```
+
+>[!IMPORTANT]
+>These commands are exclusively used to run the program logic, including the complete Machine Learning workflow.
