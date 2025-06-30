@@ -26,7 +26,7 @@ plt.ylabel('Number of examples')
 plt.title('Distribution of the classes')
 plt.show()
 
-#6.VIEW SOME EXAMPLE IMAGES  
+#6.VIEW SOME EXAMPLE IMAGES
 fig,axes = plt.subplots(2,5, figsize=(10, 5))
 fig.suptitle("Examples of images")
 for i, ax in enumerate(axes.ravel()):
