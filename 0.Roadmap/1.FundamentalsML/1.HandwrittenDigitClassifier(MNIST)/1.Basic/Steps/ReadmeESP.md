@@ -151,7 +151,10 @@ En este paso, nos enfocamos en presentar visualmente los elementos más relevant
 <h3 id="perso1" align="center">1.7 Personalización</h3>
 Para el desarrollo del dashboard, utilicé la librería Streamlit y elaboré un boceto inicial con el propósito de definir la estructura visual y funcional del proyecto antes de proceder con su implementación.
 
-<h3 id="join2" align="center">1.7 Personalización</h3>
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.Basic/Steps/img/7Personalization/7.1.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
+
+<h3 id="join2" align="center">1.8 Join All (2/2)</h3>
+En este paso, realizamos una prueba completa del dashboard para asegurarnos de que todos los elementos estén correctamente alineados, funcionando como se espera y que la interfaz se muestre de forma ordenada
 <img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.Basic/Steps/img/7Personalization/Dashboard.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
 
 
