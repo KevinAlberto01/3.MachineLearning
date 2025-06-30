@@ -158,7 +158,7 @@ En este paso, realizamos una prueba completa del dashboard para asegurarnos de q
 <img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.Basic/Steps/img/7Personalization/Dashboard.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
 
 
-<h2 id="resultados" align="center">4.4.Resultados Finales</h2>
+<h2 id="resultados" align="center">3.Resultados Finales</h2>
 
 📂 Dataset utilizado: `load_digits`, proporcionado por la librería [scikit-learn](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_digits.html) *(disponible en sklearn.datasets)*
 🧠 Tipo de aprendizaje: Supervisado
@@ -168,7 +168,7 @@ En este paso, realizamos una prueba completa del dashboard para asegurarnos de q
 💻 Lenguaje utilizado: Python
 👤 Tipo de proyecto: Personal / Portafolio
 
-<h2 id="tech" align="center">5.Tecnologías Utilizadas</h2>
+<h2 id="tech" align="center">4.Tecnologías Utilizadas</h2>
 
 📊 Manipulación y análisis de datos
 
@@ -188,7 +188,7 @@ En este paso, realizamos una prueba completa del dashboard para asegurarnos de q
 📦 Desarrollo de aplicaciones
 - streamlit
 
-<h2 id="ejecutar" align="center">6.Como Ejecutar el programa</h2>
+<h2 id="ejecutar" align="center">5.Como Ejecutar el programa</h2>
 
 <img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.Basic/Steps/img/Program.png?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">
 
