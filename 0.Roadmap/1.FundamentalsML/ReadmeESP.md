@@ -56,17 +56,29 @@ Cada uno de estos proyectos está diseñado para fortalecer habilidades esencial
 
 <h4 id="objetivos1" align="center">🎯 Objetivos 🎯</h2>
 
-
-Develop a classification model that recognizes handwritten digits using the MNIST dataset.
+Desarrollar un modelo de clasificación que reconozca dígitos escritos a mano utilizando el dataset load_digits de la librería scikit-learn.
+El objetivo es implementar una pipeline completa de Machine Learning, desde la carga y preprocesamiento de datos hasta el entrenamiento, optimización y despliegue del modelo para resolver un problema de clasificación de imágenes.
 
 <h4 id="enfoque1" align="center">🔎 Enfoque 🔎</h2>
 
+Clasificación de imágenes en escala de grises de 8x8 píxeles que representan dígitos del 0 al 9.
 
-Image classification and handling of visual data using techniques such as Data Augmentation and hyperparameter optimization.
+- Exploración y visualización para entender la distribución de clases y los patrones de los píxeles.
+- Preprocesamiento y normalización de datos para preparar el modelo.
+- Entrenamiento y comparación de varios algoritmos: Regresión Logística, KNN, SVM y MLP.
+- Optimización de hiperparámetros para mejorar la precisión del modelo.
+- Desarrollo de un dashboard interactivo con Streamlit para realizar predicciones en tiempo real y visualizar resultados.
 
 <h4 id="resultados1" align="center">✅ Resultados ✅ </h2>
 
-<img src = "https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.8Personalisation/Images/Dashboard.png" width="2000"/>
+Se logró una alta precisión en todos los modelos; se seleccionó SVM como modelo final tras la optimización por su equilibrio entre desempeño y eficiencia.
+
+Se desarrolló un dashboard funcional con Streamlit que permite al usuario visualizar predicciones y explorar la lógica de clasificación.
+
+|Basic Model|Advance model|Deployment|
+|------------------------|------------------------|-------------------| 
+|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/Img/Dashboard.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/Img/3.png?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/Img/3.png?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">|
+
 
 
 <h2 id="casas" align="center">2.Predicción de Precios de Casas</h2>
