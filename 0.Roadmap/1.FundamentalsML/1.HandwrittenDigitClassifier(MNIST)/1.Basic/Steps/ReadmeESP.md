@@ -147,24 +147,18 @@ El objetivo de este paso es evaluar cuál modelo se adapta mejor a los datos, co
 Tras evaluar el rendimiento de todos los modelos, observamos algo curioso: todos alcanzaron el mismo nivel de precisión (accuracy), lo que sugiere que cualquiera de ellos podría funcionar correctamente. Por lo tanto, aún no se ha seleccionado un modelo definitivo.
 
 <br>
-<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/4.EvaluationMetrics/4.1Evaluation.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.Basic/Steps/img/4.EvaluationM/4.png?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
 
 <h3 id="optimizacion" align="center">1.5.Optimization (Tuning & Hyperparameters)</h3>
 
-La optimización de hiperparámetros consiste en ajustar manual o automáticamente los parámetros que no se aprenden durante el entrenamiento, como la profundidad de los árboles, la tasa de aprendizaje o el número de estimadores. Estos valores tienen un impacto directo en el desempeño del modelo.
-
-|Random Search|Optuna|Early Stopping|
-|----------------------------------------------|--------------|----------|
-|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/5.Optimization/5.1RandomS.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/5.Optimization/5.2Optuna.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/5.Optimization/5.3EarlyStopping.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
-
-Por último, comparamos el modelo base con las versiones optimizadas mediante ajuste de hiperparámetros, con el objetivo de encontrar la mejor combinación posible.
-Esta comparación nos permite visualizar si la optimización realmente mejora el rendimiento del modelo y elegir la configuración final que ofrece los mejores resultados en términos de precisión y generalización.
-
-|GBM Base|Light GBM + Optuna|Light GBM + Early Stopping|
-|----------------------------------------------|--------------|----------|
-|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/5.Optimization/5.1RandomS.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/5.Optimization/5.4.2GBMOptuna.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">|<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/5.Optimization/5.4.3GBMEarly.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
+Al optimizar todos los modelos, me percaté de que dos de ellos mostraron una mejora significativa en su desempeño: Support Vector Machine (SVM) y Multi-layer Perceptron (MLP). Ambos modelos lograron superar a los demás en términos de precisión y estabilidad durante las pruebas. Sin embargo, considerando factores como la complejidad computacional, la interpretabilidad y el tiempo de entrenamiento, optaremos por utilizar el modelo SVM como el modelo final para este proyecto.
+ 
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.Basic/Steps/img/5.Optimization/5.6.png?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
 
 <h2 id="agrupar1" align="center">3.Agrupar (1/2)</h2>
+En este paso, nos enfocamos en presentar visualmente los elementos más relevantes del programa, eliminando aquellos modelos, métricas y componentes que ya no son necesarios para simplificar el análisis.
+
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.Basic/Steps/img/5.Optimization/5.6.png?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
 
 <h2 id="resultados" align="center">4.Resultados Finales</h2>
 
