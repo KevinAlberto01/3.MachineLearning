@@ -155,17 +155,25 @@ Al optimizar todos los modelos, me percaté de que dos de ellos mostraron una me
  
 <img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.Basic/Steps/img/5.Optimization/5.6.png?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
 
-<h2 id="agrupar1" align="center">3.Agrupar (1/2)</h2>
+<h3 id="optimizacion" align="center">1.6.Agrupar (1/2)</h3>
+
 En este paso, nos enfocamos en presentar visualmente los elementos más relevantes del programa, eliminando aquellos modelos, métricas y componentes que ya no son necesarios para simplificar el análisis.
 
-<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.Basic/Steps/img/5.Optimization/5.6.png?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.Basic/Steps/img/6.JoinAll/5.png?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
 
-<h2 id="resultados" align="center">4.Resultados Finales</h2>
+<h3 id="optimizacion" align="center">1.7 Personalización</h3>
 
-📂 Dataset utilizado: [AmesHousing.csv](https://www.kaggle.com/datasets/shashanknecrothapa/ames-housing-dataset) *(disponible en Kaggle)*
+Para el desarrollo del dashboard, utilicé la librería Streamlit y elaboré un boceto inicial con el propósito de definir la estructura visual y funcional del proyecto antes de proceder con su implementación.
+
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.Basic/Steps/img/7Personalization/Dashboard.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
+
+
+<h2 id="resultados" align="center">4.4.Resultados Finales</h2>
+
+📂 Dataset utilizado: `load_digits`, proporcionado por la librería [scikit-learn](https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_digits.html) *(disponible en sklearn.datasets)*
 🧠 Tipo de aprendizaje: Supervisado
-📈 Tipo de problema: Regresión
-⚙️ Algoritmo principal: LightGBM
+📈 Tipo de problema: Clasificación
+⚙️ Algoritmo principal: SVM
 🧪 Nivel del modelo: Básico
 💻 Lenguaje utilizado: Python
 👤 Tipo de proyecto: Personal / Portafolio
@@ -173,19 +181,22 @@ En este paso, nos enfocamos en presentar visualmente los elementos más relevant
 <h2 id="tech" align="center">5.Tecnologías Utilizadas</h2>
 
 📊 Manipulación y análisis de datos
-- Pandas
-- NumPy
-- SciPy
+
+- pandas
+- numpy
 
 📈 Visualización
-- Matplotlib
-- Seaborn
-- Altair
+
+- matplotlib
+- seaborn
+- pillow
 
 🤖 Machine Learning
-- Scikit-learn
-- LightGBM
-- Optuna (tuning de hiperparámetros)
+
+- scikit-learn
+
+📦 Desarrollo de aplicaciones
+- streamlit
 
 <h2 id="ejecutar" align="center">6.Como Ejecutar el programa</h2>
 
