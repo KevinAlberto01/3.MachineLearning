@@ -61,6 +61,7 @@ This folder is intended to explain in detail the development logic followed in t
 >Since this was my first Machine Learning project, I chose to include each step in the code with explanations to make the workflow easier to understand.
 
 <img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.Basic/Img/steps.png?raw=true" alt="Steps" style="width: 100%; height: auto;">
+
 >[!IMPORTANT]
 >Everything is documented inside the README, but only as an explanation of the steps and logic used.
 If you want to run the program, you’ll need to upload the files and execute them locally.
