@@ -48,15 +48,18 @@ Y está preparado para conectarse a la nube, facilitando el acceso desde cualqui
 <h2 id="objetivos2" align="center">🎯 Objetivos 🎯</h2>
 
 
-- Predecir el precio de venta de viviendas de manera precisa, utilizando modelos de Machine Learning entrenados con datos reales y múltiples variables relevantes del inmueble.
+' Implementar una pipeline completa de Machine Learning para resolver un problema de clasificación de imágenes, desde la carga de datos hasta la predicción final.
 
-- Aplicar un flujo completo de ciencia de datos, que incluya desde la exploración y limpieza de datos hasta la evaluación, optimización y despliegue del modelo.
+- Explorar y entender el dataset load_digits proporcionado por scikit-learn, identificando la estructura, distribución de clases y características visuales de los datos.
 
-- Desarrollar versiones escalables del proyecto, empezando por un análisis básico hasta llegar a una solución avanzada y desplegable para usuarios finales.
+- Aplicar múltiples algoritmos de clasificación (Logistic Regression, KNN, SVM y MLP) para comparar su rendimiento y comprender sus ventajas y desventajas.
 
-- Implementar visualizaciones interactivas que faciliten la comprensión de los datos, la interpretación del modelo y la exploración de resultados por parte del usuario.
+- Evaluar los modelos con métricas de desempeño como la precisión (accuracy), para seleccionar el modelo más adecuado para el problema.
 
-- Construir una aplicación web accesible, alojada en la nube, que permita a cualquier persona predecir precios de viviendas en tiempo real sin conocimientos técnicos.
+- Optimizar los modelos seleccionados mediante el ajuste de hiperparámetros, con el objetivo de mejorar su precisión y estabilidad.
+
+- Desarrollar un dashboard interactivo con Streamlit para presentar visualmente el funcionamiento del modelo, desde la predicción hasta la interpretación de los resultados.
+
 
 
 <p align = "center" >
