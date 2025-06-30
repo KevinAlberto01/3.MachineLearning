@@ -42,22 +42,22 @@
 
 <h2 id="descripcion" align="center">📜 Descripción 📜</h2>
 
-Este es un proyecto básico de regresión en el que se implementa una pipeline completa de Machine Learning (excepto la etapa de data augmentation) para predecir el precio de una vivienda. El modelo toma en cuenta características clave como la calidad, el tamaño y la ubicación, utilizando datos históricos del mercado inmobiliario.
+Este es un proyecto de clasificación en el que se implementa una pipeline completa de Machine Learning (excepto la etapa de data augmentation) para clasificar dígitos escritos a mano. Cabe destacar que se trabaja con imágenes, por lo que el modelo debe predecir el valor numérico representado visualmente.
 
-A continuación, se explicará cada paso para mostrar la lógica con la que se resolvió el problema.
+A continuación, se explican cada uno de los pasos seguidos para resolver el problema, detallando la lógica aplicada en cada etapa del proceso.
 
 <h2 id="desarollo" align="center">Proceso de Desarrollo</h2>
 
 <table style="width: 100%; table-layout: fixed;">
   <tr>
     <td style="width: 50%; vertical-align: top; text-align: left; padding-right: 20px;">
-      El proceso de desarrollo de este proyecto sigue una estructura lógica en etapas que permiten construir un modelo de regresión robusto y comprensible. <br>
-      Comenzamos con la carga y limpieza de los datos, seguido de un análisis exploratorio para entender mejor las variables y su impacto en el precio. <br>
-      Luego, se entrenan múltiples algoritmos para comparar su rendimiento utilizando métricas adecuadas. <br>
-      Para la evaluación, utilizamos estas métricas con el fin de comparar y seleccionar el mejor algoritmo. <br>
-      Después, optimizamos el modelo elegido para obtener mejores resultados y predicciones. <br>
-      Posteriormente, integramos todo el flujo en un único programa robusto. <br>
-      Finalmente, realizamos predicciones utilizando el modelo entrenado y presentamos los resultados en un dashboard interactivo.
+    El desarrollo de este proyecto sigue una estructura lógica por etapas que permite construir un modelo de clasificación robusto y comprensible. <br>
+    Comenzamos con la carga y preparación de los datos, seguidos de un análisis exploratorio para entender mejor la distribución de clases y el contenido visual del dataset. <br>
+    Luego, se entrenan múltiples algoritmos de clasificación con el fin de comparar su rendimiento utilizando métricas adecuadas.
+    En la etapa de evaluación, utilizamos estas métricas para seleccionar el modelo con mejor desempeño.
+    Posteriormente, optimizamos los modelos para mejorar sus resultados y predicciones. <br>
+    Una vez finalizado este proceso, integramos todo el flujo de trabajo en un programa unificado y funcional.
+    Finalmente, realizamos pruebas utilizando el modelo entrenado y visualizamos los resultados en un dashboard.
     </td>
     <td style="width: 50%;">
       <img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/spanish.png?raw=true" alt="Dashboard Preview" style="width: 100%; height: auto;" />
