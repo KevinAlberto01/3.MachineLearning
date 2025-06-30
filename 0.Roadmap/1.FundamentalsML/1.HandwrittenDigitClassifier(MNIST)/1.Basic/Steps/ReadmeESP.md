@@ -170,22 +170,22 @@ En este paso, realizamos una prueba completa del dashboard para asegurarnos de q
 
 <h2 id="tech" align="center">4.Tecnologías Utilizadas</h2>
 
-📊 Manipulación y análisis de datos
+📊 **Manipulación y análisis de datos**
 
 - pandas
 - numpy
 
-📈 Visualización
+📈 **Visualización**
 
 - matplotlib
 - seaborn
 - pillow
 
-🤖 Machine Learning
+🤖 **Machine Learning**
 
 - scikit-learn
 
-📦 Desarrollo de aplicaciones
+📦 **Desarrollo de aplicaciones**
 - streamlit
 
 <h2 id="ejecutar" align="center">5.Como Ejecutar el programa</h2>
