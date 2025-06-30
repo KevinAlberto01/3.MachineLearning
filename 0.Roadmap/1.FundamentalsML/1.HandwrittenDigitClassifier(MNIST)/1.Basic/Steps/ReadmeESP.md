@@ -11,31 +11,18 @@
 2. [Proceso de Desarrollo](#desarollo)
    - [1.1.Procesamiento de Datos](#datos)
       - [1.1.1.Carga de datos](#Cdatos)
-      - [1.1.2.Verificar los null values](#Nvalues)
-      - [1.1.3 Identificación de datos duplicados y análisis de tipos de datos](#Dduplicados)
+      - [1.1.2.Explorando las dimensiones del conjunto de datos](#Nvalues)
+      - [1.1.3 Número de ejemplos por clase](#Dduplicados)
    - [1.2.Análisis Exploratorio de Datos (EDA)](#eda)
-      - [1.2.1.Heatmap](#heatmap)
-      - [1.2.2.Pairplot](#pairplot)
-      - [1.2.3.Estadísticas descriptivas](#desc)
-      - [1.2.4.Histogramas](#histo)
-      - [1.2.5.Boxplot](#boxplot)
-        - [1.2.5.1.Boxplot SalePrice](#saleprice)
-        - [1.2.5.2.Boxplot Gr Liv Area](#grlivarea)
-        - [1.2.5.3.Boxplot OverallQual](#overallqual)
-      - [1.2.6.Distribución de los datos](#distribucion)
-      - [1.2.7.Aplicamos logaritmos](#logaritmos)
-      - [1.2.8.Normalizamos los datos](#normalizamos)
+      - [1.2.1.Distribución de clases](#heatmap)
+      - [1.2.2.Ejemplos de las clases](#pairplot)
+      - [1.2.3.Normalizamos los datos](#desc)
     - [1.3 Entrenamiento de Múltiples Algoritmos](#Malgoritmos)
-      - [1.3.1.KNN Regressor](#knn)
-      - [1.3.2.SVR(Support Vector Regressor)](#svr)
-      - [1.3.3.Redes Neuronales (MLP)](#mlp)
-      - [1.3.4.LightGBM](#gbm)
-      - [1.3.5.Ridge Regression (L2 Regularization)](#l2)
-      - [1.3.6 Lasso Regression (L1 Regularization)](#l1)
-      - [1.3.7 XGBoost](#xgboost)
     - [1.4 Métricas de Evaluación](#metricas)
     - [1.5 Optimización (Ajuste y Hiperparámetros)](#optimizacion)
-3. [Agrupar (1/2)](#agrupar1)
+    - [1.6 Agrupar (1/2)](#agrupar1)
+    - [1.7 Personalización](#perso1)
+    - [1.8 Join all (2/2)](#join2)
 4. [Resultados Finales](#resultados)
 5. [Tecnologías Utilizadas](#tech)
 6. [Cómo Ejecutar](#ejecutar)
@@ -161,10 +148,10 @@ En este paso, nos enfocamos en presentar visualmente los elementos más relevant
 
 <img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.Basic/Steps/img/6.JoinAll/5.png?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
 
-<h3 id="optimizacion" align="center">1.7 Personalización</h3>
-
+<h3 id="perso1" align="center">1.7 Personalización</h3>
 Para el desarrollo del dashboard, utilicé la librería Streamlit y elaboré un boceto inicial con el propósito de definir la estructura visual y funcional del proyecto antes de proceder con su implementación.
 
+<h3 id="join2" align="center">1.7 Personalización</h3>
 <img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.Basic/Steps/img/7Personalization/Dashboard.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;"> 
 
 
@@ -200,12 +187,13 @@ Para el desarrollo del dashboard, utilicé la librería Streamlit y elaboré un 
 
 <h2 id="ejecutar" align="center">6.Como Ejecutar el programa</h2>
 
-<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/1.Basic/Steps/Img/6.Agrupar(1-2)/6.1.jpeg?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">
+<img src="https://github.com/KevinAlberto01/3.MachineLearning/blob/main/0.Roadmap/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.Basic/Steps/img/Program.png?raw=true" alt="Tipos de datos" style="width: 100%; height: auto;">
 
 ```bash
 git clone https://github.com/KevinAlberto01/3.MachineLearning.git
-cd 3.MachineLearning/0.Roadmap/1.FundamentalsML/2.HousePricePrediction/1.Basic/Local
-python 1.LOGICA.py
+cd 3.MachineLearning/0.Roadmap/1.FundamentalsML/1.HandwrittenDigitClassifier(MNIST)/1.Basic/Local/
+1.Basic/Local
+python 0.LOGICA.py
 ```
 
 >[!IMPORTANT]
