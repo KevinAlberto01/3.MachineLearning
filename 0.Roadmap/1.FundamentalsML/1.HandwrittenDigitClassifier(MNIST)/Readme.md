@@ -48,7 +48,7 @@ Y está preparado para conectarse a la nube, facilitando el acceso desde cualqui
 <h2 id="objetivos2" align="center">🎯 Objetivos 🎯</h2>
 
 
-' Implementar una pipeline completa de Machine Learning para resolver un problema de clasificación de imágenes, desde la carga de datos hasta la predicción final.
+- Implementar una pipeline completa de Machine Learning para resolver un problema de clasificación de imágenes, desde la carga de datos hasta la predicción final.
 
 - Explorar y entender el dataset load_digits proporcionado por scikit-learn, identificando la estructura, distribución de clases y características visuales de los datos.
 
