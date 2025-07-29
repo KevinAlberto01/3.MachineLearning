@@ -65,20 +65,19 @@ def limpiar_texto(texto):
 
 df['review_clean'] = df['review'].apply(limpiar_texto)
 
-
+print()
 # Longitud ANTES de limpiar
 df['length_original'] = df['review'].apply(lambda x: len(x.split()))
-
 # Longitud DESPUÉS de limpiar
 df['length_clean'] = df['review_clean'].apply(lambda x: len(x.split()))
-
-
+print()
 #5.TRANSFORMACION DE VARIABLES CATEGORICAS (PARA NLP)
 df['sentiment'] = df['sentiment'].map({'positive':1, 'negative':0})
 print(df['sentiment'])
+
 print()
 print(df.dtypes)
-print()
+print() 
 #Crear el vectorizador
 vectorizer = TfidfVectorizer(stop_words='english',max_features=5000)
 #Aplicar vectorizacion al texto 
