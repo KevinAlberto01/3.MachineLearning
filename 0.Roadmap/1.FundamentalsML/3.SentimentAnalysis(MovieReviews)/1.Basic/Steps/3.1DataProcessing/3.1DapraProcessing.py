@@ -8,11 +8,11 @@ from wordcloud import WordCloud
 import re
 
 #################### A.DATA PROCESSING ####################
-#1.Carga de datos 
+#1.CARGA DE DATOS
 df = pd.read_csv("1.Basic/Steps/3.1DataProcessing/IMDB Dataset.csv")
 print()
 
-#2.Inspeccion Inicial
+#2.INSPECCION INICIAL
 '''print(df.shape) #tamaño de fila y columna
 print()
 print(df.info()) #Informacion de la base de datos 
@@ -28,13 +28,13 @@ print()
 print(df.dtypes) # Muestra el tipo de datos
 '''
 
-#3.Limpieza de datos 
+#3.LIMPIEZA DE DATOS
 
 #3.2 Elimina Duplicados
 print(df.drop_duplicates(subset= 'review',inplace=True))
 print()
 
-#3.3 ELIMINACION DEL BR (CASO ESPECIAL NLP)
+#3.3 Eliminacion de br (para NLP)
 df['br_count'] = df['review'].str.count(r'<br\s*/?>', flags=re.IGNORECASE)
 print(df['br_count'].value_counts().sort_index()) #Cuantas filas tienen 0,1,2,3
 print()
@@ -48,8 +48,8 @@ print(df['review'])
 #comprobacion de como quedaron las columnas 
 print(df['sentiment'].value_counts()) #Muestra cuantos hay por cada columna
 
-''' 
-#INICIO DEL PASO EXTRA POR SER NLP
+
+#5.TRANSFORMACION DE VARIABLES CATEGORICAS (PARA NLP)
 df['sentiment'] = df['sentiment'].map({'positive':1, 'negative':0})
 print(df['sentiment'])
 print()
@@ -70,9 +70,8 @@ print()
 
 #FIN DEL PASO EXTRA POR SER NLP 
 
-#Division de conjuntos
+#7.DIVISION DE CONJUNTOS 
 X_train, X_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=42)
 print("Train:", X_train.shape, y_train.shape)
 print("Test:", X_test.shape, y_test.shape)
 
-'''
