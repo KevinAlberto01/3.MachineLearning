@@ -43,7 +43,7 @@ def limpiar_texto(texto):
     texto = re.sub(r'\d+', '', texto)  # eliminar números
     texto = texto.translate(str.maketrans('', '', string.punctuation))  # eliminar signos puntuación
     texto = re.sub(r'\s+', ' ', texto)  # eliminar espacios múltiples
-    return texto.starip()
+    return texto.strip()
 
 df['review_clean'] = df['review'].apply(limpiar_texto) #aqui se agrega una nueva columna pero es solamente la correccion
 print("LA BASE DE DATOS AHORA TIENE UN TAMAÑO DE:",df.shape)
