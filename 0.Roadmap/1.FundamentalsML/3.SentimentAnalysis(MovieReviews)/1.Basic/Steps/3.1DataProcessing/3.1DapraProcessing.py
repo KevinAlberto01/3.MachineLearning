@@ -75,3 +75,4 @@ X_train, X_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_
 print("Train:", X_train.shape, y_train.shape)
 print("Test:", X_test.shape, y_test.shape)
 
+################# A.FIN DE DATA PROCESSING #################
