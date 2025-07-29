@@ -83,7 +83,7 @@ plt.title('Distribucion de longitud de reseñas')
 plt.xlabel('Numero de palabras')
 plt.ylabel('Frecuencia')
 plt.show()
-print("5.LONGITUD DE LAS RESEÑAS")
+print("5.SE GENERO LA GRAFICA DE LONGITUD DE LAS RESEÑAS")
 
 
 # 3.5 Eliminar stopwords personalizadas
@@ -127,6 +127,7 @@ plt.title('Palabras más comunes (Negativas)')
 plt.axis('off')
 plt.show()
 
+print("6.SE GENERO LA GRAFICA DE WORDCLOUD")
 
 
 '''
