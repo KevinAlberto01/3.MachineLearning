@@ -6,6 +6,13 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from wordcloud import WordCloud
 import re
+import string
+from sklearn.feature_extraction import text 
+import nltk
+nltk.download('stopwords')
+from nltk.corpus import stopwords
+from sklearn.feature_extraction import text
+from nltk.corpus import stopwords
 
 #################### A.DATA PROCESSING ####################
 #1.CARGA DE DATOS
@@ -46,19 +53,51 @@ df['review'] = df['review'].str.replace(r'<br\s*/?>', ' ', regex=True)
 print(df['review'])
 
 #comprobacion de como quedaron las columnas 
-print(df['sentiment'].value_counts()) #Muestra cuantos hay por cada columna
+#print(df['sentiment'].value_counts()) #Muestra cuantos hay por cada columna
 
+#APARTIR DE AQUI FALTA DOCUMENTAR !!!!! IMPORTANTE
+# 3.4 LIMPIEZA DE TEXTO ADICIONAL
+def limpiar_texto(texto):
+    texto = texto.lower()  # minúsculas
+    texto = re.sub(r'<.*?>', ' ', texto)  # etiquetas HTML restantes
+    texto = re.sub(r'\d+', '', texto)  # eliminar números
+    texto = texto.translate(str.maketrans('', '', string.punctuation))  # eliminar signos puntuación
+    texto = re.sub(r'\s+', ' ', texto)  # eliminar espacios múltiples
+    return texto.strip()
+
+df['review_clean'] = df['review'].apply(limpiar_texto)
+
+# Longitud ANTES de limpiar
+df['length_original'] = df['review'].apply(lambda x: len(x.split()))
+
+# Longitud DESPUÉS de limpiar
+df['length_clean'] = df['review_clean'].apply(lambda x: len(x.split()))
+
+# 3.5 Eliminar stopwords personalizadas
+# Stopwords en inglés + personalizadas
+stop_words = list(text.ENGLISH_STOP_WORDS.union(stopwords.words('english')))
+stop_words += ['movie', 'film', 'one', 'character', 'time', 'story', 'make', 'see',
+    'scene', 'way', 'thing', 'look', 'plot', 'work', 'director', 'watch',
+    'get', 'go', 'going', 'even', 'bit', 'really', 'know', 'think',
+    'much', 'well', 'take', 'still', 'say', 'something', 'lot', 'back',
+    'also', 'end', 'though', 'better', 'people', 'little', 'nothing',
+    'makes', 'right', 'man', 'woman', 'new', 'life', 'im'
+]
+
+df = df.dropna(subset=['review_clean'])
+# Vectorizador actualizado
+vectorizer = TfidfVectorizer(stop_words=stop_words, max_features=5000)
+#aqui paramos 
 
 #5.TRANSFORMACION DE VARIABLES CATEGORICAS (PARA NLP)
-df['sentiment'] = df['sentiment'].map({'positive':1, 'negative':0})
-print(df['sentiment'])
-print()
-print(df.dtypes)
-print()
+#df['sentiment'] = df['sentiment'].map({'positive':1, 'negative':0}) ESTO SE CAMBIARA PARA ABAJO
+#print(df['sentiment'])
+#print()
+#print(df.dtypes)
+#print()
 #Crear el vectorizador
-vectorizer = TfidfVectorizer(stop_words='english',max_features=5000)
 #Aplicar vectorizacion al texto 
-x = vectorizer.fit_transform(df['review'])
+x = vectorizer.fit_transform(df['review_clean'])
 #Etiquetas
 y = df['sentiment']
 print("Form of X:", x.shape)
@@ -78,6 +117,14 @@ print("Test:", X_test.shape, y_test.shape)
 ################# A.FIN DE DATA PROCESSING #################
 
 ############### B.EXPLORATORY DATA ANALISYS ################
+#comparativa 
+# Comparativa del punto 3.4
+sns.histplot(df['length_original'], color='blue', label='Original', bins=50, alpha=0.5)
+sns.histplot(df['length_clean'], color='green', label='Cleaned', bins=50, alpha=0.5)
+plt.legend()
+plt.title('Distribución de longitud de reseñas (antes vs después)')
+plt.xlabel('Número de palabras')
+plt.show()
 
 #PASO 2
 #Distribucion de clases
@@ -94,12 +141,24 @@ plt.xlabel('Numero de palabras')
 plt.ylabel('Frecuencia')
 plt.show()
 
-#Palabra mas frecuentes por clases
-positive_text = ' '.join(df[df['sentiment'] == 1]['review'])
-negative_text = ' '.join(df[df['sentiment'] == 0]['review'])
 
-wordcloud_pos = WordCloud(width=800, height=400, background_color='white').generate(positive_text)
-wordcloud_neg = WordCloud(width=800, height=400, background_color='black').generate(negative_text)
+#Palabra mas frecuentes por clasesreview_clean
+# Convertir a set para más velocidad en filtrado
+
+positive_text = ' '.join(df[df['sentiment'] == 'positive']['review_clean'])
+negative_text = ' '.join(df[df['sentiment'] == 'negative']['review_clean'])
+stop_words_set = set(stop_words)
+
+# Limpiar las palabras para WordCloud (eliminar stopwords)
+positive_words = [word for word in positive_text.split() if word not in stop_words_set]
+negative_words = [word for word in negative_text.split() if word not in stop_words_set]
+
+# Volver a unir el texto limpio
+positive_text_cleaned = ' '.join(positive_words)
+negative_text_cleaned = ' '.join(negative_words)
+
+wordcloud_pos = WordCloud(width=800, height=400, background_color='white').generate(positive_text_cleaned)
+wordcloud_neg = WordCloud(width=800, height=400, background_color='black').generate(negative_text_cleaned)
 
 plt.figure(figsize=(15, 6))
 plt.subplot(1, 2, 1)
@@ -113,4 +172,6 @@ plt.title('Palabras más comunes (Negativas)')
 plt.axis('off')
 plt.show()
 
+#5.TRANSFORMACION DE VARIABLES CATEGORICAS (PARA NLP)
+df['sentiment'] = df['sentiment'].map({'positive':1, 'negative':0}) #ESTO ESTABA ARRIBA 
 ########### B.FIN DE EXPLORATORY DATA ANALISYS #############

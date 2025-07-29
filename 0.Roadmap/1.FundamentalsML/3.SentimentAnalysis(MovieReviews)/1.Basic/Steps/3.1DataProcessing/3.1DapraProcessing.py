@@ -6,7 +6,13 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from wordcloud import WordCloud
 import re
-
+import string
+from sklearn.feature_extraction import text 
+import nltk
+nltk.download('stopwords')
+from nltk.corpus import stopwords
+from sklearn.feature_extraction import text
+from nltk.corpus import stopwords
 #################### A.DATA PROCESSING ####################
 #1.CARGA DE DATOS
 df = pd.read_csv("1.Basic/Steps/3.1DataProcessing/IMDB Dataset.csv")
@@ -47,6 +53,24 @@ print(df['review'])
 
 #comprobacion de como quedaron las columnas 
 print(df['sentiment'].value_counts()) #Muestra cuantos hay por cada columna
+
+# 3.4 LIMPIEZA DE TEXTO ADICIONAL
+def limpiar_texto(texto):
+    texto = texto.lower()  # minúsculas
+    texto = re.sub(r'<.*?>', ' ', texto)  # etiquetas HTML restantes
+    texto = re.sub(r'\d+', '', texto)  # eliminar números
+    texto = texto.translate(str.maketrans('', '', string.punctuation))  # eliminar signos puntuación
+    texto = re.sub(r'\s+', ' ', texto)  # eliminar espacios múltiples
+    return texto.strip()
+
+df['review_clean'] = df['review'].apply(limpiar_texto)
+
+
+# Longitud ANTES de limpiar
+df['length_original'] = df['review'].apply(lambda x: len(x.split()))
+
+# Longitud DESPUÉS de limpiar
+df['length_clean'] = df['review_clean'].apply(lambda x: len(x.split()))
 
 
 #5.TRANSFORMACION DE VARIABLES CATEGORICAS (PARA NLP)
