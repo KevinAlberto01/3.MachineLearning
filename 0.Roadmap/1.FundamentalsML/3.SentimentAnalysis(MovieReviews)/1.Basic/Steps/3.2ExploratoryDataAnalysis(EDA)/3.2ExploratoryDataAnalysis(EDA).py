@@ -18,15 +18,15 @@ from nltk.corpus import stopwords
 #1.CARGA DE DATOS
 df = pd.read_csv("1.Basic/Steps/3.1DataProcessing/IMDB Dataset.csv")
 print()
-print("Se leyo los datos correctamente")
-print("LA BASE DE DATOS CUENTA CON UN TAMAÑO DE:",df.shape)
+print("1.SE LEYO LA BASE DE DATOS CORRECTAMENTE")
+print("La base de datos cuenta con un tamaño de:",df.shape)
 print()
 
 #3.LIMPIEZA DE DATOS
 
 #3.2 Elimina Duplicados
 df.drop_duplicates(subset= 'review',inplace=True)
-print("se elimino los datos duplicados")
+print("2.SE ELIMINO LOS DATOS DUPLICADOS")
 print()
 
 #3.3 Eliminacion de br (para NLP)
@@ -46,7 +46,7 @@ def limpiar_texto(texto):
     return texto.strip()
 
 df['review_clean'] = df['review'].apply(limpiar_texto) #aqui se agrega una nueva columna pero es solamente la correccion
-print("LA BASE DE DATOS AHORA TIENE UN TAMAÑO DE:",df.shape)
+print("La base de datos tiene un tamaño de:",df.shape)
 
 #REVISION DEL FORMATO ESTE NOMAS ES PARA CONFIRMAR POR SI VEO UNA ANOMALIA
 #print(df['review_clean'].head(10))
@@ -66,15 +66,15 @@ plt.legend()
 plt.title('Distribución de longitud de reseñas (antes vs después)')
 plt.xlabel('Número de palabras')
 plt.show()
-print("SE GENERO LA GRAFICA COMPARACION DE LONGUITUD ANTES Y DESPUES DE LIMPIAR")
+print("3.SE GENERO LA GRAFICA COMPARACION DE LONGUITUD ANTES Y DESPUES DE LIMPIAR")
 
 
 #Distribucion de clases sentiment
 sns.countplot(x='sentiment', data= df)
-plt.title('Distribucion de clases (0=Negativo), 1 = Positivo)')
+plt.title('Distribucion de clases (Negativo, Positivo)')
 plt.xticks([0,1], ['Negative', 'Positive'])
 plt.show()
-print("SE GENERO LA GRAFICA DE LA CLASE SENTIMENT")
+print("4.SE GENERO LA GRAFICA DE LA CLASE SENTIMENT")
 
 #Longitud de las reseñas
 df['review_length'] = df['review'].apply(lambda x: len(x.split()))
@@ -83,6 +83,7 @@ plt.title('Distribucion de longitud de reseñas')
 plt.xlabel('Numero de palabras')
 plt.ylabel('Frecuencia')
 plt.show()
+print("5.SE GENERO LA GRAFICA DE LONGITUD DE LAS RESEÑAS")
 
 
 # 3.5 Eliminar stopwords personalizadas
@@ -126,30 +127,4 @@ plt.title('Palabras más comunes (Negativas)')
 plt.axis('off')
 plt.show()
 
-
-
-'''
-
-x = vectorizer.fit_transform(df['review'])
-#Etiquetas
-y = df['sentiment']
-print()
-
-
-#5.TRANSFORMACION DE VARIABLES CATEGORICAS (PARA NLP)
-df['sentiment'] = df['sentiment'].map({'positive':1, 'negative':0})
-print(df['sentiment'])
-
-print()
-print(df.dtypes)
-print() 
-#Crear el vectorizador
-
-
-#FIN DEL PASO EXTRA POR SER NLP 
-
-#7.DIVISION DE CONJUNTOS 
-X_train, X_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=42)
-print("Train:", X_train.shape, y_train.shape)
-print("Test:", X_test.shape, y_test.shape)
-'''
+print("6.SE GENERO LA GRAFICA DE WORDCLOUD")
