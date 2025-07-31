@@ -13,6 +13,12 @@ nltk.download('stopwords')
 from nltk.corpus import stopwords
 from sklearn.feature_extraction import text
 from nltk.corpus import stopwords
+#LIBRERIAS PARA ALGORITMOS
+from sklearn.linear_model import LogisticRegression
+from sklearn.neighbors import KNeighborsClassifier
+#LIBRERIAS PARA METRICS
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
 #################### A.DATA PROCESSING ####################
 
 #1.CARGA DE DATOS
@@ -54,28 +60,6 @@ print("La base de datos tiene un tamaño de:",df.shape)
 ################# A.FIN DE DATA PROCESSING #################
 
 ############### B.EXPLORATORY DATA ANALISYS ################
-# Comparativa del punto 3.4
-# Longitud ANTES de limpiar
-df['length_original'] = df['review'].apply(lambda x: len(x.split()))
-# Longitud DESPUÉS de limpiar
-df['length_clean'] = df['review_clean'].apply(lambda x: len(x.split()))
-
-sns.histplot(df['length_original'], color='blue', label='Original', bins=50, alpha=0.5)
-sns.histplot(df['length_clean'], color='green', label='Cleaned', bins=50, alpha=0.5)
-plt.legend()
-plt.title('Distribución de longitud de reseñas (antes vs después)')
-plt.xlabel('Número de palabras')
-plt.show()
-print("3.SE GENERO LA GRAFICA COMPARACION DE LONGUITUD ANTES Y DESPUES DE LIMPIAR")
-
-
-#Distribucion de clases sentiment
-sns.countplot(x='sentiment', data= df)
-plt.title('Distribucion de clases (Negativo, Positivo)')
-plt.xticks([0,1], ['Negative', 'Positive'])
-plt.show()
-print("4.SE GENERO LA GRAFICA DE LA CLASE SENTIMENT")
-
 #Longitud de las reseñas
 df['review_length'] = df['review'].apply(lambda x: len(x.split()))
 sns.histplot(data= df, x='review_length', hue='sentiment', bins=50)
@@ -83,6 +67,7 @@ plt.title('Distribucion de longitud de reseñas')
 plt.xlabel('Numero de palabras')
 plt.ylabel('Frecuencia')
 plt.show()
+print()
 print("5.SE GENERO LA GRAFICA DE LONGITUD DE LAS RESEÑAS")
 
 
@@ -126,32 +111,57 @@ plt.imshow(wordcloud_neg, interpolation='bilinear')
 plt.title('Palabras más comunes (Negativas)')
 plt.axis('off')
 plt.show()
-
+print()
 print("6.SE GENERO LA GRAFICA DE WORDCLOUD")
 
 
-'''
+############ B.FIN DE EXPLORATORY DATA ANALISYS #############
 
+
+######### C.INICIO DE TRAINING MULTIPLE ALGORITHMS ##########
+
+#1.INICIO PREPARACION DE DATOS
 x = vectorizer.fit_transform(df['review'])
-#Etiquetas
 y = df['sentiment']
-print()
-
-
+#Etiquetas
 #5.TRANSFORMACION DE VARIABLES CATEGORICAS (PARA NLP)
 df['sentiment'] = df['sentiment'].map({'positive':1, 'negative':0})
 print(df['sentiment'])
-
-print()
-print(df.dtypes)
-print() 
-#Crear el vectorizador
-
 
 #FIN DEL PASO EXTRA POR SER NLP 
 
 #7.DIVISION DE CONJUNTOS 
 X_train, X_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=42)
+print()
 print("Train:", X_train.shape, y_train.shape)
 print("Test:", X_test.shape, y_test.shape)
+print()
+#1.FIN DE PREPARACION DE DATOS
+
+#2.INICIO DE LOS ALGORITMOS BASICOS
+
+#A.Logistic Regression
 '''
+modelL = LogisticRegression()
+modelL.fit(X_train, y_train)
+predictions = modelL.predict(X_test)
+print("Accuracy:", accuracy_score(y_test,predictions))
+'''
+#B.K-Nearest Neighbors (KNN)
+'''
+from sklearn.model_selection import cross_val_score
+for k in range(11, 21):
+    model = KNeighborsClassifier(n_neighbors=k)
+    scores = cross_val_score(model, X_train, y_train, cv=5, scoring='accuracy')
+    print(f"k={k}: Accuracy promedio = {scores.mean():.4f}")
+
+modelK = KNeighborsClassifier(n_neighbors=5)
+modelK.fit(X_train, y_train)
+predictions = modelK.predict(X_test)
+print("Accuracy:", accuracy_score(y_test,predictions))
+'''
+#C.Decision Tree
+
+
+#2.FIN DE LOS ALGORITMOS BASICOS
+######### C.INICIO DE TRAINING MULTIPLE ALGORITHMS ##########
