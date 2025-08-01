@@ -1,4 +1,4 @@
-#0.LIBRERIAS 
+#0.LIBRERIA 
 import pandas as pd 
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.model_selection import train_test_split
@@ -16,6 +16,16 @@ from nltk.corpus import stopwords
 #LIBRERIAS PARA ALGORITMOS
 from sklearn.linear_model import LogisticRegression
 from sklearn.neighbors import KNeighborsClassifier
+from sklearn.tree import DecisionTreeClassifier
+
+from sklearn.svm import SVC
+from sklearn.preprocessing import StandardScaler
+from sklearn.pipeline import make_pipeline
+
+from sklearn.ensemble import RandomForestClassifier
+
+
+
 #LIBRERIAS PARA METRICS
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
@@ -161,7 +171,47 @@ predictions = modelK.predict(X_test)
 print("Accuracy:", accuracy_score(y_test,predictions))
 '''
 #C.Decision Tree
+'''
+for d in range(3, 21, 2):
+    model = DecisionTreeClassifier(max_depth=d, random_state=42)
+    model.fit(X_train, y_train)
+    preds = model.predict(X_test)
+    acc = accuracy_score(y_test, preds)
+    print(f"max_depth={d} --> Accuracy: {acc:.4f}")
 
 
+modelDT = DecisionTreeClassifier(criterion='gini', max_depth=10, random_state=42)
+modelDT.fit(X_train, y_train)
+predictions = modelDT.predict(X_test)
+print("Accuracy:", accuracy_score(y_test,predictions))
+'''
 #2.FIN DE LOS ALGORITMOS BASICOS
+
+
+# Pipeline con escalado
+#ESTO ESTA LISTO PARA CORRER, MIENTRAS VOY AL GYM
+'''
+model = make_pipeline(StandardScaler(with_mean=False), SVC(kernel='rbf', C=1.0, gamma='scale'))
+model.fit(X_train, y_train)
+predictions = model.predict(X_test)
+print("Accuracy:", accuracy_score(y_test,predictions))
+'''
+
+#
+'''
+from sklearn.ensemble import RandomForestClassifier
+model = RandomForestClassifier(n_estimators=100, max_depth=10, random_state=42)
+model.fit(X_train, y_train)
+predictions = model.predict(X_test)
+print("Accuracy:", accuracy_score(y_test,predictions))
+'''
+#
+'''
+from sklearn.neural_network import MLPClassifier
+
+model = MLPClassifier(hidden_layer_sizes=(100, 50), activation='relu', max_iter=300, random_state=42)
+model.fit(X_train, y_train)
+predictions = model.predict(X_test)
+print("Accuracy:", accuracy_score(y_test,predictions))
+'''
 ######### C.INICIO DE TRAINING MULTIPLE ALGORITHMS ##########
