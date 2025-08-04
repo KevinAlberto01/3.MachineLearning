@@ -277,7 +277,7 @@ plt.show()
 
 # Pipeline con escalado
 #ESTO ESTA LISTO PARA CORRER, MIENTRAS VOY AL GYM
-
+'''
 model = make_pipeline(StandardScaler(with_mean=False), SVC(kernel='rbf', C=1.0, gamma='scale', probability=True))
 model.fit(X_train, y_train)
 predictions = model.predict(X_test)
@@ -308,7 +308,7 @@ plt.ylabel('True Positive Rate')
 plt.title('ROC Curve')
 plt.legend()
 plt.show()
-
+'''
 #
 
 '''
