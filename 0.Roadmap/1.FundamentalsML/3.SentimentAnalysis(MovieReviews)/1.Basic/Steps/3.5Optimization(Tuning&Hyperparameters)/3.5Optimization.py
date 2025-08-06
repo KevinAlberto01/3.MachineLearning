@@ -225,8 +225,8 @@ for k in range(11, 21):
     print(f"k={k}: Accuracy promedio = {scores.mean():.4f}")
 '''
 #5.1 After Optimization
-
-modelK = KNeighborsClassifier(n_neighbors=18)
+'''
+modelK = KNeighborsClassifier(n_neighbors=16)
 modelK.fit(X_train, y_train)
 predictions = modelK.predict(X_test)
 print("Accuracy:", accuracy_score(y_test,predictions))
@@ -257,8 +257,14 @@ plt.ylabel('True Positive Rate')
 plt.title('ROC Curve')
 plt.legend()
 plt.show()
-
+'''
 #C.Decision Tree
+'''
+modelDT = DecisionTreeClassifier(criterion='gini', max_depth=10, random_state=42)
+modelDT.fit(X_train, y_train)
+predictions = modelDT.predict(X_test)
+print("Accuracy:", accuracy_score(y_test,predictions))
+'''
 '''
 for d in range(3, 21, 2):
     model = DecisionTreeClassifier(max_depth=d, random_state=42)
@@ -268,7 +274,7 @@ for d in range(3, 21, 2):
     print(f"max_depth={d} --> Accuracy: {acc:.4f}")
 '''
 '''
-modelDT = DecisionTreeClassifier(criterion='gini', max_depth=10, random_state=42)
+modelDT = DecisionTreeClassifier(criterion='gini', max_depth=19, random_state=42)
 modelDT.fit(X_train, y_train)
 predictions = modelDT.predict(X_test)
 print("Accuracy:", accuracy_score(y_test,predictions))
@@ -299,8 +305,8 @@ plt.title('ROC Curve')
 plt.legend()
 plt.show()
 '''
-#2.FIN DE LOS ALGORITMOS BASICOS
 
+#2.FIN DE LOS ALGORITMOS BASICOS
 
 # Pipeline con escalado
 #ESTO ESTA LISTO PARA CORRER, MIENTRAS VOY AL GYM
@@ -309,6 +315,26 @@ model = make_pipeline(StandardScaler(with_mean=False), SVC(kernel='rbf', C=1.0, 
 model.fit(X_train, y_train)
 predictions = model.predict(X_test)
 print("Accuracy:", accuracy_score(y_test,predictions))
+'''
+'''
+C_values = [0.1,1,10]
+gamma_values = [scale,0.01,0.1,1]
+
+for C in C_values:
+    for gamma in gamma_values:
+        model = make_pipeline(
+            StandardScaler(with_mean=False),
+            SVC(kernel='rbf', C=C, gamma=gamma, probability=True)
+        )
+        model.fit(X_train, y_train)
+        predictions = model.predict(X_test)
+        acc = accuracy_score(y_test, predictions)
+        print(f"C={C}, gamma={gamma} --> Accuracy: {acc:.4f}")
+'''
+model = make_pipeline(StandardScaler(with_mean=False), SVC(kernel='rbf', C=10, gamma='scale', probability=True))
+model.fit(X_train, y_train)
+predictions = model.predict(X_test)
+print("Accuracy:", accuracy_score(y_test,predictions))
 
 #EVALUATION METRICS 
 print("Accuracy:", accuracy_score(y_test,predictions))
@@ -338,15 +364,35 @@ plt.show()
 '''
 #
 
+'''
 '''
 from sklearn.ensemble import RandomForestClassifier
 model = RandomForestClassifier(n_estimators=100, max_depth=10, random_state=42)
 model.fit(X_train, y_train)
 predictions = model.predict(X_test)
 print("Accuracy:", accuracy_score(y_test,predictions))
+'''
+'''
+'''
+'''
+from sklearn.ensemble import RandomForestClassifier
 
+for n in [50, 100, 150]:
+    for d in range(3, 21, 2):
+        model = RandomForestClassifier(n_estimators=n, max_depth=d, random_state=42)
+        model.fit(X_train, y_train)
+        predictions = model.predict(X_test)
+        acc = accuracy_score(y_test, predictions)
+        print(f"n_estimators={n}, max_depth={d} --> Accuracy: {acc:.4f}")
+'''
+'''
+model = RandomForestClassifier(n_estimators=100, max_depth=10, random_state=42)
+model.fit(X_train, y_train)
+predictions = model.predict(X_test)
+print("Accuracy:", accuracy_score(y_test,predictions))
+'''
 
-
+'''
 #EVALUATION METRICS 
 print("Accuracy:", accuracy_score(y_test,predictions))
 print("Precision:", precision_score(y_test,predictions))
@@ -373,14 +419,34 @@ plt.title('ROC Curve')
 plt.legend()
 plt.show()
 '''
+'''
 #
 '''
+'''
 from sklearn.neural_network import MLPClassifier
-
+'''
+'''
 model = MLPClassifier(hidden_layer_sizes=(100, 50), activation='relu', max_iter=300, random_state=42)
 model.fit(X_train, y_train)
 predictions = model.predict(X_test)
 print("Accuracy:", accuracy_score(y_test,predictions))
+'''
+'''
+
+layer_configs = [
+    (50,),
+    (100,),
+    (100, 50),
+    (150, 100, 50),
+    (200, 100, 50)
+]
+
+for config in layer_configs:
+    model = MLPClassifier(hidden_layer_sizes=config, activation='relu', max_iter=300, random_state=42)
+    model.fit(X_train, y_train)
+    predictions = model.predict(X_test)
+    acc = accuracy_score(y_test, predictions)
+    print(f"hidden_layer_sizes={config} --> Accuracy: {acc:.4f}")
 
 #EVALUATION METRICS 
 print("Accuracy:", accuracy_score(y_test,predictions))
@@ -408,4 +474,6 @@ plt.title('ROC Curve')
 plt.legend()
 plt.show()
 '''
+'''
 ######### C.INICIO DE TRAINING MULTIPLE ALGORITHMS ##########
+'''
