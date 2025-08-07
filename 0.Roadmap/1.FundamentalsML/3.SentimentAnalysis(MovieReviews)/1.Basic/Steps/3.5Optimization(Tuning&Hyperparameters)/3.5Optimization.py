@@ -331,6 +331,7 @@ for C in C_values:
         acc = accuracy_score(y_test, predictions)
         print(f"C={C}, gamma={gamma} --> Accuracy: {acc:.4f}")
 '''
+'''
 model = make_pipeline(StandardScaler(with_mean=False), SVC(kernel='rbf', C=10, gamma='scale', probability=True))
 model.fit(X_train, y_train)
 predictions = model.predict(X_test)
@@ -362,6 +363,7 @@ plt.title('ROC Curve')
 plt.legend()
 plt.show()
 '''
+'''
 #
 
 '''
@@ -386,7 +388,7 @@ for n in [50, 100, 150]:
         print(f"n_estimators={n}, max_depth={d} --> Accuracy: {acc:.4f}")
 '''
 '''
-model = RandomForestClassifier(n_estimators=100, max_depth=10, random_state=42)
+model = RandomForestClassifier(n_estimators=150, max_depth=19, random_state=42)
 model.fit(X_train, y_train)
 predictions = model.predict(X_test)
 print("Accuracy:", accuracy_score(y_test,predictions))
@@ -422,9 +424,9 @@ plt.show()
 '''
 #
 '''
-'''
+
 from sklearn.neural_network import MLPClassifier
-'''
+
 '''
 model = MLPClassifier(hidden_layer_sizes=(100, 50), activation='relu', max_iter=300, random_state=42)
 model.fit(X_train, y_train)
@@ -447,6 +449,12 @@ for config in layer_configs:
     predictions = model.predict(X_test)
     acc = accuracy_score(y_test, predictions)
     print(f"hidden_layer_sizes={config} --> Accuracy: {acc:.4f}")
+
+'''    
+model = MLPClassifier(hidden_layer_sizes=(200, 100, 50), activation='relu', max_iter=300, random_state=42)
+model.fit(X_train, y_train)
+predictions = model.predict(X_test)
+print("Accuracy:", accuracy_score(y_test,predictions))
 
 #EVALUATION METRICS 
 print("Accuracy:", accuracy_score(y_test,predictions))
@@ -476,4 +484,3 @@ plt.show()
 '''
 '''
 ######### C.INICIO DE TRAINING MULTIPLE ALGORITHMS ##########
-'''
