@@ -23,6 +23,7 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.pipeline import make_pipeline
 
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.neural_network import MLPClassifier
 
 
 
@@ -154,7 +155,8 @@ print()
 
 #2.INICIO DE LOS ALGORITMOS BASICOS
 
-#A.Logistic Regression
+#========================== A.INICIO DE "LOGISTIC REGRESSION" ===========================
+#ENTRENAMIENTO BASICO 
 '''
 modelL = LogisticRegression()
 modelL.fit(X_train, y_train)
@@ -162,8 +164,9 @@ predictions = modelL.predict(X_test)
 
 #EVALUATION METRICS -basic
 print("Accuracy:", accuracy_score(y_test,predictions))
-
+'''
 #EVALUATION METRICS 
+'''
 print("Accuracy:", accuracy_score(y_test,predictions))
 print("Precision:", precision_score(y_test,predictions))
 print("Recall:", recall_score(y_test,predictions))
@@ -189,7 +192,10 @@ plt.title('ROC Curve')
 plt.legend()
 plt.show()
 '''
-#B.K-Nearest Neighbors (KNN)
+#============================ A.FIN DE "LOGISTIC REGRESSION" ============================
+
+#======================== B.INICIO DE "K-Nearest Neighbors (KNN)" =======================
+#ENTRENAMIENTO BASICO 
 '''
 from sklearn.model_selection import cross_val_score
 for k in range(11, 21):
@@ -203,9 +209,9 @@ modelK = KNeighborsClassifier(n_neighbors=5)
 modelK.fit(X_train, y_train)
 predictions = modelK.predict(X_test)
 print("Accuracy:", accuracy_score(y_test,predictions))
-
-
+'''
 #EVALUATION METRICS 
+'''
 print("Accuracy:", accuracy_score(y_test,predictions))
 print("Precision:", precision_score(y_test,predictions))
 print("Recall:", recall_score(y_test,predictions))
@@ -231,22 +237,18 @@ plt.title('ROC Curve')
 plt.legend()
 plt.show()
 '''
-#C.Decision Tree
-'''
-for d in range(3, 21, 2):
-    model = DecisionTreeClassifier(max_depth=d, random_state=42)
-    model.fit(X_train, y_train)
-    preds = model.predict(X_test)
-    acc = accuracy_score(y_test, preds)
-    print(f"max_depth={d} --> Accuracy: {acc:.4f}")
-'''
+#========================== B.FIN DE "K-Nearest Neighbors (KNN)" ========================
+
+#============================== C.INICIO DE "DECISION TREE " ============================
+#ENTRENAMIENTO BASICO 
 '''
 modelDT = DecisionTreeClassifier(criterion='gini', max_depth=10, random_state=42)
 modelDT.fit(X_train, y_train)
 predictions = modelDT.predict(X_test)
 print("Accuracy:", accuracy_score(y_test,predictions))
-
+'''
 #EVALUATION METRICS 
+'''
 print("Accuracy:", accuracy_score(y_test,predictions))
 print("Precision:", precision_score(y_test,predictions))
 print("Recall:", recall_score(y_test,predictions))
@@ -272,18 +274,20 @@ plt.title('ROC Curve')
 plt.legend()
 plt.show()
 '''
+#================================ C.FIN DE "DECISION TREE " ============================
+
 #2.FIN DE LOS ALGORITMOS BASICOS
 
-
-# Pipeline con escalado
-#ESTO ESTA LISTO PARA CORRER, MIENTRAS VOY AL GYM
+#===================== D.INICIO DE "SUPPORT VECTOR MACHINE (SVM)" =======================
+#ENTRENAMIENTO BASICO 
 '''
 model = make_pipeline(StandardScaler(with_mean=False), SVC(kernel='rbf', C=1.0, gamma='scale', probability=True))
 model.fit(X_train, y_train)
 predictions = model.predict(X_test)
 print("Accuracy:", accuracy_score(y_test,predictions))
-
+'''
 #EVALUATION METRICS 
+'''
 print("Accuracy:", accuracy_score(y_test,predictions))
 print("Precision:", precision_score(y_test,predictions))
 print("Recall:", recall_score(y_test,predictions))
@@ -309,18 +313,19 @@ plt.title('ROC Curve')
 plt.legend()
 plt.show()
 '''
-#
+#======================= D.FIN DE "SUPPORT VECTOR MACHINE (SVM)" ========================
 
+#============================= E.INICIO DE "RANDOM FOREST" ==============================
+#ENTRENAMIENTO BASICO 
 '''
 from sklearn.ensemble import RandomForestClassifier
 model = RandomForestClassifier(n_estimators=100, max_depth=10, random_state=42)
 model.fit(X_train, y_train)
 predictions = model.predict(X_test)
 print("Accuracy:", accuracy_score(y_test,predictions))
-
-
-
+'''
 #EVALUATION METRICS 
+'''
 print("Accuracy:", accuracy_score(y_test,predictions))
 print("Precision:", precision_score(y_test,predictions))
 print("Recall:", recall_score(y_test,predictions))
@@ -346,16 +351,18 @@ plt.title('ROC Curve')
 plt.legend()
 plt.show()
 '''
-#
-'''
-from sklearn.neural_network import MLPClassifier
+#=============================== E.FIN DE "RANDOM FOREST" ===============================
 
+#============================ F.INICIO DE "NEURAL NETWORKS" =============================
+#ENTRENAMIENTO BASICO 
+'''
 model = MLPClassifier(hidden_layer_sizes=(100, 50), activation='relu', max_iter=300, random_state=42)
 model.fit(X_train, y_train)
 predictions = model.predict(X_test)
 print("Accuracy:", accuracy_score(y_test,predictions))
-
+'''
 #EVALUATION METRICS 
+'''
 print("Accuracy:", accuracy_score(y_test,predictions))
 print("Precision:", precision_score(y_test,predictions))
 print("Recall:", recall_score(y_test,predictions))
@@ -381,4 +388,5 @@ plt.title('ROC Curve')
 plt.legend()
 plt.show()
 '''
-######### C.INICIO DE TRAINING MULTIPLE ALGORITHMS ##########
+#============================= F.FIN DE "NEURAL NETWORKS" ===============================
+######### C.FIN DE TRAINING MULTIPLE ALGORITHMS ##########
