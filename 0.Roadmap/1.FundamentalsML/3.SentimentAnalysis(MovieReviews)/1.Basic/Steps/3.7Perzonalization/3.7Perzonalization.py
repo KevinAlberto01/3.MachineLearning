@@ -20,10 +20,11 @@ import joblib
 #============================ 0.FIN DE "LIBRERIAS" ===========================#
 
 #======================== 1.INICIO DE "MACHINE LEARNING" =====================#
-#lectura de archivo
+#------------------------- 1.1 INICIO LECTURA DE ARCHIVO ---------------------#
 df = pd.read_csv("1.Basic/Steps/3.1DataProcessing/IMDB Dataset.csv")
-print()
-#df['br_count'] = df['review'].str.count(r'<br\s*/?>', flags=re.IGNORECASE)
+#--------------------------- 1.1 FIN LECTURA DE ARCHIVO ----------------------#
+
+#----------------------- 1.1 INICIO DE LIMPIEZA DE ARCHIVO -------------------#
 df['review'] = df['review'].str.replace(r'<br\s*/?>', ' ', regex=True)
 
 #comprobacion de como quedaron las columnas 
@@ -40,6 +41,9 @@ def limpiar_texto(texto):
     texto = re.sub(r'\s+', ' ', texto)  # eliminar espacios múltiples
     return texto.strip()
 df['review_clean'] = df['review'].apply(limpiar_texto) #aqui se agrega una nueva columna pero es solamente la correccion
+#------------------------ 1.1 FIN DE LIMPIEZA DE ARCHIVO ---------------------#
+
+#---------------------------- 1.1 INICIO DE STOPWORDS ------------------------#
 # 3.5 Eliminar stopwords personalizadas
 # Stopwords en inglés + personalizadas
 stop_words = list(text.ENGLISH_STOP_WORDS.union(stopwords.words('english')))
@@ -68,10 +72,9 @@ negative_text_cleaned = ' '.join(negative_words)
 
 wordcloud_pos = WordCloud(width=800, height=400, background_color='white').generate(positive_text_cleaned)
 wordcloud_neg = WordCloud(width=800, height=400, background_color='black').generate(negative_text_cleaned)
+#------------------------------ 1.1 FIN DE STOPWORDS ------------------------#
 
-
-#MATRIX 
-#model#
+#------------------------ 1.1 INICIO DE MATRIX CONFUSION --------------------#
 #5.TRANSFORMACION DE VARIABLES CATEGORICAS (PARA NLP)
 df['sentiment'] = df['sentiment'].map({'positive':1, 'negative':0})
 print(df['sentiment'])
@@ -84,7 +87,9 @@ X_train, X_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_
 modelL = LogisticRegression(C=1, solver='liblinear', random_state=42)
 modelL.fit(X_train, y_train)
 predictions = modelL.predict(X_test)
+#------------------------- 1.1 FIN DE MATRIX CONFUSION ----------------------#
 
+#------------------------- 1.1 INICIO DE MODELO CARGADO ---------------------#
 modelo_cargado = joblib.load('1.Basic/Steps/3.6JoinAll(1-2)/LogisticPipeline.pkl')
 
 def predecir_sentimiento(texto):
@@ -96,6 +101,7 @@ def predecir_sentimiento(texto):
     prob_pos = probabilidades[0][1]  # Probabilidad de clase positiva
     
     return prediccion_texto, prob_pos
+#--------------------------- 1.1 FIN DE MODELO CARGADO ----------------------#
 
 #========================== 1.FIN DE "MACHINE LEARNING" ======================#
 
