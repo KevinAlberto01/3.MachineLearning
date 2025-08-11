@@ -99,15 +99,18 @@ def predecir_sentimiento(texto):
 
 #========================== 1.FIN DE "MACHINE LEARNING" ======================#
 
-#COLUMNA 1#
-#LECTURA DE DATOS#
-#CONTEO TOTAL DE REVIEWS ANALIZADAS#
+#============================ 2.INICIO DE "DASHBOARD" ========================#
+#----------------------------- 2.1 INICIO - COLUMNA 1 ------------------------#
+
+#///////////// 2.1.1 INICIO DE CONTEO TOTAL DE REVIEWS ANALIZADAS ////////////#
 print(df.shape)
+#/////////////// 2.1.1 FIN DE CONTEO TOTAL DE REVIEWS ANALIZADAS /////////////#
 
-#PROMEDIO DE SNETIMIENTO GLOBAL#
+#///////////////// 2.1.2 INICIO DE PROMEDIO DE SENTIMIENTO GLOBAL ////////////#
 print(df['sentiment'].value_counts())
+#/////////////////// 2.1.2 FIN DE PROMEDIO DE SENTIMIENTO GLOBAL /////////////#
 
-#top 10 
+#////////////// 2.1.3 INICIO DE TOP 10 POSITIVAS Y NEGATIVAS /////////////////#
 # Contar las palabras positivas
 counter_pos = Counter(positive_words)
 top10_pos = counter_pos.most_common(10)
@@ -118,10 +121,13 @@ top10_neg = counter_neg.most_common(10)
 
 print("Top 10 palabras positivas:", top10_pos)
 print("Top 10 palabras negativas:", top10_neg)
-#COLUMNA 1#
+#//////////////// 2.1.3 FIN DE TOP 10 POSITIVAS Y NEGATIVAS //////////////////#
 
-#COLUMNA 2#
-#worldcloud
+#------------------------------- 2.1 FIN - COLUMNA 1 ------------------------#
+
+#----------------------------- 2.2 INICIO - COLUMNA 2 ------------------------#
+
+#/////////////////////////// 2.2.1 INICIO DE WORLDCLOUD //////////////////////#
 plt.figure(figsize=(15, 6))
 plt.subplot(1, 2, 1)
 plt.imshow(wordcloud_pos, interpolation='bilinear')
@@ -133,20 +139,23 @@ plt.imshow(wordcloud_neg, interpolation='bilinear')
 plt.title('Palabras más comunes (Negativas)')
 plt.axis('off')
 plt.show()
+#///////////////////////////// 2.2.1 FIN DE WORLDCLOUD ///////////////////////#
 
-#head#
+#///////////////////////////// 2.2.2 INICIO MUESTRAS 5 ///////////////////////#
 print(df['review_clean'].head(5))
+#/////////////////////////////// 2.2.2 FIN MUESTRAS 5 ////////////////////////#
 
-#COLUMNA 2#
+#------------------------------- 2.2 FIN - COLUMNA 2 -------------------------#
 
-#columna 3#
+#----------------------------- 2.3 INICIO - COLUMNA 3 ------------------------#
 
-#matrix confusion#
+#//////////////////////// 2.2.1 INICIO DE MATRIX CONFUSION ///////////////////#
 #print("Confusion Matrix: \n", confusion_matrix(y_test,predictions))
 disp=ConfusionMatrixDisplay.from_predictions(y_test,predictions, cmap='Blues')
 plt.show()
+#////////////////////////// 2.2.1 FIN DE MATRIX CONFUSION ////////////////////#
 
-#predictions
+#//////////////////////// 2.2.1 INICIO DE PREDICTIONS ////////////////////////#
 # Lista de frases positivas y negativas combinadas
 textos_prueba = [
     "This movie was fantastic! Loved every minute of it.",
@@ -167,6 +176,8 @@ for texto in textos_prueba:
     print(f"Texto: {texto}")
     print(f"Predicción: {sentimiento} | Probabilidad de positivo: {probabilidad:.2%}")
     print("-" * 50)
+#///////////////////////// 2.2.1 FIN DE PREDICTIONS //////////////////////////#
 
-#columna 3#
+#------------------------------- 2.3 FIN - COLUMNA 3 ------------------------#
 
+#============================== 2.FIN DE "DASHBOARD" =========================#
